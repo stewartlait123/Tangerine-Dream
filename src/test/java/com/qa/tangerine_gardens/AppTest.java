@@ -1,4 +1,4 @@
-package com.qa.Tangerine_Gardens;
+package com.qa.tangerine_gardens;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

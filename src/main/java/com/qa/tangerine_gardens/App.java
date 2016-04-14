@@ -1,4 +1,4 @@
-package com.qa.Tangerine_Gardens;
+package com.qa.tangerine_gardens;
 
 /**
  * Hello world!
