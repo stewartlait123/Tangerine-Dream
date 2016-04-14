@@ -1,4 +1,4 @@
-package com.qa.tangerine_gardens;
+package com.qa.tangerine_gardens.entities;
 
 import java.sql.Date;
 import java.util.Currency;
