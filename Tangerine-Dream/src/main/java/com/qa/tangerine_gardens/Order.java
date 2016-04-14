@@ -1,4 +1,4 @@
-package com.qa.tangerine_gardens.entities;
+package com.qa.tangerine_gardens;
 
 import java.math.BigInteger;
 import java.sql.Date;
