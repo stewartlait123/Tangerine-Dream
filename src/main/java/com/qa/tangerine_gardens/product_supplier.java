@@ -1,5 +1,15 @@
 package com.qa.tangerine_gardens;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
 @Entity
 @Table (name = "product_supplier")
 public class product_supplier {
@@ -13,12 +23,12 @@ public class product_supplier {
 	@Column (name = "cost")
 	private int cost;
 	
-	@ZeroToMany
+	@OneToMany
 	@JoinColumn(name = "supplier_fk", nullable = false)
 	@NotNull
 	private int supplier_id;
 	
-	@ZeroToMany
+	@OneToMany
 	@JoinColumn(name = "product_fk", nullable = false)
 	@NotNull
 	private int product_id;
