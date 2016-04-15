@@ -1,4 +1,4 @@
-package com.qa.tangerine_gardens;
+package com.qa.tangerine_gardens.entities;
 
 import java.math.BigInteger;
 
@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 @Entity
 @Table (name="orderline")
 
