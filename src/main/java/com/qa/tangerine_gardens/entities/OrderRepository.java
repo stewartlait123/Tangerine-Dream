@@ -10,7 +10,7 @@ import java.util.List;
 		public Order findByOrderID(int id);
 		public ArrayList<Order> getOrders();
 		
-		public void updateOrder (Order a);
+		public void updateOrder (Order o);
 		
 	}
 
