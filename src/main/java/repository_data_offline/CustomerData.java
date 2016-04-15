@@ -7,6 +7,10 @@ import javax.ejb.Singleton;
 
 import com.qa.tangerine_gardens.entities.Customer;
 
+import javax.inject.Singleton;
+
+import com.qa.tangerine_gardens.entities.Customer;
+
 
 @Singleton
 public class CustomerData {
@@ -15,7 +19,7 @@ public class CustomerData {
 			new ArrayList<Customer>();
 	
 	public void initialData(){
-		
+	
 		
 		customers.add(new Customer(new Long( 1) ,"John Doe", "BigJohn", "johnPassword", new Date() ,67 , 100));	
 		customers.add(new Customer(new Long( 1) ,"James Crisps", "GoldenWonder", "crisps00001", new Date() ,15099 , 12000));
