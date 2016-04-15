@@ -1,5 +1,10 @@
 package com.qa.tangerine_gardens.entities;
-
+/**
+ * This is the PurchaseOrderLine entity
+ * 
+ * @author Iain Q
+ *
+ */
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,5 +1,12 @@
 package com.qa.tangerine_gardens.entities;
 
+/**
+ * This is the Customer entity
+ * 
+ * @author Iain Q
+ *
+ */
+
 import java.util.Date;
 
 import javax.persistence.Column;
