@@ -7,7 +7,7 @@ public interface CustomerRepository {
 	
 	
 	public void persistCustomer (Customer c);
-	public void persistCustomers (List<Customer> a);
+	public void persistCustomers (List<Customer> c);
 	
 	
 	public Customer findByName(String name);
@@ -27,6 +27,6 @@ public interface CustomerRepository {
 	
 	public void updateCredit(Currency c);
 	
-	public void updateCreditLimit(Currency c);	
+	public void updateCreditLimit(Currency c);
 
 }

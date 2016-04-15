@@ -1,7 +1,6 @@
 package com.qa.tangerine_gardens.entities;
 
-import java.sql.Date;
-import java.util.Currency;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -41,11 +40,24 @@ public class Customer {
 	@NotNull
 	private Date dob;
 
+	//Currency types changed to ints
 	@Column (name = "credit", nullable = true)
-	private Currency credit;
+	private int credit;
 
 	@Column (name = "credit", nullable = true)
-	private Currency credit_limit;
+	private int credit_limit;
+	
+	//Constructor added for creation in InitialData class
+	public Customer(Long Id_, String name_, String username_, String password_, Date date, int credit_, int creditLimit_ )
+	{
+		customer_id = Id_;
+		name = name_;
+		username = username_;
+		password = password_;
+		dob = date;
+		credit = credit_;
+		credit_limit = creditLimit_;
+	}
 
 	public Long getCustomer_id()
 		{ return customer_id; }
@@ -72,16 +84,16 @@ public class Customer {
 	public Date getDob()
 		{ return dob; }
 
-	public void setCredit(Currency credit)
+	public void setCredit(int credit)
 		{ this.credit = credit; }
 
-	public Currency getCredit()
+	public int getCredit()
 		{ return credit; }
 
-	public void setCreditLimit(Currency credit_limit)
+	public void setCreditLimit(int credit_limit)
 		{ this.credit_limit = credit_limit; }
 
-	public Currency getCreditLimit()
+	public int getCreditLimit()
 		{ return credit_limit; }
 
 }
