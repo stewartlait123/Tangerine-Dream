@@ -1,3 +1,4 @@
+// Created by Mohammed Miah and Umar
 package com.qa.tangerine_gardens.repository;
 
 import com.qa.tangerine_gardens.entities.*;
@@ -16,7 +17,6 @@ public class InitialData{
 	public ArrayList<Product> getProducts(){
 		return products;
 	}
-
 
 	public void addProduct(Product product){
 		products.add(product);
