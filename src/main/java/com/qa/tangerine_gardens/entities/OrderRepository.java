@@ -5,12 +5,12 @@ import java.util.List;
 	
 	public interface OrderRepository {
 		public void persistOrder (Order o);
-		public void persistOrder (List<Order> o);
+		public void persistOrder (List<Order>);
 		
 		public Order findByOrderID(int id);
 		public ArrayList<Order> getOrders();
 		
-		public void updateOrder (Order o);
+		public void updateOrder (Order a);
 		
 	}
 
