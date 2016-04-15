@@ -6,9 +6,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+/**
+ * This is the orderLine entity
+ * 
+ * @author Jess
+ *
+ */
 @Entity
 @Table (name="orderline")
-
 public class OrderLine {
 	@Id
 	@OneToMany 
@@ -42,7 +48,11 @@ public class OrderLine {
 		return product;
 	}
 	
-	
+	/**
+	 * gets the quantity
+	 * 
+	 * @return int - quantity
+	 */
 	public int getQuantity()
 	{ return quantity; }
 
