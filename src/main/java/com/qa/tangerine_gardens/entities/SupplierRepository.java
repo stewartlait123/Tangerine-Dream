@@ -1,5 +1,13 @@
 package com.qa.tangerine_gardens.entities;
 
+/**
+ * This is the Supplier repository
+ * 
+ * @author Iain Q
+ *
+ */
+
+
 import java.util.ArrayList;
 import java.util.List;
 

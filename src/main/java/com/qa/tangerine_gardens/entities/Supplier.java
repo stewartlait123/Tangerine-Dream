@@ -1,5 +1,12 @@
 package com.qa.tangerine_gardens.entities;
 
+/**
+ * This is the Supplier entity
+ * 
+ * @author Iain Q
+ *
+ */
+
 import java.math.BigInteger;
 
 import javax.persistence.Column;

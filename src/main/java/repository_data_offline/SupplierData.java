@@ -1,5 +1,12 @@
 package repository_data_offline;
 
+/**
+ * This is dummy data for the Supplier
+ * 
+ * @author Iain Q
+ *
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 

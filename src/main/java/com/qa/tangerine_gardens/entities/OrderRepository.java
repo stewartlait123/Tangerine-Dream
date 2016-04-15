@@ -1,3 +1,7 @@
+/* Order repositorys  interface created for Order Entity by Christine Stokes
+ * methods are defined in here and the actual methods are in OrderRepositoryOffline
+ */
+
 package com.qa.tangerine_gardens.entities;
 import java.util.ArrayList;
 import java.util.List;
