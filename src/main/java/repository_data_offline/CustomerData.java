@@ -7,11 +7,6 @@ import javax.ejb.Singleton;
 
 import com.qa.tangerine_gardens.entities.Customer;
 
-import javax.inject.Singleton;
-
-import com.qa.tangerine_gardens.entities.Customer;
-
-
 @Singleton
 public class CustomerData {
 	
