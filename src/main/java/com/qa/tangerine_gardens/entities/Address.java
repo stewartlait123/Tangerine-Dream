@@ -30,7 +30,7 @@ public class Address {
 	String delivery_address;
 	
 	@ManyToOne
-	@JoinColumn (name = "customer")
+	@JoinColumn (name = "customer_id_fk")
 	long customer_id_fk;
 	
 	
