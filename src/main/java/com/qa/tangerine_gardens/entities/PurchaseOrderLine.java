@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,30 +14,31 @@ import javax.persistence.Table;
 public class PurchaseOrderLine {
 	
 	@Id
-	@Column(name = "purchase_order_line")
+	@Column(name = "purchase_orderline_id")
 	@GeneratedValue ( strategy = GenerationType.IDENTITY)
-	public long purchaseorderline_id;
+	public long purchase_orderline_id;
 	
 	@Column ( name = "qty")
-	public int qty;
+	public int quantity;
 	
 	@ManyToOne
-	@JoinColumn( name = "purchase_order_id", nullable = false)
-	public PurchaseOrder purchaseorder_FK;
-	
-	public int getQty(){
-		return qty;
+	@JoinColumn( name = "purchase_order_id_fk", nullable = false)
+	public int purchase_order_id_fk;
+
+	public int getQuantity(){
+		return quantity;
 	}
 	
-	public PurchaseOrder getPurchaseOrderFK(){
-		return purchaseorder_FK;
+	public void setQuantity(int value){
+		this.quantity = value;
 	}
 	
-	public void setQty(int value){
-		this.qty = value;
+	public long getPurchaseOrderlineId(){
+		return purchase_orderline_id;
 	}
 	
-	public void setPurchaseorderFK(PurchaseOrder value){
-		this.purchaseorder_FK = value;
+	public int getPurchaseOrderId()
+	{
+		return purchase_order_id_fk;
 	}
 }
