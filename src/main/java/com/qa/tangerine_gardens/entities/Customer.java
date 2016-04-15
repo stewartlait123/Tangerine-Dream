@@ -59,6 +59,9 @@ public class Customer {
 		credit_limit = creditLimit_;
 	}
 
+	public Customer(){
+		
+	}
 	public Long getCustomer_id()
 		{ return customer_id; }
 
