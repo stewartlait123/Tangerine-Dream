@@ -1,6 +1,11 @@
 package repository_data_offline;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Singleton;
+
+import com.qa.tangerine_gardens.entities.Supplier;
 
 @Singleton
 public class SupplierData {
@@ -21,7 +26,7 @@ public class SupplierData {
 	public void addSupplier(Supplier Supplier) {
 		Suppliers.add(Supplier);
 	}
-	public void setSuppliers(List<Supplier> Suppliers) {
-		Suppliers = Supplier;
+	public void setSuppliers(List<Supplier> Supplier) {
+		Suppliers = (ArrayList<Supplier>) Supplier;
 	}
 }

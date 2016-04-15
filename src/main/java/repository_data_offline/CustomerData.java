@@ -2,14 +2,18 @@ package repository_data_offline;
 
 import java.util.ArrayList;
 
+import javax.inject.Singleton;
+
+import com.qa.tangerine_gardens.entities.Customer;
+
 
 @Singleton
 public class CustomerData {
 	
 	private ArrayList<Customer> customers = 
-			new ArrayList<Author>();
+			new ArrayList<Customer>();
 	
-	public initialData(){
+	public void initialData(){
 		
 		customers.add(new Customer()
 				);

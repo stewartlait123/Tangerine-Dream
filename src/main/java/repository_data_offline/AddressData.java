@@ -2,6 +2,10 @@ package repository_data_offline;
 
 import java.util.ArrayList;
 
+import javax.inject.Singleton;
+
+import com.qa.tangerine_gardens.entities.Address;
+
 @Singleton
 public class AddressData
 {
@@ -10,9 +14,9 @@ public class AddressData
 			new ArrayList<Address>();
 	
 	
-	public InitialData()
+	public void InitialData()
 	{
-		addresses.add(new Address())
+		addresses.add(new Address());
 	}
 
 }
