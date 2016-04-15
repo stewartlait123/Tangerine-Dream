@@ -14,6 +14,24 @@ import javax.validation.constraints.Size;
 @Table (name = "product")
 
 public class Product{
+	// These values will be used to identify the product type
+	public enum PRODUCT_TYPE{
+		POTS, FURNITURE
+	}
+	
+	public Product(long id, String name, int cost, int price, int size, int weight, int stock, int minStock, int orderAmount, PRODUCT_TYPE productType){
+		this.product_id = id; 
+		this.name = name;
+		this.cost_price = cost;
+		this.price = price;
+		this.size = size;
+		this.weight = weight;
+		this.stock = stock;
+		this.min_stock = minStock;
+		this.order_amount = orderAmount;
+		this.product_type = productType;
+	}
+	
 	@Id
 	@Column (name = "product_id")
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -62,7 +80,7 @@ public class Product{
 	@Column (name = "product_type", nullable = false)
 	@NotNull
 	@Size (min = 0, max = 2147483647)
-	private int product_type;
+	private PRODUCT_TYPE product_type;
 	
 	public long getProduct_id(){
 		return product_id;
@@ -168,11 +186,11 @@ public class Product{
 		return order_amount;
 	}
 	
-	public void setProduct_type(int value) {
+	public void setProduct_type(PRODUCT_TYPE value) {
 		this.product_type = value;
 	}
 	
-	public int getProduct_type() {
+	public PRODUCT_TYPE getProduct_type() {
 		return product_type;
 	}
 }
