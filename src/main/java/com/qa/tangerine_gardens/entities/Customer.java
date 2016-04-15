@@ -17,41 +17,34 @@ import javax.validation.constraints.Size;
 public class Customer {
 	@Id
 	@Column (name = "customer_id")
-	@GeneratedValue (
-		strategy = GenerationType.IDENTITY)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long customer_id;
 
-	@Column (name = "name",
-		nullable = false, length = 225)
+	@Column (name = "name", nullable = false, length = 225)
 	@NotNull
 	@Size (min = 2, max = 225)
 
 	private String name;
 
-	@Column (name = "username",
-		nullable = false, length = 225)
+	@Column (name = "username",	nullable = false, length = 225)
 	@NotNull
 	@Size (min = 2, max = 225)
 	private String username;
 
-	@Column (name = "password",
-		nullable = false, length = 225)
+	@Column (name = "password", nullable = false, length = 225)
 	@NotNull
 	@Size (min = 5, max = 225)
 	private String password;
 
 
-	@Column (name = "dob",
-		nullable = false)
+	@Column (name = "dob", nullable = false)
 	@NotNull
 	private Date dob;
 
-	@Column (name = "credit",
-		nullable = true)
+	@Column (name = "credit", nullable = true)
 	private Currency credit;
 
-	@Column (name = "credit",
-		nullable = true)
+	@Column (name = "credit", nullable = true)
 	private Currency credit_limit;
 
 	public Long getCustomer_id()
