@@ -20,22 +20,22 @@ public class PurchaseOrderLine {
 	public long purchaseorderline_id;
 	
 	@Column ( name = "qty")
-	public int Quantity;
+	public int qty;
 	
 	@ManyToOne
 	@JoinColumn( name = "purchase_order_id", nullable = false)
 	public PurchaseOrder purchaseorder_FK;
 	
-	public int getQuantity(){
-		return Quantity;
+	public int getQty(){
+		return qty;
 	}
 	
 	public PurchaseOrder getPurchaseOrderFK(){
 		return purchaseorder_FK;
 	}
 	
-	public void setQuantity(int value){
-		this.Quantity = value;
+	public void setQty(int value){
+		this.qty = value;
 	}
 	
 	public void setPurchaseorderFK(PurchaseOrder value){
