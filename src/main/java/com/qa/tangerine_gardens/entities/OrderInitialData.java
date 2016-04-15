@@ -41,6 +41,10 @@ public void setOrder(List<Order> order) {
 	Orders = (ArrayList<Order>) order;
 }
 
+public List<Order> getEntityList() {
+	return Orders;
+}
+
 
 
 }

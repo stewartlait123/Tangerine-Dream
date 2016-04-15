@@ -11,7 +11,4 @@ import java.util.List;
 		public ArrayList<Order> getOrders();
 		
 		public void updateOrder (Order o);
-		
 	}
-
-

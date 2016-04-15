@@ -1,6 +1,8 @@
 package com.qa.tangerine_gardens.entities;
-import java.util.Date;
+
 import java.math.BigInteger;
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -39,7 +41,7 @@ public class Order {
 	
 	public Order(){}
 
-	public Order(int status, java.util.Date currentDate, Customer customerID) {
+	public Order(int status, Date currentDate, Customer customerID) {
 		this.status = status;
 		this.order_date = currentDate;
 		this.customer_id = customerID;
