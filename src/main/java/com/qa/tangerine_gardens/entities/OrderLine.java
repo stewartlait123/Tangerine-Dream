@@ -1,11 +1,7 @@
 package com.qa.tangerine_gardens.entities;
 
-import java.math.BigInteger;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -14,42 +10,36 @@ import javax.persistence.Table;
 @Table (name="orderline")
 
 public class OrderLine {
-
 	@Id
-	@Column (name = "orderline_id")
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private BigInteger orderline_id;
-	
-	@OneToMany 
-	@JoinColumn(name = "product_id_fk", nullable = true)
-	private int product_id_fk ;
-	
 	@OneToMany 
 	@JoinColumn(name = "order_id_fk", nullable = true)
-	private int order_id_fk ;
+	private Order order;
+	
+	@Id
+	@OneToMany 
+	@JoinColumn(name = "product_id_fk", nullable = true)
+	private Product product;
+	
 	
 	@Column (name = "quantity")
 	private int quantity;
 	
-	
 	public OrderLine(){}
-
 	
-
-	
-	public BigInteger getOrderline_id() {
-		return orderline_id;
+	public OrderLine(Order order, Product product, int quantity){
+		this.order = order;
+		this.product = product;
+		this.quantity = quantity;
 	}
 	
-	
-	public int getOrderId()
+	public Order getOrder()
 	{
-		return order_id_fk;
+		return order;
 	}
 	
-	public int getProductId()
+	public Product getProduct()
 	{
-		return product_id_fk;
+		return product;
 	}
 	
 	
@@ -58,6 +48,4 @@ public class OrderLine {
 
 	public void setQuantity(int quantity)
 	{ this.quantity = quantity; }
-	
-	
 }
