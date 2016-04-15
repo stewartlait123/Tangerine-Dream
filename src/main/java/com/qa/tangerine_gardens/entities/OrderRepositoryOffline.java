@@ -1,17 +1,16 @@
 package com.qa.tangerine_gardens.entities;
-
-/* Program which allows the user to Create, read the dummy data, and Update the files.
- * All lists or just one row can be read and search can be done through ID number.
- * File created by Christine Stokes
- */
-
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 
 import repository_data_offline.OrderInitialData;
-
+/**
+ * Program which allows the user to Create, read the dummy data, and Update the files.
+ * All lists or just one row can be read and search can be done through ID number.
+ * @author Christine Stokes
+ *
+ */
 public class OrderRepositoryOffline 
 implements OrderRepository {
 	@Inject

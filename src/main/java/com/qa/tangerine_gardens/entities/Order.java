@@ -1,11 +1,16 @@
-/* Order Entity table created by Christine Stokes Team Tangerine the columns in the
- * table are defined and reference to Customer class included
+/* 
+ * 
  */
 
 package com.qa.tangerine_gardens.entities;
 
 
 import java.math.BigInteger;
+/**
+ * Order Entity table created by Christine Stokes Team Tangerine the columns in the
+ * table are defined and reference to Customer class included
+ * @author Christine Stokes
+ */
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -46,7 +51,12 @@ public class Order {
 	
 	public Order(){}
 
-	//  method to allow dummy data to be generated 
+	/**
+	 *   method to allow dummy data to be generated 
+	 * @param status
+	 * @param currentDate
+	 * @param customerID
+	 */
 	public Order(int status, Date currentDate, Customer customerID) {
 		this.status = status;
 		this.order_date = currentDate;
