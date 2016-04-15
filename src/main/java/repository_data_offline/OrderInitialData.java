@@ -1,4 +1,4 @@
-package com.qa.tangerine_gardens.entities;
+package repository_data_offline;
 
 import java.sql.Date;
 import java.text.DateFormat;
@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Singleton;
+
+import com.qa.tangerine_gardens.entities.Customer;
+import com.qa.tangerine_gardens.entities.Order;
 
 @Singleton
 public class OrderInitialData {

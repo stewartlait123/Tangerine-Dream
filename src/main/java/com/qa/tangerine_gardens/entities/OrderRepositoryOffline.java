@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import repository_data_offline.OrderInitialData;
+
 public class OrderRepositoryOffline 
 implements OrderRepository {
 	@Inject

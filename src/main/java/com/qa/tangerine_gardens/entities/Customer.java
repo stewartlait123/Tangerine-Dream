@@ -1,3 +1,7 @@
+// Author @ Finley Peters - Team Tang 2016
+// Base customer class containing database tags.
+
+
 package com.qa.tangerine_gardens.entities;
 
 /**
