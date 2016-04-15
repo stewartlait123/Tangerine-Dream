@@ -47,6 +47,9 @@ public class Customer {
 	@Column (name = "credit", nullable = true)
 	private Currency credit_limit;
 
+	public Customer(){
+		
+	}
 	public Long getCustomer_id()
 		{ return customer_id; }
 
