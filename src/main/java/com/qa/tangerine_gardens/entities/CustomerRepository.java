@@ -5,33 +5,35 @@
 
 package com.qa.tangerine_gardens.entities;
 
-import java.util.List;
 import java.util.ArrayList;
 
 public interface CustomerRepository {
 	
 	
 	public void persistCustomer (Customer customer_);
-	public void persistCustomers (List<Customer> customer_);
+	public void persistCustomers (ArrayList<Customer> customers_);
 	
 	
-	public Customer findByName(String customerName_);
+	public ArrayList<Customer> findByName(String customerName_);
 	public ArrayList<Customer> getCustomers();
+	
+	public Customer findByID(int id_);
 	
 	public void addCustomer (Customer customer_);
 	
 	public void removeCustomer (Customer customer_);
 	
-	public void updateCustomerUserName(String userName_);
+	public void updateCustomerUserName(Long id_, String userName_);
 	
-	public void updateCustomerName(String customerName_);
+	public void updateCustomerName(Long id_, String customerName_);
 	
-	public void updateCustomerAddress(Address address_);
+	//Address removed as address does not reside in the customer table. Address is it's own object/table
+	//public void updateCustomerAddress(Long id_, Address address_);
 	
-	public void updatePassword(String password_);
+	public void updatePassword(Long id_, String password_);
 	
-	public void updateCredit(int credit_);
+	public void updateCredit(Long id_, int credit_);
 	
-	public void updateCreditLimit(int creditLimit_);
+	public void updateCreditLimit(Long id_, int creditLimit_);
 
 }

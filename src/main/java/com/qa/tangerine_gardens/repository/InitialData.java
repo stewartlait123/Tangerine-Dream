@@ -16,7 +16,7 @@ public class InitialData{
 	public InitialData(){
 		products.add(new Product(1, "pot", 100, 300, 10, 500, 1000, 100, 1000, PRODUCT_TYPE.POTS));
 		
-		//Creation of five entries to add into customer arraylist with unique values - Finley Peters @ TeamTang
+		//Creation of five entries to add into customer Arraylist with unique values - Finley Peters @ TeamTang
 		customers.add(new Customer(new Long( 1) ,"John Doe", "BigJohn", "johnPassword", new Date() ,67 , 100));	
 		customers.add(new Customer(new Long( 2) ,"James Crisps", "GoldenWonder", "crisps00001", new Date() ,15099 , 12000));
 		customers.add(new Customer(new Long( 3) ,"Billy Kitten", "LifeIsPointless", "rootin_tootin", new Date() ,0 , 0));
@@ -43,9 +43,39 @@ public class InitialData{
 		return customers;
 	}
 	
-	public void addCustomer(Customer customer)
+	public void setCustomer(Customer customer_)
 	{
-		customers.add(customer);
+		for(int i = 0 ; i < customers.size() ; i++ )
+		{
+			if(customers.get(i).getCustomerId().equals(customer_.getCustomerId())) //Checks searched customers ID against records
+			{
+				customers.set(i, customer_); //Replaces old record with new, updated record
+				return;
+			}
+		}
+	}
+	
+	public void addCustomer(Customer customer_)
+	{
+		customers.add(customer_);
+	}
+	
+	public void addCustomers(ArrayList<Customer> customers_)
+	{
+		customers.addAll(customers_);
+	}
+	
+	public void removeCustomer(Customer customer_)
+	{
+		
+		for(int i = 0 ; i < customers.size() ; i++ )
+		{
+			if(customers.get(i).getCustomerId().equals(customer_.getCustomerId())) //Checks searched customers ID against records
+			{
+				customers.remove(i);
+				return;
+			}
+		}
 	}
 	
 	public void setCustomers(ArrayList<Customer> customerList)

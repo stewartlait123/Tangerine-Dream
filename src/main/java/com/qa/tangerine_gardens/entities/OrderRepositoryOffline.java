@@ -14,16 +14,22 @@ import repository_data_offline.OrderInitialData;
 public class OrderRepositoryOffline 
 implements OrderRepository {
 	@Inject
-	private OrderInitialData OrderInitialData;
+	
+	/**Changed injection from 'OrderInitialData' to 'InitialData' as all offline
+	 * data is to be folded into this class. 
+	*  Changed variable name 'OrderInitialData' to 'initialData' to reflect this.
+	*/
+	
+	private OrderInitialData initialData;
 	
 	@Override
 	public void persistOrder(Order o) {
-	OrderInitialData.addOrder(o);	
+		initialData.addOrder(o);	
 	}
 
 	@Override
 	public Order findByOrderID(int id) {
-		ArrayList<Order> os = (ArrayList<Order>) OrderInitialData.getOrders();
+		ArrayList<Order> os = (ArrayList<Order>) initialData.getOrders();
 		for(int i=0;i<os.size(); i++){
 			if(os.get(i).getOrder_id().equals(id)){
 				System.out.println(os.toString());
@@ -34,13 +40,13 @@ implements OrderRepository {
 
 	@Override
 	public void updateOrder(Order o) {
-		ArrayList<Order> os = (ArrayList<Order>) OrderInitialData.getOrders();
+		ArrayList<Order> os = (ArrayList<Order>) initialData.getOrders();
 		for(int i=0;i<os.size(); i++){
 			if(os.get(i).equals(o)){
 				os.set(i, o);
 			}
 		}
-		OrderInitialData.setOrder(os);
+		initialData.setOrder(os);
 		
 	}
 	@Override
@@ -51,6 +57,6 @@ implements OrderRepository {
 
 	@Override
 	public ArrayList<Order> getOrders() {
-		return (ArrayList<Order>) OrderInitialData.getEntityList();
+		return (ArrayList<Order>) initialData.getEntityList();
 	}
 }
