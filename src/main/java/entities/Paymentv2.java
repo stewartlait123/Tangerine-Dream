@@ -1,4 +1,4 @@
-package com.qa.tangerine_gardens.entities;
+package entities;
 
 /** Remake of Payment entity
  * 
@@ -40,6 +40,11 @@ public class Paymentv2 {
 	@JoinColumn(name = "address_id", nullable = true)
 	private int address_id;
 	
+	public Paymentv2(int i, Order orderID, Address address_ID2,
+			Customer customer_ID) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void Payment(){}
 	
 	/**

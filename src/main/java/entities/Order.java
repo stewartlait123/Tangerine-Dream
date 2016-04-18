@@ -57,9 +57,9 @@ public class Order {
 	 * @param currentDate
 	 * @param customerID
 	 */
-	public Order(int status, Date currentDate, Customer customerID) {
+	public Order(int status, java.util.Date currentDate, Customer customerID) {
 		this.status = status;
-		this.order_date = currentDate;
+		this.order_date = (Date) currentDate;
 		this.customer_id = customerID;
 		
 	}

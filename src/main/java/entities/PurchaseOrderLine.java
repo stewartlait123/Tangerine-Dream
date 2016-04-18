@@ -30,7 +30,11 @@ public class PurchaseOrderLine {
 	
 	@ManyToOne
 	@JoinColumn( name = "purchase_order_id_fk", nullable = false)
-	public int purchase_order_id_fk;
+	private PurchaseOrder purchase_order_id;
+
+	public PurchaseOrderLine(int i, PurchaseOrder purchaseOrder) {
+		// TODO Auto-generated constructor stub
+	}
 
 	public int getQuantity(){
 		return quantity;
