@@ -30,6 +30,10 @@ public class PurchaseOrder {
 	@JoinColumn( name = "employee_id" )
 	private Employee employee;
 	
+	public PurchaseOrder(java.util.Date currentDate, Employee employee2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public long getPurchaseorder_id(){
 		return purchaseorder_id;
 	}

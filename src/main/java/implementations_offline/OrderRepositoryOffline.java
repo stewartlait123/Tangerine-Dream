@@ -1,9 +1,11 @@
-package repositories;
+package implementations_offline;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
-import dummy_data.OrderInitialData;
+
+import repositories.OrderRepository;
+import dummy_data.InitialData;
 import entities.Order;
 
 
@@ -22,7 +24,7 @@ implements OrderRepository {
 	*  Changed variable name 'OrderInitialData' to 'initialData' to reflect this.
 	*/
 	
-	private OrderInitialData initialData;
+	private InitialData initialData;
 	
 	@Override
 	public void persistOrder(Order o) {

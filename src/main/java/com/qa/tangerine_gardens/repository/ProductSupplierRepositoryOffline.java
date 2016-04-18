@@ -1,10 +1,14 @@
-package com.qa.tangerine_gardens.entities;
+package com.qa.tangerine_gardens.repository;
 
 import java.util.ArrayList;
 import java.util.Currency;
 import java.util.List;
 
 import javax.inject.Inject;
+
+import repositories.*;
+import entities.*;
+import dummy_data.InitialData;
 
 /**
  * This is the offline ProductSupplier repository
@@ -25,7 +29,7 @@ public class ProductSupplierRepositoryOffline implements ProductSupplierReposito
 		
 		@Override
 		public void persistProductSuppliers(List<ProductSupplier> ps) {
-			initialData.addProductSuppliers(ps);	
+			initialData.getProductSupplier(ps);	
 		}
 		
 		@Override

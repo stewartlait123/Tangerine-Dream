@@ -41,6 +41,13 @@ public class ProductSupplier {
 	private int product_id;
 	
 	
+
+
+	public ProductSupplier(Supplier supplier, Product productID) {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public int getPsupplier_id()
 	{
 		return psupplier_id;

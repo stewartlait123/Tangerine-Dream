@@ -7,7 +7,7 @@ package com.qa.tangerine_gardens.repositories;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.qa.tangerine_gardens.entities.Paymentv2;
+import entities.Paymentv2;
 
 
 public interface Paymentv2Repository {

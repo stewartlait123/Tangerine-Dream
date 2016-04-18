@@ -36,6 +36,10 @@ public class Address {
 	long customer_id_fk;
 	
 	
+	public Address(String string, String string2, Customer customer_ID) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getBilling_address() {
 		return billing_address;
 	}

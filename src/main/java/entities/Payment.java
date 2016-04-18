@@ -40,6 +40,10 @@ public class Payment {
 	@JoinColumn(name = "address_id", nullable = true)
 	private int address_id;
 	
+	public Payment(int i, Order orderID, Address address, Customer customer_ID) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void Payment(){}
 	
 	/**

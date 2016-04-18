@@ -1,12 +1,7 @@
 /*
  * Created by Umar */
 package entities;
-/**
- * This is the PurchaseOrderLine entity
- * 
- * @author Iain Q
- *
- */
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,7 +25,11 @@ public class PurchaseOrderLine {
 	
 	@ManyToOne
 	@JoinColumn( name = "purchase_order_id_fk", nullable = false)
-	public int purchase_order_id_fk;
+	private PurchaseOrder purchase_order_id;
+
+	public PurchaseOrderLine(int i, PurchaseOrder purchaseOrder) {
+		// TODO Auto-generated constructor stub
+	}
 
 	public int getQuantity(){
 		return quantity;
@@ -44,8 +43,8 @@ public class PurchaseOrderLine {
 		return purchase_orderline_id;
 	}
 	
-	public int getPurchaseOrderId()
+	public PurchaseOrder getPurchaseOrderId()
 	{
-		return purchase_order_id_fk;
+		return purchase_order_id;
 	}
 }
