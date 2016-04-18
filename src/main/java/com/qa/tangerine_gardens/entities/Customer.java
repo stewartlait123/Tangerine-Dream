@@ -1,4 +1,15 @@
+// Author @ Finley Peters - Team Tang 2016
+// Base customer class containing database tags.
+
+
 package com.qa.tangerine_gardens.entities;
+
+/**
+ * This is the Customer entity
+ * 
+ * @author Iain Q
+ *
+ */
 
 import java.util.Date;
 
