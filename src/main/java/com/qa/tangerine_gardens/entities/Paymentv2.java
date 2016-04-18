@@ -40,12 +40,11 @@ public class Paymentv2 {
 	@JoinColumn(name = "address_id", nullable = true)
 	private int address_id;
 	
-	public void Paymentv2(){}
+	public void Payment(){}
 	
 	/**
 	 * Gets and returns payment ID
 	 */
-
 	public int getPayment_id() {
 		return payment_id;
 	}
