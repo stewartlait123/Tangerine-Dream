@@ -68,6 +68,7 @@ public class InitialData{
 	
 	// Creation of Payment Dummy Data by Christine Stokes
 	
+
 	payment.add(new Payment(2, orderID, address.get(0), customer_ID));
 	payment.add(new Payment(2, orderID, address.get(1), customer_ID));
 	payment.add(new Payment(2, orderID, address.get(2), customer_ID));
