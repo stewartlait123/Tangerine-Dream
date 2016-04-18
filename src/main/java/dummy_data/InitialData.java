@@ -10,6 +10,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 import javax.ejb.Singleton;
 
 @Singleton
@@ -18,7 +20,7 @@ public class InitialData{
 	private ArrayList<Address> address = new ArrayList<Address>();
 	private ArrayList<Order> Orders = new ArrayList<Order>();
 	private ArrayList<OrderLine> OrderLine= new ArrayList<OrderLine>();
-	private ArrayList<Paymentv2> payment = new ArrayList<Paymentv2>();
+	private ArrayList<Payment> payment = new ArrayList<Payment>();
 	private ArrayList<Product> products = new ArrayList<Product>();
 	private ArrayList<Employee> employees = new ArrayList<Employee>();
 	private ArrayList<PurchaseOrder> purchaseOrders = new ArrayList<PurchaseOrder>();
@@ -66,10 +68,9 @@ public class InitialData{
 	
 	// Creation of Payment Dummy Data by Christine Stokes
 	
-	
-	payment.add(new Paymentv2(2, orderID, address.get(0), customer_ID));
-	payment.add(new Paymentv2(2, orderID, address.get(1), customer_ID));
-	payment.add(new Paymentv2(2, orderID, address.get(2), customer_ID));
+	payment.add(new Payment(2, orderID, address.get(0), customer_ID));
+	payment.add(new Payment(2, orderID, address.get(1), customer_ID));
+	payment.add(new Payment(2, orderID, address.get(2), customer_ID));
 	
 	// Creation of Employee Dummy data by Christine
 	
@@ -142,18 +143,68 @@ public class InitialData{
 	
 
 	// Added by Stewart
-	public ArrayList<Payment> getPayments(){
+	public List<Payment> getPayments(){
 		return payment;
 	}
 
 	public void addPayment(Payment payment){
-		payment.add(payment);
+		this.payment.add(payment);
 	}
 
 	public void setPayments(ArrayList<Payment> paymentList){
 		payment = paymentList;
 	}
 	
+	// Order data getter by Christine Stokes
+	
+	public List<Order>getOrders(){
+		return Orders;
+
+	}
+	public void addOrder(Order order){
+		Orders.add(order);
+	}
+	public void setOrder(List<Order> order) {
+		Orders = (ArrayList<Order>) order;
+	}
+
+	public List<Order> getEntityList() {
+		return Orders;
+	}
+	
+	// Order Line getter etc added by Christine
+	
+	public List<OrderLine> getOrderLine(){
+		return OrderLine;
+
+	}
+	public void addOrderLine(OrderLine orderline){
+		OrderLine.add(orderline);
+	}
+	public void setOrderLine(List<OrderLine> orderline) {
+		OrderLine = (ArrayList<OrderLine>) orderline;
+	}
+
+	public List<OrderLine> getEntityListOrderLine() {
+		return OrderLine;
+	}
+	
+	// Supplier getters added by Christine Stokes
+	
+	public List<Supplier>getSupplier(){
+		return supplier;
+
+	}
+	public void addSupplier(Supplier supplier){
+		this.supplier.add(supplier);
+	}
+	public void setSupplier(List<Supplier> supplier) {
+		this.supplier = (ArrayList<Supplier>) supplier;
+	}
+
+	public List<Supplier> getEntityListSupplier() {
+		return supplier;
+	}
 	
 	//Customer getters, setters and adder - Finley Peters @ TeamTang
 	public ArrayList<Customer> getCustomers()
