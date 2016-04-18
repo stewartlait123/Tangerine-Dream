@@ -5,10 +5,9 @@ import java.util.ArrayList;
 
 import javax.inject.Inject;
 
+import entities.Employee;
+import repositories.EmployeeRepository;
 import repository_data_offline.InitialData;
-
-import com.qa.tangerine_gardens.entities.Employee;
-import com.qa.tangerine_gardens.entities.EmployeeRepository;
 
 public class EmployeeRepositoryOffline implements EmployeeRepository{
 	@Inject
