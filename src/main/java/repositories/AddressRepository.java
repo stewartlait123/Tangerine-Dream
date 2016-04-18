@@ -9,10 +9,10 @@ import entities.Address;
 
 public interface AddressRepository {
 	
-	public void persisBillingAddress (Address a);
+	public void persistBillingAddress (Address a);
 	public void persistBillingAddresses(List<Address> a);
 	
-	public void persisDeliveryAddress (Address a);
+	public void persistDeliveryAddress (Address a);
 	public void persistDeliveryAddresses(List<Address> a);
 	
 	public Address findBillingAddress(String s);
