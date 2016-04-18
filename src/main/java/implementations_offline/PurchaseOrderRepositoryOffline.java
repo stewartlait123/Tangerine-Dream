@@ -1,16 +1,16 @@
 /*
  * Created by Umar
  * */
-package repository_data_offline;
+package implementations_offline;
 
 import java.util.ArrayList;
 
 import javax.ejb.Singleton;
 import javax.inject.Inject;
 
-import com.qa.tangerine_gardens.entities.PurchaseOrder;
-import com.qa.tangerine_gardens.entities.PurchaseOrderRepository;
-import com.qa.tangerine_gardens.repository.InitialData;
+import repositories.PurchaseOrderRepository;
+import dummy_data.InitialData;
+import entities.PurchaseOrder;
 
 @Singleton
 public class PurchaseOrderRepositoryOffline implements PurchaseOrderRepository {

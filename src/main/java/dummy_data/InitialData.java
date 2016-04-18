@@ -1,9 +1,6 @@
-
 package dummy_data;
 
-// Created by Mohammed Miah and Umar
-
-
+//Created by Mohammed Miah and Umar
 
 import entities.*;
 import entities.Product.PRODUCT_TYPE;
@@ -13,7 +10,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-
 import javax.ejb.Singleton;
 
 @Singleton
@@ -60,7 +56,6 @@ public class InitialData{
 		Orders.add(new Order(2, currentDate, customer_ID));
 		Orders.add(new Order(3, currentDate, customer_ID));
 	
-
 	// Creation of Dummy Data for oderline by Christine Stokes
 	Order orderID = new Order();
 	Product productID = new Product(0, null, 0, 0, 0, 0, 0, 0, 0, null);
@@ -108,28 +103,55 @@ public class InitialData{
 	
 	}
 	// Products and Employee methods by Mohammed Miah
+	// Products, Employee and Address methods by Mohammed Miah
 	public ArrayList<Product> getProducts(){
-		return products;
+		return this.products;
 	}
 
 	public void addProduct(Product product){
-		products.add(product);
+		this.products.add(product);
 	}
 
-	public void setProducts(ArrayList<Product> products){
-		this.products = products;
+	public void setProducts(ArrayList<Product> productList){
+		this.products = productList;
 	}
 
 	public ArrayList<Employee> getEmployees(){
-		return employees;
+		return this.employees;
 	}
 
 	public void addEmployee(Employee employee){
-		employees.add(employee);
+		this.employees.add(employee);
 	}
 
-	public void setEmployees(ArrayList<Employee> employees){
-		this.employees = employees;
+	public void setEmployees(ArrayList<Employee> employeeList){
+		this.employees = employeeList;
+	}
+
+	public ArrayList<Address> getAddresses(){
+		return this.address;
+	}
+
+	public void addAddress(Address address){
+		this.address.add(address);
+	}
+
+	public void setAddresses(ArrayList<Address> addressList){
+		this.address = addressList;
+	}
+	
+
+	// Added by Stewart
+	public ArrayList<Payment> getPayments(){
+		return payment;
+	}
+
+	public void addPayment(Payment payment){
+		payment.add(payment);
+	}
+
+	public void setPayments(ArrayList<Payment> paymentList){
+		payment = paymentList;
 	}
 	
 	

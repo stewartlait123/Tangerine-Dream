@@ -73,7 +73,7 @@ public class Customer {
 	public Customer(){
 		
 	}
-	public Long getCustomer_id()
+	public Long getCustomerId()
 		{ return customer_id; }
 
 
