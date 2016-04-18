@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table (name = "purchaseorder")
-class PurchaseOrder {
+public class PurchaseOrder {
 	
 	@Id
 	@Column (name = "purchaseorder_id")

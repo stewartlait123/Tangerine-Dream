@@ -1,4 +1,4 @@
-package com.qa.tangerine_gardens.entities;
+package com.qa.tangerine_gardens.repositories;
 
 /**
  * This is the Supplier repository
@@ -10,6 +10,8 @@ package com.qa.tangerine_gardens.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.qa.tangerine_gardens.entities.Supplier;
 
 public interface SupplierRepository {
 	public void persistSupplier (Supplier s);

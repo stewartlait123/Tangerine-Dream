@@ -1,6 +1,8 @@
-package com.qa.tangerine_gardens.entities;
+package com.qa.tangerine_gardens.repositories;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.qa.tangerine_gardens.entities.OrderLine;
 
 public interface OrderLineRepository {
 
