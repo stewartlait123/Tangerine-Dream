@@ -11,9 +11,13 @@ import javax.persistence.GenerationType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+/**
+ * 
+ * @author Administrator
+ *
+ */
 @Entity
 @Table (name = "product")
-
 public class Product{
 	// These values will be used to identify the product type
 	public enum PRODUCT_TYPE{
