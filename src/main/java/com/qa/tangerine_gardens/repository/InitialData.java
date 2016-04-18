@@ -1,7 +1,7 @@
 package com.qa.tangerine_gardens.repository;
 
-import com.qa.tangerine_gardens.entities.*;
-import com.qa.tangerine_gardens.entities.Product.PRODUCT_TYPE;
+import entities.*;
+import entities.Product.PRODUCT_TYPE;
 
 import java.util.ArrayList;
 import java.util.Date;

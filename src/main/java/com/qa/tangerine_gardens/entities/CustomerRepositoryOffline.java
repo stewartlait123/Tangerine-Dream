@@ -4,7 +4,11 @@ import java.util.ArrayList;
 
 import javax.inject.Inject;
 
+import repositories.CustomerRepository;
+
 import com.qa.tangerine_gardens.repository.InitialData;
+
+import entities.Customer;
 
 /**
  * @author Finley Peters TeamTang 2016
