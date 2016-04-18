@@ -1,6 +1,8 @@
-package com.qa.tangerine_gardens.entities;
+package com.qa.tangerine_gardens.repositories;
 
 import java.util.ArrayList;
+
+import com.qa.tangerine_gardens.entities.Employee;
 
 public interface EmployeeRepository{
 	public void persistEmployee(Employee p);

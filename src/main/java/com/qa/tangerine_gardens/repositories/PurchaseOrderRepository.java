@@ -1,8 +1,10 @@
 /*
  * Created by Umar */
-package com.qa.tangerine_gardens.entities;
+package com.qa.tangerine_gardens.repositories;
 
 import java.util.ArrayList;
+
+import com.qa.tangerine_gardens.entities.PurchaseOrder;
 
 public interface PurchaseOrderRepository {
 	

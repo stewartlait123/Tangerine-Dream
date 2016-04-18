@@ -1,8 +1,10 @@
-package com.qa.tangerine_gardens.entities;
+package com.qa.tangerine_gardens.repositories;
 
 import java.util.ArrayList;
 import java.util.Currency;
 import java.util.List;
+
+import com.qa.tangerine_gardens.entities.ProductSupplier;
 
 public interface ProductSupplierRepository {
 	public void persistProductSupplier (ProductSupplier p);

@@ -1,8 +1,11 @@
 /*
  * Created by Umar */
-package com.qa.tangerine_gardens.entities;
+package com.qa.tangerine_gardens.repositories;
 
 import java.util.ArrayList;
+
+import com.qa.tangerine_gardens.entities.PurchaseOrder;
+import com.qa.tangerine_gardens.entities.PurchaseOrderLine;
 
 public interface PurchaseOrderLineRepository {
 	public void persistPurchaseOrderLine(PurchaseOrderLine p);

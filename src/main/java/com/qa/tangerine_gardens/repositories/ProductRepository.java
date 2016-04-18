@@ -1,6 +1,8 @@
-package com.qa.tangerine_gardens.entities;
+package com.qa.tangerine_gardens.repositories;
 
 import java.util.ArrayList;
+
+import com.qa.tangerine_gardens.entities.Product;
 
 public interface ProductRepository{
 	public void persistProduct(Product p);
