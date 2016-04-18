@@ -36,7 +36,6 @@ public class Address {
 	long customer_id_fk;
 	
 	
-	
 	public String getBilling_address() {
 		return billing_address;
 	}

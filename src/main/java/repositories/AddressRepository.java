@@ -9,28 +9,51 @@ import entities.Address;
 
 public interface AddressRepository {
 	
-	public void persistBillingAddress (Address a);
-	public void persistBillingAddresses(List<Address> a);
+	/*
+	 * Removed add/remove/update address functions as Address class does not
+	 * support multiple delivery/billing address on each record.
+	 * A set delivery/billing address method will encompass
+	 * all uses. 
 	
-	public void persistDeliveryAddress (Address a);
-	public void persistDeliveryAddresses(List<Address> a);
+	public void persistBillingAddress (Address address_);
+	public void persistBillingAddresses(List<Address> address_);
 	
-	public Address findBillingAddress(String s);
+	public void persistDeliveryAddress (Address address_);
+	public void persistDeliveryAddresses(List<Address> address_);
+	 
+	 */
+	public void persistAddress(Address address_);
+	
+	public void persistAddresses(ArrayList<Address> address_);
+	
+	public Address findBillingAddress(String searchString);
 	public ArrayList<Address> getBillingAddresses();
 	
-	public Address findDeliveryAddress(String s);
+	public Address findDeliveryAddress(String searchString);
 	public ArrayList<Address> getDeliveryAddresses();
 	
-	public void addBillingAddress(Address a);
+	public void setBillingAddress(Long id_, Address address_);
 	
-	public void addDeliveryAddress(Address a);
+	public void setDeliveryAddress(Long id_, Address address_);
 	
-	public void removeBillingAddress(Address a);
+	/*
+	 * Removed add/remove/update address functions as Address class does not
+	 * support multiple delivery/billing address on each record.
+	 * A set delivery/billing address method will encompass
+	 * all uses.
+	 * 
+	public void addBillingAddress(Long id_, Address address_);
 	
-	public void removeDeliveryAddress(Address a);
+	public void addDeliveryAddress(Long id_, Address address_);
 	
-	public void updateBillingAddress(Address a);
+	public void removeBillingAddress(Long id_, Address address_);
 	
-	public void updateDeliveryAddress(Address a);	
+	public void removeDeliveryAddress(Long id_, Address address_);
+	
+	public void updateBillingAddress(Long id_, Address address_);
+	
+	public void updateDeliveryAddress(Long id_, Address address_);
+	
+	*/
 	
 }

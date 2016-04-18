@@ -5,6 +5,7 @@ import entities.Product.PRODUCT_TYPE;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.ejb.Singleton;
 
@@ -12,6 +13,7 @@ import javax.ejb.Singleton;
 public class InitialData{
 	private ArrayList<Product> products = new ArrayList<Product>();
 	private ArrayList<Customer> customers = new ArrayList<Customer>();
+	private ArrayList<Address> addresses = new ArrayList<Address>();
 	
 	public InitialData(){
 		products.add(new Product(1, "pot", 100, 300, 10, 500, 1000, 100, 1000, PRODUCT_TYPE.POTS));
@@ -81,5 +83,47 @@ public class InitialData{
 	public void setCustomers(ArrayList<Customer> customerList)
 	{
 		customers = customerList;
+	}
+	
+	public ArrayList<Address> getAddresses()
+	{
+		return addresses;
+	}
+	
+	public void addAddress(Address address_)
+	{
+		addresses.add(address_);
+	}
+	
+	public void addAddresses(ArrayList<Address> address_)
+	{
+		addresses.addAll(address_);
+	}
+	
+	public void setDeliveryAddress(Address address_) {
+		// TODO Auto-generated method stub
+		
+		for(int i = 0 ; i < customers.size() ; i++ )
+		{
+			if(customers.get(i).getCustomerId().equals(address_.getCustomercustomer_id())) //Checks searched customers ID against records
+			{
+				addresses.set(i, address_); //Replaces old record with new, updated record
+				return;
+			}
+		}
+	}
+
+
+	public void setBillingAddress(Address address_) {
+		// TODO Auto-generated method stub
+		
+		for(int i = 0 ; i < customers.size() ; i++ )
+		{
+			if(customers.get(i).getCustomerId().equals(address_.getCustomercustomer_id())) //Checks searched customers ID against records
+			{
+				addresses.set(i, address_); //Replaces old record with new, updated record
+				return;
+			}
+		}
 	}
 }
