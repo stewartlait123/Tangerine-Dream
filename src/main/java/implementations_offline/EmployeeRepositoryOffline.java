@@ -48,7 +48,7 @@ public class EmployeeRepositoryOffline implements EmployeeRepository{
 		ArrayList<Employee> employeeList = initialData.getEmployees();
 		
 		for(int i=0; i < employeeList.size(); i++) {
-			if(employeeList.get(i).equals(employee))
+			if(employeeList.get(i).getEmployee_id() == employee.getEmployee_id())
 				employeeList.set(i, employee);
 		}
 		
@@ -60,7 +60,7 @@ public class EmployeeRepositoryOffline implements EmployeeRepository{
 		ArrayList<Employee> employeeList = initialData.getEmployees();
 		
 		for(int i=0; i < employeeList.size(); i++) {
-			if(employeeList.get(i).equals(employee))
+			if(employeeList.get(i).getEmployee_id() == employee.getEmployee_id())
 				employeeList.remove(i);
 		}
 		

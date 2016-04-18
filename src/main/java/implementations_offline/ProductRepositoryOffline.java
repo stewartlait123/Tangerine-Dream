@@ -47,7 +47,7 @@ public class ProductRepositoryOffline implements ProductRepository{
 		ArrayList<Product> productList = initialData.getProducts();
 		
 		for(int i=0; i < productList.size(); i++) {
-			if(productList.get(i).equals(product))
+			if(productList.get(i).getProduct_id() == product.getProduct_id())
 				productList.set(i, product);
 		}
 		
@@ -59,7 +59,7 @@ public class ProductRepositoryOffline implements ProductRepository{
 		ArrayList<Product> productList = initialData.getProducts();
 		
 		for(int i=0; i < productList.size(); i++) {
-			if(productList.get(i).equals(product))
+			if(productList.get(i).getProduct_id() == product.getProduct_id())
 				productList.remove(i);
 		}
 		
