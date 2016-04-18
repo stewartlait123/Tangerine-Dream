@@ -66,5 +66,17 @@ public class ProductSupplierRepositoryOffline implements ProductSupplierReposito
 			return initialData.getProductSupplier(id);
 		}
 
+		@Override
+		public ArrayList<ProductSupplier> getProductSuppliers() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public void updateCost(Currency c) {
+			// TODO Auto-generated method stub
+			
+		}
+
 
 }
