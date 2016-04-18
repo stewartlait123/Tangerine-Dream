@@ -1,4 +1,4 @@
-
+                                       
 package entities;
 
 // Created by Mohammed Miah
@@ -45,6 +45,10 @@ public class Employee {
 	@Size (min = 0, max = 2147483647)
 	private boolean forklift_trained;
 	
+	public Employee(String string, int i, int j, boolean b) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public long getEmployee_id(){
 		return employee_id;
 	}
