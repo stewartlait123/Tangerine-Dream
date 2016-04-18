@@ -7,7 +7,7 @@ import javax.inject.Inject;
 
 import entities.Employee;
 import repositories.EmployeeRepository;
-import repository_data_offline.InitialData;
+import dummy_data.InitialData;
 
 public class EmployeeRepositoryOffline implements EmployeeRepository{
 	@Inject

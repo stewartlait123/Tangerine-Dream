@@ -15,6 +15,10 @@ public class OrderLine {
 	private int quantity;
 	private int purchasePrice;
 	
+	public OrderLine(Order orderID, Product productID, int i) {
+		// TODO Auto-generated constructor stub
+	}
+
 	//constructors for attributes
 	public void OrderLine (Order order, Product product, int quantity, int purchasePrice) {
 	

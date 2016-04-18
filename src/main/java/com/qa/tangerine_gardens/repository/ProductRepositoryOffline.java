@@ -5,10 +5,10 @@ import java.util.ArrayList;
 
 import javax.inject.Inject;
 
-import repository_data_offline.InitialData;
+import dummy_data.InitialData;
 
-import com.qa.tangerine_gardens.entities.Product;
-import com.qa.tangerine_gardens.entities.ProductRepository;
+import repositories.*;
+import entities.*;
 
 public class ProductRepositoryOffline implements ProductRepository{
 	@Inject

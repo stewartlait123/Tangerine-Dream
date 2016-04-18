@@ -207,6 +207,24 @@ public class InitialData{
 		return supplier;
 	}
 	
+	// Product Supplier added by Christine Stokes
+	
+	public List<ProductSupplier>getProductSupplier(){
+		return productsupplier;
+
+	}
+	public void addProductSupplier(ProductSupplier productsupplier){
+		this.productsupplier.add(productsupplier);
+	}
+	public void setProductSupplier(List<ProductSupplier> productsupplier) {
+		this.productsupplier = (ArrayList<ProductSupplier>) productsupplier;
+	}
+
+	public List<ProductSupplier> getEntityListProductSupplier() {
+		return productsupplier;
+	}
+	
+	
 	//Customer getters, setters and adder - Finley Peters @ TeamTang
 	public ArrayList<Customer> getCustomers()
 	{
