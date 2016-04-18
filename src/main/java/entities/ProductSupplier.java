@@ -1,4 +1,4 @@
-package com.qa.tangerine_gardens.entities;
+package entities;
 
 /**
  * This is the ProductSupplier repository

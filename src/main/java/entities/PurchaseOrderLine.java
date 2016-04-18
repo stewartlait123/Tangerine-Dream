@@ -1,6 +1,6 @@
 /*
  * Created by Umar */
-package com.qa.tangerine_gardens.entities;
+package entities;
 /**
  * This is the PurchaseOrderLine entity
  * 

@@ -3,13 +3,13 @@
 // Contains blueprints for database query classes.
 
 
-package com.qa.tangerine_gardens.repositories;
+package repositories;
 
 import java.util.List;
 import java.util.ArrayList;
 
-import com.qa.tangerine_gardens.entities.Address;
-import com.qa.tangerine_gardens.entities.Customer;
+import entities.Address;
+import entities.Customer;
 
 public interface CustomerRepository {
 	

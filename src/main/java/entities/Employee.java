@@ -1,5 +1,9 @@
+
+package entities;
+
 // Created by Mohammed Miah
-package com.qa.tangerine_gardens.entities;
+
+
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

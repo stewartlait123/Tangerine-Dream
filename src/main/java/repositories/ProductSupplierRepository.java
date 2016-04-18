@@ -1,17 +1,10 @@
-package com.qa.tangerine_gardens.repositories;
-
-/**
- * This is the ProductSupplier repository
- * 
- * @author Iain Q
- *
- */
+package repositories;
 
 import java.util.ArrayList;
 import java.util.Currency;
 import java.util.List;
 
-import com.qa.tangerine_gardens.entities.ProductSupplier;
+import entities.ProductSupplier;
 
 public interface ProductSupplierRepository {
 	public void persistProductSupplier (ProductSupplier p);

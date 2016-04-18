@@ -1,6 +1,6 @@
 //Created by Finley Peters @ Team Tang
 
-package com.qa.tangerine_gardens.entities;
+package entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

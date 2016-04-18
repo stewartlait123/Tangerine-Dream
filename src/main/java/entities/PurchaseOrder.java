@@ -1,7 +1,7 @@
 /*
  * Created by Umar 
  * */
-package com.qa.tangerine_gardens.entities;
+package entities;
 
 import java.sql.Date;
 

@@ -1,11 +1,11 @@
-package repository_data_offline;
+package dummy_data;
 
 import java.util.ArrayList;
 import java.util.Date;
 
 import javax.ejb.Singleton;
 
-import com.qa.tangerine_gardens.entities.Customer;
+import entities.Customer;
 
 @Singleton
 public class CustomerData {

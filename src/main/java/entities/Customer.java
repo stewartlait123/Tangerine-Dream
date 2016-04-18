@@ -2,7 +2,7 @@
 // Base customer class containing database tags.
 
 
-package com.qa.tangerine_gardens.entities;
+package entities;
 
 /**
  * This is the Customer entity

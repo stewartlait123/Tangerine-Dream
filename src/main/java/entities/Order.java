@@ -2,7 +2,7 @@
  * 
  */
 
-package com.qa.tangerine_gardens.entities;
+package entities;
 
 
 import java.math.BigInteger;

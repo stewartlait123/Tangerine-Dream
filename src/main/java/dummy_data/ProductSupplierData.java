@@ -1,4 +1,4 @@
-package repository_data_offline;
+package dummy_data;
 
 /**
  * This is dummy data for the Product Supplier
@@ -12,7 +12,7 @@ import java.util.List;
 
 import javax.inject.Singleton;
 
-import com.qa.tangerine_gardens.entities.ProductSupplier;
+import entities.ProductSupplier;
 
 @Singleton
 public class ProductSupplierData {

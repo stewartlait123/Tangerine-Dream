@@ -1,10 +1,10 @@
-package repository_data_offline;
+package dummy_data;
 
 import java.util.ArrayList;
 
 import javax.inject.Singleton;
 
-import com.qa.tangerine_gardens.entities.Address;
+import entities.Address;
 
 @Singleton
 public class AddressData
