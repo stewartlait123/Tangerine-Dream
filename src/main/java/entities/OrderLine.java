@@ -1,61 +1,77 @@
 package entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
 /**
- * This is the orderLine entity
  * 
- * @author Jess
- *
+ * @author Jessica Maddocks 
+ * @version 2.1
+ * The Entity for the Orderline class.
+ * Christine Stokes created version 1.0.
  */
-@Entity
-@Table (name="orderline")
+
 public class OrderLine {
-	@Id
-	@OneToMany 
-	@JoinColumn(name = "order_id_fk", nullable = true)
+	
 	private Order order;
-	
-	@Id
-	@OneToMany 
-	@JoinColumn(name = "product_id_fk", nullable = true)
-	private Product product;
-	
-	
-	@Column (name = "quantity")
+	private Product product;  
 	private int quantity;
+	private int purchasePrice;
 	
-	public OrderLine(){}
+	//constructors for attributes
+	public void OrderLine (Order order, Product product, int quantity, int purchasePrice) {
 	
-	public OrderLine(Order order, Product product, int quantity){
 		this.order = order;
 		this.product = product;
 		this.quantity = quantity;
+		this.purchasePrice = purchasePrice;
+		
 	}
 	
-	public Order getOrder()
-	{
-		return order;
+	//attributes getters
+	public Order getorder(){
+		
+		return order;  
 	}
 	
-	public Product getProduct()
-	{
+	public Product getproduct(){
+		
 		return product;
+	
+	}
+
+	public int getquantity(){
+		
+		return quantity; 
+		
 	}
 	
-	/**
-	 * gets the quantity
-	 * 
-	 * @return int - quantity
-	 */
-	public int getQuantity()
-	{ return quantity; }
+	public int getpurchasePrice(){
+		
+		return purchasePrice;
+		
+	}
+	
+	//attributes setters
+	public void setorder(Order order){
+		
+		this.order = order;  
+		
+	}
+	
+	public void setproduct(Product product){
+		
+		this.product = product;
+	
+	}
 
-	public void setQuantity(int quantity)
-	{ this.quantity = quantity; }
+	public void setquantity(int quantity){
+		
+		this.quantity = quantity; 
+		
+	}
+	
+	public void setpurchasePrice(int purchasePrice){
+		
+		this.purchasePrice = purchasePrice;
+		
+	}
+	
 }
