@@ -39,6 +39,7 @@ public class Address {
 	public Address(String string, String string2, Customer customer_ID) {
 		// TODO Auto-generated constructor stub
 	}
+
 	public String getBilling_address() {
 		return billing_address;
 	}
