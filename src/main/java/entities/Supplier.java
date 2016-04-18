@@ -1,6 +1,8 @@
 package entities;
 
 import java.math.BigInteger;
+
+import javax.enterprise.inject.Default;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,8 +28,16 @@ public class Supplier
 	private BigInteger id;
 	@NotNull
 	@Size (min = 0)
+	
+	@Column (name = "active")
+	@Default 
+	private boolean active = true;
 
 	public BigInteger getId() {
 		return id;
+	}
+	
+	public void setActive(boolean b) {
+		active = b;
 	}
 }

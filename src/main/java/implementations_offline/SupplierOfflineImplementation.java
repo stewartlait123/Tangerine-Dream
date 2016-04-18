@@ -2,41 +2,40 @@ package implementations_offline;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import entities.Supplier;
 import repositories.SupplierRepository;
 
+/**
+ * @author Duncan Gillespie 
+ *
+ */
+
 public class SupplierOfflineImplementation implements SupplierRepository{
-	ArrayList suppliers;
+	ArrayList<Supplier> suppliers;
 	
 	@Override
 	public void persistSupplier(Supplier s) {
-		// TODO Auto-generated method stub
-		
+		suppliers.add(s);
 	}
 
 	@Override
 	public void persistSuppliers(List<Supplier> s) {
-		// TODO Auto-generated method stub
-		
+		suppliers.addAll(s);
 	}
 
 	@Override
 	public Supplier find(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return suppliers.get(id);
 	}
 
 	@Override
 	public ArrayList<Supplier> getSuppliers() {
-		// TODO Auto-generated method stub
-		return null;
+		return suppliers;
 	}
 
 	@Override
 	public void remove(Supplier s) {
-		// TODO Auto-generated method stub
-		
+		suppliers.remove(s.getId());
 	}
 
 }

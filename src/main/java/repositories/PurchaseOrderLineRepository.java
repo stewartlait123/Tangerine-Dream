@@ -2,7 +2,7 @@
  * Created by Umar */
 package repositories;
 
-import entities;
+import entities.*;
 
 import java.util.ArrayList;
 
