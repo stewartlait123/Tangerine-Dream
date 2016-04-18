@@ -144,7 +144,7 @@ public class InitialData{
 	
 
 	// Added by Stewart
-	public List<Payment> getPayments(){
+	public ArrayList<Payment> getPayments(){
 		return payment;
 	}
 
