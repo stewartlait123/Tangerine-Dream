@@ -1,5 +1,12 @@
 package com.qa.tangerine_gardens.repositories;
 
+/**
+ * This is the ProductSupplier repository
+ * 
+ * @author Iain Q
+ *
+ */
+
 import java.util.ArrayList;
 import java.util.Currency;
 import java.util.List;
