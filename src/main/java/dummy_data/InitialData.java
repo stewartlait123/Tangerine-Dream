@@ -18,7 +18,7 @@ public class InitialData{
 	private ArrayList<Address> address = new ArrayList<Address>();
 	private ArrayList<Order> Orders = new ArrayList<Order>();
 	private ArrayList<OrderLine> OrderLine= new ArrayList<OrderLine>();
-	private ArrayList<Paymentv2> payment = new ArrayList<Paymentv2>();
+	private ArrayList<Payment> payment = new ArrayList<Payment>();
 	private ArrayList<Product> products = new ArrayList<Product>();
 	private ArrayList<Employee> employees = new ArrayList<Employee>();
 	private ArrayList<PurchaseOrder> purchaseOrders = new ArrayList<PurchaseOrder>();
