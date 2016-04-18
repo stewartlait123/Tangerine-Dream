@@ -12,6 +12,7 @@ import javax.ejb.Singleton;
 @Singleton
 public class InitialData{
 	private ArrayList<Product> products = new ArrayList<Product>();
+	private ArrayList<Employee> employees = new ArrayList<Employee>();
 	private ArrayList<Customer> customers = new ArrayList<Customer>();
 	
 	public InitialData(){
@@ -25,6 +26,7 @@ public class InitialData{
 		customers.add(new Customer(new Long( 5) ,"Jane Sniff", "Hoot", "Lovely_Day_1969", new Date() , 50020 , 600000));
 	}
 
+	// Products and Employee methods by Mohammed Miah
 	public ArrayList<Product> getProducts(){
 		return products;
 	}
@@ -35,6 +37,18 @@ public class InitialData{
 
 	public void setProducts(ArrayList<Product> products){
 		this.products = products;
+	}
+
+	public ArrayList<Employee> getEmployees(){
+		return employees;
+	}
+
+	public void addEmployee(Employee employee){
+		employees.add(employee);
+	}
+
+	public void setEmployees(ArrayList<Employee> employees){
+		this.employees = employees;
 	}
 	
 	//Customer getters, setters and adder - Finley Peters @ TeamTang

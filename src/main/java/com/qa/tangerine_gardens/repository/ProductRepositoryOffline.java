@@ -2,7 +2,6 @@
 package com.qa.tangerine_gardens.repository;
 
 import java.util.ArrayList;
-
 import javax.inject.Inject;
 
 import com.qa.tangerine_gardens.entities.Product;
