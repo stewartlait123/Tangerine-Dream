@@ -1,8 +1,6 @@
-package repositories;
+package entities;
 
 import java.util.ArrayList;
-
-import entities.Employee;
 
 public interface EmployeeRepository{
 	public void persistEmployee(Employee employee);

@@ -1,8 +1,6 @@
-package repositories;
+package entities;
 import java.util.ArrayList;
 import java.util.List;
-
-import entities.Order;
 /**
  * Order repositorys  interface created for Order Entity by Christine Stokes
  * methods are defined in here and the actual methods are in OrderRepositoryOffline

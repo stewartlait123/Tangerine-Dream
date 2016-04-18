@@ -2,13 +2,12 @@
  * @author Stewart Lait
  */
 
-package implementations_offline;
+package entities;
 
 import java.util.ArrayList;
 
 import javax.inject.Inject;
 
-import repositories.PaymentRepository;
 import entities.*;
 import dummy_data.InitialData;
 

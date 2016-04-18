@@ -1,9 +1,7 @@
-package implementations_offline;
+package entities;
 
 import java.util.ArrayList;
 import java.util.List;
-import entities.Supplier;
-import repositories.SupplierRepository;
 
 /**
  * @author Duncan Gillespie 

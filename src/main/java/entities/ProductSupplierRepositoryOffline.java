@@ -1,4 +1,4 @@
-package com.qa.tangerine_gardens.repository;
+package entities;
 
 import java.util.ArrayList;
 import java.util.Currency;

@@ -1,12 +1,11 @@
 /*
  * Created by Umar */
-package implementations_offline;
+package entities;
 
 import java.util.ArrayList;
 
 import javax.inject.Inject;
 
-import repositories.PurchaseOrderLineRepository;
 import entities.*;
 import dummy_data.InitialData;
 

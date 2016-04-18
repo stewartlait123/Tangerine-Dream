@@ -2,7 +2,7 @@
  * @author Stewart
  */
 
-package com.qa.tangerine_gardens.repositories;
+package entities;
 
 import java.util.List;
 import java.util.ArrayList;

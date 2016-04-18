@@ -1,16 +1,14 @@
 /*
  * Created by Umar
  * */
-package implementations_offline;
+package entities;
 
 import java.util.ArrayList;
 
 import javax.ejb.Singleton;
 import javax.inject.Inject;
 
-import repositories.PurchaseOrderRepository;
 import dummy_data.InitialData;
-import entities.PurchaseOrder;
 
 @Singleton
 public class PurchaseOrderRepositoryOffline implements PurchaseOrderRepository {

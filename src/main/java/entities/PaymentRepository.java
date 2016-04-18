@@ -2,11 +2,9 @@
  * @author Stewart Lait
  */
 
-package repositories;
+package entities;
 
 import java.util.ArrayList;
-
-import entities.Payment;
 
 public interface PaymentRepository{
 	public void persistPayment(Payment payment);

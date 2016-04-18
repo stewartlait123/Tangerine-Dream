@@ -1,10 +1,10 @@
 // Created by Mohammed Miah
-package implementations_offline;
+package entities;
 
 import java.util.ArrayList;
+
 import javax.inject.Inject;
 
-import repositories.ProductRepository;
 import entities.*;
 import dummy_data.InitialData;
 

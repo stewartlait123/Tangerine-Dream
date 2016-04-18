@@ -1,10 +1,8 @@
 /*
  * Created by Umar */
-package repositories;
+package entities;
 
 import java.util.ArrayList;
-
-import entities.PurchaseOrder;
 
 public interface PurchaseOrderRepository {
 	

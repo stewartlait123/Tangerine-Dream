@@ -1,4 +1,4 @@
-package repositories;
+package entities;
 
 /**
  * This is the Supplier repository
@@ -10,8 +10,6 @@ package repositories;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import entities.Supplier;
 
 public interface SupplierRepository {
 	public void persistSupplier (Supplier s);

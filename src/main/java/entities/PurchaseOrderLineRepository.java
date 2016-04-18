@@ -1,13 +1,11 @@
 /*
  * Created by Umar */
-package repositories;
+package entities;
 
 
 import entities.*;
 
 import java.util.ArrayList;
-
-import entities.PurchaseOrderLine;
 
 public interface PurchaseOrderLineRepository {
 	public void persistPurchaseOrderLine(PurchaseOrderLine p);

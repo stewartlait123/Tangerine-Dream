@@ -1,11 +1,9 @@
 //Created by Finley Peters @ Team Tang
 
-package repositories;
+package entities;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import entities.Address;
 
 public interface AddressRepository {
 	

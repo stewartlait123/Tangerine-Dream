@@ -1,10 +1,8 @@
-package repositories;
+package entities;
 
 import java.util.ArrayList;
 import java.util.Currency;
 import java.util.List;
-
-import entities.ProductSupplier;
 
 public interface ProductSupplierRepository {
 	public void persistProductSupplier (ProductSupplier p);

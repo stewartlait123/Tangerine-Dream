@@ -1,8 +1,6 @@
-package repositories;
+package entities;
 
 import java.util.ArrayList;
-
-import entities.Product;
 
 public interface ProductRepository{
 	public void persistProduct(Product product);

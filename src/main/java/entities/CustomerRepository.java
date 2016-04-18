@@ -3,11 +3,9 @@
 // Contains blueprints for database query classes.
 
 
-package repositories;
+package entities;
 
 import java.util.ArrayList;
-
-import entities.Customer;
 
 public interface CustomerRepository {
 	
