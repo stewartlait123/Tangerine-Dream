@@ -14,6 +14,8 @@ public class InitialData{
 	private ArrayList<Product> products = new ArrayList<Product>();
 	private ArrayList<Employee> employees = new ArrayList<Employee>();
 	private ArrayList<Customer> customers = new ArrayList<Customer>();
+	private ArrayList<PurchaseOrder> purchaseOrders = new ArrayList<PurchaseOrder>();
+	private ArrayList<PurchaseOrderLine> purchaseOrderLines = new ArrayList<PurchaseOrderLine>();
 	
 	public InitialData(){
 		products.add(new Product(1, "pot", 100, 300, 10, 500, 1000, 100, 1000, PRODUCT_TYPE.POTS));
@@ -51,6 +53,7 @@ public class InitialData{
 		this.employees = employees;
 	}
 	
+	
 	//Customer getters, setters and adder - Finley Peters @ TeamTang
 	public ArrayList<Customer> getCustomers()
 	{
@@ -65,5 +68,37 @@ public class InitialData{
 	public void setCustomers(ArrayList<Customer> customerList)
 	{
 		customers = customerList;
+	}
+	
+	//PurchaseOrder methods - Muhammad Umar
+	public ArrayList<PurchaseOrder> getPurchaseOrders()
+	{
+		return purchaseOrders;
+	}
+	
+	public void addPurchaseOrder(PurchaseOrder purchaseOrder)
+	{
+		purchaseOrders.add(purchaseOrder);
+	}
+	
+	public void setPurchaseOrders(ArrayList<PurchaseOrder> purchaseOrderList)
+	{
+		purchaseOrders = purchaseOrderList;
+	}
+	
+	//PurchaseOrderLine methods - Muhammad Umar
+	public ArrayList<PurchaseOrderLine> getPurchaseOrderLines()
+	{
+		return purchaseOrderLines;
+	}
+	
+	public void addPurchaseOrderLine(PurchaseOrderLine purchaseOrderLine)
+	{
+		purchaseOrderLines.add(purchaseOrderLine);
+	}
+	
+	public void setPurchaseOrderLines(ArrayList<PurchaseOrderLine> purchaseOrderLineList)
+	{
+		purchaseOrderLines = purchaseOrderLineList;
 	}
 }
