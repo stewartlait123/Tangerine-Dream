@@ -6,13 +6,13 @@ import com.qa.tangerine_gardens.entities.Product.PRODUCT_TYPE;
 
 import java.util.ArrayList;
 import java.util.Date;
-
 import javax.ejb.Singleton;
 
 @Singleton
 public class InitialData{
 	private ArrayList<Product> products = new ArrayList<Product>();
 	private ArrayList<Employee> employees = new ArrayList<Employee>();
+	private ArrayList<Address> addresses = new ArrayList<Address>();
 	private ArrayList<Customer> customers = new ArrayList<Customer>();
 	
 	public InitialData(){
@@ -26,29 +26,41 @@ public class InitialData{
 		customers.add(new Customer(new Long( 5) ,"Jane Sniff", "Hoot", "Lovely_Day_1969", new Date() , 50020 , 600000));
 	}
 
-	// Products and Employee methods by Mohammed Miah
+	// Products, Employee and Address methods by Mohammed Miah
 	public ArrayList<Product> getProducts(){
-		return products;
+		return this.products;
 	}
 
 	public void addProduct(Product product){
-		products.add(product);
+		this.products.add(product);
 	}
 
-	public void setProducts(ArrayList<Product> products){
-		this.products = products;
+	public void setProducts(ArrayList<Product> productList){
+		this.products = productList;
 	}
 
 	public ArrayList<Employee> getEmployees(){
-		return employees;
+		return this.employees;
 	}
 
 	public void addEmployee(Employee employee){
-		employees.add(employee);
+		this.employees.add(employee);
 	}
 
-	public void setEmployees(ArrayList<Employee> employees){
-		this.employees = employees;
+	public void setEmployees(ArrayList<Employee> employeeList){
+		this.employees = employeeList;
+	}
+
+	public ArrayList<Address> getAddresses(){
+		return this.addresses;
+	}
+
+	public void addAddress(Address address){
+		this.addresses.add(address);
+	}
+
+	public void setAddresses(ArrayList<Address> addressList){
+		this.addresses = addressList;
 	}
 	
 	//Customer getters, setters and adder - Finley Peters @ TeamTang

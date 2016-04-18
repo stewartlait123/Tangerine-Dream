@@ -2,6 +2,7 @@
 package com.qa.tangerine_gardens.repository;
 
 import java.util.ArrayList;
+
 import javax.inject.Inject;
 
 import com.qa.tangerine_gardens.entities.Employee;
@@ -17,33 +18,56 @@ public class EmployeeRepositoryOffline implements EmployeeRepository{
 	}
 	
 	@Override
-	public void persistEmployees(ArrayList<Employee> p){
-		
+	public void persistEmployees(ArrayList<Employee> employees){
+		initialData.setEmployees(employees);
 	}
 	
 	@Override
 	public Employee findByEmployeeId(long id){
-		return null;
+		ArrayList<Employee> employeeList = initialData.getEmployees();
+		Employee employee = null;
+		
+		for(int i = 0; i < employeeList.size(); i++) {
+			if(employeeList.get(i).getEmployee_id() == id){
+				employee = employeeList.get(i);
+				break;
+			}
+		}
+		
+		return employee;
 	}
 	
 	@Override
 	public ArrayList<Employee> getEmployees(){
-		return null;
+		return initialData.getEmployees();
 	}
 	
 	@Override
 	public void updateEmployee(Employee employee){
+		ArrayList<Employee> employeeList = initialData.getEmployees();
 		
+		for(int i=0; i < employeeList.size(); i++) {
+			if(employeeList.get(i).equals(employee))
+				employeeList.set(i, employee);
+		}
+		
+		initialData.setEmployees(employeeList);
 	}
 	
 	@Override
 	public void removeEmployee(Employee employee){
+		ArrayList<Employee> employeeList = initialData.getEmployees();
 		
+		for(int i=0; i < employeeList.size(); i++) {
+			if(employeeList.get(i).equals(employee))
+				employeeList.remove(i);
+		}
+		
+		initialData.setEmployees(employeeList);
 	}
 	
 	@Override
 	public void addEmployee(Employee employee){
-		
+		initialData.addEmployee(employee);
 	}
-
 }
