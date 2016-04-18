@@ -1,4 +1,7 @@
-// Created by Mohammed Miah
+/**
+ * @author Stewart Lait
+ */
+
 package implementations_offline;
 
 import java.util.ArrayList;
