@@ -6,6 +6,8 @@ import javax.enterprise.inject.Default;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.Column;
@@ -23,6 +25,7 @@ import javax.validation.constraints.Size;
 public class Supplier
 {
 	@Id
+	@ManyToOne
 	@Column (name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private BigInteger id;
