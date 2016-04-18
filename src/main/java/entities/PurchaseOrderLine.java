@@ -43,8 +43,8 @@ public class PurchaseOrderLine {
 		return purchase_orderline_id;
 	}
 	
-	public int getPurchaseOrderId()
+	public PurchaseOrder getPurchaseOrderId()
 	{
-		return purchase_order_id_fk;
+		return purchase_order_id;
 	}
 }
