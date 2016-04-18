@@ -2,10 +2,12 @@
 package com.qa.tangerine_gardens.repository;
 
 import java.util.ArrayList;
+
 import javax.inject.Inject;
 
-import com.qa.tangerine_gardens.entities.Employee;
-import com.qa.tangerine_gardens.entities.EmployeeRepository;
+import entities.Employee;
+import repositories.EmployeeRepository;
+import repository_data_offline.InitialData;
 
 public class EmployeeRepositoryOffline implements EmployeeRepository{
 	@Inject
