@@ -1,11 +1,12 @@
 // Created by Mohammed Miah
-package com.qa.tangerine_gardens.repository;
+package implementations_offline;
 
 import java.util.ArrayList;
 import javax.inject.Inject;
 
-import com.qa.tangerine_gardens.entities.Product;
-import com.qa.tangerine_gardens.entities.ProductRepository;
+import repositories.ProductRepository;
+import entities.*;
+import dummy_data.InitialData;
 
 public class ProductRepositoryOffline implements ProductRepository{
 	@Inject

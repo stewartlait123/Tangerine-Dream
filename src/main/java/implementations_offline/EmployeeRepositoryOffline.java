@@ -1,12 +1,13 @@
 // Created by Mohammed Miah
-package com.qa.tangerine_gardens.repository;
+package implementations_offline;
 
 import java.util.ArrayList;
 
 import javax.inject.Inject;
 
-import com.qa.tangerine_gardens.entities.Employee;
-import com.qa.tangerine_gardens.entities.EmployeeRepository;
+import repositories.EmployeeRepository;
+import entities.*;
+import dummy_data.InitialData;
 
 public class EmployeeRepositoryOffline implements EmployeeRepository{
 	@Inject

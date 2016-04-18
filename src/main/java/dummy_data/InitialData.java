@@ -1,9 +1,6 @@
-
 package dummy_data;
 
-// Created by Mohammed Miah and Umar
-
-
+//Created by Mohammed Miah and Umar
 
 import entities.*;
 import entities.Product.PRODUCT_TYPE;
