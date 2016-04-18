@@ -8,7 +8,6 @@ package com.qa.tangerine_gardens.entities;
  */
 
 import java.util.ArrayList;
-import java.util.Currency;
 import java.util.List;
 
 public interface ProductSupplierRepository {
@@ -17,7 +16,7 @@ public interface ProductSupplierRepository {
 			List<ProductSupplier> p);
 	public ProductSupplier findById(int id);
 	public void removeProductSupplier (ProductSupplier p);
-	public ArrayList<ProductSupplier> getProductSuppliers();
-	public void updateCost(Currency c);
+	public ArrayList<ProductSupplier> getProductSuppliers(ProductSupplier ps);
+	void updateProductSupplier(ProductSupplier ps);
 
 }
