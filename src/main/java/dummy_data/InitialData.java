@@ -14,6 +14,7 @@ public class InitialData{
 	private ArrayList<Product> products = new ArrayList<Product>();
 	private ArrayList<Employee> employees = new ArrayList<Employee>();
 	private ArrayList<Address> addresses = new ArrayList<Address>();
+	private ArrayList<Payment> payments = new ArrayList<Payment>();
 	private ArrayList<Customer> customers = new ArrayList<Customer>();
 	private ArrayList<PurchaseOrder> purchaseOrders = new ArrayList<PurchaseOrder>();
 	private ArrayList<PurchaseOrderLine> purchaseOrderLines = new ArrayList<PurchaseOrderLine>();
@@ -64,6 +65,20 @@ public class InitialData{
 
 	public void setAddresses(ArrayList<Address> addressList){
 		this.addresses = addressList;
+	}
+	
+
+	// Added by Stewart
+	public ArrayList<Payment> getPayments(){
+		return this.payments;
+	}
+
+	public void addPayment(Payment payment){
+		this.payments.add(payment);
+	}
+
+	public void setPayments(ArrayList<Payment> paymentList){
+		this.payments = paymentList;
 	}
 	
 	
