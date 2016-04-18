@@ -2,11 +2,11 @@
  * Created by Umar */
 package repositories;
 
+
 import entities.*;
 
 import java.util.ArrayList;
 
-import entities.PurchaseOrder;
 import entities.PurchaseOrderLine;
 
 public interface PurchaseOrderLineRepository {

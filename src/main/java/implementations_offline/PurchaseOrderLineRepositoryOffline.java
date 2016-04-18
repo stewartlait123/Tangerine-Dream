@@ -1,14 +1,14 @@
 /*
  * Created by Umar */
-package repository_data_offline;
+package implementations_offline;
 
 import java.util.ArrayList;
 
 import javax.inject.Inject;
 
-import com.qa.tangerine_gardens.entities.PurchaseOrderLine;
-import com.qa.tangerine_gardens.entities.PurchaseOrderLineRepository;
-import com.qa.tangerine_gardens.repository.InitialData;
+import repositories.PurchaseOrderLineRepository;
+import entities.*;
+import dummy_data.InitialData;
 
 public class PurchaseOrderLineRepositoryOffline implements PurchaseOrderLineRepository {
 	
