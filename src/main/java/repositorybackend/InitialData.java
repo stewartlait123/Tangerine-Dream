@@ -109,9 +109,9 @@ public class InitialData{
 	
 	// Creation of Product Supplier Dummy data by Christine
 	
-	productSuppliers.add(new ProductSupplier(supplier.get(0), productID));
-	productSuppliers.add(new ProductSupplier(supplier.get(1), productID));
-	productSuppliers.add(new ProductSupplier(supplier.get(2), productID));
+	productSuppliers.add(new ProductSupplier(supplier.get(0), productID, 1999));
+	productSuppliers.add(new ProductSupplier(supplier.get(1), productID, 2500));
+	productSuppliers.add(new ProductSupplier(supplier.get(2), productID, 499));
 	
 	}
 	// Products and Employee methods by Mohammed Miah
