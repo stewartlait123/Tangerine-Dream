@@ -36,6 +36,7 @@ public class InitialData{
 	private ArrayList<PurchaseOrderLine> purchaseOrderLines = new ArrayList<PurchaseOrderLine>();
 	private ArrayList<Supplier> supplier = new ArrayList<Supplier>();
 	private ArrayList<ProductSupplier> productSuppliers = new ArrayList<ProductSupplier>();
+
 	
 	public InitialData(){
 		products.add(new Product(1, "pot", 100, 300, 10, 500, 1000, 100, 1000, "POTS"));
@@ -108,9 +109,9 @@ public class InitialData{
 	
 	// Creation of Product Supplier Dummy data by Christine
 	
-	productsupplier.add(new ProductSupplier(supplier.get(0), productID));
-	productsupplier.add(new ProductSupplier(supplier.get(1), productID));
-	productsupplier.add(new ProductSupplier(supplier.get(2), productID));
+	productSuppliers.add(new ProductSupplier(supplier.get(0), productID));
+	productSuppliers.add(new ProductSupplier(supplier.get(1), productID));
+	productSuppliers.add(new ProductSupplier(supplier.get(2), productID));
 	
 	}
 	// Products and Employee methods by Mohammed Miah
@@ -229,18 +230,18 @@ public class InitialData{
 	// Product Supplier added by Christine Stokes
 	
 	public List<ProductSupplier>getProductSupplier(){
-		return productsupplier;
+		return productSuppliers;
 
 	}
 	public void addProductSupplier(ProductSupplier productsupplier){
-		this.productsupplier.add(productsupplier);
+		this.productSuppliers.add(productsupplier);
 	}
 	public void setProductSupplier(List<ProductSupplier> productsupplier) {
-		this.productsupplier = (ArrayList<ProductSupplier>) productsupplier;
+		this.productSuppliers = (ArrayList<ProductSupplier>) productsupplier;
 	}
 
 	public List<ProductSupplier> getEntityListProductSupplier() {
-		return productsupplier;
+		return productSuppliers;
 	}
 	
 	
