@@ -7,7 +7,6 @@ package com.qa.tangerinedream.entities;
  *
  */
 
-import java.math.BigInteger;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,31 +26,26 @@ public class ProductSupplier {
 	@Column (name = "psupplier_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int psupplier_id;
-	
-	
+
 	@Column (name = "cost")
 	private int cost;
 	
 	@OneToMany
 	@JoinColumn(name = "supplier_fk", nullable = false)
 	@NotNull
-	private BigInteger supplier_id;
+	private Supplier supplier;
 	
 	@OneToMany
 	@JoinColumn(name = "product_fk", nullable = false)
 	@NotNull
-	private long product_id;
+	private Product product;
 	
-	
-
-
 	public ProductSupplier(Supplier supplier, Product product, int cost) {
-		this.product_id = product.getProduct_id();
-		this.supplier_id = supplier.getId();
+		this.product = product;
+		this.supplier = supplier;
 		this.cost = cost;
 				
 	}
-
 
 	public int getPsupplier_id()
 	{
@@ -68,15 +62,24 @@ public class ProductSupplier {
 		return cost;
 	}
 	
-	
-	public BigInteger getSupplier()
+	public Supplier getSupplier()
 	{
-		return supplier_id;
+		return supplier;
 	}
 	
-	public long getProduct_id()
+	public Product getProduct()
 	{
-		return product_id;
+		return product;
+	}
+	
+	public void setSupplier(Supplier supplier)
+	{
+		this.supplier = supplier;
+	}
+	
+	public void setProduct(Product product)
+	{
+		this.product = product;
 	}
 
 }

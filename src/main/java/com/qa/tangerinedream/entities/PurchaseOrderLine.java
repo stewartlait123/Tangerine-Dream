@@ -27,8 +27,9 @@ public class PurchaseOrderLine {
 	@JoinColumn( name = "purchase_order_id_fk", nullable = false)
 	private PurchaseOrder purchase_order_id;
 
-	public PurchaseOrderLine(int i, PurchaseOrder purchaseOrder) {
-		// TODO Auto-generated constructor stub
+	public PurchaseOrderLine(int quantity, PurchaseOrder purchaseOrder) {
+		this.quantity = quantity;
+		this.purchase_order_id = purchaseOrder;
 	}
 
 	public int getQuantity(){
