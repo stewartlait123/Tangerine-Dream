@@ -6,6 +6,8 @@ package com.qa.tangerinedream.entities;
  *
  */
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,14 +36,21 @@ public class Payment {
 	@OneToOne
 	@Column (name = "order_id")	
 	@JoinColumn(name = "order_id", nullable = true)
-	private int order_id;
+	private Order order_id;
 	
 	@OneToMany 
 	@JoinColumn(name = "address_id", nullable = true)
-	private int address_id;
+	private Address address_id;
 	
-	public Payment(int i, Order orderID, Address address, Customer customer_ID) {
+	@OneToOne
+	@JoinColumn( name = "customer_id")
+	private Customer customer_id;
 	
+	public Payment(int paymentType, Order orderID, Address address, Customer customer_ID) {
+		this.payment_type = paymentType;
+		this.order_id = orderID;
+		this.address_id = address;
+		this.customer_id = customer_ID;
 	}
 	
 	/**
