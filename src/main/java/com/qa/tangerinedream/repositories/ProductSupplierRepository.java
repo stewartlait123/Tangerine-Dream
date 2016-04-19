@@ -1,5 +1,12 @@
 package com.qa.tangerinedream.repositories;
 
+/**
+ * This is the ProductSupplier repository
+ * 
+ * @author Iain Q
+ *
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 

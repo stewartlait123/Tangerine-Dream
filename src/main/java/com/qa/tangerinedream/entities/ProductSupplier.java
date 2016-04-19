@@ -1,7 +1,7 @@
 package com.qa.tangerinedream.entities;
 
 /**
- * This is the ProductSupplier repository
+ * This is the ProductSupplier entity
  * 
  * @author Iain Q
  *
