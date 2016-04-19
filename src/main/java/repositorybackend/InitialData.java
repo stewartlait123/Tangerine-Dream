@@ -68,7 +68,7 @@ public class InitialData{
 		Orders.add(new Order(2, currentDate, customer_ID));
 		Orders.add(new Order(3, currentDate, customer_ID));
 	
-	// Creation of Dummy Data for oderline by Christine Stokes
+	// Creation of Dummy Data for orderline by Christine Stokes
 	Order orderID = new Order();
 	Product productID = new Product(0, null, 0, 0, 0, 0, 0, 0, 0, null);
 	
