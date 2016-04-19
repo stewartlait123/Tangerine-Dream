@@ -11,6 +11,18 @@ import java.util.List;
 
 import javax.ejb.Singleton;
 
+import com.qa.tangerinedream.entities.Address;
+import com.qa.tangerinedream.entities.Customer;
+import com.qa.tangerinedream.entities.Employee;
+import com.qa.tangerinedream.entities.Order;
+import com.qa.tangerinedream.entities.OrderLine;
+import com.qa.tangerinedream.entities.Payment;
+import com.qa.tangerinedream.entities.Product;
+import com.qa.tangerinedream.entities.ProductSupplier;
+import com.qa.tangerinedream.entities.PurchaseOrder;
+import com.qa.tangerinedream.entities.PurchaseOrderLine;
+import com.qa.tangerinedream.entities.Supplier;
+
 import repositorybackend.*;
 import repositorybackend.Product.PRODUCT_TYPE;
 
