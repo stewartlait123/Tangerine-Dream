@@ -37,7 +37,7 @@ public class InitialData{
 	private ArrayList<PurchaseOrder> purchaseOrders = new ArrayList<PurchaseOrder>();
 	private ArrayList<PurchaseOrderLine> purchaseOrderLines = new ArrayList<PurchaseOrderLine>();
 	private ArrayList<Supplier> supplier = new ArrayList<Supplier>();
-	private ArrayList<ProductSupplier> productsupplier = new ArrayList<ProductSupplier>();
+	private ArrayList<ProductSupplier> productSuppliers = new ArrayList<ProductSupplier>();
 	
 	public InitialData(){
 		products.add(new Product(1, "pot", 100, 300, 10, 500, 1000, 100, 1000, "POTS"));
@@ -182,6 +182,16 @@ public class InitialData{
 
 	public List<Order> getEntityList() {
 		return Orders;
+	}
+	
+	// Product Suppliers by Duncan Gillespie
+	
+	public ArrayList<ProductSupplier> getProductSuppliers(){
+		return productSuppliers;
+	}
+	
+	public ProductSupplier getProductSupplier(int id){
+		return productSuppliers.get(id);
 	}
 	
 	// Order Line getter etc added by Christine

@@ -9,7 +9,6 @@ import javax.inject.Inject;
 import com.qa.tangerinedream.entities.ProductSupplier;
 import com.qa.tangerinedream.repositories.ProductSupplierRepository;
 
-import repositories.*;
 import repositorybackend.*;
 
 /**
@@ -31,12 +30,12 @@ public class ProductSupplierRepositoryOffline implements ProductSupplierReposito
 		
 		@Override
 		public void persistProductSuppliers(List<ProductSupplier> ps) {
-			initialData.getProductSupplier(ps);	
+			initialData.setProductSupplier(ps);	
 		}
 		
 		@Override
-		public ArrayList<ProductSupplier> getProductSuppliers(ProductSupplier ps) {
-			return initialData.getEntityList(ps);
+		public ArrayList<ProductSupplier> getProductSuppliers() {
+			return initialData.getProductSuppliers();
 		}
 		
 		
@@ -48,7 +47,7 @@ public class ProductSupplierRepositoryOffline implements ProductSupplierReposito
 				if(aps.get(i).equals(ps))
 				aps.set(i, ps);
 			}
-			initialData.setProductSuppliers(aps);
+			initialData.setProductSupplier(aps);
 		}
 		
 		@Override
@@ -59,7 +58,7 @@ public class ProductSupplierRepositoryOffline implements ProductSupplierReposito
 				if(aps.get(i).equals(ps))
 				aps.remove(i);
 			}
-			initialData.setProductSuppliers(aps);
+			initialData.setProductSupplier(aps);
 		}
 
 
@@ -69,15 +68,15 @@ public class ProductSupplierRepositoryOffline implements ProductSupplierReposito
 		}
 
 		@Override
-		public ArrayList<ProductSupplier> getProductSuppliers() {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
 		public void updateCost(Currency c) {
 			// TODO Auto-generated method stub
 			
+		}
+
+		@Override
+		public ArrayList<ProductSupplier> getProductSupplier(ProductSupplier ps) {
+			// TODO Auto-generated method stub
+			return null;
 		}
 
 

@@ -14,5 +14,7 @@ public interface ProductSupplierRepository {
 	public void removeProductSupplier (ProductSupplier p);
 	public ArrayList<ProductSupplier> getProductSuppliers();
 	public void updateCost(Currency c);
+	public ArrayList<ProductSupplier> getProductSupplier(ProductSupplier ps);
+	void updateProductSupplier(ProductSupplier ps);
 
 }
