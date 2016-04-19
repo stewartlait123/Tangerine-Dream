@@ -27,10 +27,10 @@ public interface AddressRepository {
 	public void persistAddresses(ArrayList<Address> address_);
 	
 	public Address findBillingAddress(String searchString);
-	public ArrayList<Address> getBillingAddresses();
+	public ArrayList<String> getBillingAddresses();
 	
 	public Address findDeliveryAddress(String searchString);
-	public ArrayList<Address> getDeliveryAddresses();
+	public ArrayList<String> getDeliveryAddresses();
 	
 	public void setBillingAddress(Long id_, Address address_);
 	

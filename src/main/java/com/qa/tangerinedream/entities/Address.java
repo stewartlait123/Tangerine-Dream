@@ -59,7 +59,7 @@ public class Address {
 		this.customer_id_fk = customercustomer_id;
 	}
 	
-	
+	 
 	
 
 }
