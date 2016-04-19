@@ -23,8 +23,6 @@ import com.qa.tangerinedream.entities.PurchaseOrder;
 import com.qa.tangerinedream.entities.PurchaseOrderLine;
 import com.qa.tangerinedream.entities.Supplier;
 
-import repositorybackend.*;
-
 @Singleton
 public class InitialData{
 	private ArrayList<Customer> customers = new ArrayList<Customer>();
