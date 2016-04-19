@@ -14,7 +14,7 @@ import repositorybackend.*;
 /**
  * This is the offline ProductSupplier repository
  * 
- * @author Iain Q
+ * @author Iain Q, edited by Duncan Gillespie
  * 
  */
 
