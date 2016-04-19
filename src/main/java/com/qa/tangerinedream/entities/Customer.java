@@ -59,9 +59,8 @@ public class Customer {
 	private int credit_limit;
 	
 	//Constructor added for creation in InitialData class
-	public Customer(Long Id_, String name_, String username_, String password_, Date date, int credit_, int creditLimit_ )
+	public Customer(String name_, String username_, String password_, Date date, int credit_, int creditLimit_ )
 	{
-		customer_id = Id_;
 		name = name_;
 		username = username_;
 		password = password_;
