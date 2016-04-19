@@ -1,7 +1,13 @@
 package com.qa.tangerinedream.repositories;
 
+/**
+ * This is the ProductSupplier repository
+ * 
+ * @author Iain Q
+ *
+ */
+
 import java.util.ArrayList;
-import java.util.Currency;
 import java.util.List;
 
 import com.qa.tangerinedream.entities.ProductSupplier;
@@ -13,8 +19,6 @@ public interface ProductSupplierRepository {
 	public ProductSupplier findById(int id);
 	public void removeProductSupplier (ProductSupplier p);
 	public ArrayList<ProductSupplier> getProductSuppliers();
-	public void updateCost(Currency c);
-	public ArrayList<ProductSupplier> getProductSupplier(ProductSupplier ps);
 	void updateProductSupplier(ProductSupplier ps);
 
 }

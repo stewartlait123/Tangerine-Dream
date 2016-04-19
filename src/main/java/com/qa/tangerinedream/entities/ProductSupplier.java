@@ -1,11 +1,13 @@
 package com.qa.tangerinedream.entities;
 
 /**
- * This is the ProductSupplier repository
+ * This is the ProductSupplier entity
  * 
  * @author Iain Q
  *
  */
+
+import java.math.BigInteger;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,18 +35,21 @@ public class ProductSupplier {
 	@OneToMany
 	@JoinColumn(name = "supplier_fk", nullable = false)
 	@NotNull
-	private int supplier_id;
+	private BigInteger supplier_id;
 	
 	@OneToMany
 	@JoinColumn(name = "product_fk", nullable = false)
 	@NotNull
-	private int product_id;
+	private long product_id;
 	
 	
 
 
-	public ProductSupplier(Supplier supplier, Product productID) {
-		// TODO Auto-generated constructor stub
+	public ProductSupplier(Supplier supplier, Product product, int cost) {
+		this.product_id = product.getProduct_id();
+		this.supplier_id = supplier.getId();
+		this.cost = cost;
+				
 	}
 
 
@@ -64,12 +69,12 @@ public class ProductSupplier {
 	}
 	
 	
-	public int getSupplier()
+	public BigInteger getSupplier()
 	{
 		return supplier_id;
 	}
 	
-	public int getProduct_id()
+	public long getProduct_id()
 	{
 		return product_id;
 	}
