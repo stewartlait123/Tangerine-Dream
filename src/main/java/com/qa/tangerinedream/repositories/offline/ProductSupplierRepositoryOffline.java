@@ -1,7 +1,6 @@
 package com.qa.tangerinedream.repositories.offline;
 
 import java.util.ArrayList;
-import java.util.Currency;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -14,7 +13,7 @@ import repositorybackend.*;
 /**
  * This is the offline ProductSupplier repository
  * 
- * @author Iain Q, edited by Duncan Gillespie
+ * @author Iain Q
  * 
  */
 
@@ -67,17 +66,6 @@ public class ProductSupplierRepositoryOffline implements ProductSupplierReposito
 			return initialData.getProductSupplier(id);
 		}
 
-		@Override
-		public void updateCost(Currency c) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public ArrayList<ProductSupplier> getProductSupplier(ProductSupplier ps) {
-			// TODO Auto-generated method stub
-			return null;
-		}
 
 
 }
