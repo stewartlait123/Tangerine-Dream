@@ -12,6 +12,7 @@ import java.util.List;
 import javax.ejb.Singleton;
 
 import repositorybackend.*;
+import repositorybackend.Product.PRODUCT_TYPE;
 
 @Singleton
 public class InitialData{
