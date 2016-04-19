@@ -35,7 +35,7 @@ public class InitialData{
 	private ArrayList<PurchaseOrder> purchaseOrders = new ArrayList<PurchaseOrder>();
 	private ArrayList<PurchaseOrderLine> purchaseOrderLines = new ArrayList<PurchaseOrderLine>();
 	private ArrayList<Supplier> supplier = new ArrayList<Supplier>();
-	private ArrayList<ProductSupplier> productsupplier = new ArrayList<ProductSupplier>();
+	private ArrayList<ProductSupplier> productSuppliers = new ArrayList<ProductSupplier>();
 	
 	public InitialData(){
 		products.add(new Product(1, "pot", 100, 300, 10, 500, 1000, 100, 1000, "POTS"));
@@ -71,9 +71,9 @@ public class InitialData{
 	Order orderID = new Order();
 	Product productID = new Product(0, null, 0, 0, 0, 0, 0, 0, 0, null);
 	
-	OrderLine.add(new OrderLine(orderID, productID, 2));
-	OrderLine.add(new OrderLine(orderID, productID, 1));
-	OrderLine.add(new OrderLine(orderID, productID, 5));
+	OrderLine.add(new OrderLine(orderID, productID, 2, 1799));
+	OrderLine.add(new OrderLine(orderID, productID, 1899));
+	OrderLine.add(new OrderLine(orderID, productID, 1599));
 	
 	// Creation of Payment Dummy Data by Christine Stokes
 	
@@ -180,6 +180,16 @@ public class InitialData{
 
 	public List<Order> getEntityList() {
 		return Orders;
+	}
+	
+	// Product Suppliers by Duncan Gillespie
+	
+	public ArrayList<ProductSupplier> getProductSuppliers(){
+		return productSuppliers;
+	}
+	
+	public ProductSupplier getProductSupplier(int id){
+		return productSuppliers.get(id);
 	}
 	
 	// Order Line getter etc added by Christine
