@@ -36,7 +36,7 @@ public class Address {
 	long customer_id_fk;
 	
 	
-	public Address(String deliveryAddress ,String billingAddress, Long customer_ID) {
+	public Address(String deliveryAddress ,String billingAddress, Customer customer_ID) {
 		// TODO Auto-generated constructor stub
 		
 		
