@@ -36,10 +36,12 @@ public class Address {
 	long customer_id_fk;
 	
 	
-	public Address(String deliveryAddress ,String billingAddress, Long customer_ID) {
+	public Address(String deliveryAddress ,String billingAddress, Customer customer) {
 		// TODO Auto-generated constructor stub
 		
-		
+		this.billing_address = billingAddress;
+		this.delivery_address = deliveryAddress;
+		this.customer_id_fk = customer.getCustomerId();
 	}
 
 	public String getBilling_address() {
