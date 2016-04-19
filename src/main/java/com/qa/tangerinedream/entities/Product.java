@@ -22,13 +22,8 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table (name = "product")
-public class Product{
-	// These values will be used to identify the product type
-	public enum PRODUCT_TYPE{
-		POTS, FURNITURE
-	}
-	
-	public Product(long id, String name, int cost, int price, int size, int weight, int stock, int minStock, int orderAmount, PRODUCT_TYPE productType){
+public class Product{	
+	public Product(long id, String name, int cost, int price, int size, int weight, int stock, int minStock, int orderAmount, String productType){
 		this.product_id = id; 
 		this.name = name;
 		this.cost_price = cost;
@@ -86,10 +81,10 @@ public class Product{
 	@Size (min = 0, max = 2147483647)
 	private int order_amount;
 
-	@Column (name = "product_type", nullable = false)
+	@Column (name = "product_type", nullable = false, length = 225)
 	@NotNull
 	@Size (min = 0, max = 2147483647)
-	private PRODUCT_TYPE product_type;
+	private String product_type;
 	
 	public long getProduct_id(){
 		return product_id;
@@ -195,11 +190,11 @@ public class Product{
 		return order_amount;
 	}
 	
-	public void setProduct_type(PRODUCT_TYPE value) {
+	public void setProduct_type(String value) {
 		this.product_type = value;
 	}
 	
-	public PRODUCT_TYPE getProduct_type() {
+	public String getProduct_type() {
 		return product_type;
 	}
 }

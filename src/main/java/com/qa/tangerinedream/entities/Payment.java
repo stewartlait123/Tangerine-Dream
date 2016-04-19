@@ -41,10 +41,8 @@ public class Payment {
 	private int address_id;
 	
 	public Payment(int i, Order orderID, Address address, Customer customer_ID) {
-		// TODO Auto-generated constructor stub
+	
 	}
-
-	public void Payment(){}
 	
 	/**
 	 * Gets and returns payment ID

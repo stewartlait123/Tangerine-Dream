@@ -35,10 +35,11 @@ public class InitialData{
 	private ArrayList<PurchaseOrder> purchaseOrders = new ArrayList<PurchaseOrder>();
 	private ArrayList<PurchaseOrderLine> purchaseOrderLines = new ArrayList<PurchaseOrderLine>();
 	private ArrayList<Supplier> supplier = new ArrayList<Supplier>();
-	private ArrayList<ProductSupplier> productsupplier = new ArrayList<ProductSupplier>();
+	private ArrayList<ProductSupplier> productSuppliers = new ArrayList<ProductSupplier>();
+
 	
 	public InitialData(){
-		products.add(new Product(1, "pot", 100, 300, 10, 500, 1000, 100, 1000, PRODUCT_TYPE.POTS));
+		products.add(new Product(1, "pot", 100, 300, 10, 500, 1000, 100, 1000, "POTS"));
 		
 		//Creation of five entries to add into customer arraylist with unique values - Finley Peters @ TeamTang
 		customers.add(new Customer("John Doe", "BigJohn", "johnPassword", new Date() ,67 , 100));	
@@ -71,9 +72,9 @@ public class InitialData{
 	Order orderID = new Order();
 	Product productID = new Product(0, null, 0, 0, 0, 0, 0, 0, 0, null);
 	
-	OrderLine.add(new OrderLine(orderID, productID, 2));
-	OrderLine.add(new OrderLine(orderID, productID, 1));
-	OrderLine.add(new OrderLine(orderID, productID, 5));
+	OrderLine.add(new OrderLine(orderID, productID, 2, 1799));
+	OrderLine.add(new OrderLine(orderID, productID, 3,1899));
+	OrderLine.add(new OrderLine(orderID, productID, 5,1599));
 	
 	// Creation of Payment Dummy Data by Christine Stokes
 	
@@ -108,9 +109,9 @@ public class InitialData{
 	
 	// Creation of Product Supplier Dummy data by Christine
 	
-	productsupplier.add(new ProductSupplier(supplier.get(0), productID));
-	productsupplier.add(new ProductSupplier(supplier.get(1), productID));
-	productsupplier.add(new ProductSupplier(supplier.get(2), productID));
+	productSuppliers.add(new ProductSupplier(supplier.get(0), productID));
+	productSuppliers.add(new ProductSupplier(supplier.get(1), productID));
+	productSuppliers.add(new ProductSupplier(supplier.get(2), productID));
 	
 	}
 	// Products and Employee methods by Mohammed Miah
@@ -186,6 +187,16 @@ public class InitialData{
 		return Orders;
 	}
 	
+	// Product Suppliers by Duncan Gillespie
+	
+	public ArrayList<ProductSupplier> getProductSuppliers(){
+		return productSuppliers;
+	}
+	
+	public ProductSupplier getProductSupplier(int id){
+		return productSuppliers.get(id);
+	}
+	
 	// Order Line getter etc added by Christine
 	
 	public List<OrderLine> getOrderLine(){
@@ -223,18 +234,18 @@ public class InitialData{
 	// Product Supplier added by Christine Stokes
 	
 	public List<ProductSupplier>getProductSupplier(){
-		return productsupplier;
+		return productSuppliers;
 
 	}
 	public void addProductSupplier(ProductSupplier productsupplier){
-		this.productsupplier.add(productsupplier);
+		this.productSuppliers.add(productsupplier);
 	}
 	public void setProductSupplier(List<ProductSupplier> productsupplier) {
-		this.productsupplier = (ArrayList<ProductSupplier>) productsupplier;
+		this.productSuppliers = (ArrayList<ProductSupplier>) productsupplier;
 	}
 
 	public List<ProductSupplier> getEntityListProductSupplier() {
-		return productsupplier;
+		return productSuppliers;
 	}
 	
 	
