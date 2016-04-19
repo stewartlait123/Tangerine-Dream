@@ -1,9 +1,5 @@
-                                       
+// Created by Mohammed Miah                                       
 package com.qa.tangerinedream.entities;
-
-// Created by Mohammed Miah
-
-
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
