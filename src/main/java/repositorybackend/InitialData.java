@@ -71,9 +71,9 @@ public class InitialData{
 	Order orderID = new Order();
 	Product productID = new Product(0, null, 0, 0, 0, 0, 0, 0, 0, null);
 	
-	OrderLine.add(new OrderLine(orderID, productID, 2));
-	OrderLine.add(new OrderLine(orderID, productID, 1));
-	OrderLine.add(new OrderLine(orderID, productID, 5));
+	OrderLine.add(new OrderLine(orderID, productID, 2, 1799));
+	OrderLine.add(new OrderLine(orderID, productID, 1899));
+	OrderLine.add(new OrderLine(orderID, productID, 1599));
 	
 	// Creation of Payment Dummy Data by Christine Stokes
 	
