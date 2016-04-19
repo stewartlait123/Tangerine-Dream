@@ -24,7 +24,6 @@ import com.qa.tangerinedream.entities.PurchaseOrderLine;
 import com.qa.tangerinedream.entities.Supplier;
 
 import repositorybackend.*;
-import repositorybackend.Product.PRODUCT_TYPE;
 
 @Singleton
 public class InitialData{
@@ -41,7 +40,7 @@ public class InitialData{
 	private ArrayList<ProductSupplier> productsupplier = new ArrayList<ProductSupplier>();
 	
 	public InitialData(){
-		products.add(new Product(1, "pot", 100, 300, 10, 500, 1000, 100, 1000, PRODUCT_TYPE.POTS));
+		products.add(new Product(1, "pot", 100, 300, 10, 500, 1000, 100, 1000, "POTS"));
 		
 		//Creation of five entries to add into customer arraylist with unique values - Finley Peters @ TeamTang
 		customers.add(new Customer(new Long( 1) ,"John Doe", "BigJohn", "johnPassword", new Date() ,67 , 100));	
