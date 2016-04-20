@@ -1,7 +1,6 @@
 package com.qa.tangerinedream.repositories;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import com.qa.tangerinedream.entities.OrderLine;
 
@@ -16,7 +15,7 @@ import com.qa.tangerinedream.entities.OrderLine;
 
 public interface OrderLineRepository {
 	public void persistOrderLine (OrderLine o);
-	public void persistOrderLines (List<OrderLine> o);
+	public void persistOrderLines (ArrayList<OrderLine> o);
 	
 	public ArrayList<OrderLine> getOrderLines();
 	public ArrayList<OrderLine> findByOrderId(long order_id);
