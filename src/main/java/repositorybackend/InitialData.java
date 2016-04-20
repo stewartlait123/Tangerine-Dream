@@ -271,6 +271,10 @@ public class InitialData{
 	 * sets the customer list
 	 * @param customerList
 	 */
+	
+	public void setCustomer(List<Customer> customer) {
+		customers = (ArrayList<Customer>) customer;
+	}
 	public void setCustomers(ArrayList<Customer> customerList)
 	{
 		customers = customerList;
