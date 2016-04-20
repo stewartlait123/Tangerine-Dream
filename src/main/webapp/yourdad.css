@@ -1,0 +1,37 @@
+@CHARSET "ISO-8859-1";
+#page {
+	width: 100%;
+	text-align: center;
+	background-color: gray;
+}
+
+.savage {
+	text-decoration: underline;
+	font-size: large;
+	color: red;
+}
+
+.maximumsass {
+	font-style: italic;
+	text-shadow: fuchsia;
+	color: lime;
+}
+
+h1{
+	font-family: fantasy;
+}
+
+h2 {
+	font-stretch: ultra-expanded;
+}
+
+.navigation {
+	display: block;
+    padding-right: 1.5rem;
+    font-weight: 700;
+    list-style: none;
+}
+
+#footer {
+	background-color: #564598;	
+}
