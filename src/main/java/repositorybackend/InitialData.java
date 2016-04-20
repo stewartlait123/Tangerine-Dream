@@ -199,7 +199,7 @@ public class InitialData{
 	
 	// Order Line getter etc added by Christine
 	
-	public List<OrderLine> getOrderLine(){
+	public ArrayList<OrderLine> getOrderLines(){
 		return OrderLine;
 
 	}
@@ -214,6 +214,7 @@ public class InitialData{
 		return OrderLine;
 	}
 	
+		
 	// Supplier getters added by Christine Stokes
 	
 	public List<Supplier>getSupplier(){
