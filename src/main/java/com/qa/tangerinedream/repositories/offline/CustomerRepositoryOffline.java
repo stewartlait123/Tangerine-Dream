@@ -3,8 +3,9 @@ package com.qa.tangerinedream.repositories.offline;
 import java.util.ArrayList;
 
 import javax.inject.Inject;
+import repositorybackend.InitialData;
 
-import com.qa.tangerine_gardens.repository.InitialData;
+
 import com.qa.tangerinedream.entities.Customer;
 import com.qa.tangerinedream.repositories.CustomerRepository;
 
@@ -27,12 +28,18 @@ implements CustomerRepository{
 		initialData.addCustomer(customer);
 	}
 
+	/**
+	 * 
+	 * Adjusted by Jessica/Christine. Created a for loop inside method to return array of customers one at a time (changed addCustomers to addcustomer like in InitialDate.java)
+	 */
 	@Override
 	public void persistCustomers(ArrayList<Customer> customers_) {
-		// TODO Auto-generated method stub
 		
-		initialData.addCustomers(customers_);
+		for(Customer customers : customers_){
+					
+		initialData.addCustomer(customers);
 		
+		}
 	}
 	
 	@Override

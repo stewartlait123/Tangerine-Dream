@@ -249,17 +249,28 @@ public class InitialData{
 	}
 	
 	
-	//Customer getters, setters and adder - Finley Peters @ TeamTang
+	/**
+	 *  gets the list of customers
+	 * @return
+	 */
 	public ArrayList<Customer> getCustomers()
 	{
 		return customers;
 	}
 	
+	/**
+	 * adds a single customer
+	 * @param customer
+	 */
 	public void addCustomer(Customer customer)
 	{
 		customers.add(customer);
 	}
 	
+	/**
+	 * sets the customer list
+	 * @param customerList
+	 */
 	public void setCustomers(ArrayList<Customer> customerList)
 	{
 		customers = customerList;
