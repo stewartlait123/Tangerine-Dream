@@ -7,8 +7,6 @@ import java.util.ArrayList;
 
 import com.qa.tangerinedream.entities.PurchaseOrderLine;
 
-import repositorybackend.*;
-
 public interface PurchaseOrderLineRepository {
 	public void persistPurchaseOrderLine(PurchaseOrderLine p);
 	
