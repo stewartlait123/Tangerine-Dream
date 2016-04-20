@@ -18,11 +18,11 @@ public interface OrderLineRepository {
 	public void persistOrderLine (OrderLine o);
 	public void persistOrderLines (List<OrderLine> o);
 	
-	public OrderLine findByName(String name);
 	public ArrayList<OrderLine> getOrderLines();
+	public ArrayList<OrderLine> findByOrderId(long order_id);
 	
+	public ArrayList<OrderLine> findByProductId(long product_id);
+		
 	public void updateOrderLine (OrderLine o);
-	
-	public void removeOrderLine (OrderLine o);
-	
+
 }
