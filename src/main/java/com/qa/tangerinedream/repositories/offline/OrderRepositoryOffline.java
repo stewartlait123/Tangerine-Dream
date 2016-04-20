@@ -57,6 +57,8 @@ implements OrderRepository {
 	}
 	@Override
 	public void persistOrder(List<Order> o) {
+		initialData.getOrders();
+		
 		// TODO Auto-generated method stub
 		
 	}

@@ -39,7 +39,7 @@ public class InitialData{
 
 	
 	public InitialData(){
-		products.add(new Product(1, "pot", 100, 300, 10, 500, 1000, 100, 1000, "POTS"));
+		products.add(new Product("pot", 100, 300, 10, 500, 1000, 100, 1000, "POTS"));
 		
 		//Creation of five entries to add into customer arraylist with unique values - Finley Peters @ TeamTang
 		customers.add(new Customer("John Doe", "BigJohn", "johnPassword", new Date() ,67 , 100));	
@@ -70,7 +70,7 @@ public class InitialData{
 	
 	// Creation of Dummy Data for orderline by Christine Stokes
 	Order orderID = new Order();
-	Product productID = new Product(0, null, 0, 0, 0, 0, 0, 0, 0, null);
+	Product productID = new Product(null, 0, 0, 0, 0, 0, 0, 0, null);
 	
 	OrderLine.add(new OrderLine(orderID, productID, 2, 1799));
 	OrderLine.add(new OrderLine(orderID, productID, 3,1899));
