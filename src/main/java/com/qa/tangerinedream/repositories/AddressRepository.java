@@ -3,13 +3,11 @@
 package com.qa.tangerinedream.repositories;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import com.qa.tangerinedream.entities.Address;
 
 public interface AddressRepository {
 	
-	/*
+	/**
 	 * Removed add/remove/update address functions as Address class does not
 	 * support multiple delivery/billing address on each record.
 	 * A set delivery/billing address method will encompass
@@ -21,7 +19,7 @@ public interface AddressRepository {
 	public void persistDeliveryAddress (Address address_);
 	public void persistDeliveryAddresses(List<Address> address_);
 	 
-	 */
+	 **/
 	public void persistAddress(Address address_);
 	
 	public void persistAddresses(ArrayList<Address> address_);
@@ -36,7 +34,7 @@ public interface AddressRepository {
 	
 	public void setDeliveryAddress(Long id_, Address address_);
 	
-	/*
+	/**
 	 * Removed add/remove/update address functions as Address class does not
 	 * support multiple delivery/billing address on each record.
 	 * A set delivery/billing address method will encompass
