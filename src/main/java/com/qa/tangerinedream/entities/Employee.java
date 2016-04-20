@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table (name = "employee")
 
-public class Employee {
+public class Employee{
 	@Id
 	@Column (name = "employee_id")
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -34,15 +34,18 @@ public class Employee {
 	@Column (name = "dept", nullable = false)
 	@NotNull
 	@Size (min = 0, max = 2147483647)
-	private int dept;
+	private int department;
 
 	@Column (name = "forklift_trained", nullable = false)
 	@NotNull
 	@Size (min = 0, max = 2147483647)
 	private boolean forklift_trained;
 	
-	public Employee(String string, int i, int j, boolean b) {
-		// TODO Auto-generated constructor stub
+	public Employee(String name, int employeeType, int department, boolean forkliftTrained) {
+		this.name = name;
+		this.employee_type = employeeType;
+		this.department = department;
+		this.forklift_trained = forkliftTrained;
 	}
 
 	public long getEmployee_id(){
@@ -73,11 +76,11 @@ public class Employee {
 		return forklift_trained;
 	}
 	
-	public void setDept(int value) {
-		this.dept = value;
+	public void setDepartment(int value) {
+		this.department = value;
 	}
 	
 	public int getDept() {
-		return dept;
+		return department;
 	}
 }
