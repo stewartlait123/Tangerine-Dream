@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="Template.html">
+
+	<ui:define name="Orderdetails">
+	
+		<div id="maincontent">
+			<div class="OrderPage">
+				<div id="orderlist">
+					<h1>Order Details</h1>
+					<table>
+						<ui:repeat value="#{ordered.items}" var="item">
+
+							<tr>
+								<td><img src="../img/freaky_gnome_01.png"></td>
+								<td Class="ProductName">#{item.name}</td>
+								<td class="ProductLabels">Product ID</td>
+								<td class="Productdescriptions">#{item.id}</td>
+
+								<td class="ProductLabels">Quantity</td>
+								<td class="Productdescriptions">#{item.quanty}</td>
+
+								<td class="ProductLabels">Price</td>
+								<td class="Productdescriptions">#{item.qty}</td>
+							</tr>
+
+
+						</ui:repeat>
+						<tr>
+							<td Class="ProductTotal">Total Cost</td>
+							<td Class="OrderPrice">#{ordered.total}</td>
+							<td Class="ProductTotal"></td>
+							<td Class="OrderPrice"></td>
+							<td Class="ProductTotal"></td>
+							<td Class="OrderPrice"></td>
+							<td Class="ProductTotal"></td>
+							<td Class="Button">
+								<button>Proceed to Payment</button>
+							</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+	</ui:composition>
+	
+
+
+	
