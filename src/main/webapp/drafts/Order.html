@@ -21,45 +21,75 @@
 							<a href="Basket.html">BASKET</a>
 						</div></li>
 					<li class="Top header"><div class="spacer">
-							<a href="login.html">LOGIN</a>
-							<a href="Register.html">REGISTER</a>
+							<a href="login.html">LOGIN</a> <a href="Register.html">REGISTER</a>
 						</div></li>
 				</ul>
 
 			</div>
 		</div>
-		
-		<div ID = maincontent>
-		<div Class = OrderPage>
-		<div ID = orderslist>
-		<h1> Order Details</h1>
-		</div>
-		</div>
-		</div>
-		
 
-		<div Class="Footer Bar">
-			<div ID="footbar">
-				<ul class="Foot header">
-					<li Class="Foot header"><div class="spacer">
-							<a href="About.html">ABOUT</a>
-						</div></li>
-					<li Class="Foot header"><div class="spacer">
-							<a href="FAQ.html">FAQ</a>
-						</div></li>
-					<li Class="Foot header"><div class="spacer">
-							<a href="ContactInfo.html">Contact Information</a>
-						</div></li>
-					<li Class="Foot header"><div class="spacer">
-							<a href="ReturnInfo.html">Return Information</a>
-						</div></li>
-					<li Class="Foot header"><div class="spacer">
-							<a href="OrderForms.html">PDF Order Form</a>
-						</div></li>
-				</ul>
+		<div id="maincontent">
+			<div class="OrderPage">
+				<div id="orderlist">
+					<h1>Order Details</h1>
+					<table>
+						<ui:repeat value="#{ordered.items}" var="item">
+
+							<tr>
+								<td><img src="../img/freaky_gnome_01.png"></td>
+								<td Class="ProductName">#{item.name}</td>
+								<td class="ProductLabels">Product ID</td>
+								<td class="Productdescriptions">#{item.id}</td>
+
+								<td class="ProductLabels">Quantity</td>
+								<td class="Productdescriptions">#{item.quanty}</td>
+
+								<td class="ProductLabels">Price</td>
+								<td class="Productdescriptions">#{item.qty}</td>
+							</tr>
+
+
+						</ui:repeat>
+						<tr>
+							<td Class="ProductTotal">Total Cost</td>
+							<td Class="OrderPrice">#{ordered.total}</td>
+							<td Class="ProductTotal"></td>
+							<td Class="OrderPrice"></td>
+							<td Class="ProductTotal"></td>
+							<td Class="OrderPrice"></td>
+							<td Class="ProductTotal"></td>
+							<td Class="Button">
+								<button>Proceed to Payment</button>
+							</td>
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>
-</body>
+
+
+
+	<div Class="Footer Bar">
+		<div ID="footbar">
+			<ul class="Foot header">
+				<li Class="Foot header"><div class="spacer">
+						<a href="About.html">ABOUT</a>
+					</div></li>
+				<li Class="Foot header"><div class="spacer">
+						<a href="FAQ.html">FAQ</a>
+					</div></li>
+				<li Class="Foot header"><div class="spacer">
+						<a href="ContactInfo.html">Contact Information</a>
+					</div></li>
+				<li Class="Foot header"><div class="spacer">
+						<a href="ReturnInfo.html">Return Information</a>
+					</div></li>
+				<li Class="Foot header"><div class="spacer">
+						<a href="OrderForms.html">PDF Order Form</a>
+					</div></li>
+			</ul>
+		</div>
+	</div>
+<body>
 </html>
 </html>
