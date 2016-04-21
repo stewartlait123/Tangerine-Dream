@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html>
-<meta charset="ISO-8859-1">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="Template.html" css="Template.css">
 <link rel="stylesheet" type="text/css" href="Template.css">
-<ui:template="template.html">
-<!--Author: Iain Q?<-->
-<h1 class="page-header">Payment</h1>
+<link rel="import" href="Template.html">
+	<ui:define name="pagetitle">
+		<div id="header">
+			<h1>Payment</h1>
+		</div>
+	</ui:define>
 
+
+<ui:define name="maincontent">
+<!--Author: Iain Q?<-->
 <div>
 Select a payment method: 
 <select name="category">
@@ -31,4 +37,3 @@ Select a payment method:
 	</div>
 
 </div>
-</html>

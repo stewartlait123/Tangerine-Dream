@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="Template.html" css="Template.css">
 <link rel="stylesheet" type="text/css" href="Template.css">
-</head>
+<link rel="import" href="Template.html">
+	<ui:define name="pagetitle">
+		<div id="header">
+			<h1>Catalogue</h1>
+		</div>
+	</ui:define>
 
+<ui:define name="maincontent">
 <!--Author and artist: Iain Q><-->
-<div>
-<h1 class="page-header">Catalogue</h1>
 
 <input type="text" name="search" value="Search"> 
 
@@ -36,7 +39,7 @@
     <td>Test gnome do not use.</td> 
     <td>Gnome</td>
     <td>5</td>
-    <td>£9.99</td>
+    <td>Â£9.99</td>
     <td><input type="range" id="gnomerange" value="0" max="5"><button type="button">Add to basket</button><button type="button">Wishlist</button></td>
   </tr>
   
@@ -46,7 +49,7 @@
     <td>A simple pot that tries its best.</td> 
     <td>Pot</td>
     <td>1</td>
-    <td>£3.50</td>
+    <td>Â£3.50</td>
     <td><input type="range" id="potrange" value="0" max="1"><button type="button">Add to basket</button><button type="button">Wishlist</button></td>
   </tr>
 
@@ -54,3 +57,6 @@
 </table>
 
 </html>
+
+	</ui:define>
+</ui:composition>
