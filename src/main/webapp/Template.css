@@ -1,3 +1,4 @@
+/* Page created by Christine Stokes*/
 @CHARSET "ISO-8859-1";
 
 #Order Page {
@@ -176,4 +177,10 @@ span.myspan {
 	padding-top: 2em;
 	margin-left: 20px;
 	font-size: large
+}
+#about {
+	font-size: x-large;
+	padding-left: 20%;
+	padding-right: 20%;
+	text-align: center;
 }

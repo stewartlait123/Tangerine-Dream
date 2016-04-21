@@ -8,7 +8,11 @@ import javax.inject.Named;
 import com.qa.tangerinedream.entities.Order;
 import com.qa.tangerinedream.entities.OrderLine;
 import com.qa.tangerinedream.entities.Product;
-
+/**
+ * 
+ * @author James Thompson
+ *
+ */
 @Named(value="ordered")
 @PageScoped
 public class BasketController {
