@@ -1,0 +1,105 @@
+@CHARSET "UTF-8";
+
+
+h1 {
+	text-align: center;
+    font-size: 36px;
+    line-height: 40px;
+}
+
+h2 {
+	text-align: center;
+    font-size: 30px;
+    line-height: 40px;
+}
+
+head{
+	
+	
+}
+
+body{
+	
+	font-family: Helvetica;
+	font-size : 16px;
+	background-color: #575757;	
+}
+
+
+.content{
+	
+	background-color:#575757;
+	
+}
+
+.main{
+	
+	background-color: #2BCCCA;
+}
+
+.cataloguePreview{
+	width: 70%;
+	float:left;
+	background-color: #FF8FAB;
+}
+
+.productRow{
+	
+	height: 150px ;
+	float:center;
+	background-color: #FF6E59 ;
+	border-style: solid;
+	border-width: 2px;
+	margin: 5px;
+}
+
+.newsPanel{
+	width: 250px;
+	float:left;
+	background-color: #CC2BA5;
+}
+
+.newsItem{
+	
+	float: left;
+	margin: 10px;
+	border-style: solid;
+	border-width: 2px;
+}
+
+.navigation-bar{
+	
+	background-color: #4FFF99;
+}
+
+.navigation-item{
+	
+	display: inline;
+}
+
+#header{
+	
+	
+}
+
+#content{
+	
+	
+}
+
+
+
+#catalogue-navigation{
+	
+	display:block;
+	background-color: #6E4319;
+	list-style-type:none;
+	
+}
+
+#spacer{
+	
+	height:100px;
+	opacity: 0;
+}
+
