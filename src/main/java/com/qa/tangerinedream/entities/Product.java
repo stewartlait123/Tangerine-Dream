@@ -18,8 +18,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table (name = "product")
 public class Product{	
-	public Product(long id, String name, int cost, int price, int size, int weight, int stock, int minStock, int orderAmount, String productType){
-		this.product_id = id; 
+	public Product(String name, int cost, int price, int size, int weight, int stock, int minStock, int orderAmount, String productType){
 		this.name = name;
 		this.cost_price = cost;
 		this.price = price;

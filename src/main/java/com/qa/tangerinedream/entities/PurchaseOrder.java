@@ -18,6 +18,11 @@ import javax.persistence.Table;
 @Table (name = "purchaseorder")
 public class PurchaseOrder {
 	
+	public PurchaseOrder(Date purchaseOrderDate, Employee employee){
+		this.purchaseOrderDate = purchaseOrderDate;
+		this.employee = employee;
+	}
+	
 	@Id
 	@Column (name = "purchaseorder_id")
 	@GeneratedValue (strategy = GenerationType.IDENTITY)

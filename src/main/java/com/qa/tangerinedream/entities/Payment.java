@@ -6,7 +6,6 @@ package com.qa.tangerinedream.entities;
  *
  */
 
-import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -77,21 +76,21 @@ public class Payment {
 	/**
 	 * Gets and returns order id
 	 */
-	public int getOrder_id() {
+	public Order getOrder_id() {
 		return order_id;
 	}
 
 	/**
 	 * Get and returns Address id
 	 */
-	public int getAddress_id() {
+	public Address getAddress_id() {
 		return address_id;
 	}
 
 	/**
 	 * Sets address id
 	 */
-	public void setAddress_id(int address_id) {
+	public void setAddress_id(Address address_id) {
 		this.address_id = address_id;
 	}
 	

@@ -39,7 +39,7 @@ public class InitialData{
 
 	
 	public InitialData(){
-		products.add(new Product(1, "pot", 100, 300, 10, 500, 1000, 100, 1000, "POTS"));
+		products.add(new Product("pot", 100, 300, 10, 500, 1000, 100, 1000, "POTS"));
 		
 		//Creation of five entries to add into customer arraylist with unique values - Finley Peters @ TeamTang
 		customers.add(new Customer("John Doe", "BigJohn", "johnPassword", new Date() ,67 , 100));	
@@ -68,9 +68,9 @@ public class InitialData{
 		Orders.add(new Order(2, currentDate, customer_ID));
 		Orders.add(new Order(3, currentDate, customer_ID));
 	
-	// Creation of Dummy Data for oderline by Christine Stokes
+	// Creation of Dummy Data for orderline by Christine Stokes
 	Order orderID = new Order();
-	Product productID = new Product(0, null, 0, 0, 0, 0, 0, 0, 0, null);
+	Product productID = new Product(null, 0, 0, 0, 0, 0, 0, 0, null);
 	
 	OrderLine.add(new OrderLine(orderID, productID, 2, 1799));
 	OrderLine.add(new OrderLine(orderID, productID, 3,1899));
@@ -199,7 +199,7 @@ public class InitialData{
 	
 	// Order Line getter etc added by Christine
 	
-	public List<OrderLine> getOrderLine(){
+	public ArrayList<OrderLine> getOrderLines(){
 		return OrderLine;
 
 	}
@@ -214,6 +214,7 @@ public class InitialData{
 		return OrderLine;
 	}
 	
+		
 	// Supplier getters added by Christine Stokes
 	
 	public List<Supplier>getSupplier(){
@@ -249,17 +250,32 @@ public class InitialData{
 	}
 	
 	
-	//Customer getters, setters and adder - Finley Peters @ TeamTang
+	/**
+	 *  gets the list of customers
+	 * @return
+	 */
 	public ArrayList<Customer> getCustomers()
 	{
 		return customers;
 	}
 	
+	/**
+	 * adds a single customer
+	 * @param customer
+	 */
 	public void addCustomer(Customer customer)
 	{
 		customers.add(customer);
 	}
 	
+	/**
+	 * sets the customer list
+	 * @param customerList
+	 */
+	
+	public void setCustomer(List<Customer> customer) {
+		customers = (ArrayList<Customer>) customer;
+	}
 	public void setCustomers(ArrayList<Customer> customerList)
 	{
 		customers = customerList;

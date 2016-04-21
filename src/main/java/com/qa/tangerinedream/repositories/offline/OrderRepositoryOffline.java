@@ -24,6 +24,7 @@ implements OrderRepository {
 	/**Changed injection from 'OrderInitialData' to 'InitialData' as all offline
 	 * data is to be folded into this class. 
 	*  Changed variable name 'OrderInitialData' to 'initialData' to reflect this.
+	*  Jessica:changed to long rather than biginteger for order_id (james recommended)
 	*/
 	
 	private InitialData initialData;
@@ -37,7 +38,7 @@ implements OrderRepository {
 	public Order findByOrderID(int id) {
 		ArrayList<Order> os = (ArrayList<Order>) initialData.getOrders();
 		for(int i=0;i<os.size(); i++){
-			if(os.get(i).getOrder_id().equals(id)){
+			if(os.get(i).getOrder_id() == id){
 				System.out.println(os.toString());
 			}
 		}		
@@ -57,6 +58,8 @@ implements OrderRepository {
 	}
 	@Override
 	public void persistOrder(List<Order> o) {
+		initialData.getOrders();
+		
 		// TODO Auto-generated method stub
 		
 	}

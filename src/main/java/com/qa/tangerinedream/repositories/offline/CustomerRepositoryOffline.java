@@ -3,8 +3,9 @@ package com.qa.tangerinedream.repositories.offline;
 import java.util.ArrayList;
 
 import javax.inject.Inject;
+import repositorybackend.InitialData;
 
-import com.qa.tangerine_gardens.repository.InitialData;
+
 import com.qa.tangerinedream.entities.Customer;
 import com.qa.tangerinedream.repositories.CustomerRepository;
 
@@ -27,12 +28,18 @@ implements CustomerRepository{
 		initialData.addCustomer(customer);
 	}
 
+	/**
+	 * 
+	 * Adjusted by Jessica/Christine. Created a for loop inside method to return array of customers one at a time (changed addCustomers to addcustomer like in InitialDate.java)
+	 */
 	@Override
 	public void persistCustomers(ArrayList<Customer> customers_) {
-		// TODO Auto-generated method stub
 		
-		initialData.addCustomers(customers_);
+		for(Customer customers : customers_){
+					
+		initialData.addCustomer(customers);
 		
+		}
 	}
 	
 	@Override
@@ -86,18 +93,11 @@ implements CustomerRepository{
 		
 	}
 
-	@Override
-	public void removeCustomer(Customer customer_) {
-		// TODO Auto-generated method stub
-		
-		initialData.removeCustomer(customer_);
-		
-	}
+
 
 	@Override
 	public void updateCustomerUserName(Long id_, String userName_) {
-		// TODO Auto-generated method stub
-		
+
 		ArrayList<Customer> searchList = initialData.getCustomers(); //The list we will search		
 		
 		for(int i = 0 ; i < searchList.size() ; i++ )
@@ -106,10 +106,12 @@ implements CustomerRepository{
 			{
 				Customer newDetails = searchList.get(i);
 				newDetails.setUsername(userName_);
-				initialData.setCustomer(newDetails);
+				
 			}
-		}		
+		}	
+		initialData.setCustomers(searchList);
 	}
+
 
 	@Override
 	public void updateCustomerName(Long id_, String customerName_) {
@@ -123,9 +125,10 @@ implements CustomerRepository{
 			{
 				Customer newDetails = searchList.get(i);
 				newDetails.setName(customerName_);
-				initialData.setCustomer(newDetails);
+				
 			}
-		}		
+		}
+		initialData.setCustomers(searchList);
 	}
 
 //	Address removed as address does not reside in the customer table. Address is it's own object/table
@@ -158,9 +161,11 @@ implements CustomerRepository{
 			{
 				Customer newDetails = searchList.get(i);
 				newDetails.setPassword(password_);
-				initialData.setCustomer(newDetails);
+				
+		}	
 			}
-		}		
+			initialData.setCustomers(searchList);
+		
 	}
 
 	@Override
@@ -175,9 +180,10 @@ implements CustomerRepository{
 			{
 				Customer newDetails = searchList.get(i);
 				newDetails.setCredit(credit_);
-				initialData.setCustomer(newDetails);
+				
 			}
-		}		
+		}
+		initialData.setCustomers(searchList);
 	}
 
 	@Override
@@ -192,8 +198,9 @@ implements CustomerRepository{
 			{
 				Customer newDetails = searchList.get(i);
 				newDetails.setCreditLimit(creditLimit_);
-				initialData.setCustomer(newDetails);
+				
 			}
-		}		
+		}
+		initialData.setCustomers(searchList);
 	}
 }

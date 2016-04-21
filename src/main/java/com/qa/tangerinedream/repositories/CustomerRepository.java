@@ -23,8 +23,6 @@ public interface CustomerRepository {
 	
 	public void addCustomer (Customer customer_);
 	
-	public void removeCustomer (Customer customer_);
-	
 	public void updateCustomerUserName(Long id_, String userName_);
 	
 	public void updateCustomerName(Long id_, String customerName_);
