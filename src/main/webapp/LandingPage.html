@@ -7,6 +7,10 @@
 <head>
 	<title> NBGardens Landing Page </title>
 	<link href="defaultStyleLandingPage.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" href="slick-1.5.9/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="slick-1.5.9/slick/slick-theme.css"/>
+	
 </head>
 
 <body>
@@ -25,39 +29,56 @@
 				
 		</div> <!-- Navigation Bar closer -->
 		
-		<div id = "spacer" > </div> 
-		
-			<!-- Banner - no longer used 
-			<div class = "main">
-				<h2> Welcome to NB Gardens </h2>
-				<p> We sell gnomes and all sorts of wacky stuff for your garden! </p>
-			-->
-			
-			<div class = "cataloguePreview">
-			
-			<div class = "navigation-bar">
-			<ul id = "catalogue-navigation">   
-				<li class = "navigation-item"> <a href= "">Pots</a> </li>
-				<li class = "navigation-item"> <a href= "">Gnomes</a> </li>
-				<li class = "navigation-item"> <a href= "">Pots again</a> </li>
-				<li class = "navigation-item"> <a href= "">Please buy our pots</a> </li>			
-			</ul>
-			 </div>
-			<!-- Insert code to populate product rows. Endless product rows depending on height of page?  -->
+		<div id = "spacer" > </div>
 			
 			<h2> Check out our hottest deals</h2>
 			
-			<div class = "productRow"> Product Line 1 </div>
+			<div class = "departments"> 
 			
-			<!-- Product preview script here -->
-			
-			<div class = "productRow"> Product Line 2 </div>
-			
-			<!-- Product preview script here -->
-			
-			<div class = "productRow"> Product Line 3 </div>
-			
-			<!-- Product preview script here -->
+				<div id="department1"  class = "productRow">			
+						<div class = "carousel1">	
+								<Div> <img src = "img/abstractpot.jpg"/> </Div>
+								<Div> <img src = "img/potato.png"/> </Div>
+								<Div> <img src = "img/abstractpot.jpg"/> </Div>
+								<Div> <img src = "img/potato.png"/> </Div>
+								<Div> <img src = "img/abstractpot.jpg"/> </Div>
+								<Div> <img src = "img/abstractpot.jpg"/> </Div>
+								<Div> <img src = "img/potato.png"/></Div>
+								<Div> <img src = "img/abstractpot.jpg"/></Div>
+								<Div> <img src = "img/potato.png"/></Div>
+								<Div> <img src = "img/abstractpot.jpg"/> </Div>	
+						</div>			
+				</div>
+				
+				<div id="department2"  class = "productRow">			
+						<div class = "carousel2">	
+								<Div> <img src = "img/abstractpot.jpg"/> </Div>
+								<Div> <img src = "img/potato.png"/> </Div>
+								<Div> <img src = "img/abstractpot.jpg"/> </Div>
+								<Div> <img src = "img/potato.png"/> </Div>
+								<Div> <img src = "img/abstractpot.jpg"/> </Div>
+								<Div> <img src = "img/abstractpot.jpg"/> </Div>
+								<Div> <img src = "img/potato.png"/></Div>
+								<Div> <img src = "img/abstractpot.jpg"/></Div>
+								<Div> <img src = "img/potato.png"/></Div>
+								<Div> <img src = "img/abstractpot.jpg"/> </Div>	
+						</div>			
+				</div>
+				
+				<div id="department3"  class = "productRow">			
+					<div class = "carousel3">	
+							<Div> <img src = "img/abstractpot.jpg"/> </Div>
+							<Div> <img src = "img/potato.png"/> </Div>
+							<Div> <img src = "img/abstractpot.jpg"/> </Div>
+							<Div> <img src = "img/potato.png"/> </Div>
+							<Div> <img src = "img/abstractpot.jpg"/> </Div>
+							<Div> <img src = "img/abstractpot.jpg"/> </Div>
+							<Div> <img src = "img/potato.png"/></Div>
+							<Div> <img src = "img/abstractpot.jpg"/></Div>
+							<Div> <img src = "img/potato.png"/></Div>
+							<Div> <img src = "img/abstractpot.jpg"/> </Div>	
+					</div>			
+			</div>
 			
 			</div>
 			
@@ -83,10 +104,40 @@
 				
 			</div>
 			
-			</div> <!--  Main Div closer -->		
-		 	
-		</div> <!--  Content Closer -->
+			</div> <!--  Content Div closer -->	
 
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="slick-1.5.9/slick/slick.min.js"></script>
 </body>
-<script src="script.js"></script>
+<script>
+
+$(document).ready(function() {
+	
+	$('.carousel1').slick({
+	  	arrows: true,
+		infinite:true,
+		slidesToShow: 4,
+		slidesToScroll: 4
+		
+	  });
+	
+	$('.carousel2').slick({
+	  	arrows: true,
+		infinite:true,
+		slidesToShow: 4,
+		slidesToScroll: 4
+		
+	  });
+	
+	$('.carousel3').slick({
+	  	arrows: true,
+		infinite:true,
+		slidesToShow: 4,
+		slidesToScroll: 4
+		
+	  });
+			
+  
+});
+</script>
 </html>
