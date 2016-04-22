@@ -27,11 +27,11 @@
 	text-align: right;
 }
 
-#Banner li {
+#Banner tr {
 	display: inline-block;
 	margin: 8em . 20em;
 	text-align: left;
-	font-size: 3em;
+	font-size: 2em;
 	font-family: fantasy;
 }
 
@@ -71,7 +71,7 @@
 	padding-top: 80%;
 }
 
-#footbar li {
+#footbar tr {
 	display: inline-block;
 	margin: 8em . 20em;
 	text-align: left;

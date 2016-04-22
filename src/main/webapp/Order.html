@@ -4,12 +4,16 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="Template.html">
 
-	<ui:define name="Orderdetails">
+	<ui:define name="pagetitle">
+		<h1>Order Details</h1>
+	</ui:define>
+
+	<ui:define name="maincontent">
 	
 		<div id="maincontent">
 			<div class="OrderPage">
 				<div id="orderlist">
-					<h1>Order Details</h1>
+					
 					<table>
 						<ui:repeat value="#{ordered.items}" var="item">
 
