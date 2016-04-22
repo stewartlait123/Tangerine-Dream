@@ -1,17 +1,13 @@
-<!-- Page created by Christine Stokes -->
+<!-- Page Created by Christine Stokes -->
 
 <!DOCTYPE html>
-<html
-xmlns=“http://www.w3.org/1999/xhtml”
-xmlns:f="http://java.sun.com/jsf/core”
-xmlns:h=“http://java.sun.com/jsf/html”
-xmlns:ui=“http://java.sun.com/jsf/facelets”>
-<h:head>
+<html>
+<head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="Template.css">
 <title>NBGardens</title>
-</h:head>
-<f:view><body>
+</head>
+<body>
 	<div ID="Order Page">
 		<div class="header Bar">
 			<div ID="Banner">
@@ -27,29 +23,21 @@ xmlns:ui=“http://java.sun.com/jsf/facelets”>
 							<a href="Basket.html">BASKET</a>
 						</div></li>
 					<li class="Top header"><div class="spacer">
-							<a href="login.html">LOGIN/REGISTER</a>
+							<a href="login.html">LOGIN</a> <a href="Register.html">REGISTER</a>
 						</div></li>
 				</ul>
 
 			</div>
 		</div>
-		
-		<!-- Template calling Login page - @author Stewart -->
-		<div Class="Content">
-			<ui:insert name="pagetitle">
-				
-			<ui:insert name="maincontent">
-			
-			<!-- Template calling about, Orderdetails and EmailOrderForm -->
-			
-			<ui:insert name="Orderdetails">
-			
-			<ui:insert name="about">
-			
-			<ui:insert name="PDFOrderForm">	
-			
-		</div>
-		
+
+<div id="maincontent">
+			<div class="PaperOrderPage">
+				<div id="PaperOrderlist">
+					<h1>Email and Postal Order Form Download</h1>
+					<a href="img/NBGardensOrderForm.pdf">DOWNLOAD!</a>
+					</div>
+					</div></div>
+
 		<div Class="Footer Bar">
 			<div ID="footbar">
 				<ul class="Foot header">
@@ -72,5 +60,5 @@ xmlns:ui=“http://java.sun.com/jsf/facelets”>
 			</div>
 		</div>
 	</div>
-</body></f:view>
+</body>
 </html>
