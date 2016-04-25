@@ -1,0 +1,162 @@
+<!-- @author - Umar -->
+<!DOCTYPE html>
+
+<style>
+
+.faq{
+   Width:500px;
+   height:50px;
+   border: 1px solid black;
+   padding:10px;
+   margin: 1px;
+   border-radius:9px 9px 9px 9px;
+   border-color: #dddddd;
+   background-color:white;
+   color:black;
+}
+
+.info{
+   Width:500px;
+   height:230px;
+   visibility: "hidden";
+}
+
+</style>
+
+<script>
+  function toggle(btnID){
+    var faq = document.getElementById("faq"+btnID);
+    var info = document.getElementById("info"+btnID);
+    var toggle_button = document.getElementById("toggle_button_"+btnID);
+
+    if (info.style.visibility == "hidden"){
+       <!-- Open the div-->
+       faq.style.height = "300px";
+       info.style.visibility = "visible";
+       toggle_button.innerHTML = "-";
+    }
+    else{
+       <!-- Close the div-->
+       faq.style.height = "50px";
+       info.style.visibility = "hidden";
+       toggle_button.innerHTML = "+";
+    }
+  }
+
+  function closeAllButtons(){
+     for (var i=1; i<=5; ++i){
+       document.getElementById("faq"+i).style.height = "50px";
+       document.getElementById("info"+i).style.visibility = "hidden";
+       document.getElementById("toggle_button_"+i).innerHTML = "+";
+     }
+  }
+
+  function initPage(){
+     closeAllButtons()
+  }
+</script>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+template="Template.html">
+	<link rel="stylesheet" type="text/css" href="Template.css">
+	
+	<ui:define name="Frequently Asked Questions (FAQ)">
+		<h1 class="page-header">Frequently Asked Questions (FAQ)</h1>
+	</ui:define>
+	
+	<ui:define name="maincontent">
+	<div id="faq1" class="faq">
+	   <div style="width: 100%; display: table;">
+	      <div style="display: table-row">
+	         <div style="width:100%; display: table-cell;"><h3>How long it will take to recieve my order?</h3></div>
+	         <div style="display: table-cell;"><button id="toggle_button_1" onclick="toggle('1');">+</button></div>
+	      </div>
+	   </div>
+	   
+	   <div id="info1" class="info">
+		    <p>Please be patient. You will get your order within 5 working days after order date.
+		    Thank you for shopping with NB Gardens. We highly appreciate your business with us.</p>
+	   </div>
+	</div>
+	
+	<div id="faq2" class="faq">
+	   <div style="width: 100%; display: table;">
+	      <div style="display: table-row">
+	         <div style="width:100%; display: table-cell;"><h3>What is NB Gardens?</h3></div>
+	         <div style="display: table-cell;"><button id="toggle_button_2" onclick="toggle('2');">+</button></div>
+	      </div>
+	   </div>
+	   
+	   <div id="info2" class="info">
+			<p> Me gusta la clase de español porque es divertida.No me gusta la clase de comunicación porque son los lunes y los miércoles.No me gusta la universidad porque está lejos de mi casa. Me gusta la clase de computación porque la computación es mi especialidad. Me gustan mis compañeros. Son muy inteligentes like you.</p>
+	   </div>
+	</div>
+	
+	<div id="faq3" class="faq">
+	   <div style="width: 100%; display: table;">
+	      <div style="display: table-row">
+	         <div style="width:100%; display: table-cell;"><h3>How can i apply for credit with NB Gardens?</h3></div>
+	         <div style="display: table-cell;"><button id="toggle_button_3" onclick="toggle('3');">+</button></div>
+	      </div>
+	   </div>
+	   
+	   <div id="info3" class="info">
+			Me gusta la clase de español porque es divertida.No me gusta la clase de comunicación porque son los lunes y los miércoles.No me gusta la universidad porque está lejos de mi casa. Me gusta la clase de computación porque la computación es mi especialidad. Me gustan mis compañeros. Son muy inteligentes like you.
+	   </div>
+	</div>
+	
+	<div id="faq4" class="faq">
+	   <div style="width: 100%; display: table;">
+	      <div style="display: table-row">
+	         <div style="width:100%; display: table-cell;"><h3>How can i apply for credit with NB Gardens?</h3></div>
+	         <div style="display: table-cell;"><button id="toggle_button_4" onclick="toggle('4');">+</button></div>
+	      </div>
+	   </div>
+	   
+	   <div id="info4" class="info">
+			Me gusta la clase de español porque es divertida.No me gusta la clase de comunicación porque son los lunes y los miércoles.No me gusta la universidad porque está lejos de mi casa. Me gusta la clase de computación porque la computación es mi especialidad. Me gustan mis compañeros. Son muy inteligentes like you.
+	   </div>
+	</div>
+	
+	<div id="faq5" class="faq">
+	   <div style="width: 100%; display: table;">
+	      <div style="display: table-row">
+	         <div style="width:100%; display: table-cell;"><h3>How can i apply for credit with NB Gardens?</h3></div>
+	         <div style="display: table-cell;"><button id="toggle_button_5" onclick="toggle('5');">+</button></div>
+	      </div>
+	   </div>
+	   
+	   <div id="info5" class="info">
+			Me gusta la clase de español porque es divertida.No me gusta la clase de comunicación porque son los lunes y los miércoles.No me gusta la universidad porque está lejos de mi casa. Me gusta la clase de computación porque la computación es mi especialidad. Me gustan mis compañeros. Son muy inteligentes like you.
+	   </div>
+	</div>
+	</ui:define>
+	
+	<script>
+		initPage();
+	</script>
+
+</ui:composition>
+
+<!--<html>
+ <head>
+
+<meta charset="ISO-8859-1">
+
+
+<title>FAQ (Frequently Asked Questions)</title>
+</head>
+ <body onload="initPage()"> 
+
+
+<h2>Frequently Asked Questions (FAQ)</h2>-->
+
+
+
+
+
+
+
+<!-- </body>
+</html>-->

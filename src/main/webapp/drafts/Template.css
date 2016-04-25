@@ -1,3 +1,4 @@
+/* Page created by Christine Stokes*/
 @CHARSET "ISO-8859-1";
 
 #Order Page {
@@ -43,6 +44,18 @@
 	font-size: xx-large;
 	font-style: normal;
 	font-family: cursive;
+}
+
+#Maintext {
+	padding-top: 5em;
+	padding-left: 3em;
+	padding-right: 3em;
+}
+
+#Maintext p {
+	font-size: x-large;
+	font-family: fantasy;
+	text-align: justify;
 }
 
 #footbar {
@@ -108,4 +121,66 @@ label {
 span.myspan {
 	width: 100px;
 	display: inline-block;
+}
+
+#productIm u1 {
+	text-align: left;
+	margin-left: 30px;
+	position: relative;
+}
+#productIm li {
+	display: inline-block;
+	margin: 8em . 20em;
+	text-align: left;
+	font-size: 2em;
+}
+
+
+#orderlist ul{
+	list-style: none;
+	text-align: left;
+}
+.ProductName{
+	padding-left: 30px;
+	padding-bottom: 2em;
+	margin-left: 20px;
+	font-size: larger;
+	font-weight: bold;
+}
+.ProductLabels {
+	padding-left: 30px;
+	padding-bottom: 2em;
+	margin-left: 20px;
+	font-size: large;
+	font-weight: bold;
+}
+.Productdescriptions{
+		padding-left: 30px;
+	padding-bottom: 2em;
+	margin-left: 20px;
+	font-size: large;
+}
+.ProductTotal{
+	padding-left: 3em;
+	padding-top: 2em;
+	margin-left: 20px;
+	font-size: large;
+	font-weight: bold;
+}
+.OrderPrice{
+	padding-left: 3em;
+	padding-top: 2em;
+	margin-left: 20px;
+	font-size: large;
+}
+.Button{
+	padding-top: 2em;
+	margin-left: 20px;
+	font-size: large
+}
+#about {
+	font-size: x-large;
+	padding-left: 20%;
+	padding-right: 20%;
+	text-align: center;
 }

@@ -1,0 +1,149 @@
+<!-- Author: Finley Peters @Team Tang  -->
+
+
+
+<!DOCTYPE html><html>
+
+<head>
+	<title> NBGardens Landing Page </title>
+	<link href="defaultStyleLandingPage.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" href="slick-1.5.9/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="slick-1.5.9/slick/slick-theme.css"/>
+	
+</head>
+
+<body>
+	
+	<div id = "content"> 
+		<!--
+		<div class = "navigation-bar"> 
+			<h1> Navigation </h1>
+			<ul>   
+				<li class = "navigation-item" style = width:25%> <a href= "">Link 1</a></li>
+				<li class = "navigation-item" style = width:25%> <a href= "">Link 2</a></li>
+				<li class = "navigation-item" style = width:25%> <a href= "">Link 3</a></li>
+				<li class = "navigation-item" style = width:25%> <a href= "">Link 4</a></li>			
+			</ul>
+				
+		</div> --><!-- Navigation Bar closer -->
+		
+		<div id = "spacer" > </div>
+			
+			<div id="content-container">
+
+			<div style = "float:left; display:inline-block;width:70%">
+						<h2 style = float:left;margin:10px> Check Out Our Hottest Deals</h2>
+			</div >
+
+			<div style = "float:left; display:inline-block;width:30%">
+
+			</div>
+
+			<div style="text-align: center;">
+				<div class = "departments" id="departmentHolder">
+
+					
+
+					<div class="departmentHeader">
+						<h4 class= "departmentFont">Gnomes and Accessories  </h4>
+					</div>
+					
+					<div id="department1"  class = "productRow">			
+							<div class = "carousel1">	
+									<div> <img src = "img/abstractpot.png"/> </div>
+									<div> <img src = "img/freaky_gnome_01.png"/> </div>
+									<div> <img src = "img/abstractpot.png"/> </div>
+									<div> <img src = "img/freaky_gnome_01.png"/> </div>
+									<div> <img src = "img/abstractpot.png"/> </div>
+									<div> <img src = "img/abstractpot.png"/> </div>
+									<div> <img src = "img/freaky_gnome_01.png"/></div>
+									<div> <img src = "img/abstractpot.png"/></div>
+									<div> <img src = "img/freaky_gnome_01.png"/></div>
+									<div> <img src = "img/abstractpot.png"/> </div>	
+							</div>			
+					</div> 	
+					
+					<div class="departmentHeader">
+					<h4 class= "departmentFont">Garden Tools  </h4>
+					</div>
+
+					<div id="department2"  class = "productRow">			
+							<div class = "carousel2">	
+									<div> <img src = "img/abstractpot.png"/> </div>
+									<div> <img src = "img/freaky_gnome_01.png"/> </div>
+									<div> <img src = "img/abstractpot.png"/> </div>
+									<div> <img src = "img/freaky_gnome_01.png"/> </div>
+									<div> <img src = "img/abstractpot.png"/> </div>
+									<div> <img src = "img/abstractpot.png"/> </div>
+									<div> <img src = "img/freaky_gnome_01.png"/></div>
+									<div> <img src = "img/abstractpot.png"/></div>
+									<div> <img src = "img/freaky_gnome_01.png"/></div>
+									<div> <img src = "img/abstractpot.png"/> </div>	
+							</div>			
+					</div>
+					
+				</div>
+				
+
+				<div id = "newsContainer"> 
+					<div id = "newsPanelTop" class = "newsPanel"> 
+						<h3> Garden Gnews </h3>				
+						
+					</div>
+
+					<div id = "newsPanelBottom" class = "newsPanel">
+
+						<div class = "newsItem"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+												 Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
+												 Aenean id sapien in mi convallis dapibus vel eu felis. </div>
+						
+						<div class = "newsItem"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+												 Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
+												 Aenean id sapien in mi convallis dapibus vel eu felis. </div>
+						
+						<div class = "newsItem"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+												 Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
+												 Aenean id sapien in mi convallis dapibus vel eu felis. </div>
+						
+						<div class = "newsItem"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+												 Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
+												 Aenean id sapien in mi convallis dapibus vel eu felis. </div>
+
+					</div>
+				</div>
+			</div>
+			</div>
+			
+	</div> <!--  Content div closer -->	
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="slick-1.5.9/slick/slick.min.js"></script>
+</body>
+<script>
+
+var carouselHolder = document.getElementById("departmentHolder");
+var carouselDisplayCount = carouselHolder.offsetWidth/128;
+
+$(document).ready(function() {
+	
+	$('.carousel1').slick({
+	  	arrows: true,
+		infinite:true,
+		slidesToShow: 4,
+		slidesToScroll: 4
+		
+	  });
+	
+	$('.carousel2').slick({
+	  	arrows: true,
+		infinite:true,
+		slidesToShow: 4,
+		slidesToScroll: 4
+		
+	  });			
+  
+});
+
+</script>
+</html>
