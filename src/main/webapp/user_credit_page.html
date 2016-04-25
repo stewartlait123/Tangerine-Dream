@@ -1,12 +1,16 @@
-<!-- Created by Muhammad Umar -->
+<!-- @author - Umar -->
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>User Credit Page</title>
-</head>
-<body>
-	<div id="page">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="Template.html">
+	<link rel="stylesheet" type="text/css" href="Template.css">
+
+	<ui:define name="User Credit Page">
+		<h1 class="page-header">User Credit Page</h1>
+	</ui:define>
+
+	<ui:define name="maincontent">
+		<div id="page">
 		<div>
 			<h2>Customer Info</h2>
 		</div>
@@ -62,5 +66,16 @@
 			</div>
 		</div>
 	</div>
+	</ui:define>
+</ui:composition>
+
+
+<!-- <html>
+<head>
+<meta charset="ISO-8859-1">
+<title>User Credit Page</title>
+</head>
+<body>
+	
 </body>
-</html>
+</html>-->
