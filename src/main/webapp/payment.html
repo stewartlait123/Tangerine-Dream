@@ -21,18 +21,26 @@ Select a payment method:
 </div>
 
 <div>
-     or
-<div>
+     <br>or<br><br>
+</div>
 
 <div class="grid-temp">
 	<div class="row-title">New payment method:</div>
-		<div class="main-row"><form action="">
-		  Name as it appears on card:  <input type="text" name="cardname"><br>
-		  Card number: <input type="text" name="cardnumber"><br>
-		  Expiry date: <input type="text" name="expiry date"><br>
-		  CSV: <input type="text" name="csv"><br>
-		  <input type="submit" value="Submit">
+		<div class="main-row">
+		<form name="paymentform" action="">	  
+		<fieldset>
+				<legend>Payment Form</legend>
+		  <table id="payment">
+				    <tr><th>Name as it appears on card:</th><th><input type="text" name="cardname" /></th></tr>
+				    <tr><th>Card Number:</th><th><input type="text" name="cardnumber" /></th></tr>
+				    <tr><th>Expiry Date:</th> <th><input type="text" name="expirydate" /></th></tr>
+				    <tr><th>CSV:</th> <th><input type="text" name="csv" /></th></tr>
+				 </table>
+				 <input type="submit" class="submitButton" value="Submit" />
+				 
+				 </fieldset>
 	</form>
 	</div>
+
 
 </div>
