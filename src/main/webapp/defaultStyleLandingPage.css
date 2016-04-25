@@ -61,14 +61,17 @@ body{
 
 .departmentFont{
 
-	margin:0px;
+	margin-left: 15px;
 }
 
 .departmentHeader{
 
+	float:left;
 	width:325px;
 	display: inline-block;
 	background-color: #CC2BA5;
+	border-radius: 15px 50px 0px 0px;
+
 }
 
 .content{
@@ -91,7 +94,7 @@ body{
 }
 
 .departments{
-	float:left;
+	display: inline-block;
 	width: 70%;
 	background-color: #ffffff;
 }
@@ -105,22 +108,21 @@ body{
 
 .productRow{
 	
+	float: left;
 	overflow:hidden;
-	margin: 10px;
+	margin: 0px;
 	
 }
 
 .newsPanel{
 	width: 250px;
-	float:right;
 	background-color: #CC2BA5;
 	border-radius: 25px;
 }
 
 #newsContainer{
-
+	display: inline-block;
 	width: 250px;
-	display:inline;
 	float:right;
 	margin:0px;
 	border: 0px;
