@@ -15,26 +15,26 @@
 				<div id="orderlist">
 					
 					<table>
-						<ui:repeat value="#{ordered.items}" var="item">
+				<!--  		<ui:repeat value="#{ordered.items}" var="item">-->
 
 							<tr>
 								<td><img src="../img/freaky_gnome_01.png"></td>
-								<td Class="ProductName">#{item.name}</td>
+								<td Class="ProductName">item.name</td>
 								<td class="ProductLabels">Product ID</td>
-								<td class="Productdescriptions">#{item.id}</td>
+								<td class="Productdescriptions">item.id</td>
 
 								<td class="ProductLabels">Quantity</td>
-								<td class="Productdescriptions">#{item.quanty}</td>
+								<td class="Productdescriptions">item.quanty</td>
 
 								<td class="ProductLabels">Price</td>
-								<td class="Productdescriptions">#{item.qty}</td>
+								<td class="Productdescriptions">item.qty</td>
 							</tr>
 
 
-						</ui:repeat>
+						<!-- </ui:repeat> -->
 						<tr>
 							<td Class="ProductTotal">Total Cost</td>
-							<td Class="OrderPrice">#{ordered.total}</td>
+							<td Class="OrderPrice">ordered.total</td>
 							<td Class="ProductTotal"></td>
 							<td Class="OrderPrice"></td>
 							<td Class="ProductTotal"></td>

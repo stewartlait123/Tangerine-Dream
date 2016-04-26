@@ -25,11 +25,11 @@ public long get_prod_ID(){
 }
 
 
-public ArrayList<Product> add_product(long prod_ID){
+public ArrayList<Product> add_product(){
 	basketService.add_product(prod_ID);
 }
 
-public ArrayList<Product> remove_product(long prod_ID){
+public ArrayList<Product> remove_product(){
 	basketService.remove_product(prod_ID);
 }
 
@@ -37,7 +37,7 @@ public ArrayList<Product> empty_basket(){
 	basketService.empty_basket();
 }
 
-public ArrayList<Product> change_quantity(long prod_ID){
+public ArrayList<Product> change_quantity(){
 	basketService.change_quantity(prod_ID);
 }
 
