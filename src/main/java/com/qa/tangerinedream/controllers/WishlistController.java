@@ -23,19 +23,19 @@ public class WishlistController {
 	@Inject BasketService basketService;
 
 	
-	public ArrayList<Product> addProduct(long prod_ID){
+	public ArrayList<Product> addProduct(){
 		basketService.add_product(prod_ID);
 		
-	public ArrayList<Product> removeProduct(long prod_ID){
+	public ArrayList<Product> removeProduct(){
 		basketService.remove_product(prod_ID);
 		
 	public ArrayList<Product> getItem(){
 		return basketService.get_item();
 		
-	public ArrayList<Product> moveProduct(long prod_ID){
+	public ArrayList<Product> moveProduct(){
 		basketService.move_product(prod_ID);
 		
-	public ArrayList<Product> moveProduct(long prod_ID){
+	public ArrayList<Product> moveProduct(){
 		basketService.move_product();
 	
 	private long prod_ID;
