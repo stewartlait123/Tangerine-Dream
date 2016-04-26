@@ -169,42 +169,107 @@ $(document).ready(function() {
 	
 	$('.carousel1').slick({
 
-		slidesToShow:4,
+		slidesToShow:6,
 		slidesToScroll: 1,
-	  	arrows: true,	
+	  	arrows: true,
+	  	dots: false,
 	  	infinite:true,
 
-	  	responsive:
-	  	[{
-	  		breakpoint:300,
-	  		settings:
-	  		{
-	  			slidesToShow:6,
-	  			slidesToScroll: 2,
-	  			infinite:true,
-	  		}
-	  	},
-	  	{
-	  		breakpoint:600,
-	  		settings:
-	  		{
-	  			slidesToShow:2,
-	  			slidesToScroll: 1,
-	  			infinite:true,
-	  		}
+	  	responsive: [{
 
-	  	}],		
+	  		breakpoint: 1500,
+      		settings:
+      		{
+        		slidesToShow: 6,
+        		infinite: true
+      		}
+      	},
+	  		{
+	  		breakpoint: 1224,
+      		settings:
+      		{
+        		slidesToShow: 4,
+        		infinite: true
+      		}
+      	},
+      	{
+	  		breakpoint: 800,
+      		settings:
+      		{
+        		slidesToShow: 3,
+        		infinite: true
+      		}
+      	},
+    		{
+      		breakpoint: 675,
+      		settings:
+      		{
+        		slidesToShow: 2,
+      		}
+
+      },
+    		{
+      		breakpoint: 475,
+      		settings:
+      		{
+        		slidesToShow: 1,
+      		}
+      		
+      }]
 		
-	  });
+	});
 	
 	$('.carousel2').slick({
+
+		slidesToShow:6,
+		slidesToScroll: 1,
 	  	arrows: true,
-		infinite:true,
+	  	dots: false,
+	  	infinite:true,
+
+	  	responsive: [{
+
+	  		breakpoint: 1500,
+      		settings:
+      		{
+        		slidesToShow: 6,
+        		infinite: true
+      		}
+      	},
+	  		{
+	  		breakpoint: 1224,
+      		settings:
+      		{
+        		slidesToShow: 4,
+        		infinite: true
+      		}
+      	},
+      	{
+	  		breakpoint: 800,
+      		settings:
+      		{
+        		slidesToShow: 3,
+        		infinite: true
+      		}
+      	},
+    		{
+      		breakpoint: 675,
+      		settings:
+      		{
+        		slidesToShow: 2,
+      		}
+
+      },
+    		{
+      		breakpoint: 475,
+      		settings:
+      		{
+        		slidesToShow: 1,
+      		}
+      		
+      }]
 		
-		slidesToShow: 4,
-		slidesToScroll: 1
-		
-	  });			
+	});
   
 });
 
