@@ -105,6 +105,9 @@ public class Customer {
 
 	public void setCreditLimit(int credit_limit)
 		{ this.credit_limit = credit_limit; }
+	
+	public void setDOB(Date dob)
+	{ this.dob = dob; }
 
 	public int getCreditLimit()
 		{ return credit_limit; }
