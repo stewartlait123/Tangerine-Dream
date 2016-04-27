@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.qa.tangerinedream.entities.Product;
+import com.qa.tangerinedream.service.BasketService;
 
 /**
  * 
@@ -25,19 +26,19 @@ public long get_prod_ID(){
 }
 
 
-public ArrayList<Product> add_product(){
+public void add_product(){
 	basketService.add_product(prod_ID);
 }
 
-public ArrayList<Product> remove_product(){
+public void remove_product(){
 	basketService.remove_product(prod_ID);
 }
 
-public ArrayList<Product> empty_basket(){
+public void empty_basket(){
 	basketService.empty_basket();
 }
 
-public ArrayList<Product> change_quantity(){
+public void change_quantity(){
 	basketService.change_quantity(prod_ID);
 }
 

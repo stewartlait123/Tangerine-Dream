@@ -6,11 +6,7 @@
 
 package com.qa.tangerinedream.controllers;
 
-import java.util.ArrayList;
-
-import javax.faces.bean.RequestScoped;	
-
-import com.qa.tangerinedream.entities.Order;
+import javax.faces.bean.RequestScoped;
 
 
 
@@ -39,16 +35,24 @@ public class OrderController {
 	 */
 	
 	private int orderId = 0; //The Id to be used in searching for specific orders
+	public int getOrderId() {
+		return orderId;
+	}
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
 	private int customerId = 0; //The Id of the customer to use in getOrderHistory	
 	
 	
-	public ArrayList<Order> getOrderHistory(){}; //Returns ArrayList of previous orders
+	public void getOrderHistory(){}; //Returns ArrayList of previous orders
 	
-	public boolean cancelOrder(){}; //Returns a boolean if order has been successfully cancelled or not after cancelling
+	public void cancelOrder(){}; //Returns a boolean if order has been successfully cancelled or not after cancelling
 	
-	public Order searchForOrder(){}; //Returns order that meets criteria
+	public void searchForOrder(){}; //Returns order that meets criteria
 	
-	public boolean cofirmOrder(){}; // returns a boolean if order has been successfully confirmed or not
+	public void cofirmOrder(){}; // returns a boolean if order has been successfully confirmed or not
 	
 
 }

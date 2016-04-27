@@ -4,11 +4,11 @@
 
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets" template="Template.html">
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="/template/Template.xhtml">
 
 	<ui:define name="pagetitle">
-
-		<link rel="stylesheet" type"text/css" href="Template.css">
+<head>
+		<link rel="stylesheet" type="text/css" href="Template.css"></link>
 		</head>
 		<div>
 			<h1 class="page-header">Wish List</h1>
@@ -22,8 +22,8 @@ This is the first table
 	<ui:define name="maincontent">
 		<table style="width: 80%">
 			<tr>
-				<td width="128px"><img src="../img/freaky_gnome_01.png"
-					height="128xp" width="128xp"></td>
+				<td width="128px"><img src="img/freaky_gnome_01.png"
+					height="128xp" width="128xp"></img></td>
 				<td>
 					<table style="float: left;">
 						<tr>
@@ -44,7 +44,7 @@ This is the first table
 							<td>Quantity</td>
 							<td>
 								<form>
-									<input type="number" name="quantity" min="1" max="999">
+									<input type="number" name="quantity" min="1" max="999"></input>
 								</form>
 							</td>
 						</tr>
@@ -53,16 +53,16 @@ This is the first table
 						<tr>
 							<td><input type="button"
 								onclick="alert('Product added to Basket.')"
-								value="Add to Basket"></td>
+								value="Add to Basket"></input></td>
 						</tr>
 						<tr>
 							<td><select name="Move +/-" size="1">
-									<option vlaue="move">Move</option>
+									<option value="move">Move</option>
 									<option value="moveup">Up</option>
 									<option value="movedown">Down</option>
 							</select></td>
 							<td><input type="button"
-								onclick="alert('Product deleted from Basket.')" value="Delete">
+								onclick="alert('Product deleted from Basket.')" value="Delete"></input>
 							</td>
 						</tr>
 					</table>
@@ -75,8 +75,7 @@ This is the second table
  -->
 		<table style="width: 80%">
 			<tr>
-				<td width="128px"><img src="../img/abstractpot.png"
-					"height="128xp" width="128xp"></td>
+				<td width="128px"><img src="img/abstractpot.png" height="128xp" width="128xp"></img></td>
 				<td>
 					<table style="float: left;">
 						<tr>
@@ -97,7 +96,7 @@ This is the second table
 							<td>Quantity</td>
 							<td>
 								<form>
-									<input type="number" name="quantity" min="1" max="999">
+									<input type="number" name="quantity" min="1" max="999"></input>
 								</form>
 							</td>
 						</tr>
@@ -106,29 +105,21 @@ This is the second table
 						<tr>
 							<td><input type="button"
 								onclick="alert('Product added to Basket.')"
-								value="Add to Basket"></td>
+								value="Add to Basket"></input></td>
 						</tr>
 						<tr>
 							<td><select name="Move +/-" size="1">
-									<option vlaue="move">Move</option>
+									<option value="move">Move</option>
 									<option value="moveup">Up</option>
 									<option value="movedown">Down</option>
 							</select></td>
 							<td><input type="button"
-								onclick="alert('Product deleted from Basket.')" value="Delete">
+								onclick="alert('Product deleted from Basket.')" value="Delete"></input>
 							</td>
 						</tr>
 					</table>
 				</td>
 			</tr>
 		</table>
-
-
-
-
-
-
-
-
 	</ui:define>
 </ui:composition>

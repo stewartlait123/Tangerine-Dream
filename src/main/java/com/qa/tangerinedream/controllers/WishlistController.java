@@ -12,8 +12,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.qa.tangerinedream.entities.Order;
-import com.qa.tangerinedream.entities.OrderLine;
 import com.qa.tangerinedream.entities.Product;
 import com.qa.tangerinedream.service.BasketService;
 
@@ -23,32 +21,28 @@ public class WishlistController {
 	@Inject BasketService basketService;
 
 	
-	public ArrayList<Product> addProduct(){
+	public void addProduct(){
 		basketService.add_product(prod_ID);
-		
-	public ArrayList<Product> removeProduct(){
+	}
+	public void removeProduct(){
 		basketService.remove_product(prod_ID);
-		
+	}	
 	public ArrayList<Product> getItem(){
 		return basketService.get_item();
-		
-	public ArrayList<Product> moveProduct(){
+	}	
+	public void moveProduct1(){
 		basketService.move_product(prod_ID);
-		
-	public ArrayList<Product> moveProduct(){
-		basketService.move_product();
-	
+	}	
+	public void moveProduct(){
+		basketService.move_product(prod_ID);
+	}
 	private long prod_ID;
 		public long getproductID(){
 			return prod_ID;
 		}
 			
-		}
 	
-	}
 		
 	
-	}
 	
-	}
 }

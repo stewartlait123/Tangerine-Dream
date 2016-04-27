@@ -17,6 +17,7 @@ public class HomeController {
 	
 	ArrayList<Product> product = new ArrayList<Product>();
 	
+	@SuppressWarnings("unused")
 	private void GetProducts()
 	{
 		productRepo.getProducts();

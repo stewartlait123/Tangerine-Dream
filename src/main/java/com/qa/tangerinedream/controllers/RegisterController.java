@@ -20,6 +20,7 @@ public class RegisterController {
 	private String password = "";
 	private Date dob;
 	
+	@SuppressWarnings("unused")
 	private void Register()
 	{
 		Customer customer = new Customer();

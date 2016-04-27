@@ -221,3 +221,28 @@ span.myspan {
 	height: 230px;
 	visibility: "hidden";
 }
+
+.accounts {
+	Width: 350px;
+	height: 200px;
+	border: 1px solid black;
+	border-color: #dddddd;
+	background-color: white;
+	border-radius: 9px 9px 9px 9px;
+	color: black;
+	padding: 10px;
+	margin: 20px;
+}
+
+h2 {
+	color: coral;
+	line-height: 60%;
+}
+
+h5 {
+	line-height: 60%;
+}
+
+a {
+	text-decoration: none;
+}

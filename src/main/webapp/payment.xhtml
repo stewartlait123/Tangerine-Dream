@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets" template="Template.html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="/template/Template.xhtml"
 	css="Template.css">
 	<ui:define name="pagetitle">
-		<link rel="stylesheet" type="text/css" href="Template.css">
+		<link rel="stylesheet" type="text/css" href="Template.css"></link>
 		<div id="header">
 			<h1>Payment</h1>
 		</div>
@@ -14,15 +14,16 @@
 		<!--Author: Iain Q><-->
 		<div>
 			Select a payment method: <select name="category">
-				<option selected disabled>Payment methods</option>
+				<option value="payment">Payment methods</option>
 				<option value="payment1">Visa ending 1234</option>
 				<option value="payment2">Credit</option>
 			</select>
 		</div>
 
 		<div>
-			<br>or<br>
-			<br>
+			<br></br>
+			<br></br>
+			<br></br>
 		</div>
 
 		<div class="grid-temp">
@@ -34,22 +35,22 @@
 						<table id="payment">
 							<tr>
 								<th>Name as it appears on card:</th>
-								<th><input type="text" name="cardname" /></th>
+								<th><input type="text" name="cardname"></input></th>
 							</tr>
 							<tr>
 								<th>Card Number:</th>
-								<th><input type="text" name="cardnumber" /></th>
+								<th><input type="text" name="cardnumber"></input></th>
 							</tr>
 							<tr>
 								<th>Expiry Date:</th>
-								<th><input type="text" name="expirydate" /></th>
+								<th><input type="text" name="expirydate"></input></th>
 							</tr>
 							<tr>
 								<th>CSV:</th>
-								<th><input type="text" name="csv" /></th>
+								<th><input type="text" name="csv"></input></th>
 							</tr>
 						</table>
-						<input type="submit" class="submitButton" value="Submit" />
+						<input type="submit" class="submitButton" value="Submit"></input>
 
 					</fieldset>
 				</form>
@@ -57,3 +58,5 @@
 
 
 		</div>
+		</ui:define>
+		</ui:composition>

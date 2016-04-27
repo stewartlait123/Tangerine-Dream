@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.qa.tangerinedream.entities.Product;
-import com.qa.tangerinedream.repositories.ProductRepository;
+import com.qa.tangerinedream.service.CatalogueService;
 /**
  * 
  * @author Iain Q
@@ -28,5 +28,15 @@ public class CatalogueController {
 	public ArrayList<Product> searchProducts() {
 		return catalogueService.getProducts();
 	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+
+	public String getProductType() {
+		return productType;
+	}
+
 	
 }
