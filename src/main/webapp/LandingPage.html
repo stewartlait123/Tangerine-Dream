@@ -41,9 +41,8 @@
 			</div>
 
 			<div style="text-align: center;">
-				<div class = "departments" id="departmentHolder">
 
-					
+				<div class = "departments" id="departmentHolder">					
 
 					<div class="departmentHeader">
 						<h4 class= "departmentFont">Gnomes and Accessories  </h4>
@@ -51,39 +50,58 @@
 					
 					<div id="department1"  class = "productRow">			
 							<div class = "carousel1">	
-									<div> <img src = "img/abstractpot.png"/> </div>
-									<div> <img src = "img/freaky_gnome_01.png"/> </div>
-									<div> <img src = "img/abstractpot.png"/> </div>
-									<div> <img src = "img/freaky_gnome_01.png"/> </div>
-									<div> <img src = "img/abstractpot.png"/> </div>
-									<div> <img src = "img/abstractpot.png"/> </div>
-									<div> <img src = "img/freaky_gnome_01.png"/></div>
-									<div> <img src = "img/abstractpot.png"/></div>
-									<div> <img src = "img/freaky_gnome_01.png"/></div>
-									<div> <img src = "img/abstractpot.png"/> </div>	
+									<div> <img src = "img/Gnome1.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Gnome2.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Gnome3.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Gnome4.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Gnome5.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Gnome6.jpg"/>
+										<p> Item. Price </p>
+									</div>	
 							</div>			
 					</div> 	
+
+					
 					
 					<div class="departmentHeader">
-					<h4 class= "departmentFont">Garden Tools  </h4>
+						<h4 class= "departmentFont">Garden Tools  </h4>
 					</div>
 
 					<div id="department2"  class = "productRow">			
 							<div class = "carousel2">	
-									<div> <img src = "img/abstractpot.png"/> </div>
-									<div> <img src = "img/freaky_gnome_01.png"/> </div>
-									<div> <img src = "img/abstractpot.png"/> </div>
-									<div> <img src = "img/freaky_gnome_01.png"/> </div>
-									<div> <img src = "img/abstractpot.png"/> </div>
-									<div> <img src = "img/abstractpot.png"/> </div>
-									<div> <img src = "img/freaky_gnome_01.png"/></div>
-									<div> <img src = "img/abstractpot.png"/></div>
-									<div> <img src = "img/freaky_gnome_01.png"/></div>
-									<div> <img src = "img/abstractpot.png"/> </div>	
+									<div> <img src = "img/Rake.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Shovel.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Trimmers.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Trowel.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Clippers.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Hook.jpg"/>
+										<p> Item. Price </p>
+									</div>
 							</div>			
 					</div>
 					
-				</div>
+
+				</div>				
 				
 
 				<div id = "newsContainer"> 
@@ -110,8 +128,30 @@
 												 Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
 												 Aenean id sapien in mi convallis dapibus vel eu felis. </div>
 
+						<div class = "newsItem"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+												 Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
+												 Aenean id sapien in mi convallis dapibus vel eu felis. </div>
+
+						<div class = "newsItem"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+												 Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
+												 Aenean id sapien in mi convallis dapibus vel eu felis. </div>
+
 					</div>
 				</div>
+
+				<div id="advertWrapper">
+
+					<div id="advert1" class = "advert">
+						<img src = "img/CreditApplyAlt.jpg" />
+					</div>
+
+					<div id = "advert2" class = "advert">
+						<img src = "img/GnomeAwards.jpg" />
+					</div>
+
+				</div>
+
+
 			</div>
 			</div>
 			
@@ -128,21 +168,51 @@ var carouselDisplayCount = carouselHolder.offsetWidth/128;
 $(document).ready(function() {
 	
 	$('.carousel1').slick({
-	  	arrows: true,
-		infinite:true,
-		slidesToShow: 4,
-		slidesToScroll: 4
+
+		slidesToShow:4,
+		slidesToScroll: 1,
+	  	arrows: true,	
+	  	infinite:true,
+
+	  	responsive:
+	  	[{
+	  		breakpoint:300,
+	  		settings:
+	  		{
+	  			slidesToShow:6,
+	  			slidesToScroll: 2,
+	  			infinite:true,
+	  		}
+	  	},
+	  	{
+	  		breakpoint:600,
+	  		settings:
+	  		{
+	  			slidesToShow:2,
+	  			slidesToScroll: 1,
+	  			infinite:true,
+	  		}
+
+	  	}],		
 		
 	  });
 	
 	$('.carousel2').slick({
 	  	arrows: true,
 		infinite:true,
+		
 		slidesToShow: 4,
-		slidesToScroll: 4
+		slidesToScroll: 1
 		
 	  });			
   
+});
+
+$(window).resize(function() {
+
+
+
+
 });
 
 </script>
