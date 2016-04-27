@@ -3,7 +3,7 @@ package com.qa.tangerinedream.controllers;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
-@Named(value = "creditapplication")
+@Named(value = "credapplic")
 @RequestScoped
 
 public class CreditApplicationController {
