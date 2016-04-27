@@ -5,6 +5,31 @@
 <!DOCTYPE html>
 
 <style>
+
+.basket_item{
+   Width:800px;
+   height:200px;
+   border: 1px solid black;
+   padding:0px;
+   margin: 0px;
+   border-radius:9px 9px 9px 9px;
+   border-color: #dddddd;
+   background-color:white;
+   color:black;
+}
+
+.item_description{
+   Width:580px;
+   height:160px;
+   border: 1px solid black;
+   padding:0px;
+   margin: 10px;
+   border-radius:5px 5px 5px 5px;
+   border-color: #eeeeee;
+   background-color:white;
+   color:black;
+}
+
 </style>
 
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
@@ -18,5 +43,74 @@
 	</ui:define>
 
 	<ui:define name="maincontent">
+       <div style="width:800px; display:table;">
+          <div style="display:table-row">
+             <div style="width:600px; display:table-cell;">
+		        items
+             </div>
+             <div style="width:100px; display:table-cell;">
+		        Price
+             </div>             
+             <div style="width:100px; display:table-cell;">
+		        Quantity
+             </div>
+          </div>
+       </div>
+       
+	   <div id="item1" class="basket_item">
+	      <div style="width:800px; display:table;">
+	         <div style="display:table-row">
+	            <div style="width:600px; display:table-cell;">
+			       <div id="item1" class="item_description">
+			      	Item
+			       </div>
+	            </div>
+	            <div style="width:100px; display:table-cell;">
+	               <h2>£10.00</h2>
+	            </div>
+	            <div style="width:70px; display:table-cell;">	
+				   <input id="item_quantity1" type="number" name="quantity" min="0" max="99" maxlength="2" size="6" value="1">
+				   <br>
+				   <button id="update_basket1" class="update_basket_button" onclick="updateBasket();">
+				      Update
+				   </button>
+				</div>
+
+	            <div style="width:30px; display:table-cell;">
+	               <button id="incrementItem" class="increment_button" onclick="incrementItem(1);">
+	                  +
+	               </button>
+	               <br>
+	               <button id="decrementItem" class="decrement_button" onclick="decrementItem(1);">
+	                  -
+	               </button>
+	            </div>
+	         </div>
+	      </div>
+	   </div>
+	   
+	   <script>
+		   function incrementItem(itemID){
+		   }
+		   
+		   function decrementItem(itemID){
+		   }
+		   
+		   function updateBasket(){
+		   }
+		   
+		   function createBasket(){
+			   var itemCount = 10;
+			   var items[];
+			   
+			   for (var i=0; i<itemCount; ++i){
+			   }
+		   }
+		
+		   function initPage(){
+		   }
+		   
+		   initPage();
+		</script>
 	</ui:define>
 </ui:composition>
