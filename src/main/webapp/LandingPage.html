@@ -274,63 +274,87 @@ $(document).ready(function() {
       	}]
 		
 	});
+
+
+	responsiveLayout();
   
 });
 
-$(window).resize(function()
+$(window).resize(function(){
+
+	responsiveLayout();
+
+	});
 
 
-
-	)};
-
-
-$(window).resize(function() {
+function responsiveLayout() {
 
 	var docWidth = $(window).width();
 
-	if(docWidth < 685)
+	if(docWidth > 1224)
 	{
-		//Set stuff to center etc
-		//Adjusts Title/Headline to keep in center of page
+		//Return settings to 'default' if page is large enough.
+
 		document.getElementById("content-container").style.textAlign = "center";
 
 
-		//productTitleWrapper  -remove float:left
+		document.getElementById("productTitleWrapper").style.float = "left";
+
+		document.getElementById("newsContainer").style.width = '350px';
+		document.getElementById("newsContainer").style.float = "right";
+
+
+		var newsPanelElements = document.getElementsByClassName("newsPanel");
+		for(var i = 0 ;  i < newsPanelElements.length ; i++){
+			newsPanelElements[i].style.padding = "5px";
+			newsPanelElements[i].style.width = "350px";
+		}
+
+		var newsItemElements = document.getElementsByClassName("newsItem");
+		for(var i = 0 ; i < newsItemElements ; i++)
+		{
+			newsItemElements[i].style.width = 330;
+		}
+
+	}else if(docWidth > 800)
+	{
+
+		document.getElementById("content-container").style.textAlign = "center";
+
+		document.getElementById("productTitleWrapper").style.float = "none";
+
+		document.getElementById("newsContainer").style.width = "350px";
+		document.getElementById("newsContainer").style.float = "right";
+
+
+		var newsPanelElements = document.getElementsByClassName("newsPanel");
+		for(var i = 0 ;  i < newsPanelElements.length ; i++){
+			newsPanelElements[i].style.padding = "5px";
+			newsPanelElements[i].style.width = "350px";
+		}
+	}else
+	{
+
+		document.getElementById("content-container").style.textAlign = "center";
+
 		document.getElementById("productTitleWrapper").style.float = "none";
 
 		document.getElementById("newsContainer").style.width = "100%";
 		document.getElementById("newsContainer").style.float = "none";
 
-		//News panel - make width 70%
-		var elms = document.getElementsByClassName("newsPanel");
-		for(var i = 0 ;  i < elms.length ; i++){
-			elms[i].style.padding = "15px";
-			elms[i].style.width = "100%";
+		var newsPanelElements = document.getElementsByClassName("newsPanel");
+		for(var i = 0 ;  i < newsPanelElements.length ; i++){
+			newsPanelElements[i].style.padding = "15px";
+			newsPanelElements[i].style.width = "100%";
 		}
 
-	}
-	else
-	{
-		//Normal display mode
-
-		//content container - remove text-align:center
-		document.getElementById("content-container").style.textAlign = "center";
-
-		//productTitleWrapper  -add float:left
-		document.getElementById("productTitleWrapper").style.float = "left";
-
-		document.getElementById("newsContainer").style.width = '70%';
-		document.getElementById("newsContainer").style.float = "left";
-
-		//News panel - make width 350px
-		var elms = document.getElementsByClassName("newsPanel");
-		for(var i = 0 ;  i < elms.length ; i++){
-			elms[i].style.padding = "5px";
-			elms[i].style.width = "350px";
+		var newsItemElements = document.getElementsByClassName("newsItem");
+		for(var i = 0 ; i < newsItemElements ; i++)
+		{
+			newsItemElements[i].style.width = 450;
 		}
 	}
-
-});
+};
 
 </script>
 </html>
