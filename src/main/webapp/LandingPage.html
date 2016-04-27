@@ -277,6 +277,12 @@ $(document).ready(function() {
   
 });
 
+$(window).resize(function()
+
+
+
+	)};
+
 
 $(window).resize(function() {
 
@@ -286,20 +292,20 @@ $(window).resize(function() {
 	{
 		//Set stuff to center etc
 		//Adjusts Title/Headline to keep in center of page
-		document.getElementById("content-container").setAttribute("text-align", "center");
+		document.getElementById("content-container").style.textAlign = "center";
 
 
 		//productTitleWrapper  -remove float:left
-		document.getElementById("productTitleWrapper").float = "none";
+		document.getElementById("productTitleWrapper").style.float = "none";
 
-		document.getElementById("newsContainer").width = "100%";
-		document.getElementById("newsContainer").float = "right";
+		document.getElementById("newsContainer").style.width = "100%";
+		document.getElementById("newsContainer").style.float = "none";
 
 		//News panel - make width 70%
 		var elms = document.getElementsByClassName("newsPanel");
 		for(var i = 0 ;  i < elms.length ; i++){
-			elms[i].padding = "15px";
-			elms[i].width = "100%";
+			elms[i].style.padding = "15px";
+			elms[i].style.width = "100%";
 		}
 
 	}
@@ -308,19 +314,19 @@ $(window).resize(function() {
 		//Normal display mode
 
 		//content container - remove text-align:center
-		document.getElementById("content-container").setAttribute("text-align", "none");
+		document.getElementById("content-container").style.textAlign = "center";
 
 		//productTitleWrapper  -add float:left
-		document.getElementById("productTitleWrapper").float = "left";
+		document.getElementById("productTitleWrapper").style.float = "left";
 
-		document.getElementById("newsContainer").width = '70%';
-		document.getElementById("newsContainer").float = "none";
+		document.getElementById("newsContainer").style.width = '70%';
+		document.getElementById("newsContainer").style.float = "left";
 
 		//News panel - make width 350px
 		var elms = document.getElementsByClassName("newsPanel");
 		for(var i = 0 ;  i < elms.length ; i++){
-			elms[i].padding = "5px";
-			elms[i].width = "350px";
+			elms[i].style.padding = "5px";
+			elms[i].style.width = "350px";
 		}
 	}
 

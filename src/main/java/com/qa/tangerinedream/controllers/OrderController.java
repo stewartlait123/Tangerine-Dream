@@ -8,7 +8,8 @@ package com.qa.tangerinedream.controllers;
 
 import java.util.ArrayList;
 
-import javax.faces.bean.RequestScoped;	
+import javax.faces.bean.RequestScoped;
+import javax.inject.Inject;
 
 import com.qa.tangerinedream.entities.Order;
 
@@ -20,8 +21,8 @@ public class OrderController {
 		
 	//Injection commented out for now as services are not created. To be uncommented/edited at later date
 	//@Inject
-	//OrderService orderService; 
-	
+	@Inject OrderService orderService; 
+	@Inject LoggedInUser loggedInUser;
 	/*
 	 * List of required functions
 	 * 
