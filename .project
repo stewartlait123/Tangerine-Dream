@@ -16,17 +16,13 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-<<<<<<< HEAD
-=======
 			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-<<<<<<< HEAD
+
 			<name>org.hibernate.eclipse.console.hibernateBuilder</name>
-=======
->>>>>>> 84fd2dfb581e7e4c150be48d99b53d3cb3ffb919
 			<name>org.jboss.tools.jst.web.kb.kbbuilder</name>
 			<arguments>
 			</arguments>
@@ -38,7 +34,7 @@
 		</buildCommand>
 		<buildCommand>
 			<name>org.eclipse.wst.validation.validationbuilder</name>
->>>>>>> 6ac733e937ad646e93914a6f56116575491c4f3b
+
 			<arguments>
 			</arguments>
 		</buildCommand>
@@ -47,29 +43,29 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-<<<<<<< HEAD
 		<buildCommand>
 			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
-=======
->>>>>>> 1c88a79d330544c2aa346fae9243c11c018fffdc
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 		<nature>org.hibernate.eclipse.console.hibernateNature</nature>
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
-<<<<<<< HEAD
-=======
+
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
-<<<<<<< HEAD
 		<nature>org.jboss.tools.jst.web.kb.kbnature</nature>
 		<nature>org.jboss.tools.cdi.core.cdinature</nature>
-=======
->>>>>>> 1c88a79d330544c2aa346fae9243c11c018fffdc
 		<nature>org.hibernate.eclipse.console.hibernateNature</nature>
->>>>>>> 6ac733e937ad646e93914a6f56116575491c4f3b
+
+		<nature>org.jboss.tools.jst.web.kb.kbnature</nature>
+		<nature>org.jboss.tools.cdi.core.cdinature</nature>
+		<nature>org.hibernate.eclipse.console.hibernateNature</nature>
+
+		<nature>org.hibernate.eclipse.console.hibernateNature</nature>
+
 	</natures>
 </projectDescription>
+
