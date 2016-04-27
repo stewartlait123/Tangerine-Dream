@@ -128,6 +128,7 @@ span.myspan {
 	margin-left: 30px;
 	position: relative;
 }
+
 #productIm li {
 	display: inline-block;
 	margin: 8em . 20em;
@@ -135,18 +136,19 @@ span.myspan {
 	font-size: 2em;
 }
 
-
-#orderlist ul{
+#orderlist ul {
 	list-style: none;
 	text-align: left;
 }
-.ProductName{
+
+.ProductName {
 	padding-left: 30px;
 	padding-bottom: 2em;
 	margin-left: 20px;
 	font-size: larger;
 	font-weight: bold;
 }
+
 .ProductLabels {
 	padding-left: 30px;
 	padding-bottom: 2em;
@@ -154,30 +156,35 @@ span.myspan {
 	font-size: large;
 	font-weight: bold;
 }
-.Productdescriptions{
-		padding-left: 30px;
+
+.Productdescriptions {
+	padding-left: 30px;
 	padding-bottom: 2em;
 	margin-left: 20px;
 	font-size: large;
 }
-.ProductTotal{
+
+.ProductTotal {
 	padding-left: 3em;
 	padding-top: 2em;
 	margin-left: 20px;
 	font-size: large;
 	font-weight: bold;
 }
-.OrderPrice{
+
+.OrderPrice {
 	padding-left: 3em;
 	padding-top: 2em;
 	margin-left: 20px;
 	font-size: large;
 }
-.Button{
+
+.Button {
 	padding-top: 2em;
 	margin-left: 20px;
 	font-size: large
 }
+
 #about {
 	font-size: x-large;
 	padding-left: 20%;

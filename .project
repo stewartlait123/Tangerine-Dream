@@ -23,7 +23,6 @@
 		<buildCommand>
 
 			<name>org.hibernate.eclipse.console.hibernateBuilder</name>
-
 			<name>org.jboss.tools.jst.web.kb.kbbuilder</name>
 			<arguments>
 			</arguments>
@@ -45,7 +44,7 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>org.hibernate.eclipse.console.hibernateBuilder</name>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
@@ -57,6 +56,9 @@
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+		<nature>org.jboss.tools.jst.web.kb.kbnature</nature>
+		<nature>org.jboss.tools.cdi.core.cdinature</nature>
+		<nature>org.hibernate.eclipse.console.hibernateNature</nature>
 
 		<nature>org.jboss.tools.jst.web.kb.kbnature</nature>
 		<nature>org.jboss.tools.cdi.core.cdinature</nature>
@@ -66,3 +68,4 @@
 
 	</natures>
 </projectDescription>
+

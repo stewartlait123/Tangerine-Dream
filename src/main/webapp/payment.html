@@ -1,46 +1,59 @@
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets" template="Template.html" css="Template.css">
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="Template.html"
+	css="Template.css">
 	<ui:define name="pagetitle">
-	<link rel="stylesheet" type="text/css" href="Template.css">
+		<link rel="stylesheet" type="text/css" href="Template.css">
 		<div id="header">
 			<h1>Payment</h1>
 		</div>
 	</ui:define>
 
 
-<ui:define name="maincontent">
-<!--Author: Iain Q><-->
-<div>
-Select a payment method: 
-<select name="category">
-  <option selected disabled>Payment methods</option>	
-  <option value="payment1">Visa ending 1234</option>
-  <option value="payment2">Credit</option>
-</select>
-</div>
+	<ui:define name="maincontent">
+		<!--Author: Iain Q><-->
+		<div>
+			Select a payment method: <select name="category">
+				<option selected disabled>Payment methods</option>
+				<option value="payment1">Visa ending 1234</option>
+				<option value="payment2">Credit</option>
+			</select>
+		</div>
 
-<div>
-     <br>or<br><br>
-</div>
+		<div>
+			<br>or<br>
+			<br>
+		</div>
 
-<div class="grid-temp">
-	<div class="row-title">New payment method:</div>
-		<div class="main-row">
-		<form name="paymentform" action="">	  
-		<fieldset>
-				<legend>Payment Form</legend>
-		  <table id="payment">
-				    <tr><th>Name as it appears on card:</th><th><input type="text" name="cardname" /></th></tr>
-				    <tr><th>Card Number:</th><th><input type="text" name="cardnumber" /></th></tr>
-				    <tr><th>Expiry Date:</th> <th><input type="text" name="expirydate" /></th></tr>
-				    <tr><th>CSV:</th> <th><input type="text" name="csv" /></th></tr>
-				 </table>
-				 <input type="submit" class="submitButton" value="Submit" />
-				 
-				 </fieldset>
-	</form>
-	</div>
+		<div class="grid-temp">
+			<div class="row-title">New payment method:</div>
+			<div class="main-row">
+				<form name="paymentform" action="">
+					<fieldset>
+						<legend>Payment Form</legend>
+						<table id="payment">
+							<tr>
+								<th>Name as it appears on card:</th>
+								<th><input type="text" name="cardname" /></th>
+							</tr>
+							<tr>
+								<th>Card Number:</th>
+								<th><input type="text" name="cardnumber" /></th>
+							</tr>
+							<tr>
+								<th>Expiry Date:</th>
+								<th><input type="text" name="expirydate" /></th>
+							</tr>
+							<tr>
+								<th>CSV:</th>
+								<th><input type="text" name="csv" /></th>
+							</tr>
+						</table>
+						<input type="submit" class="submitButton" value="Submit" />
+
+					</fieldset>
+				</form>
+			</div>
 
 
-</div>
+		</div>

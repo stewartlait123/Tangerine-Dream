@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+<<<<<<< HEAD
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="Template.html"
+	css="Template.css">
+=======
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets" template="Template.html" css="Template.css">
+>>>>>>> 1c88a79d330544c2aa346fae9243c11c018fffdc
 	<link rel="stylesheet" type="text/css" href="Template.css">
 	<ui:define name="pagetitle">
 		<div id="header">
@@ -10,26 +15,41 @@
 	</ui:define>
 
 
-<ui:define name="maincontent">
-<!--Author: Iain Q><-->
-<div class="grid-temp">
-<div class="row-title">Please enter your details.</div>
-<div class="main-row">
-			<form name="registerform">
-			<fieldset>
-				<legend>Registration Form</legend>
-				<table id="registration">
-				    <tr><th>Name:</th><th><input type="text" name="name" /></th></tr>
-				    <tr><th>Username:</th><th><input type="text" name="username" /></th></tr>
-				    <tr><th>Password:</th> <th><input type="password" name="pass" /></th></tr>
-				    <tr><th>Confirm Password:</th><th><input type="password" name="pass" /></th></tr>
-				    <tr><th>Date of Birth:</th><th><input type="date" name="dateofbirth"/><br></th></tr>
-				 </table>
-				 <input type="submit" class="submitButton" value="Submit" />
-			</fieldset>
-		</form>
-</div>
-</div>
+	<ui:define name="maincontent">
+		<!--Author: Iain Q><-->
+		<div class="grid-temp">
+			<div class="row-title">Please enter your details.</div>
+			<div class="main-row">
+				<form name="registerform">
+					<fieldset>
+						<legend>Registration Form</legend>
+						<table id="registration">
+							<tr>
+								<th>Name:</th>
+								<th><input type="text" name="name" /></th>
+							</tr>
+							<tr>
+								<th>Username:</th>
+								<th><input type="text" name="username" /></th>
+							</tr>
+							<tr>
+								<th>Password:</th>
+								<th><input type="password" name="pass" /></th>
+							</tr>
+							<tr>
+								<th>Confirm Password:</th>
+								<th><input type="password" name="pass" /></th>
+							</tr>
+							<tr>
+								<th>Date of Birth:</th>
+								<th><input type="date" name="dateofbirth" /><br></th>
+							</tr>
+						</table>
+						<input type="submit" class="submitButton" value="Submit" />
+					</fieldset>
+				</form>
+			</div>
+		</div>
 
 
 	</ui:define>

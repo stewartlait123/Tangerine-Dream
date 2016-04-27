@@ -2,33 +2,33 @@
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="Template.html">
+	template="${template/Template.html}">
 
 	<ui:define name="pagetitle">
 		<h1>Order Details</h1>
 	</ui:define>
 
 	<ui:define name="maincontent">
-	
+
 		<div id="maincontent">
 			<div class="OrderPage">
 				<div id="orderlist">
-					
+
 					<table>
-				<!--  		<ui:repeat value="#{ordered.items}" var="item">-->
+						<!--  		<ui:repeat value="#{ordered.items}" var="item">-->
 
-							<tr>
-								<td><img src="../img/freaky_gnome_01.png"></td>
-								<td Class="ProductName">item.name</td>
-								<td class="ProductLabels">Product ID</td>
-								<td class="Productdescriptions">item.id</td>
+						<tr>
+							<td><img src="img/freaky_gnome_01.png"></img></td>
+							<td Class="ProductName">item.name</td>
+							<td class="ProductLabels">Product ID</td>
+							<td class="Productdescriptions">item.id</td>
 
-								<td class="ProductLabels">Quantity</td>
-								<td class="Productdescriptions">item.quanty</td>
+							<td class="ProductLabels">Quantity</td>
+							<td class="Productdescriptions">item.quanty</td>
 
-								<td class="ProductLabels">Price</td>
-								<td class="Productdescriptions">item.qty</td>
-							</tr>
+							<td class="ProductLabels">Price</td>
+							<td class="Productdescriptions">item.qty</td>
+						</tr>
 
 
 						<!-- </ui:repeat> -->
@@ -41,16 +41,17 @@
 							<td Class="OrderPrice"></td>
 							<td Class="ProductTotal"></td>
 							<td Class="Button">
-								<button onclick="location.href='payment.html'">Proceed to Payment</button>
+								<button onclick="location.href='payment.html'">Proceed
+									to Payment</button>
 							</td>
-							</tr>
+						</tr>
 					</table>
 				</div>
 			</div>
 		</div>
 	</ui:define>
-	</ui:composition>
-	
+</ui:composition>
 
 
-	
+
+
