@@ -150,7 +150,7 @@ body{
 }
 
 #newsPanelTop{
-
+	display: inline-block;
 	border-radius: 15px 50px 0px 0px;
 	background-color:#FDABA5;
 }

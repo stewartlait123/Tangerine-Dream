@@ -32,8 +32,8 @@
 			
 			<div id="content-container">
 
-			<div style = "float:left; display:inline-block;width:70%">
-						<h2 style = float:left;margin:10px> Check Out Our Hottest Deals</h2>
+			<div id = "productTitleWrapper" style = display:inline-block;width:70%>
+						<h2 style = margin:10px> Check Out Our Hottest Deals</h2>
 			</div >
 
 			<div style = "float:left; display:inline-block;width:30%">
@@ -67,6 +67,24 @@
 									</div>
 									<div> <img src = "img/Gnome6.jpg"/>
 										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Gnome1.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Gnome2.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Gnome3.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Gnome4.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Gnome5.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Gnome6.jpg"/>
+										<p> Item. Price </p>
 									</div>	
 							</div>			
 					</div> 	
@@ -79,6 +97,24 @@
 
 					<div id="department2"  class = "productRow">			
 							<div class = "carousel2">	
+									<div> <img src = "img/Rake.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Shovel.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Trimmers.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Trowel.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Clippers.jpg"/>
+										<p> Item. Price </p>
+									</div>
+									<div> <img src = "img/Hook.jpg"/>
+										<p> Item. Price </p>
+									</div>
 									<div> <img src = "img/Rake.jpg"/>
 										<p> Item. Price </p>
 									</div>
@@ -241,7 +277,54 @@ $(document).ready(function() {
   
 });
 
-//Resizing script here. Change layout at 800px
+
+$(window).resize(function() {
+
+	var docWidth = $(window).width();
+
+	if(docWidth < 685)
+	{
+		//Set stuff to center etc
+		//Adjusts Title/Headline to keep in center of page
+		document.getElementById("content-container").setAttribute("text-align", "center");
+
+
+		//productTitleWrapper  -remove float:left
+		document.getElementById("productTitleWrapper").float = "none";
+
+		document.getElementById("newsContainer").width = "100%";
+		document.getElementById("newsContainer").float = "right";
+
+		//News panel - make width 70%
+		var elms = document.getElementsByClassName("newsPanel");
+		for(var i = 0 ;  i < elms.length ; i++){
+			elms[i].padding = "15px";
+			elms[i].width = "100%";
+		}
+
+	}
+	else
+	{
+		//Normal display mode
+
+		//content container - remove text-align:center
+		document.getElementById("content-container").setAttribute("text-align", "none");
+
+		//productTitleWrapper  -add float:left
+		document.getElementById("productTitleWrapper").float = "left";
+
+		document.getElementById("newsContainer").width = '70%';
+		document.getElementById("newsContainer").float = "none";
+
+		//News panel - make width 350px
+		var elms = document.getElementsByClassName("newsPanel");
+		for(var i = 0 ;  i < elms.length ; i++){
+			elms[i].padding = "5px";
+			elms[i].width = "350px";
+		}
+	}
+
+});
 
 </script>
 </html>
