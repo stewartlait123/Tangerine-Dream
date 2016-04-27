@@ -123,7 +123,12 @@ body {
 	border: 0px;
 }
 
+<<<<<<< HEAD
 #newsPanelTop {
+=======
+#newsPanelTop{
+	display: inline-block;
+>>>>>>> 1c88a79d330544c2aa346fae9243c11c018fffdc
 	border-radius: 15px 50px 0px 0px;
 	background-color: #FDABA5;
 }
