@@ -8,6 +8,7 @@
 	padding: 10px 10px 10px 10px;
 	float: left;
 }
+
 .container {
 	width: 100%;
 	margin: 0 0 0 0;
@@ -28,7 +29,9 @@
 	font-family: fantasy;
 	color: #13ca17;
 	margin-left: 20px;
-}S
+}
+
+S
 
 #Banner ul {
 	padding-right: 1em;
@@ -137,6 +140,7 @@ span.myspan {
 	margin-left: 30px;
 	position: relative;
 }
+
 #productIm li {
 	display: inline-block;
 	margin: 8em . 20em;
@@ -144,18 +148,19 @@ span.myspan {
 	font-size: 2em;
 }
 
-
-#orderlist ul{
+#orderlist ul {
 	list-style: none;
 	text-align: left;
 }
-.ProductName{
+
+.ProductName {
 	padding-left: 30px;
 	padding-bottom: 2em;
 	margin-left: 20px;
 	font-size: larger;
 	font-weight: bold;
 }
+
 .ProductLabels {
 	padding-left: 30px;
 	padding-bottom: 2em;
@@ -163,33 +168,56 @@ span.myspan {
 	font-size: large;
 	font-weight: bold;
 }
-.Productdescriptions{
-		padding-left: 30px;
+
+.Productdescriptions {
+	padding-left: 30px;
 	padding-bottom: 2em;
 	margin-left: 20px;
 	font-size: large;
 }
-.ProductTotal{
+
+.ProductTotal {
 	padding-left: 3em;
 	padding-top: 2em;
 	margin-left: 20px;
 	font-size: large;
 	font-weight: bold;
 }
-.OrderPrice{
+
+.OrderPrice {
 	padding-left: 3em;
 	padding-top: 2em;
 	margin-left: 20px;
 	font-size: large;
 }
-.Button{
+
+.Button {
 	padding-top: 2em;
 	margin-left: 20px;
 	font-size: large
 }
+
 #about {
 	font-size: x-large;
 	padding-left: 20%;
 	padding-right: 20%;
 	text-align: center;
+}
+
+.faq {
+	Width: 500px;
+	height: 50px;
+	border: 1px solid black;
+	padding: 10px;
+	margin: 1px;
+	border-radius: 9px 9px 9px 9px;
+	border-color: #dddddd;
+	background-color: white;
+	color: black;
+}
+
+.info {
+	Width: 500px;
+	height: 230px;
+	visibility: "hidden";
 }

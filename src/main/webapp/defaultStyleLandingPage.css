@@ -1,224 +1,186 @@
-
-
-@font-face{
-
-font-family: Austie;
-src:url(Font/Austie.ttf);
-
-
+@font-face {
+	font-family: Austie;
+	src: url(Font/Austie.ttf);
 }
 
-@font-face{
-
+@font-face {
 	font-family: Carnet;
-	src:url(Font/Carnet.ttf);
+	src: url(Font/Carnet.ttf);
 }
 
-@font-face{
-
+@font-face {
 	font-family: OrangeJuice;
-	src:url(Font/Orange.ttf);
+	src: url(Font/Orange.ttf);
 }
 
 h1 {
 	text-align: center;
-    font-size: 36px;
-    line-height: 40px;
+	font-size: 36px;
+	line-height: 40px;
 }
 
 h2 {
 	font-family: OrangeJuice;
 	text-align: center;
-    font-size: 60px;
-    line-height: 60px;
-    letter-spacing: 15px;
+	font-size: 60px;
+	line-height: 60px;
+	letter-spacing: 15px;
 }
 
 h3 {
 	font-family: OrangeJuice;
 	text-align: center;
-    font-size: 32px;
-    line-height: 35px;
-    letter-spacing: 5px;
-    margin:0px;
+	font-size: 32px;
+	line-height: 35px;
+	letter-spacing: 5px;
+	margin: 0px;
 }
 
 h4 {
-	font-family:Carnet;
-	margin:0px;
+	font-family: Carnet;
+	margin: 0px;
 }
 
-head{
-	
+head {
 	
 }
 
-body{
-	
+body {
 	font-family: Helvetica;
-	font-size : 16px;
-	background-color: #FFFFFF;	
+	font-size: 16px;
+	background-color: #FFFFFF;
 }
 
-.navBar{
-
+.navBar {
 	display: inline-block;
 	height: 50px;
-	width:50px;
-
+	width: 50px;
 }
 
-.departmentFont{
-
+.departmentFont {
 	margin-left: 15px;
 }
 
-.departmentHeader{
-
-	width:325px;
+.departmentHeader {
+	width: 325px;
 	display: block;
 	background-color: #00A9A2;
 	border-radius: 15px 50px 0px 0px;
-
 }
 
-.content{
-	
-	background-color:#575757;
-	opacity:1;
-	
+.content {
+	background-color: #575757;
+	opacity: 1;
 }
 
-.main{
-	
+.main {
 	background-color: #2BCCCA;
 }
 
-.advert{
-
-	display:inline;
-	width:auto;
-	margin:auto;
-
-
+.advert {
+	display: inline;
+	width: auto;
+	margin: auto;
 }
 
-.cataloguePreview{
+.cataloguePreview {
 	width: 70%;
 	margin: 15px;
-	float:left;
+	float: left;
 	background-color: #FF8FAB;
 }
 
-.departments{
+.departments {
 	display: inline-block;
 	width: 70%;
 	background-color: #ffffff;
 }
 
-.departments img{
-	
+.departments img {
 	border-style: outset;
 	border-width: 3px;
-	
 }
 
-.productRow{
-	
-	overflow:hidden;
-	
+.productRow {
+	overflow: hidden;
 }
 
-.productRow p{
-	
+.productRow p {
 	text-align: left;
-	
 }
 
-.newsPanel{
+.newsPanel {
 	width: 350px;
 	background-color: #00A9A2;
 	border-radius: 25px;
 }
 
-#newsContainer{
+#newsContainer {
 	display: inline-block;
 	width: 350px;
-	float:right;
-	margin:0px;
+	float: right;
+	margin: 0px;
 	border: 0px;
 }
 
-#newsPanelTop{
-
+#newsPanelTop {
 	border-radius: 15px 50px 0px 0px;
-	background-color:#FDABA5;
+	background-color: #FDABA5;
 }
 
-#newsPanelBottom{
-
-	display:inline-block;
+#newsPanelBottom {
+	display: inline-block;
 	border-radius: 0px 0px 15px 50px;
 }
 
-.newsItem{
-	
+.newsItem {
 	float: left;
 	margin: 10px;
-	border:15px;
+	border: 15px;
 	background-color: #FFFFFF;
 	border-radius: 15px 50px 15px 50px;
 	font-size: 14px;
-    text-align: center;
-    padding:5px;
+	text-align: center;
+	padding: 5px;
 }
 
-.navigation-bar{
-	
+.navigation-bar {
 	background-color: #4FFF99;
 }
 
-.navigation-item{
-	
+.navigation-item {
 	display: inline;
 }
 
-.horiz-spacer{
-	
+.horiz-spacer {
 	display: block;
-	width:100%;
+	width: 100%;
 	height: 20px;
 	background-image: url(img/horizontalSpacer.png);
 	background-repeat: repeat-x;
-	border-style:none;
+	border-style: none;
+}
+
+#header {
 	
 }
 
-
-#header{
-	
+#content {
 	
 }
 
-#content{
-	
-
-}
-
-#catalogue-navigation{
-	
-	display:block;
+#catalogue-navigation {
+	display: block;
 	background-color: #FFFFFF;
-	list-style-type:none;
-	margin:0px;
-	
+	list-style-type: none;
+	margin: 0px;
 }
 
-#spacer{
-	
-	height:100px;
+#spacer {
+	height: 100px;
 	opacity: 0;
 }
-.slick-prev:before, .slick-next:before{
-    color:red;
+
+.slick-prev:before, .slick-next:before {
+	color: red;
 }
