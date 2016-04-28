@@ -25,8 +25,10 @@ public class RegisterController {
 	private String error;
 	
 
+
 	@SuppressWarnings("unused")
 	private void Register()
+
 
 	{
 		if (registerService.ValidateDetails(name, username, password, confirmPassword, dob)){
