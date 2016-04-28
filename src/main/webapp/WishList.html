@@ -1,0 +1,55 @@
+<!--@author - Stewart Lait-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="Template.html">
+
+	<ui:define name="pagetitle">
+		<div>
+			<h1 class="page-header">Wish List</h1>
+		</div>
+	</ui:define>
+
+	<!--This is the first table-->
+	<ui:define name="maincontent">
+		<table class="wishlist">
+			<ui:repeat var="item" value="#{wishlist.wishlist}">
+				<tr>
+					<td id="itemImgContainer">
+						<h:graphicImage value="#{item.imageLocation}" id="itemImg" />
+					</td>
+					<td>
+						<table class="wishlistDetails">
+							<tr>
+								<td>
+									<h:outputText value="#{item.name}"/>
+								</td>
+							</tr>
+							<tr>
+								<td><h:outputText value="#{item.stock}"/></td>
+							</tr>
+						</table>
+						<table id="wishlistControls">
+							<tr>
+								<td>
+									<h:commandButton value="Add to Basket" action="#{wishlist.addToBasketFromWishlist(item.product_Id)}" />
+								</td>
+							</tr>
+							<tr>
+								<td><select name="Move +/-" size="1">
+										<option value="move">Move</option>
+										<option value="moveup">Up</option>
+										<option value="movedown">Down</option>
+								</select></td>
+								<td>
+									<h:commandButton value="Remove from Wishlist" action="#{wishlist.removeFromWishlist(item.product_Id)}" />
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</ui:repeat>
+		</table>
+	</ui:define>
+</ui:composition>
