@@ -1,3 +1,5 @@
+/*
+ * @author - Umar */ 
 package com.qa.tangerinedream.controllers;
 
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ public class HomeController {
 	
 	ArrayList<Product> product = new ArrayList<Product>();
 	
-	private void GetProducts()
+	public void GetProducts()
 	{
 		productRepo.getProducts();
 	}

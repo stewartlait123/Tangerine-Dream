@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets" template="Template.html" css="Template.css">
-	<link rel="stylesheet" type="text/css" href="Template.css">
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="template/Template.xhtml">
 	<ui:define name="pagetitle">
 		<div id="header">
 			<h1>Registration</h1>
@@ -15,7 +14,23 @@
 <div class="grid-temp">
 <div class="row-title">Please enter your details.</div>
 <div class="main-row">
-			<form name="registerform">
+			<!-- Umar - 28 April 2016 -->
+			<h:form>
+			<h:message class= "error" value="#{register.error}"/>
+			<table>
+				<tr><th><h:outputLabel value="Name: "/></th><th><h:inputText value="#{login.name}"/></th></tr>
+				<tr><th><h:outputLabel value="Username: "/></th>
+					<th><h:inputText value="#{login.username}"/></th></tr>	
+				<tr><th><h:outputLabel value="Password: "/></th>
+					<th><h:inputText value="#{login.password}"/></th></tr>
+				<tr><th><h:outputLabel value="Confirm Password: "/></th>
+					<th><h:inputText value="#{login.confirmPassword}"/></th></tr>
+				<tr><th><h:outputLabel value="Date Of Birth: "/></th>
+					<th><h:inputText value="#{login.dob}"/></th></tr>			
+			</table>
+			<h:commandButtonvalue="Login" action="#{register.Register}"/>
+			</h:form>
+			<!--  <form name="registerform">
 			<fieldset>
 				<legend>Registration Form</legend>
 				<table id="registration">
@@ -27,7 +42,7 @@
 				 </table>
 				 <input type="submit" class="submitButton" value="Submit" />
 			</fieldset>
-		</form>
+		</form>-->
 </div>
 </div>
 
