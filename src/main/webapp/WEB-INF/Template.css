@@ -1,0 +1,420 @@
+/* Page created by Christine Stokes*/
+@CHARSET "ISO-8859-1";
+
+
+/*
+*  Fonts
+*/
+
+@font-face{
+
+font-family: Austie;
+src:url(Font/Austie.ttf);
+
+
+}
+
+@font-face{
+
+	font-family: Carnet;
+	src:url(Font/Carnet.ttf);
+}
+
+@font-face{
+
+	font-family: OrangeJuice;
+	src:url(Font/Orange.ttf);
+}
+
+/*
+* Landing page CSS
+*/ 
+
+
+#landingpage-content h1{
+
+	text-align: center;
+    font-size: 36px;
+    line-height: 40px;
+}
+
+#landingpage-content h2{
+
+	font-family: OrangeJuice;
+	text-align: center;
+    font-size: 60px;
+    line-height: 60px;
+    letter-spacing: 15px;
+}
+
+#landingpage-content h3{
+
+	font-family: OrangeJuice;
+	text-align: center;
+    font-size: 32px;
+    line-height: 35px;
+    letter-spacing: 5px;
+    margin:0px;
+}
+
+#landingpage-content h4{
+	
+	font-family:Carnet;
+	margin:0px;
+}
+
+/*
+* Landng page product department CSS
+*/
+
+.departments{
+	display: inline-block;
+	width: 70%;
+	background-color: #ffffff;
+}
+
+.departments img{
+	
+	border-style: outset;
+	border-width: 3px;	
+}
+
+.department-font{
+
+	margin-left: 15px;
+}
+
+.department-header{
+
+	width:325px;
+	display: block;
+	background-color: #00A9A2;
+	border-radius: 15px 50px 0px 0px;
+}
+
+.landing-page-content{
+	
+	background-color:#575757;
+	opacity:1;	
+}
+
+.landing-page-advert{
+
+	display:inline;
+	width:auto;
+	margin:auto;
+}
+
+/*
+* Landing page Carousel CSS
+*/ 
+
+.product-row{
+	
+	overflow:hidden;	
+}
+
+.product-row p{
+	
+	text-align: left;	
+}
+
+/*
+* Landing page News Window CSS
+*/
+
+.news-panel{
+	width: 350px;
+	background-color: #00A9A2;
+	border-radius: 25px;
+}
+
+#news-container{
+	display: inline-block;
+	width: 350px;
+	float:right;
+	margin:0px;
+	border: 0px;
+}
+
+#news-panel-top{
+	display: inline-block;
+	border-radius: 15px 50px 0px 0px;
+	background-color:#FDABA5;
+}
+
+#news-panel-bottom{
+
+	display:inline-block;
+	border-radius: 0px 0px 15px 50px;
+}
+
+.news-item{
+	
+	float: left;
+	margin: 10px;
+	border:15px;
+	background-color: #FFFFFF;
+	border-radius: 15px 50px 15px 50px;
+	font-size: 14px;
+    text-align: center;
+    padding:5px;
+}
+
+/* Spacer ID. Used for vertical spacing (see landing page for example)*/
+#spacer{
+	
+	height:100px;
+	opacity: 0;
+}
+
+
+/*
+* End of landing page CSS
+*/
+
+#orderpage {
+	width: 100%;
+	text-align: center;
+	background-color: #399f79;
+	padding: 10px 10px 10px 10px;
+	float: left;
+}
+
+.container {
+	width: 100%;
+	margin: 0 0 0 0;
+	border: 1px solid;
+	background-color: white;
+	float: left;
+}
+
+#Banner {
+	overflow: hidden;
+}
+
+#Banner h1 {
+	float: left;
+	font-style: normal;
+	font-size: 10em;
+	font-weight: bold;
+	font-family: fantasy;
+	color: #13ca17;
+	margin-left: 20px;
+}
+
+S
+
+#Banner ul {
+	padding-right: 1em;
+	padding-top: 1em;
+	text-align: right;
+}
+
+#Banner table {
+	display: inline-block;
+	margin: 8em . 20em;
+	text-align: right;
+	font-size: 2em;
+	font-family: fantasy;
+}
+
+#Subheading {
+	padding-top: 4em;
+}
+
+#Subheading h2 {
+	text-align: center;
+	font-size: xx-large;
+	font-style: normal;
+	font-family: cursive;
+}
+
+#Maintext {
+	padding-top: 5em;
+	padding-left: 3em;
+	padding-right: 3em;
+}
+
+#Maintext p {
+	font-size: x-large;
+	font-family: fantasy;
+	text-align: justify;
+}
+
+#footbar {
+	overflow: hidden;
+}
+
+#footbar ul {
+	text-align: left;
+	margin-left: 30px;
+	margin-bottom: 20px;
+	margin-right: 30px;
+	position: relative;
+	padding-top: 80%;
+}
+
+#footbar tr {
+	display: inline-block;
+	margin: 8em . 20em;
+	text-align: left;
+	font-size: 2em;
+}
+
+.spacer {
+	padding-left: 30px;
+	padding-bottom: 2em;
+	margin-left: 20px;
+}
+
+h1 {
+	letter-spacing: 1px;
+	font-size: .4in;
+	color: green;
+}
+
+span {
+	color: red
+}
+
+legend {
+	font-variant: small-caps;
+	font-weight: bold
+}
+
+fieldset {
+	width: 300px;
+	font-family: Arial; sans-serif;
+	background-color: limegreen
+}
+
+label {
+	display: block; position relative;
+	line-height: 2;
+	margin: 10px 0px;
+}
+
+.text {
+	position: absolute;
+	margin-left: 20px;
+	width: 15em;
+	left: 80px
+}
+
+span.myspan {
+	width: 100px;
+	display: inline-block;
+}
+
+#productIm u1 {
+	text-align: left;
+	margin-left: 30px;
+	position: relative;
+}
+
+#productIm li {
+	display: inline-block;
+	margin: 8em . 20em;
+	text-align: left;
+	font-size: 2em;
+}
+
+#orderlist ul {
+	list-style: none;
+	text-align: left;
+}
+
+.ProductName {
+	padding-left: 30px;
+	padding-bottom: 2em;
+	margin-left: 20px;
+	font-size: larger;
+	font-weight: bold;
+}
+
+.ProductLabels {
+	padding-left: 30px;
+	padding-bottom: 2em;
+	margin-left: 20px;
+	font-size: large;
+	font-weight: bold;
+}
+
+.Productdescriptions {
+	padding-left: 30px;
+	padding-bottom: 2em;
+	margin-left: 20px;
+	font-size: large;
+}
+
+.ProductTotal {
+	padding-left: 3em;
+	padding-top: 2em;
+	margin-left: 20px;
+	font-size: large;
+	font-weight: bold;
+}
+
+.OrderPrice {
+	padding-left: 3em;
+	padding-top: 2em;
+	margin-left: 20px;
+	font-size: large;
+}
+
+.Button {
+	padding-top: 2em;
+	margin-left: 20px;
+	font-size: large
+}
+
+#about {
+	font-size: x-large;
+	padding-left: 20%;
+	padding-right: 20%;
+	text-align: center;
+}
+
+.faq {
+	Width: 500px;
+	height: 50px;
+	border: 1px solid black;
+	padding: 10px;
+	margin: 1px;
+	border-radius: 9px 9px 9px 9px;
+	border-color: #dddddd;
+	background-color: white;
+	color: black;
+}
+
+.info {
+	Width: 500px;
+	height: 230px;
+	visibility: "hidden";
+}
+
+.accounts {
+	Width: 350px;
+	height: 200px;
+	border: 1px solid black;
+	border-color: #dddddd;
+	background-color: white;
+	border-radius: 9px 9px 9px 9px;
+	color: black;
+	padding: 10px;
+	margin: 20px;
+}
+
+h2 {
+	color: coral;
+	line-height: 60%;
+}
+
+h5 {
+	line-height: 60%;
+}
+
+a {
+	text-decoration: none;
+}

@@ -6,14 +6,17 @@
 
 package com.qa.tangerinedream.controllers;
 
-import java.util.ArrayList;
 
 import javax.faces.bean.RequestScoped;
+
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import com.qa.tangerinedream.entities.Order;
+import com.qa.tangerinedream.service.OrderService;
 
 
+@Named(value = "order")
 
 @RequestScoped
 
@@ -22,7 +25,10 @@ public class OrderController {
 	//Injection commented out for now as services are not created. To be uncommented/edited at later date
 	//@Inject
 	@Inject OrderService orderService; 
-	@Inject LoggedInUser loggedInUser;
+	@Inject CurrentUser currentUser;
+	
+	private Order order = orderService.getUsersPendingOrder(currentUser.getUserID());
+	
 	/*
 	 * List of required functions
 	 * 
@@ -39,17 +45,39 @@ public class OrderController {
 	 * 
 	 */
 	
-	private int orderId = 0; //The Id to be used in searching for specific orders
-	private int customerId = 0; //The Id of the customer to use in getOrderHistory	
+
+	public Long getOrderId() {
+		return order.getOrder_id();
+	}
+
+	public Long getCustomerId() {
+		return currentUser.getUserID();
+	}
 	
 	
-	public ArrayList<Order> getOrderHistory(){}; //Returns ArrayList of previous orders
+	public void getOrderHistory(){
+		
+		// TODO hook into order search functionality in relevent Bean.
+		
+	};
 	
-	public boolean cancelOrder(){}; //Returns a boolean if order has been successfully cancelled or not after cancelling
+	public void cancelOrder(){
+		
+		orderService.clearOrder(currentUser.getUserID());
+		
+	}; 
 	
-	public Order searchForOrder(){}; //Returns order that meets criteria
+	public void searchForOrder(){
+		
+		// TODO hook into order search functionality in relevent Bean.
+		
+	}; 
 	
-	public boolean cofirmOrder(){}; // returns a boolean if order has been successfully confirmed or not
+	public void cofirmOrder(){
+		
+		orderService.placeOrder(order, currentUser.getUserID());
+	}; // returns a boolean if order has been successfully confirmed or not
+
 	
 
 }

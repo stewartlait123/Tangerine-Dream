@@ -9,23 +9,27 @@ import javax.inject.Named;
  * 
  */
 
+import com.qa.tangerinedream.service.LoggedInUser;
+import com.qa.tangerinedream.service.PaymentService;
+
 
 @RequestScoped
-@Named(value= "")
-@PageScoped
+@Named(value= "Payment")
+
 public class PaymentController {
 
 	@Inject PaymentService paymentService;
 	@Inject LoggedInUser loggedInUser;
 	
 	
-	public Boolean payByCard()
+/**	public Boolean payByCard()
 	{
 		return false; //Returns a boolean for if the transaction succeeds or not
 	}
-	
+		
 	public Boolean payByCredit(loggedInUser.getID)
 	{
 		return false; //Returns a boolean for if the transaction succeeds or not
-	}	
+	}	**/
+
 }

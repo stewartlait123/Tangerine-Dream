@@ -1,0 +1,57 @@
+<!-- Page Created by Christine Stokes -->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/Template.xhtml">
+
+	<ui:define name="pagetitle">
+		<h1>Order Details</h1>
+	</ui:define>
+
+	<ui:define name="maincontent">
+
+		<div id="maincontent">
+			<div class="OrderPage">
+				<div id="orderlist">
+
+					<table>
+						<!--  		<ui:repeat value="#{ordered.items}" var="item">-->
+
+						<tr>
+							<td><img src="img/freaky_gnome_01.png"></img></td>
+							<td Class="ProductName">item.name</td>
+							<td class="ProductLabels">Product ID</td>
+							<td class="Productdescriptions">item.id</td>
+
+							<td class="ProductLabels">Quantity</td>
+							<td class="Productdescriptions">item.quanty</td>
+
+							<td class="ProductLabels">Price</td>
+							<td class="Productdescriptions">item.qty</td>
+						</tr>
+
+
+						<!-- </ui:repeat> -->
+						<tr>
+							<td Class="ProductTotal">Total Cost</td>
+							<td Class="OrderPrice">ordered.total</td>
+							<td Class="ProductTotal"></td>
+							<td Class="OrderPrice"></td>
+							<td Class="ProductTotal"></td>
+							<td Class="OrderPrice"></td>
+							<td Class="ProductTotal"></td>
+							<td Class="Button">
+								<button onclick="location.href='payment.html'">Proceed
+									to Payment</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+
+
+
+
