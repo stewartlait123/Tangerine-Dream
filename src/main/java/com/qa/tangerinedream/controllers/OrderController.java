@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import com.qa.tangerinedream.entities.Order;
 
@@ -22,7 +23,11 @@ public class OrderController {
 	//Injection commented out for now as services are not created. To be uncommented/edited at later date
 	//@Inject
 	@Inject OrderService orderService; 
-	@Inject LoggedInUser loggedInUser;
+	@Inject CurrentUser currentUser;
+	
+	private int orderId = 0; //The Id to be used in searching for specific orders
+	private int customerId = 0; //The Id of the customer to use in getOrderHistory	
+	
 	/*
 	 * List of required functions
 	 * 
@@ -39,17 +44,13 @@ public class OrderController {
 	 * 
 	 */
 	
-	private int orderId = 0; //The Id to be used in searching for specific orders
-	private int customerId = 0; //The Id of the customer to use in getOrderHistory	
+	public ArrayList<Order> getOrderHistory(){};
 	
+	public String cancelOrder(){};
 	
-	public ArrayList<Order> getOrderHistory(){}; //Returns ArrayList of previous orders
+	public String searchForOrder(){};
 	
-	public boolean cancelOrder(){}; //Returns a boolean if order has been successfully cancelled or not after cancelling
-	
-	public Order searchForOrder(){}; //Returns order that meets criteria
-	
-	public boolean cofirmOrder(){}; // returns a boolean if order has been successfully confirmed or not
+	public String cofirmOrder(){};
 	
 
 }
