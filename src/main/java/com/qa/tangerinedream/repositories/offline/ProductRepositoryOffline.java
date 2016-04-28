@@ -74,8 +74,7 @@ public class ProductRepositoryOffline implements ProductRepository{
 	}
 
 	@Override
-	public ArrayList<Product> findByProductType(String productType) {
-		
+	public ArrayList<Product> findByProductType(String productType) {		
 		ArrayList<Product> productList = initialData.getProducts();
 		ArrayList<Product> outputList = new ArrayList<Product>();
 		
@@ -86,4 +85,6 @@ public class ProductRepositoryOffline implements ProductRepository{
 		}
 		return outputList;
 	}
+	
+	
 }

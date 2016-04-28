@@ -64,9 +64,10 @@
 			<div class="row-title">
 				<h4>Name and Address</h4>
 			</div>
+			<h:form>
 			<div class="main-row">
 
-	<h:form>
+	
 
 
 					<h:outputLabel value="Surname:" />
@@ -105,7 +106,7 @@
 					<h:outputLabel value="Proof of Address Number:" />
 					<h:inputText value="#{credapplic.proof_number}" />
 			</div>
-		</div>
+	
 
 		<div class="row-title">
 			<h4>Employment</h4>
@@ -180,8 +181,10 @@
 			<h:outputLabel value="Bank Address:" />
 			<h:inputText value="#{credapplic.bank_address}" />
 
-  		<h:commandButton value="Apply" action="#{credapplic.apply}"></h:commandButton>
+  		  <h:commandButton value="Apply" action="#{credapplic.apply}"></h:commandButton>
 			<h:commandButton value="Cancel" action="#{credapplic.cancel}"></h:commandButton>
+				
+				</div>
 				</h:form>
 				<img alt="dank"
 					src="http://img.ifcdn.com/images/f138d05cdcbf2d87a1e7040e3addf36e141bf5f40f9802f6f00558493f3b309f_1.jpg">
