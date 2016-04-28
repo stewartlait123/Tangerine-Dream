@@ -6,16 +6,20 @@
 
 package com.qa.tangerinedream.controllers;
 
-import java.util.ArrayList;
 
 import javax.faces.bean.RequestScoped;
+
+import java.util.ArrayList;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.qa.tangerinedream.entities.Order;
+import com.qa.tangerinedream.service.OrderService;
 
 
 @Named(value = "order")
+
 @RequestScoped
 
 public class OrderController {
@@ -26,7 +30,7 @@ public class OrderController {
 	@Inject CurrentUser currentUser;
 	
 	private int orderId = 0; //The Id to be used in searching for specific orders
-	private int customerId = 0; //The Id of the customer to use in getOrderHistory	
+	
 	
 	/*
 	 * List of required functions
@@ -44,13 +48,26 @@ public class OrderController {
 	 * 
 	 */
 	
-	public ArrayList<Order> getOrderHistory(){};
+
+	public int getOrderId() {
+		return orderId;
+	}
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	private int customerId = 0; //The Id of the customer to use in getOrderHistory	
 	
-	public String cancelOrder(){};
 	
-	public String searchForOrder(){};
+	public void getOrderHistory(){}; //Returns ArrayList of previous orders
 	
-	public String cofirmOrder(){};
+	public void cancelOrder(){}; //Returns a boolean if order has been successfully cancelled or not after cancelling
+	
+	public void searchForOrder(){}; //Returns order that meets criteria
+	
+	public void cofirmOrder(){}; // returns a boolean if order has been successfully confirmed or not
+
 	
 
 }

@@ -26,6 +26,7 @@ import com.qa.tangerinedream.service.WishlistService;
 @Named(value="wishlist")
 @RequestScoped
 public class WishlistController {
+
 	@Inject private BasketService basketService;
 	@Inject private WishlistService wishlistService;
 	@Inject private CurrentUser currentUser;
@@ -73,3 +74,4 @@ public class WishlistController {
 		return wishlist;
 	}	
 }
+

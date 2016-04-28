@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/Template.xhtml">
+
+	<ui:define name="pagetitle">
+		<div>
+			<h:outputText class="page-header" value="#{product.product.name}" />
+		</div>
+	</ui:define>
+
+	<ui:define name="maincontent">
+		<table class="product">
+			<tr>
+				<td>(content here)</td>
+			</tr>
+			<tr>
+				<h:form>
+					<td><h:commandButton value="#{basket.addToBasket(product.product.product_id)}" /></td>
+				</h:form>
+			</tr>
+		</table>
+	</ui:define>
+</ui:composition>

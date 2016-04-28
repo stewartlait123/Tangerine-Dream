@@ -9,61 +9,66 @@
  * 4. Needed for scale animation
  */
 .uk-datepicker {
-  /* 1 */
-  z-index: 1050;
-  /* 2 */
-  width: auto;
-  /* 3 */
-  -webkit-animation: uk-fade 0.2s ease-in-out;
-  animation: uk-fade 0.2s ease-in-out;
-  /* 4 */
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
+	/* 1 */
+	z-index: 1050;
+	/* 2 */
+	width: auto;
+	/* 3 */
+	-webkit-animation: uk-fade 0.2s ease-in-out;
+	animation: uk-fade 0.2s ease-in-out;
+	/* 4 */
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
 }
 /* Sub-object: `uk-datepicker-nav`
 ========================================================================== */
 .uk-datepicker-nav {
-  margin-bottom: 15px;
-  text-align: center;
-  line-height: 20px;
+	margin-bottom: 15px;
+	text-align: center;
+	line-height: 20px;
 }
 /*
  * Micro clearfix
  */
-.uk-datepicker-nav:before,
-.uk-datepicker-nav:after {
-  content: "";
-  display: table;
+.uk-datepicker-nav:before, .uk-datepicker-nav:after {
+	content: "";
+	display: table;
 }
+
 .uk-datepicker-nav:after {
-  clear: both;
+	clear: both;
 }
 /*
  * Previous and next navigation
  */
 .uk-datepicker-nav a {
-  color: #444444;
-  text-decoration: none;
+	color: #444444;
+	text-decoration: none;
 }
+
 .uk-datepicker-nav a:hover {
-  color: #444444;
+	color: #444444;
 }
+
 .uk-datepicker-previous {
-  float: left;
+	float: left;
 }
+
 .uk-datepicker-next {
-  float: right;
+	float: right;
 }
-.uk-datepicker-previous:after,
-.uk-datepicker-next:after {
-  width: 20px;
-  font-family: FontAwesome;
+
+.uk-datepicker-previous:after, .uk-datepicker-next:after {
+	width: 20px;
+	font-family: FontAwesome;
 }
+
 .uk-datepicker-previous:after {
-  content: "\f053";
+	content: "\f053";
 }
+
 .uk-datepicker-next:after {
-  content: "\f054";
+	content: "\f054";
 }
 /* Sub-object: `uk-datepicker-heading`
 ========================================================================== */
@@ -71,53 +76,53 @@
 ========================================================================== */
 /* Block element behavior */
 .uk-datepicker-table {
-  width: 100%;
+	width: 100%;
 }
-.uk-datepicker-table th,
-.uk-datepicker-table td {
-  padding: 2px;
+
+.uk-datepicker-table th, .uk-datepicker-table td {
+	padding: 2px;
 }
+
 .uk-datepicker-table th {
-  font-size: 12px;
+	font-size: 12px;
 }
 /*
  * Item
  */
 .uk-datepicker-table a {
-  display: block;
-  width: 26px;
-  line-height: 24px;
-  text-align: center;
-  color: #444444;
-  text-decoration: none;
+	display: block;
+	width: 26px;
+	line-height: 24px;
+	text-align: center;
+	color: #444444;
+	text-decoration: none;
 }
 /*
  * Sub-object: `uk-datepicker-table-muted`
  */
 a.uk-datepicker-table-muted {
-  color: #999999;
+	color: #999999;
 }
 /*
  * Hover
  * 1. Apply hover style also to focus state
  * 2. Remove default focus style
  */
-.uk-datepicker-table a:hover,
-.uk-datepicker-table a:focus {
-  background-color: #dddddd;
-  color: #444444;
-  /* 2 */
-  outline: none;
+.uk-datepicker-table a:hover, .uk-datepicker-table a:focus {
+	background-color: #dddddd;
+	color: #444444;
+	/* 2 */
+	outline: none;
 }
 /* OnClick */
 .uk-datepicker-table a:active {
-  background-color: #cccccc;
-  color: #444444;
+	background-color: #cccccc;
+	color: #444444;
 }
 /*
  * Active
  */
 .uk-datepicker-table a.uk-active {
-  background: #00a8e6;
-  color: #ffffff;
+	background: #00a8e6;
+	color: #ffffff;
 }

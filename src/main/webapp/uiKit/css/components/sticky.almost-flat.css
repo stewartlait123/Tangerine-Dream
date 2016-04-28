@@ -6,18 +6,19 @@
  * 1. More robust if padding and border are used
  */
 [data-uk-sticky].uk-active {
-  z-index: 980;
-  /* 1 */
-  box-sizing: border-box;
+	z-index: 980;
+	/* 1 */
+	box-sizing: border-box;
 }
 /*
  * Faster animations
  */
 [data-uk-sticky][class*='uk-animation-'] {
-  -webkit-animation-duration: 0.2s;
-  animation-duration: 0.2s;
+	-webkit-animation-duration: 0.2s;
+	animation-duration: 0.2s;
 }
+
 [data-uk-sticky].uk-animation-reverse {
-  -webkit-animation-duration: 0.2s;
-  animation-duration: 0.2s;
+	-webkit-animation-duration: 0.2s;
+	animation-duration: 0.2s;
 }
