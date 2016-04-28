@@ -9,12 +9,9 @@ package com.qa.tangerinedream.controllers;
 
 import javax.faces.bean.RequestScoped;
 
-import java.util.ArrayList;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.qa.tangerinedream.entities.Order;
 import com.qa.tangerinedream.service.OrderService;
 
 
