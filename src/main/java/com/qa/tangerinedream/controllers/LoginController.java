@@ -33,4 +33,3 @@ public class LoginController{
 		// TODO: Log out the user by destroying all data held about them in the current session.
 	}
 }
-
