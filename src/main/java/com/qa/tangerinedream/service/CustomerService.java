@@ -11,4 +11,16 @@ public class CustomerService {
 	public void changeName(long userID, String newName){
 		//TODO: Change the users name
 	}
+
+	public void changeEmail(long userID, String newEmail){
+		//TODO: Change the users E-mail
+	}
+
+	public void changePassword(long userID, String newPassword){
+		//TODO: Change the users password
+	}
+
+	public void addAddress(long userID, String newAddress){
+		//TODO: Add a new Address
+	}
 }

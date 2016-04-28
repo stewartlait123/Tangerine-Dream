@@ -54,6 +54,24 @@ public class UserAccountController{
 		//CustomerService customerService;
 		//customerService.changeName(userID, newName);
 	}
+
+	public void changeEmail(long userID, String newEmail){
+		//TODO: Change the users E-mail using the CustomerService.
+		//CustomerService customerService;
+		//customerService.changeName(userID, newEmail);
+	}
+
+	public void changePassword(long userID, String newPassword){
+		//TODO: Change the users password using the CustomerService.
+		//CustomerService customerService;
+		//customerService.changePassword(userID, newPassword);
+	}
+
+	public void addAddress(long userID, String newAddress){
+		//TODO: Add a new Address using the CustomerService.
+		//CustomerService customerService;
+		//customerService.addAddress(userID, newAddress);
+	}
 }
 
 
