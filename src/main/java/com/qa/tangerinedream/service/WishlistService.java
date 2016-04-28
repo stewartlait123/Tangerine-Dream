@@ -1,3 +1,7 @@
+/**
+ * @author Stewart Lait
+ */
+
 package com.qa.tangerinedream.service;
 
 import java.util.ArrayList;
