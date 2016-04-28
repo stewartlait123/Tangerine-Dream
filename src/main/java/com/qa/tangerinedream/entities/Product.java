@@ -18,7 +18,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table (name = "product")
 public class Product{	
-	public Product(String name, int cost, int price, int size, int weight, int stock, int minStock, int orderAmount, String productType){
+	public Product(String name, int cost, int price, int size, int weight, int stock, int minStock, int orderAmount, String productType, String imageLocation){
 		this.name = name;
 		this.cost_price = cost;
 		this.price = price;
@@ -28,6 +28,7 @@ public class Product{
 		this.min_stock = minStock;
 		this.order_amount = orderAmount;
 		this.product_type = productType;
+		this.imageLocation = imageLocation;
 	}
 	
 	@Id
@@ -79,6 +80,9 @@ public class Product{
 	@NotNull
 	@Size (min = 0, max = 2147483647)
 	private String product_type;
+	
+	@Column(name="imageLocation")
+	private String imageLocation;
 	
 	public long getProduct_id(){
 		return product_id;
@@ -190,5 +194,13 @@ public class Product{
 	
 	public String getProduct_type() {
 		return product_type;
+	}
+	
+	public String getImageLocation() {
+		return imageLocation;
+	}
+
+	public void setImageLocation(String imageLocation) {
+		this.imageLocation = imageLocation;
 	}
 }

@@ -14,7 +14,7 @@ import javax.inject.Inject;
 import com.qa.tangerinedream.entities.Order;
 
 
-
+@Named(value = "order")
 @RequestScoped
 
 public class OrderController {
