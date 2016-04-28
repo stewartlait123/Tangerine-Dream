@@ -6,7 +6,7 @@
 
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets" template="Template.html">
+	>
 
 
 	<ui:define name="pagetitle">
@@ -178,7 +178,7 @@
 			<h:outputLabel value="Bank Address:" />
 			<h:inputText value="#{credapplic.bank_address}" />
 
-			<h:commandButton value="Apply" action="#{credapplic.apply}"></h:commandButton>
+  		<h:commandButton value="Apply" action="#{credapplic.apply}"></h:commandButton>
 			<h:commandButton value="Cancel" action="#{credapplic.cancel}"></h:commandButton>
 				</h:form>
 				<img alt="dank"

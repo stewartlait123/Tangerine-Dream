@@ -22,7 +22,7 @@ public class PaymentController {
 	@Inject LoggedInUser loggedInUser;
 	
 	
-	public Boolean payByCard()
+/**	public Boolean payByCard()
 	{
 		return false; //Returns a boolean for if the transaction succeeds or not
 	}
@@ -30,6 +30,6 @@ public class PaymentController {
 	public Boolean payByCredit(loggedInUser.getID)
 	{
 		return false; //Returns a boolean for if the transaction succeeds or not
-	}	
+	}	**/
 
 }
