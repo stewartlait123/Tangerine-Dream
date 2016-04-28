@@ -1,14 +1,19 @@
+<!-- Page Created by Christine Stokes -->
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="Template.html">
 
-	<ui:define name="Orderdetails">
+	<ui:define name="pagetitle">
+		<h1>Order Details</h1>
+	</ui:define>
+
+	<ui:define name="maincontent">
 	
 		<div id="maincontent">
 			<div class="OrderPage">
 				<div id="orderlist">
-					<h1>Order Details</h1>
+					
 					<table>
 						<ui:repeat value="#{ordered.items}" var="item">
 
@@ -36,7 +41,7 @@
 							<td Class="OrderPrice"></td>
 							<td Class="ProductTotal"></td>
 							<td Class="Button">
-								<button>Proceed to Payment</button>
+								<button onclick="location.href='payment.html'">Proceed to Payment</button>
 							</td>
 							</tr>
 					</table>
