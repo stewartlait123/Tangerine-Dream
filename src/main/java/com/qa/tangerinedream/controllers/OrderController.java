@@ -15,6 +15,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.qa.tangerinedream.entities.Order;
+import com.qa.tangerinedream.service.OrderService;
 
 
 @Named(value = "order")
@@ -29,7 +30,7 @@ public class OrderController {
 	@Inject CurrentUser currentUser;
 	
 	private int orderId = 0; //The Id to be used in searching for specific orders
-	private int customerId = 0; //The Id of the customer to use in getOrderHistory	
+	
 	
 	/*
 	 * List of required functions
@@ -48,7 +49,6 @@ public class OrderController {
 	 */
 	
 
-	private int orderId = 0; //The Id to be used in searching for specific orders
 	public int getOrderId() {
 		return orderId;
 	}
