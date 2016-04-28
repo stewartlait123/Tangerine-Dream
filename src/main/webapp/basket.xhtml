@@ -1,12 +1,42 @@
-<!--
-@author - Mohammed Miah
--->
-
+<!--@author - Mohammed Miah-->
 <!DOCTYPE html>
+<<<<<<< HEAD:src/main/webapp/basket.xhtml
 
 
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets" template="/template/Template.xhtml">
+=======
+<style>
+.basket_item {
+	Width: 800px;
+	height: 200px;
+	border: 1px solid black;
+	padding: 0px;
+	margin: 0px;
+	border-radius: 9px 9px 9px 9px;
+	border-color: #dddddd;
+	background-color: white;
+	color: black;
+}
+
+.item_description {
+	Width: 580px;
+	height: 160px;
+	border: 1px solid black;
+	padding: 0px;
+	margin: 10px;
+	border-radius: 5px 5px 5px 5px;
+	border-color: #eeeeee;
+	background-color: white;
+	color: black;
+}
+</style>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html" template="Template.html">
+
+>>>>>>> 642afa00bf15bf172f96969233e5672248027275:src/main/webapp/basket.html
 	<ui:define name="pagetitle">
 		<div id="header">
 			<h1>Basket</h1>
@@ -14,6 +44,7 @@
 	</ui:define>
 
 	<ui:define name="maincontent">
+<<<<<<< HEAD:src/main/webapp/basket.xhtml
        <div style="width:800px; display:table;">
           <div style="display:table-row">
              <div style="width:600px; display:table-cell;">
@@ -83,5 +114,29 @@
 		   
 		   initPage();
 		</script>
+=======
+		<table class="basket">
+			<tr>
+				<td><h5>Product</h5></td>
+				<td><h5>Quantity</h5></td>
+				<td><h5>Remove?</h5></td>
+			</tr>
+			<h:form>
+				<ui:repeat var="line" value="#{basket.order.orderline}">
+					<tr>
+						<td><h:outputText value="#{line.product.name}" /></td>
+						<td><h:intputText value="#{line.quantity}" /></td>
+						<td><h:commandButton
+								value="#{basket.removeFromBasket(line.product.product_id)}" /></td>
+					</tr>
+				</ui:repeat>
+				<tr>
+					<td></td>
+					<td><h:outputText value="#{basket.totalPrice}" /></td>
+					<td><h:commandButton value="#{basket.placeOrder}" /></td>
+				</tr>
+			</h:form>
+		</table>
+>>>>>>> 642afa00bf15bf172f96969233e5672248027275:src/main/webapp/basket.html
 	</ui:define>
 </ui:composition>
