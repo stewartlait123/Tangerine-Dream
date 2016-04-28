@@ -1,25 +1,37 @@
 package com.qa.tangerinedream.controllers;
 
-import java.util.ArrayList;
-
-import javax.inject.Inject;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 import com.qa.tangerinedream.entities.Order;
-import com.qa.tangerinedream.entities.OrderLine;
-import com.qa.tangerinedream.entities.Product;
-/**
- * 
- * @author James Thompson
- *
- */
-@Named(value="ordered")
-@PageScoped
+
+@Named(value = "Basket")
+@RequestScoped
 public class BasketController {
-	@Inject BasketService basketService;
-	@Inject LoggedInUser loggedInUser;
+	private Order order;
+	private float totalPrice;
 	
-	public ArrayList<Product> getItems() {
-		return basketService.getBasket(loggedInUser.getID);
+	public void addToBasket(){
+		
+	}
+	
+	public String removeFromBasket(){
+		
+		return "basket";
+	}
+	
+	public String updateQuantity(){
+		
+		return "basket";
+	}
+	
+	public String clearBasket(){
+		
+		return "basket";
+	}
+	
+	public String placeOrder() {
+		
+		return "order";
 	}
 }
