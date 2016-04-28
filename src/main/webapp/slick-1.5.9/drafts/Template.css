@@ -191,3 +191,27 @@ span.myspan {
 	padding-right: 20%;
 	text-align: center;
 }
+
+.basket_item{
+   Width:800px;
+   height:200px;
+   border: 1px solid black;
+   padding:0px;
+   margin: 0px;
+   border-radius:9px 9px 9px 9px;
+   border-color: #dddddd;
+   background-color:white;
+   color:black;
+}
+
+.item_description{
+   Width:580px;
+   height:160px;
+   border: 1px solid black;
+   padding:0px;
+   margin: 10px;
+   border-radius:5px 5px 5px 5px;
+   border-color: #eeeeee;
+   background-color:white;
+   color:black;
+}
