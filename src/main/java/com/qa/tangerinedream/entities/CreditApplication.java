@@ -15,20 +15,21 @@ public class CreditApplication {
 	private String place_of_birth;
 	private String type_of_proof;
 	private String proof_number;
-	private String employer_name ;
-	private String employer_address ;
-	private String time_with_employer ;
-	private String type_of_employment ;
-	private String bank_name ;
-	private String time_with_bank ;
-	private String account_number ;
-	private String sort_code ;
-	private String card_name ;
-	private String card_number ;
-	private String expiry_date ;
-	private String cvs ;
-	private String bank_address ;
+	private String employer_name;
+	private String employer_address;
+	private String time_with_employer;
+	private String type_of_employment;
+	private String bank_name; 
+	private String time_with_bank;
+	private String account_number;
+	private String sort_code;
+	private String card_name;
+	private String card_number;
+	private String expiry_date;
+	private String cvs;
+	private String bank_address;
 	
+
 	//getters and setters for strings
 	public String getSurname() {
 		return surname;

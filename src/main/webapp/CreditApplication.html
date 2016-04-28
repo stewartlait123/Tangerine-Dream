@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Author: Jess M -->
+<!-- Author: Jessica Maddocks -->
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -174,11 +174,22 @@
 			<h:outputLabel value="Bank Address:" />
 			<h:inputText value="#{credapplic.bank_address}" />
 
+<!-- This may not work as apply and cancel have not been mentioned within cred app.java-->
 			<h:commandButton value="Apply" action="#{credapplic.apply}">
 			<h:commandButton value="Cancel" action="#{credapplic.cancel}">
+				<!-- Several different ideas for it to work -->
+					<h:button value="Cancel" outcome="home" />
+
+					<h:form id="form">
+						<h:commandButton id="button" value="Apply button" action="Credit confirmation" />
+					</h:form>
+
 				</h:form>
-				<img alt="dank"
-					src="http://img.ifcdn.com/images/f138d05cdcbf2d87a1e7040e3addf36e141bf5f40f9802f6f00558493f3b309f_1.jpg">
+
+				
+						<img alt="dank"
+							src="http://img.ifcdn.com/images/f138d05cdcbf2d87a1e7040e3addf36e141bf5f40f9802f6f00558493f3b309f_1.jpg"/>
+					
 		</div>
 	</ui:define>
 </ui:composition>

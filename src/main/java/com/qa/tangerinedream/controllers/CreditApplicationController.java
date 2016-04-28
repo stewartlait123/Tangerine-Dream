@@ -1,12 +1,19 @@
 package com.qa.tangerinedream.controllers;
 //Created by Jessica Maddocks
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
+
+import com.qa.tangerinedream.service.CreditApplicationService;
 
 @Named(value = "credapplic")
 @RequestScoped
 
 public class CreditApplicationController {
+	//CAS will be a service layer object to carry the gay away
+	@Inject
+	private CreditApplicationService creditApplicationService;
+		
 	//apply for credit method
 	//private for all variables inside the html fill
 	private String surname = "";
@@ -30,11 +37,20 @@ public class CreditApplicationController {
 	private String expiry_date = "";
 	private String cvs = "";
 	private String bank_address = "";
-	
-	
-	//method for doing the thing. Link with mule accounts system  
 
+	//Link with mule accounts system 
+	//method for apply and cancel buttons
+	public String apply (){
+		//send to accounts and confirm page
+		//don't give a shit m8
+		//will come back to CAS later because fudge you bruh.
+		creditApplicationService.sendApplication(surname, first_name, date_of_birth, home_address, time_at_address, place_of_birth, type_of_proof, proof_number, employer_name, employer_address, time_with_employer, type_of_employment, bank_name, time_with_bank, account_number, sort_code, card_name, card_number, expiry_date, cvs, bank_address);
+		return "CreditConfirmation";	
+	}
 	
+	public String cancel(){
+		return "LandingPage";
+	}
 	//getters and setters for strings
 	public String getSurname() {
 		return surname;
