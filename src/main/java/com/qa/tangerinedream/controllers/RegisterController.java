@@ -24,7 +24,12 @@ public class RegisterController {
 	private Date dob;
 	private String error;
 	
+<<<<<<< HEAD
 	public void Register()
+=======
+	@SuppressWarnings("unused")
+	private void Register()
+>>>>>>> 5290c4cdb2b5c2e1f393390e10ccf93a21d1a91f
 	{
 		if (registerService.ValidateDetails(name, username, password, confirmPassword, dob)){
 			Customer customer = new Customer();

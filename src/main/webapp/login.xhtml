@@ -1,0 +1,27 @@
+<!--
+@author - Stewart Lait 
+-->
+
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="/template/Template.xhtml">
+
+	<ui:define name="pagetitle">
+		<div id="header">
+			<h1>Login</h1>
+		</div>
+	</ui:define>
+
+	<ui:define name="maincontent">
+		<form name="loginform">
+			<fieldset>
+				<legend>Login Form</legend>
+				<label><span class="myspan">Username:</span> <input
+					type="text" name="username" /><span>*</span></label> <label><span
+					class="myspan">Password:</span> <input type="password" name="pass" /><span>*</span></label>
+				<input type="reset" class="resetButton" /> <input type="submit"
+					value="Login" class="submitButton" />
+			</fieldset>
+		</form>
+	</ui:define>
+</ui:composition>

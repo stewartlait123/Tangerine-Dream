@@ -19,7 +19,12 @@ public class HomeController {
 	
 	ArrayList<Product> product = new ArrayList<Product>();
 	
+<<<<<<< HEAD
 	public void GetProducts()
+=======
+	@SuppressWarnings("unused")
+	private void GetProducts()
+>>>>>>> 5290c4cdb2b5c2e1f393390e10ccf93a21d1a91f
 	{
 		productRepo.getProducts();
 	}

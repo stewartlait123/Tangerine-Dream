@@ -9,10 +9,13 @@ import javax.inject.Named;
  * 
  */
 
+import com.qa.tangerinedream.service.LoggedInUser;
+import com.qa.tangerinedream.service.PaymentService;
+
 
 @RequestScoped
 @Named(value= "Payment")
-@PageScoped
+
 public class PaymentController {
 
 	@Inject PaymentService paymentService;
@@ -23,9 +26,10 @@ public class PaymentController {
 	{
 		return false; //Returns a boolean for if the transaction succeeds or not
 	}
-	
+		
 	public Boolean payByCredit(loggedInUser.getID)
 	{
 		return false; //Returns a boolean for if the transaction succeeds or not
 	}	
+
 }
