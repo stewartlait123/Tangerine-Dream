@@ -11,7 +11,7 @@ import javax.inject.Named;
 
 
 @RequestScoped
-@Named(value= "")
+@Named(value= "Payment")
 @PageScoped
 public class PaymentController {
 
