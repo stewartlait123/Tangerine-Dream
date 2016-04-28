@@ -1,6 +1,178 @@
 /* Page created by Christine Stokes*/
 @CHARSET "ISO-8859-1";
 
+
+/*
+*  Fonts
+*/
+
+@font-face{
+
+font-family: Austie;
+src:url(Font/Austie.ttf);
+
+
+}
+
+@font-face{
+
+	font-family: Carnet;
+	src:url(Font/Carnet.ttf);
+}
+
+@font-face{
+
+	font-family: OrangeJuice;
+	src:url(Font/Orange.ttf);
+}
+
+/*
+* Landing page CSS
+*/ 
+
+
+#landingpage-content h1{
+
+	text-align: center;
+    font-size: 36px;
+    line-height: 40px;
+}
+
+#landingpage-content h2{
+
+	font-family: OrangeJuice;
+	text-align: center;
+    font-size: 60px;
+    line-height: 60px;
+    letter-spacing: 15px;
+}
+
+#landingpage-content h3{
+
+	font-family: OrangeJuice;
+	text-align: center;
+    font-size: 32px;
+    line-height: 35px;
+    letter-spacing: 5px;
+    margin:0px;
+}
+
+#landingpage-content h4{
+	
+	font-family:Carnet;
+	margin:0px;
+}
+
+/*
+* Landng page product department CSS
+*/
+
+.departments{
+	display: inline-block;
+	width: 70%;
+	background-color: #ffffff;
+}
+
+.departments img{
+	
+	border-style: outset;
+	border-width: 3px;	
+}
+
+.department-font{
+
+	margin-left: 15px;
+}
+
+.department-header{
+
+	width:325px;
+	display: block;
+	background-color: #00A9A2;
+	border-radius: 15px 50px 0px 0px;
+}
+
+.landing-page-content{
+	
+	background-color:#575757;
+	opacity:1;	
+}
+
+.landing-page-advert{
+
+	display:inline;
+	width:auto;
+	margin:auto;
+}
+
+/*
+* Landing page Carousel CSS
+*/ 
+
+.product-row{
+	
+	overflow:hidden;	
+}
+
+.product-row p{
+	
+	text-align: left;	
+}
+
+/*
+* Landing page News Window CSS
+*/
+
+.news-panel{
+	width: 350px;
+	background-color: #00A9A2;
+	border-radius: 25px;
+}
+
+#news-container{
+	display: inline-block;
+	width: 350px;
+	float:right;
+	margin:0px;
+	border: 0px;
+}
+
+#news-panel-top{
+	display: inline-block;
+	border-radius: 15px 50px 0px 0px;
+	background-color:#FDABA5;
+}
+
+#news-panel-bottom{
+
+	display:inline-block;
+	border-radius: 0px 0px 15px 50px;
+}
+
+.news-item{
+	
+	float: left;
+	margin: 10px;
+	border:15px;
+	background-color: #FFFFFF;
+	border-radius: 15px 50px 15px 50px;
+	font-size: 14px;
+    text-align: center;
+    padding:5px;
+}
+
+/* Spacer ID. Used for vertical spacing (see landing page for example)*/
+#spacer{
+	
+	height:100px;
+	opacity: 0;
+}
+
+
+/*
+* End of landing page CSS
+*/
+
 #orderpage {
 	width: 100%;
 	text-align: center;

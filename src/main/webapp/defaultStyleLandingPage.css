@@ -60,20 +60,12 @@ body{
 	background-color: #FFFFFF;	
 }
 
-.navBar{
-
-	display: inline-block;
-	height: 50px;
-	width:50px;
-
-}
-
-.departmentFont{
+.department-font{
 
 	margin-left: 15px;
 }
 
-.departmentHeader{
+.department-header{
 
 	width:325px;
 	display: block;
@@ -82,32 +74,19 @@ body{
 
 }
 
-.content{
+.landing-page-content{
 	
 	background-color:#575757;
-	opacity:1;
-	
+	opacity:1;	
 }
 
-.main{
-	
-	background-color: #2BCCCA;
-}
-
-.advert{
+.landing-page-advert{
 
 	display:inline;
 	width:auto;
 	margin:auto;
 
 
-}
-
-.cataloguePreview{
-	width: 70%;
-	margin: 15px;
-	float:left;
-	background-color: #FF8FAB;
 }
 
 .departments{
@@ -123,25 +102,24 @@ body{
 	
 }
 
-.productRow{
+.product-row{
 	
 	overflow:hidden;
 	
 }
 
-.productRow p{
+.product-row p{
 	
-	text-align: left;
-	
+	text-align: left;	
 }
 
-.newsPanel{
+.news-panel{
 	width: 350px;
 	background-color: #00A9A2;
 	border-radius: 25px;
 }
 
-#newsContainer{
+#news-container{
 	display: inline-block;
 	width: 350px;
 	float:right;
@@ -149,19 +127,19 @@ body{
 	border: 0px;
 }
 
-#newsPanelTop{
+#news-panel-top{
 	display: inline-block;
 	border-radius: 15px 50px 0px 0px;
 	background-color:#FDABA5;
 }
 
-#newsPanelBottom{
+#news-panel-bottom{
 
 	display:inline-block;
 	border-radius: 0px 0px 15px 50px;
 }
 
-.newsItem{
+.news-item{
 	
 	float: left;
 	margin: 10px;
@@ -173,52 +151,9 @@ body{
     padding:5px;
 }
 
-.navigation-bar{
-	
-	background-color: #4FFF99;
-}
-
-.navigation-item{
-	
-	display: inline;
-}
-
-.horiz-spacer{
-	
-	display: block;
-	width:100%;
-	height: 20px;
-	background-image: url(img/horizontalSpacer.png);
-	background-repeat: repeat-x;
-	border-style:none;
-	
-}
-
-
-#header{
-	
-	
-}
-
-#content{
-	
-
-}
-
-#catalogue-navigation{
-	
-	display:block;
-	background-color: #FFFFFF;
-	list-style-type:none;
-	margin:0px;
-	
-}
 
 #spacer{
 	
 	height:100px;
 	opacity: 0;
-}
-.slick-prev:before, .slick-next:before{
-    color:red;
 }

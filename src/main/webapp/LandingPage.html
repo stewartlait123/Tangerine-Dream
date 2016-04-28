@@ -15,24 +15,13 @@
 
 <body>
 	
-	<div id = "content" style = "min-width:685px"> 
-		<!--
-		<div class = "navigation-bar"> 
-			<h1> Navigation </h1>
-			<ul>   
-				<li class = "navigation-item" style = width:25%> <a href= "">Link 1</a></li>
-				<li class = "navigation-item" style = width:25%> <a href= "">Link 2</a></li>
-				<li class = "navigation-item" style = width:25%> <a href= "">Link 3</a></li>
-				<li class = "navigation-item" style = width:25%> <a href= "">Link 4</a></li>			
-			</ul>
-				
-		</div> --><!-- Navigation Bar closer -->
+	<div id = "landing-page-content" style = "min-width:685px"> 
 		
 		<div id = "spacer" > </div>
 			
 			<div id="content-container">
 
-			<div id = "productTitleWrapper" style = display:inline-block;width:70%>
+			<div id = "product-title-wrapper" style = display:inline-block;width:70%>
 						<h2 style = margin:10px> Check Out Our Hottest Deals</h2>
 			</div >
 
@@ -42,23 +31,27 @@
 
 			<div style="text-align: center;">
 
-				<div class = "departments" id="departmentHolder">					
+				<div class = "departments" id="department-holder">					
 
-					<div class="departmentHeader">
-						<h4 class= "departmentFont">Gnomes and Accessories  </h4>
+					<div class="department-header">
+						<h4 class= "department-font">Gnomes and Accessories  </h4>
 					</div>
 					
-					<div id="department1"  class = "productRow">			
+					<div id="department1"  class = "product-row">			
 							<div class = "carousel1">	
 									<div> <img src = "img/Gnome1.jpg"/>
-										<p> Item. Price </p>
+									<p> Item. Price </p>
 									</div>
 									<div> <img src = "img/Gnome2.jpg"/>
 										<p> Item. Price </p>
 									</div>
 									<div> <img src = "img/Gnome3.jpg"/>
 										<p> Item. Price </p>
-									</div>
+									<
+
+
+
+									/div>
 									<div> <img src = "img/Gnome4.jpg"/>
 										<p> Item. Price </p>
 									</div>
@@ -91,11 +84,11 @@
 
 					
 					
-					<div class="departmentHeader">
-						<h4 class= "departmentFont">Garden Tools  </h4>
+					<div class="department-header">
+						<h4 class= "department-font">Garden Tools  </h4>
 					</div>
 
-					<div id="department2"  class = "productRow">			
+					<div id="department2"  class = "product-row">			
 							<div class = "carousel2">	
 									<div> <img src = "img/Rake.jpg"/>
 										<p> Item. Price </p>
@@ -140,48 +133,48 @@
 				</div>				
 				
 
-				<div id = "newsContainer"> 
-					<div id = "newsPanelTop" class = "newsPanel"> 
+				<div id = "news-container"> 
+					<div id = "news-panel-top" class = "news-panel"> 
 						<h3> Garden Gnews </h3>				
 						
 					</div>
 
-					<div id = "newsPanelBottom" class = "newsPanel">
+					<div id = "news-panel-bottom" class = "news-panel">
 
-						<div class = "newsItem"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+						<div class = "news-item"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 												 Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
 												 Aenean id sapien in mi convallis dapibus vel eu felis. </div>
 						
-						<div class = "newsItem"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+						<div class = "news-item"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 												 Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
 												 Aenean id sapien in mi convallis dapibus vel eu felis. </div>
 						
-						<div class = "newsItem"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+						<div class = "news-item"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 												 Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
 												 Aenean id sapien in mi convallis dapibus vel eu felis. </div>
 						
-						<div class = "newsItem"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+						<div class = "news-item"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 												 Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
 												 Aenean id sapien in mi convallis dapibus vel eu felis. </div>
 
-						<div class = "newsItem"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+						<div class = "news-item"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 												 Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
 												 Aenean id sapien in mi convallis dapibus vel eu felis. </div>
 
-						<div class = "newsItem"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+						<div class = "news-item"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 												 Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
 												 Aenean id sapien in mi convallis dapibus vel eu felis. </div>
 
 					</div>
 				</div>
 
-				<div id="advertWrapper">
+				<div id="advert-wrapper">
 
-					<div id="advert1" class = "advert">
+					<div id="advert1" class = "landing-page-advert">
 						<img src = "img/CreditApplyAlt.jpg" />
 					</div>
 
-					<div id = "advert2" class = "advert">
+					<div id = "advert2" class = "landing-page-advert">
 						<img src = "img/GnomeAwards.jpg" />
 					</div>
 
@@ -198,7 +191,7 @@
 </body>
 <script>
 
-var carouselHolder = document.getElementById("departmentHolder");
+var carouselHolder = document.getElementById("department-holder");
 var carouselDisplayCount = carouselHolder.offsetWidth/128;
 
 $(document).ready(function() {
@@ -298,19 +291,19 @@ function responsiveLayout() {
 		document.getElementById("content-container").style.textAlign = "center";
 
 
-		document.getElementById("productTitleWrapper").style.float = "left";
+		document.getElementById("product-title-wrapper").style.float = "left";
 
-		document.getElementById("newsContainer").style.width = '350px';
-		document.getElementById("newsContainer").style.float = "right";
+		document.getElementById("news-container").style.width = '350px';
+		document.getElementById("news-container").style.float = "right";
 
 
-		var newsPanelElements = document.getElementsByClassName("newsPanel");
+		var newsPanelElements = document.getElementsByClassName("news-panel");
 		for(var i = 0 ;  i < newsPanelElements.length ; i++){
 			newsPanelElements[i].style.padding = "5px";
 			newsPanelElements[i].style.width = "350px";
 		}
 
-		var newsItemElements = document.getElementsByClassName("newsItem");
+		var newsItemElements = document.getElementsByClassName("news-item");
 		for(var i = 0 ; i < newsItemElements ; i++)
 		{
 			newsItemElements[i].style.width = 330;
@@ -321,13 +314,13 @@ function responsiveLayout() {
 
 		document.getElementById("content-container").style.textAlign = "center";
 
-		document.getElementById("productTitleWrapper").style.float = "none";
+		document.getElementById("product-titlewrapper").style.float = "none";
 
-		document.getElementById("newsContainer").style.width = "350px";
-		document.getElementById("newsContainer").style.float = "right";
+		document.getElementById("news-container").style.width = "350px";
+		document.getElementById("news-container").style.float = "right";
 
 
-		var newsPanelElements = document.getElementsByClassName("newsPanel");
+		var newsPanelElements = document.getElementsByClassName("news-panel");
 		for(var i = 0 ;  i < newsPanelElements.length ; i++){
 			newsPanelElements[i].style.padding = "5px";
 			newsPanelElements[i].style.width = "350px";
@@ -337,18 +330,18 @@ function responsiveLayout() {
 
 		document.getElementById("content-container").style.textAlign = "center";
 
-		document.getElementById("productTitleWrapper").style.float = "none";
+		document.getElementById("product-title-wrapper").style.float = "none";
 
-		document.getElementById("newsContainer").style.width = "100%";
-		document.getElementById("newsContainer").style.float = "none";
+		document.getElementById("news-container").style.width = "100%";
+		document.getElementById("news-container").style.float = "none";
 
-		var newsPanelElements = document.getElementsByClassName("newsPanel");
+		var newsPanelElements = document.getElementsByClassName("news-panel");
 		for(var i = 0 ;  i < newsPanelElements.length ; i++){
 			newsPanelElements[i].style.padding = "15px";
 			newsPanelElements[i].style.width = "100%";
 		}
 
-		var newsItemElements = document.getElementsByClassName("newsItem");
+		var newsItemElements = document.getElementsByClassName("news-item");
 		for(var i = 0 ; i < newsItemElements ; i++)
 		{
 			newsItemElements[i].style.width = 450;
