@@ -72,4 +72,10 @@ public class ProductRepositoryOffline implements ProductRepository{
 	public void addProduct(Product product){
 		initialData.addProduct(product);
 	}
+
+	@Override
+	public ArrayList<Product> findByProductType(String productType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
