@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.qa.tangerinedream.entities.Order;
+
+import repositorybackend.OrderStatus;
 /**
  * Order repositorys  interface created for Order Entity by Christine Stokes
  * methods are defined in here and the actual methods are in OrderRepositoryOffline
@@ -18,6 +20,7 @@ import com.qa.tangerinedream.entities.Order;
 		public Order findByOrderID(int id);
 		public ArrayList<Order> getOrders();
 		
+		
 		public void updateOrder (Order o);
-		public Order findUsersPendingOrder(long userId);
+		public Order findUserAndStatus(long userId, OrderStatus orderStatus);
 	}

@@ -2,10 +2,7 @@ package com.qa.tangerinedream.service;
 //Created by :Jessica Maddocks-Thompson.
 import java.io.Serializable;
 
-import javax.ejb.MessageDriven;
-
-@MessageDriven
-public class CreditApplicationApplication implements Serializable{
+public class CreditApplicationApplication  implements Serializable{
 	/**
 	 * 
 	 */
