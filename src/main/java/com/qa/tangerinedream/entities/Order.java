@@ -40,7 +40,7 @@ public class Order {
 	@Size (min = 1, max = 10)
 	private OrderStatus status; // Status which needs to be converted to an enum at time
 	
-	@Column(name = "order_date", nullable = false, length = 50)
+	@Column(name = "order_date", length = 50)
 	@NotNull
 	@Size (min = 6, max = 50)
 	private Date order_date; // the column for date order placed
@@ -57,6 +57,13 @@ public class Order {
 	public Order(){
 		orderLines = new ArrayList<>();
 	}
+	
+	public Order(Customer customer, OrderStatus status){
+		orderLines = new ArrayList<>();
+		this.customer = customer;
+		this.status = status;
+	}
+
 
 	/**
 	 *   method to allow dummy data to be generated 

@@ -48,10 +48,10 @@ implements OrderRepository {
 	}
 	
 	@Override
-	public Order findUsersPendingOrder(long userID) {
+	public Order findUserAndStatus(long userId, OrderStatus orderStatus) {
 		ArrayList<Order> orders = (ArrayList<Order>) initialData.getOrders();
 		for (Order order : orders)
-			if(order.getCustomer().getCustomerId()==userID && order.getStatus().equals(OrderStatus.PENDING))
+			if(order.getCustomer().getCustomerId()==userId && order.getStatus().equals(orderStatus))
 				return order;
 		return null;
 	}
