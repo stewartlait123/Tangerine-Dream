@@ -1,5 +1,6 @@
 package com.qa.tangerinedream.controllers;
-//Created by Jessica Maddocks
+//Created by Jessica Maddocks. Credit Application controller: the controller will have the apply and cancel buttons that navigate to a confirmation page and send to Accounts via Mule (JMS) when applied and go to the home page when cancelled.
+//For Mule, to receive the form, the application service is created which has the JMS 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -10,6 +11,7 @@ import com.qa.tangerinedream.service.CreditApplicationService;
 @RequestScoped
 
 public class CreditApplicationController {
+	
 	//CAS will be a service layer object to carry the gay away
 	@Inject
 	private CreditApplicationService creditApplicationService;
@@ -38,12 +40,11 @@ public class CreditApplicationController {
 	private String cvs = "";
 	private String bank_address = "";
 
-	//Link with mule accounts system 
+	
 	//method for apply and cancel buttons
 	public String apply (){
 		//send to accounts and confirm page
-		//don't give a shit m8
-		//will come back to CAS later because fudge you bruh.
+		//we don't give a shit m8 coz its a controller, we dont need the logik ere
 		creditApplicationService.sendApplication(surname, first_name, date_of_birth, home_address, time_at_address, place_of_birth, type_of_proof, proof_number, employer_name, employer_address, time_with_employer, type_of_employment, bank_name, time_with_bank, account_number, sort_code, card_name, card_number, expiry_date, cvs, bank_address);
 		return "CreditConfirmation";	
 	}
