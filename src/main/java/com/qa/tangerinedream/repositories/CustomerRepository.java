@@ -19,7 +19,7 @@ public interface CustomerRepository {
 	public ArrayList<Customer> findByName(String customerName_);
 	public ArrayList<Customer> getCustomers();
 	
-	public Customer findByID(int id_);
+	public Customer findByID(long userId);
 	
 	public void addCustomer (Customer customer_);
 	

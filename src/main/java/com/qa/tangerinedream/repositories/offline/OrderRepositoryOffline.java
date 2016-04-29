@@ -68,4 +68,10 @@ implements OrderRepository {
 	public ArrayList<Order> getOrders() {
 		return (ArrayList<Order>) initialData.getEntityList();
 	}
+
+	@Override
+	public Order findUsersPendingOrder(long userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

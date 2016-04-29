@@ -27,7 +27,7 @@
 				<td><h5>Remove?</h5></td>
 			</tr>
 			<h:form>
-				<ui:repeat var="line" value="#{basket.order.orderline}">
+				<ui:repeat var="line" value="#{basket.order.orderLines}">
 					<tr>
 						<td><h:outputText value="#{line.product.name}" /></td>
 						<td><h:intputText value="#{line.quantity}" /></td>

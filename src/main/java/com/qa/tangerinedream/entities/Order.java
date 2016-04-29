@@ -10,7 +10,8 @@ package com.qa.tangerinedream.entities;
  * @author Christine Stokes
  */
 import java.sql.Date;
-
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,9 +19,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import repositorybackend.OrderStatus;
 @Entity
 @Table (name="order")
 
@@ -34,8 +38,7 @@ public class Order {
 	@Column(name = "status", nullable = false, length = 10)
 	@NotNull
 	@Size (min = 1, max = 10)
-	
-	private int status; // Status which needs to be converted to an enum at time
+	private OrderStatus status; // Status which needs to be converted to an enum at time
 	
 	@Column(name = "order_date", nullable = false, length = 50)
 	@NotNull
@@ -45,9 +48,15 @@ public class Order {
 	@ManyToOne
 	@JoinColumn (name = "order_customer_id_fk", nullable = false)
 	@NotNull
-	private Customer customer_id; // Customer ID taken from customer table
+	private Customer customer; // Customer ID taken from customer table
+
+	@OneToMany(mappedBy="OrderLine")
+	private List<OrderLine> orderLines;
 	
-	public Order(){}
+
+	public Order(){
+		orderLines = new ArrayList<>();
+	}
 
 	/**
 	 *   method to allow dummy data to be generated 
@@ -55,11 +64,12 @@ public class Order {
 	 * @param currentDate
 	 * @param customerID
 	 */
-	public Order(int status, java.util.Date currentDate, Customer customerID) {
+	public Order(OrderStatus status, long currentDate, Customer customer, OrderLine orderLine) {
 		this.status = status;
-		this.order_date = (Date) currentDate;
-		this.customer_id = customerID;
-		
+		this.order_date.setTime(currentDate);
+		this.customer = customer;
+		this.orderLines = new ArrayList<>();
+		this.orderLines.add(orderLine);
 	}
 
 	// methods which will be defined in OrderRepositoryOffline and OrderLineRepository
@@ -67,7 +77,7 @@ public class Order {
 		return order_id;
 	}
 
-	public int getStatus() {
+	public OrderStatus getStatus() {
 		return status;
 	}
 
@@ -75,12 +85,25 @@ public class Order {
 		return order_date;
 	}
 
-
-	public void setStatus(int status) {
+	public void setStatus(OrderStatus status) {
 		this.status = status;
 	}
 
 	public void setOrder_date(Date order_date) {
 		this.order_date = order_date;
 	}	
+	
+	public List<OrderLine> getOrderLines() {
+		return orderLines;
+	}
+
+	public void setOrderLines(List<OrderLine> orderLines) {
+		this.orderLines = orderLines;
+	}
+	
+	public void addOrderLine(OrderLine orderLine){
+		this.orderLines.add(orderLine);
+		if(orderLine.getOrder() != this)
+			orderLine.setOrder(this);
+	}
 }

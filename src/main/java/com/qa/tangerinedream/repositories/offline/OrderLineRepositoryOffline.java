@@ -38,7 +38,7 @@ implements OrderLineRepository {
 		ArrayList<OrderLine> orderLineList = initialData.getOrderLines();
 		
 		for (int i = 0; i < orderLineList.size(); i++){
-			if (orderLineList.get(i).getorder().getOrder_id() != order_id){
+			if (orderLineList.get(i).getOrder().getOrder_id() != order_id){
 				orderLineList.remove(i);
 			}
 		}
@@ -46,6 +46,7 @@ implements OrderLineRepository {
 	}
 
 	@Override
+	@Deprecated
 	public ArrayList<OrderLine> findByProductId(long product_id) {
 		
 		ArrayList<OrderLine> productLineList = initialData.getOrderLines();
