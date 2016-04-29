@@ -2,7 +2,7 @@ package com.qa.tangerinedream.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -20,13 +20,6 @@ import javax.validation.constraints.Size;
 @Entity
 @Table (name = "OrderLines")
 public class OrderLine {
-	@Id 
-	@ManyToOne
-	@JoinColumn (name = "order_fk", nullable = false)
-	@Size (min = 4, max = 500)
-	@NotNull
-	private Order order;
-	
 	@ManyToOne
 	@JoinColumn (name = "product_fk", nullable = false)
 	@Size (min = 4, max = 500)
@@ -40,21 +33,17 @@ public class OrderLine {
 	@Column (name = "purchasePrice", nullable = false)
 	@NotNull
 	private int purchasePrice;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="OrderID")
+	private Order order;
 
 	//constructor for attributes
-	public OrderLine (Order order, Product product, int quantity, int purchasePrice) {
-	
-		this.order = order;
+	public OrderLine (Product product, int quantity, int purchasePrice) {
 		this.product = product;
 		this.quantity = quantity;
 		this.purchasePrice = purchasePrice;
 		
-	}
-	
-	//attributes getters
-	public Order getorder(){
-		
-		return order;  
 	}
 	
 	public Product getproduct(){
@@ -72,12 +61,6 @@ public class OrderLine {
 		return purchasePrice;		
 	}
 	
-	//attributes setters
-	public void setorder(Order order){
-		
-		this.order = order;  		
-	}
-	
 	public void setproduct(Product product){
 		
 		this.product = product;	
@@ -93,4 +76,13 @@ public class OrderLine {
 		this.purchasePrice = purchasePrice;		
 	}
 	
+	public void setOrder(Order order){
+		this.order = order;
+		if(!order.getOrderLines().contains(this))
+			order.addOrderLine(this);
+	}
+
+	public Order getOrder() {
+		return order;
+	}
 }

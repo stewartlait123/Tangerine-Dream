@@ -19,4 +19,5 @@ import com.qa.tangerinedream.entities.Order;
 		public ArrayList<Order> getOrders();
 		
 		public void updateOrder (Order o);
+		public Order findUsersPendingOrder(long userId);
 	}

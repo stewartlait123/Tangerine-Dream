@@ -8,7 +8,7 @@ import com.qa.tangerinedream.entities.Product;
 public interface ProductRepository{
 	public void persistProduct(Product product);
 	public void persistProducts(ArrayList<Product> products);
-	
+
 	public Product findByProductId(long id);
 	public ArrayList<Product> getProducts();
 	

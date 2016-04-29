@@ -18,6 +18,7 @@ public interface OrderLineRepository {
 	public void persistOrderLines (ArrayList<OrderLine> o);
 	
 	public ArrayList<OrderLine> getOrderLines();
+	@Deprecated
 	public ArrayList<OrderLine> findByOrderId(long order_id);
 	
 	public ArrayList<OrderLine> findByProductId(long product_id);
