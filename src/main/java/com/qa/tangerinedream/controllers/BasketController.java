@@ -20,13 +20,16 @@ public class BasketController {
 	private Order order = orderService.getUsersPendingOrder(currentUser.getUserID());
 	private float totalPrice = orderService.calcOrderTotalPending(currentUser.getUserID());
 	
+	
 	/**
 	 * This method adds the specified product to the basket
 	 * 
 	 * @param productId - the products id
 	 */
-	public void addToBasket(long productId){
-		orderService.addToBasket(productId, currentUser.getUserID());
+	
+	
+	public void addToBasket(long productId, int quantity){
+		orderService.addToBasket(productId, quantity, currentUser.getUserID());
 	}
 	
 	/**
@@ -87,6 +90,7 @@ public class BasketController {
 	public void setOrder(Order order) {
 		this.order = order;
 	}
+	
 
 	/**
 	 * Gets the total price of the order

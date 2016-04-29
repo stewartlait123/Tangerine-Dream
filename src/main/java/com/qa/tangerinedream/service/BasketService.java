@@ -18,6 +18,7 @@ public class BasketService {
 	@Inject OrderRepository orderRepository;
 	@Inject ProductRepository productRepository;
 	@Inject CustomerRepository customerRepository;
+
 	
 	public void addToBasket(long productId, int quantity, long userId) {
 		Product product = productRepository.findByProductId(productId);
@@ -34,4 +35,5 @@ public class BasketService {
 		} else 
 			order = new Order(PENDING, Calendar.getInstance().getTimeInMillis(), customerRepository.findByID(userId), new OrderLine(product, quantity, product.getPrice()));
 	}
+
 }
