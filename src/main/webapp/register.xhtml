@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets" template="/template/Template.xhtml" css="Template.css">
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="template/Template.xhtml">
 	<ui:define name="pagetitle">
 		<div id="header">
 			<h1>Registration</h1>
@@ -9,41 +9,42 @@
 	</ui:define>
 
 
-	<ui:define name="maincontent">
-		<!--Author: Iain Q><-->
-		<div class="grid-temp">
-			<div class="row-title">Please enter your details.</div>
-			<div class="main-row">
-				<form name="registerform">
-					<fieldset>
-						<legend>Registration Form</legend>
-						<table id="registration">
-							<tr>
-								<th>Name:</th>
-								<th><input type="text" name="name"></input></th>
-							</tr>
-							<tr>
-								<th>Username:</th>
-								<th><input type="text" name="username"></input></th>
-							</tr>
-							<tr>
-								<th>Password:</th>
-								<th><input type="password" name="pass"></input></th>
-							</tr>
-							<tr>
-								<th>Confirm Password:</th>
-								<th><input type="password" name="pass"></input></th>
-							</tr>
-							<tr>
-								<th>Date of Birth:</th>
-								<th><input type="date" name="dateofbirth"></input><br></br></th>
-							</tr>
-						</table>
-						<input type="submit" class="submitButton" value="Submit"></input>
-					</fieldset>
-				</form>
-			</div>
-		</div>
+<ui:define name="maincontent">
+<!--Author: Iain Q><-->
+<div class="grid-temp">
+<div class="row-title">Please enter your details.</div>
+<div class="main-row">
+			<!-- Umar - 28 April 2016 -->
+			<h:form>
+			<h:message class= "error" value="#{register.error}"/>
+			<table>
+				<tr><th><h:outputLabel value="Name: "/></th><th><h:inputText value="#{login.name}"/></th></tr>
+				<tr><th><h:outputLabel value="Username: "/></th>
+					<th><h:inputText value="#{login.username}"/></th></tr>	
+				<tr><th><h:outputLabel value="Password: "/></th>
+					<th><h:inputText value="#{login.password}"/></th></tr>
+				<tr><th><h:outputLabel value="Confirm Password: "/></th>
+					<th><h:inputText value="#{login.confirmPassword}"/></th></tr>
+				<tr><th><h:outputLabel value="Date Of Birth: "/></th>
+					<th><h:inputText value="#{login.dob}"/></th></tr>			
+			</table>
+			<h:commandButtonvalue="Login" action="#{register.Register}"/>
+			</h:form>
+			<!--  <form name="registerform">
+			<fieldset>
+				<legend>Registration Form</legend>
+				<table id="registration">
+				    <tr><th>Name:</th><th><input type="text" name="name" /></th></tr>
+				    <tr><th>Username:</th><th><input type="text" name="username" /></th></tr>
+				    <tr><th>Password:</th> <th><input type="password" name="pass" /></th></tr>
+				    <tr><th>Confirm Password:</th><th><input type="password" name="pass" /></th></tr>
+				    <tr><th>Date of Birth:</th><th><input type="date" name="dateofbirth"/><br></th></tr>
+				 </table>
+				 <input type="submit" class="submitButton" value="Submit" />
+			</fieldset>
+		</form>-->
+</div>
+</div>
 
 
 	</ui:define>
