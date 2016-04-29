@@ -90,7 +90,8 @@
 					</tr>
 					
 					<tr>
-					<td><h:selectOneMenu value="#{credapplic.type_of_proof}"></td>
+					
+					<h:selectOneMenu value="#{credapplic.type_of_proof}">
 
 						<td><f:selectItem itemValue="Drivers License"
 							itemLabel="Proof1 - Drivers License" />
@@ -133,7 +134,7 @@
 					</tr>	
 
 					<tr>
-					<td><h:selectOneMenu value="#{credapplic.type_of_employment}"></td>
+					<h:selectOneMenu value="#{credapplic.type_of_employment}">
 
 						<td><f:selectItem itemValue="Financial" itemLabel="Proof1 - Financial" />
 						<f:selectItem itemValue="Medical" itemLabel="Proof2 - Medical" />
@@ -197,15 +198,15 @@
 					</tr>
 					
 					<tr>
-					<td><h:commandButton value="Apply" action="#{credapplic.apply}"></td>
-						<td><h:commandButton value="Cancel" action="#{credapplic.cancel}"></td>
+					<td><h:commandButton value="Apply" action="#{credapplic.apply}"></h:commandButton></td>
+						<td><h:commandButton value="Cancel" action="#{credapplic.cancel}"></h:commandButton></td>
 					</tr>
 				</table>
 							<img alt="dank"
 								src="http://img.ifcdn.com/images/f138d05cdcbf2d87a1e7040e3addf36e141bf5f40f9802f6f00558493f3b309f_1.jpg" />
 				</div>
-		</div>
 		</h:form>
+		</div>
 
 	</ui:define>
 </ui:composition>
