@@ -28,10 +28,10 @@ public class CreditApplicationService {
 			String employer_name, String employer_address, String time_with_employer, String type_of_employment,
 			String bank_name, String time_with_bank, String account_number, String sort_code, String card_name,
 			String card_number, String expiry_date, String cvs, String bank_address) {
-		// TODO Auto-generated method stubbers
+	
 		//JMS sender for mule to pick up 
 		//send ip address and port to mule
-		Application thing = new Application(surname, first_name, date_of_birth, home_address,
+		CreditApplicationApplication thing = new CreditApplicationApplication(surname, first_name, date_of_birth, home_address,
 				time_at_address,  place_of_birth,  type_of_proof,  proof_number,
 				employer_name,  employer_address,  time_with_employer,  type_of_employment,
 				bank_name,  time_with_bank,  account_number,  sort_code,  card_name,
