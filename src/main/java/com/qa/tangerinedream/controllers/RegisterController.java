@@ -24,9 +24,7 @@ public class RegisterController {
 	private Date dob;
 	private String error;
 	
-	@SuppressWarnings("unused")
-	private void Register()
-	{
+	public void register() {
 		if (registerService.ValidateDetails(name, username, password, confirmPassword, dob)){
 			Customer customer = new Customer();
 			customer.setName(name);

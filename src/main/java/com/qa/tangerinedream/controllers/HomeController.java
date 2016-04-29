@@ -18,9 +18,11 @@ public class HomeController {
 	@Inject ProductRepository productRepo;
 	
 	ArrayList<Product> product = new ArrayList<Product>();
+
 	
 	@SuppressWarnings("unused")
 	private void GetProducts()
+
 	{
 		productRepo.getProducts();
 	}

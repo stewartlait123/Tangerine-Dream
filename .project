@@ -28,7 +28,6 @@
 		</buildCommand>
 		<buildCommand>
 			<name>org.jboss.tools.cdi.core.cdibuilder</name>
-=======
 			<name>org.eclipse.wst.validation.validationbuilder</name>
 
 			<arguments>

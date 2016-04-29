@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<!-- Author: Jess M -->
+<!-- Author: Jessica Maddocks -->
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 
-	xmlns:ui="http://java.sun.com/jsf/facelets" template="/template/Template.xhtml"
+	
 
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	>
+
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="/WEB-INF/Template.xhtml"
+	css="Template.css">
 
 
 	<ui:define name="pagetitle">
@@ -62,9 +64,10 @@
 			<div class="row-title">
 				<h4>Name and Address</h4>
 			</div>
+			<h:form>
 			<div class="main-row">
 
-	<h:form>
+	
 
 
 					<h:outputLabel value="Surname:" />
@@ -103,7 +106,7 @@
 					<h:outputLabel value="Proof of Address Number:" />
 					<h:inputText value="#{credapplic.proof_number}" />
 			</div>
-		</div>
+	
 
 		<div class="row-title">
 			<h4>Employment</h4>
@@ -178,13 +181,34 @@
 			<h:outputLabel value="Bank Address:" />
 			<h:inputText value="#{credapplic.bank_address}" />
 
-  		<h:commandButton value="Apply" action="#{credapplic.apply}"></h:commandButton>
+<<<<<<< HEAD:src/main/webapp/CreditApplication.html
+<!-- This may not work as apply and cancel have not been mentioned within cred app.java-->
+			<h:commandButton value="Apply" action="#{credapplic.apply}">
+			<h:commandButton value="Cancel" action="#{credapplic.cancel}">
+				<!-- Several different ideas for it to work -->
+					<h:button value="Cancel" outcome="home" />
+
+					<h:form id="form">
+						<h:commandButton id="button" value="Apply button" action="Credit confirmation" />
+					</h:form>
+
+				</h:form>
+
+				
+						<img alt="dank"
+							src="http://img.ifcdn.com/images/f138d05cdcbf2d87a1e7040e3addf36e141bf5f40f9802f6f00558493f3b309f_1.jpg"/>
+					
+=======
+  		  <h:commandButton value="Apply" action="#{credapplic.apply}"></h:commandButton>
 			<h:commandButton value="Cancel" action="#{credapplic.cancel}"></h:commandButton>
+				
+				</div>
 				</h:form>
 				<img alt="dank"
 					src="http://img.ifcdn.com/images/f138d05cdcbf2d87a1e7040e3addf36e141bf5f40f9802f6f00558493f3b309f_1.jpg">
 		</img>
 		
+>>>>>>> 6c09662eec7e53c8d34c47868947089e2b0f87c1:src/main/webapp/CreditApplication.xhtml
 		</div>
 
 	</ui:define>

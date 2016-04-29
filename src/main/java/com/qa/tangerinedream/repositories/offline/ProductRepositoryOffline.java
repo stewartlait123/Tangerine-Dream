@@ -72,4 +72,19 @@ public class ProductRepositoryOffline implements ProductRepository{
 	public void addProduct(Product product){
 		initialData.addProduct(product);
 	}
+
+	@Override
+	public ArrayList<Product> findByProductType(String productType) {		
+		ArrayList<Product> productList = initialData.getProducts();
+		ArrayList<Product> outputList = new ArrayList<Product>();
+		
+		for(int i=0; i < productList.size(); i++) {
+			if(productList.get(i).getProduct_type() == productType){
+				outputList.add(productList.get(i));
+			}
+		}
+		return outputList;
+	}
+	
+	
 }
