@@ -1,11 +1,11 @@
 package com.qa.tangerinedream.service;
-
+//Created by :Jessica Maddocks-Thompson.
 import java.io.Serializable;
 
 import javax.ejb.MessageDriven;
 
 @MessageDriven
-public class Application implements Serializable{
+public class CreditApplicationApplication implements Serializable{
 	/**
 	 * 
 	 */
@@ -32,7 +32,7 @@ public class Application implements Serializable{
 	private String cvs;
 	private String bank_address;
 	
-	public Application(String surname, String first_name, String date_of_birth, String home_address,
+	public CreditApplicationApplication(String surname, String first_name, String date_of_birth, String home_address,
 			String time_at_address, String place_of_birth, String type_of_proof, String proof_number,
 			String employer_name, String employer_address, String time_with_employer, String type_of_employment,
 			String bank_name, String time_with_bank, String account_number, String sort_code, String card_name,
