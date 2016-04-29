@@ -6,6 +6,7 @@ import java.util.Calendar;
 
 import javax.inject.Inject;
 
+import com.qa.tangerinedream.entities.Customer;
 import com.qa.tangerinedream.entities.Order;
 import com.qa.tangerinedream.entities.OrderLine;
 import com.qa.tangerinedream.entities.Product;

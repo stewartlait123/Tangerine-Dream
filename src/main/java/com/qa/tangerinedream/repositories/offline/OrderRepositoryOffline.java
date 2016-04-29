@@ -6,8 +6,11 @@ import java.util.List;
 import javax.inject.Inject;
 
 import repositorybackend.InitialData;
+import repositorybackend.OrderStatus;
 
+import com.qa.tangerinedream.entities.Customer;
 import com.qa.tangerinedream.entities.Order;
+import com.qa.tangerinedream.entities.OrderLine;
 import com.qa.tangerinedream.repositories.OrderRepository;
 
 
@@ -19,16 +22,15 @@ import com.qa.tangerinedream.repositories.OrderRepository;
  */
 public class OrderRepositoryOffline 
 implements OrderRepository {
-	@Inject
 	
 	/**Changed injection from 'OrderInitialData' to 'InitialData' as all offline
 	 * data is to be folded into this class. 
 	*  Changed variable name 'OrderInitialData' to 'initialData' to reflect this.
 	*  Jessica:changed to long rather than biginteger for order_id (james recommended)
 	*/
-	
+	@Inject
 	private InitialData initialData;
-	
+
 	@Override
 	public void persistOrder(Order o) {
 		initialData.addOrder(o);	
@@ -44,6 +46,16 @@ implements OrderRepository {
 		}		
 			return null;
 	}
+	
+	@Override
+	public Order findUsersPendingOrder(long userID) {
+		ArrayList<Order> orders = (ArrayList<Order>) initialData.getOrders();
+		for (Order order : orders)
+			if(order.getCustomer().getCustomerId()==userID && order.getStatus().equals(OrderStatus.PENDING))
+				return order;
+		return null;
+	}
+	
 
 	@Override
 	public void updateOrder(Order o) {
@@ -67,11 +79,5 @@ implements OrderRepository {
 	@Override
 	public ArrayList<Order> getOrders() {
 		return (ArrayList<Order>) initialData.getEntityList();
-	}
-
-	@Override
-	public Order findUsersPendingOrder(long userId) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }
