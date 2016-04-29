@@ -74,8 +74,17 @@ public class ProductRepositoryOffline implements ProductRepository{
 	}
 
 	@Override
-	public ArrayList<Product> findByProductType(String productType) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Product> findByProductType(String productType) {		
+		ArrayList<Product> productList = initialData.getProducts();
+		ArrayList<Product> outputList = new ArrayList<Product>();
+		
+		for(int i=0; i < productList.size(); i++) {
+			if(productList.get(i).getProduct_type() == productType){
+				outputList.add(productList.get(i));
+			}
+		}
+		return outputList;
 	}
+	
+	
 }
