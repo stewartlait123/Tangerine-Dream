@@ -91,7 +91,9 @@
 					
 					<tr>
 
-					<td><h:selectOneMenu value="#{credapplic.type_of_proof}"></h:selectOneMenu></td>
+					<td><h:outputLabel value="Type of Proof for Address:" /></td>
+					<h:selectOneMenu value="#{credapplic.type_of_proof}">
+
 
 
 						<td><f:selectItem itemValue="Drivers License"
@@ -102,7 +104,7 @@
 							itemLabel="Proof3 - Recent Utility Bill" />
 						<f:selectItem itemValue="Current Council Tax Statement"
 							itemLabel="Proof4 - Current Council Tax Statement" /></td>
-				
+				</h:selectOneMenu>
 					</tr>
 					
 					<tr>
@@ -136,8 +138,8 @@
 
 					<tr>
 
+					<td><h:outputLabel value="Type of Employment" /></td>
 					<h:selectOneMenu value="#{credapplic.type_of_employment}">
-
 
 						<td><f:selectItem itemValue="Financial" itemLabel="Proof1 - Financial" />
 						<f:selectItem itemValue="Medical" itemLabel="Proof2 - Medical" />
