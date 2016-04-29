@@ -62,124 +62,146 @@
 			</div>
 			<h:form>
 				<div class="main-row">
+				<table>
 
 
+					<tr>
+					<td><h:outputLabel value="Surname:" /></td>
+					<td><h:inputText value="#{credapplic.surname}" /></td>
+					</tr>
+					
+					<tr>	
+					<td><h:outputLabel value="First Name:" /></td>
+					<td><h:inputText value="#{credapplic.first_name}" /></td>
+					</tr>
 
+					<tr>
+					<td><h:outputLabel value="Date Of Birth:" /></td>
+					<td><h:inputText value="#{credapplic.date_of_birth}" /></td>
+					</tr>
+	
+					<tr>
+					<td><h:outputLabel value="Home Address:" /></td>
+					<td><h:inputText value="#{credapplic.home_address}" /></td>
+					</tr>
 
-					<h:outputLabel value="Surname:" />
-					<h:inputText value="#{credapplic.surname}" />
+					<tr>
+					<td><h:outputLabel value="Time At Address (Years):" /></td>
+					<td><h:inputText value="#{credapplic.time_at_address}" /></td>
+					</tr>
+					
+					<tr>
+					<td><h:selectOneMenu value="#{credapplic.type_of_proof}"></td>
 
-
-					<h:outputLabel value="First Name:" />
-					<h:inputText value="#{credapplic.first_name}" />
-
-
-					<h:outputLabel value="Date Of Birth:" />
-					<h:inputText value="#{credapplic.date_of_birth}" />
-
-
-					<h:outputLabel value="Home Address:" />
-					<h:inputText value="#{credapplic.home_address}" />
-
-
-					<h:outputLabel value="Time At Address (Years):" />
-					<h:inputText value="#{credapplic.time_at_address}" />
-
-
-					<h:selectOneMenu value="#{credapplic.type_of_proof}">
-
-						<f:selectItem itemValue="Drivers License"
+						<td><f:selectItem itemValue="Drivers License"
 							itemLabel="Proof1 - Drivers License" />
 						<f:selectItem itemValue="Bank/Building Society Statement"
 							itemLabel="Proof2 - Bank/Building Society Statement" />
 						<f:selectItem itemValue="Recent Utility Bill"
 							itemLabel="Proof3 - Recent Utility Bill" />
 						<f:selectItem itemValue="Current Council Tax Statement"
-							itemLabel="Proof4 - Current Council Tax Statement" />
+							itemLabel="Proof4 - Current Council Tax Statement" /></td>
 					</h:selectOneMenu>
-
-
-					<h:outputLabel value="Proof of Address Number:" />
-					<h:inputText value="#{credapplic.proof_number}" />
+					</tr>
+					
+					<tr>
+					<td><h:outputLabel value="Proof of Address Number:" /></td>
+					<td><h:inputText value="#{credapplic.proof_number}" /></td>
+					</tr>
+				</table>
 				</div>
-
+				
 
 				<div class="row-title">
 					<h4>Employment</h4>
 				</div>
 				<div class="main-row">
+				<table>
 
+					<tr>
+					<td><h:outputLabel value="Employer Name:" /></td>
+					<td><h:inputText value="#{credapplic.employer_name}" /></td>
+					</tr>	
+	
+					<tr>
+					<td><h:outputLabel value="Employer Address" /></td>
+					<td><h:inputText value="#{credapplic.employer_address}" /></td>
+					</tr>
+	
+					<tr>
+					<td><h:outputLabel value="Time With Employer:" /></td>
+					<td><h:inputText value="#{credapplic.time_with_employer}" /></td>
+					</tr>	
 
+					<tr>
+					<td><h:selectOneMenu value="#{credapplic.type_of_employment}"></td>
 
-					<h:outputLabel value="Employer Name:" />
-					<h:inputText value="#{credapplic.employer_name}" />
-
-
-					<h:outputLabel value="Employer Address" />
-					<h:inputText value="#{credapplic.employer_address}" />
-
-
-					<h:outputLabel value="Time With Employer:" />
-					<h:inputText value="#{credapplic.time_with_employer}" />
-
-
-
-					<h:selectOneMenu value="#{credapplic.type_of_employment}">
-
-						<f:selectItem itemValue="Financial" itemLabel="Proof1 - Financial" />
+						<td><f:selectItem itemValue="Financial" itemLabel="Proof1 - Financial" />
 						<f:selectItem itemValue="Medical" itemLabel="Proof2 - Medical" />
 						<f:selectItem itemValue="IT" itemLabel="Proof3 - IT" />
-						<f:selectItem itemValue="Gnomes" itemLabel="Proof4 - Gnomes" />
+						<f:selectItem itemValue="Gnomes" itemLabel="Proof4 - Gnomes" /></td>
 					</h:selectOneMenu>
-
-
+					</tr>
+					
+				</table>
 
 				</div>
 				<div class="row-title">
 					<h4>Bank Details</h4>
 				</div>
 				<div class="main-row">
+					<table>
+				
+					<tr>
+					<td><h:outputLabel value="Bank Name:" /></td>
+					<td><h:inputText value="#{credapplic.bank_name}" /></td>
+					</tr>
 
+					<tr>
+					<td><h:outputLabel value="Time With Bank (Years):" /></td>
+					<td><h:inputText value="#{credapplic.time_with_bank}" /></td>
+					</tr>
 
+					<tr>
+					<td><h:outputLabel value="Account Number" /></td>
+					<td><h:inputText value="#{credapplic.account_number}" /></td>
+					</tr>
 
-					<h:outputLabel value="Bank Name:" />
-					<h:inputText value="#{credapplic.bank_name}" />
+					<tr>
+					<td><h:outputLabel value="Sort Code:" /></td>
+					<td><h:inputText value="#{credapplic.sort_code}" /></td>
+					</tr>	
+					
+					<tr>
+					<td><h:outputLabel value="Name on Card:" /></td>
+					<td><h:inputText value="#{credapplic.card_name}" /></td>
+					</tr>
+						
+					<tr>
+					<td><h:outputLabel value="Card Number:" /></td>
+					<td><h:inputText value="#{credapplic.card_number}" /></td>
+					</tr>
+					
+					<tr>
+					<td><h:outputLabel value="Expiry Date:" /></td>
+					<td><h:inputText value="#{credapplic.expiry_date}" /></td>
+					</tr>
 
+					<tr>
+					<td><h:outputLabel value="CVS:" /></td>
+					<td><h:inputText value="#{credapplic.cvs}" /></td>
+					</tr>
 
-					<h:outputLabel value="Time With Bank (Years):" />
-					<h:inputText value="#{credapplic.time_with_bank}" />
-
-
-					<h:outputLabel value="Account Number" />
-					<h:inputText value="#{credapplic.account_number}" />
-
-
-					<h:outputLabel value="Sort Code:" />
-					<h:inputText value="#{credapplic.sort_code}" />
-
-
-					<h:outputLabel value="Name on Card:" />
-					<h:inputText value="#{credapplic.card_name}" />
-
-
-					<h:outputLabel value="Card Number:" />
-					<h:inputText value="#{credapplic.card_number}" />
-
-
-					<h:outputLabel value="Expiry Date:" />
-					<h:inputText value="#{credapplic.expiry_date}" />
-
-
-					<h:outputLabel value="CVS:" />
-					<h:inputText value="#{credapplic.cvs}" />
-
-
-					<h:outputLabel value="Bank Address:" />
-					<h:inputText value="#{credapplic.bank_address}" />
-
-					<h:commandButton value="Apply" action="#{credapplic.apply}">
-						<h:commandButton value="Cancel" action="#{credapplic.cancel}">
-
+					<tr>
+					<td><h:outputLabel value="Bank Address:" /></td>
+					<td><h:inputText value="#{credapplic.bank_address}" /></td>
+					</tr>
+					
+					<tr>
+					<td><h:commandButton value="Apply" action="#{credapplic.apply}"></td>
+						<td><h:commandButton value="Cancel" action="#{credapplic.cancel}"></td>
+					</tr>
+				</table>
 							<img alt="dank"
 								src="http://img.ifcdn.com/images/f138d05cdcbf2d87a1e7040e3addf36e141bf5f40f9802f6f00558493f3b309f_1.jpg" />
 				</div>
