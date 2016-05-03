@@ -2,11 +2,15 @@ package com.qa.tangerinedream.service;
 //Created by :Jessica Maddocks-Thompson.
 import java.io.Serializable;
 
+import javax.ejb.Stateless;
+
+@Stateless
 public class CreditApplicationApplication  implements Serializable{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 4104281045024394123L;
+
 	private String surname;
 	private String first_name;
 	private String date_of_birth;
@@ -28,6 +32,8 @@ public class CreditApplicationApplication  implements Serializable{
 	private String expiry_date;
 	private String cvs;
 	private String bank_address;
+	
+	public CreditApplicationApplication() { }
 	
 	public CreditApplicationApplication(String surname, String first_name, String date_of_birth, String home_address,
 			String time_at_address, String place_of_birth, String type_of_proof, String proof_number,
