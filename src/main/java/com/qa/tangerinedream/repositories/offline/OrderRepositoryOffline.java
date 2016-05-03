@@ -8,9 +8,12 @@ import javax.inject.Inject;
 import repositorybackend.InitialData;
 import repositorybackend.OrderStatus;
 
+import static repositorybackend.OrderStatus.PENDING;
+import static repositorybackend.OrderStatus.WISHLIST;
+
 import com.qa.tangerinedream.entities.Customer;
 import com.qa.tangerinedream.entities.Order;
-import com.qa.tangerinedream.entities.OrderLine;
+
 import com.qa.tangerinedream.repositories.OrderRepository;
 
 
@@ -79,5 +82,16 @@ implements OrderRepository {
 	@Override
 	public ArrayList<Order> getOrders() {
 		return (ArrayList<Order>) initialData.getEntityList();
+	}
+
+	@Override
+	public Order findUsersOrderHistory(long userID) {
+		ArrayList<Order> os = (ArrayList<Order>) initialData.getOrders();
+		for (Order order : os){
+			if(order.getCustomer().getCustomerId()==userID && !order.getStatus().equals(PENDING) && !order.getStatus().equals(WISHLIST))
+				return order;
+			
+		}return null;
+	
 	}
 }

@@ -23,4 +23,5 @@ import repositorybackend.OrderStatus;
 		
 		public void updateOrder (Order o);
 		public Order findUserAndStatus(long userId, OrderStatus orderStatus);
+		public Order findUsersOrderHistory(long userID);
 	}
