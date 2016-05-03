@@ -3,9 +3,8 @@
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets" template="/WEB-INF/Template.xhtml"
-	css="Template.css">
+	css="Template.css" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/html">
 
-	<link rel="stylesheet" type="text/css" href="Template.css"></link>
 
 	<ui:define name="pagetitle">
 		<div id="header">
@@ -29,52 +28,55 @@
 			<option value="pot">Pot</option>
 		</select>
 		<br></br>
-		<br> </br>
-
-		<table id="catalogue">
-			<tr>
-				<th></th>
-				<th>Product name</th>
-				<th>Description</th>
-				<th>Category</th>
-				<th>Stock</th>
-				<th>Cost per unit</th>
-				<th></th>
-			</tr>
-
-			<tr>
-
-				<td><img src="img/freaky_gnome_01.png"
-					alt="Replace this image with something." height="128" width="128"></img></td>
-				<td>Test Gnome</td>
-				<td>Test gnome do not use.</td>
-				<td>Gnome</td>
-				<td>5</td>
-				<td>£9.99</td>
-
-				<td><input type="range" id="gnomerange" value="0" max="5"></input>
-				<button type="button">Add to basket</button>
-					<button type="button">Wishlist</button></td>
-
-			</tr>
-
-			<tr>
-				<td><img src="img/abstractpot.png"
-					alt="Replace this image with something." height="128" width="128"></img></td>
-				<td>Just a Pot</td>
-				<td>A simple pot that tries its best.</td>
-				<td>Pot</td>
-				<td>1</td>
-				<td>£3.50</td>
-
-				<td><input type="range" id="potrange" value="0" max="1"></input>
-				<button type="button">Add to basket</button>
-					<button type="button">Wishlist</button></td>
-
-			</tr>
+		<br></br>
 
 
-		</table>
+	<!-- dynamically-constructed dataTable with data pulled from the product list -->
+		<h:dataTable id="catalogue" value="#{catalogueController.getProducts}" var="product"
+			   styleClass="productTable"
+			   headerClass="productTableHeader"
+			   rowClasses="productTableOddRow,productTableEvenRow">
+			   <h:column>    				
+			      <f:facet name="header">Image</f:facet>    				
+			      <img src = #{product.imageLocation}></img>
+			      
+			   </h:column>
+			   <h:column>    				
+			      <f:facet name="header">Name</f:facet>    				
+			      #{product.productName}
+			   </h:column>
+			   
+			   <h:column>    				
+			      <f:facet name="header">Type</f:facet>    				
+			      #{product.productType}
+			   </h:column>
+			   
+			   <h:column>
+			      <f:facet name="header">Description</f:facet>
+			      #{product.description}
+			   </h:column>
+			   <h:column>
+			      <f:facet name="header">Category</f:facet>
+			      #{product.category}
+			   </h:column>
+			   <h:column>
+			      <f:facet name="header">Stock</f:facet>
+			      #{product.stock}
+			   </h:column>
+			   <h:column>
+			      <f:facet name="header">Cost Per Unit</f:facet>
+			      #{product.price}
+			   </h:column>
+			   <h:column>
+				   <f:facet name="header"></f:facet>
+					<h:inputText id="quantity" value="0"/>
+					<h:commandButton id="AddToBasket" action="#{basketController.addToBasket}" value="Add to basket" />
+					<h:commandButton id="AddToWishlist" action="#{wishlistController.addToWishlist}" value="Wishlist" />
+						
+						
+			   </h:column>
+		</h:dataTable>
+
 
 
 	</ui:define>
