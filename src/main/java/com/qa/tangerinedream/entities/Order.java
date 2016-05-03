@@ -121,4 +121,14 @@ public class Order {
 		if(orderLine.getOrder() != this)
 			orderLine.setOrder(this);
 	}
+	public void removeOrderLine(OrderLine orderline){
+		this.orderLines.remove(orderline);
+	}
+	public void updateOrderLine(OrderLine orderline){
+		for (int i=0; i < orderLines.size(); i++){
+			if(orderLines.get(i) == orderline) {
+				orderLines.set(i, orderline);
+			}
+		}
+	}
 }

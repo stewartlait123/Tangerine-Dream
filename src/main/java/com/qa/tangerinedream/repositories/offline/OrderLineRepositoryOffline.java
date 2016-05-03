@@ -73,5 +73,15 @@ implements OrderLineRepository {
 		} 
 	}
 	
-	
+	@Override
+	public void removeOrderLine(OrderLine o) {
+		ArrayList<OrderLine> orderline = initialData.getOrderLines();
+		
+		for (int i=0; i < orderline.size(); i++){
+			if(orderline.get(i) == o) {
+				orderline.remove(i);
+			}
+		}
+		initialData.setOrderLine(orderline);
+	}
 }
