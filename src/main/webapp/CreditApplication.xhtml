@@ -87,7 +87,10 @@
 
 						<tr>
 							<td><h:outputLabel value="Time At Address (Years):" /></td>
-							<td><h:inputText value="#{credapplic.time_at_address}" /></td>
+							<td><h:inputText id="time_at_address" value="#{credapplic.time_at_address}">
+							<f:validateLength maximum="2"/>
+							</h:inputText></td>
+							<td><h:message for="time_at_address" style = "color:red" /></td>
 						</tr>
 
 						<tr>
@@ -134,10 +137,10 @@
 
 						<tr>
 							<td><h:outputLabel value="Time With Employer:" /></td>
-							<td><h:inputText value="#{credapplic.time_with_employer}">
+							<td><h:inputText id = "time_with_employer" value="#{credapplic.time_with_employer}">
 							<f:validateLength maximum="2"/>
 							</h:inputText></td>
-							<td><h:messages for="time_with_employer" style = "color:red" /></td>
+							<td><h:message for="time_with_employer" style = "color:red" /></td>
 						</tr>
 
 						<tr>
@@ -170,17 +173,27 @@
 
 						<tr>
 							<td><h:outputLabel value="Time With Bank (Years):" /></td>
-							<td><h:inputText value="#{credapplic.time_with_bank}" /></td>
+							<td><h:inputText id ="time_with_bank" value="#{credapplic.time_with_bank}" >
+							<f:validateLength maximum="2"/>
+							</h:inputText></td>
+							<td><h:message for="time_with_bank" style = "color:red" /></td>
 						</tr>
 
 						<tr>
 							<td><h:outputLabel value="Account Number" /></td>
-							<td><h:inputText value="#{credapplic.account_number}" /></td>
+							<td><h:inputText id = "account_number" value="#{credapplic.account_number}">
+							<f:validateLength minimum ="8" maximum="8"/>
+							</h:inputText></td>
+							<td><h:message for="account_number" style = "color:red" /></td>
+							
 						</tr>
 
 						<tr>
 							<td><h:outputLabel value="Sort Code:" /></td>
-							<td><h:inputText value="#{credapplic.sort_code}" /></td>
+							<td><h:inputText id = "sort_code" value="#{credapplic.sort_code}">
+							<f:validateLength minimum ="6" maximum="6"/>
+							</h:inputText></td>
+							<td><h:message for="sort_code" style = "color:red" /></td>
 						</tr>
 
 						<tr>
@@ -190,7 +203,10 @@
 
 						<tr>
 							<td><h:outputLabel value="Card Number:" /></td>
-							<td><h:inputText value="#{credapplic.card_number}" /></td>
+							<td><h:inputText id = "card_number" value="#{credapplic.card_number}" >			
+							<f:validateLength minimum ="16" maximum="16"/>
+							</h:inputText></td>
+							<td><h:message for="card_number" style = "color:red" /></td>
 						</tr>
 
 						<tr>
@@ -200,7 +216,10 @@
 
 						<tr>
 							<td><h:outputLabel value="CVS:" /></td>
-							<td><h:inputText value="#{credapplic.cvs}" /></td>
+							<td><h:inputText id = "cvs" value="#{credapplic.cvs}" >
+							<f:validateLength minimum ="3" maximum="3"/>
+							</h:inputText></td>
+							<td><h:message for="cvs" style = "color:red" /></td>
 							
 						</tr>
 
