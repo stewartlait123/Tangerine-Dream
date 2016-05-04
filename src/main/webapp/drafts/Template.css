@@ -3,6 +3,32 @@
 
 
 /*
+* Template page styling
+*/
+body {
+	background: #bdfdaf;
+}
+
+.footer{
+	clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: -3em;
+    background: #000000;
+}
+
+.middleText {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em
+}
+
+.top-bar{
+	background: #000000;
+}
+
+/*
 *  Fonts
 */
 
