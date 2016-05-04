@@ -21,6 +21,7 @@ public class CatalogueController {
 	private String productName= "";
 	private String productType = "";
 	private String productImageLocation = "";
+	private int stock;
 	
 	
 	public ArrayList<Product> getProducts() {
@@ -39,6 +40,11 @@ public class CatalogueController {
 	public String getProductType() {
 		return productType;
 	}
+
+	public String getProductImageLocation() {
+		return productImageLocation;
+	}
+
 
 	
 }
