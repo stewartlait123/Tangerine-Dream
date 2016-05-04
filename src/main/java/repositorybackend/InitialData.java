@@ -27,8 +27,8 @@ import com.qa.tangerinedream.entities.Supplier;
 public class InitialData{
 	private ArrayList<Customer> customers = new ArrayList<Customer>();
 	private ArrayList<Address> address = new ArrayList<Address>();
-	private ArrayList<Order> Orders = new ArrayList<Order>();
-	private ArrayList<OrderLine> OrderLine= new ArrayList<OrderLine>();
+	private ArrayList<Order> orders = new ArrayList<Order>();
+	private ArrayList<OrderLine> orderLine= new ArrayList<OrderLine>();
 	private ArrayList<Payment> payment = new ArrayList<Payment>();
 	private ArrayList<Product> products = new ArrayList<Product>();
 	private ArrayList<Employee> employees = new ArrayList<Employee>();
@@ -39,7 +39,6 @@ public class InitialData{
 
 	
 	public InitialData(){
-		products.add(new Product("pot", 100, 300, 10, 500, 1000, 100, 1000, "POTS", null));
 		
 		//Creation of five entries to add into customer arraylist with unique values - Finley Peters @ TeamTang
 		customers.add(new Customer("John Doe", "BigJohn", "johnPassword", new Date() ,67 , 100));	
@@ -54,6 +53,23 @@ public class InitialData{
 		address.add(new Address("50 Mandel Drive, Manchester, M354JL", "50 Mandel Drive, Manchester, M354JL", customer_ID));
 		address.add(new Address("Walton Hall Paddock, Birmingham, B267hr", "Walton Hall Paddock, Birmingham, B267hr", customer_ID));
 		
+		//creation of products
+		//name, cost price size weight stock minstock orderamount productType image location
+		products.add(new Product("pot", 100, 300, 10, 500, 1000, 100, 1000, "POT", "img/abstractpot.png"));
+		products.add(new Product("clippers", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Clippers.png"));
+		products.add(new Product("normal gnome", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome1.jpg"));
+		products.add(new Product("normal gnome2", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
+		products.add(new Product("normal gnome3", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
+		products.add(new Product("normal gnome3", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
+		products.add(new Product("normal gnome4", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome4.jpg"));
+		products.add(new Product("Godzilla Gnome", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome5.jpg"));
+		products.add(new Product("Gun gnome3", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome6.jpg"));
+		products.add(new Product("Hook", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Hook.jpg"));
+		products.add(new Product("Rake", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Rake.jpg"));
+		products.add(new Product("Shovel", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Shovel.jpg"));
+		products.add(new Product("Trimmers", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Trimmers.jpg"));
+		products.add(new Product("Trowel", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Trowel.jpg"));
+		
 		//Creation of Order Dummy data by Christine Stokes
 		
 		Date currentDate = null;
@@ -64,17 +80,22 @@ public class InitialData{
 			System.out.println("Error in creating date!");
 			e.printStackTrace();
 		}
-		Orders.add(new Order(1, currentDate, customer_ID));
-		Orders.add(new Order(2, currentDate, customer_ID));
-		Orders.add(new Order(3, currentDate, customer_ID));
-	
-	// Creation of Dummy Data for orderline by Christine Stokes
-	Order orderID = new Order();
-	Product productID = new Product(null, 0, 0, 0, 0, 0, 0, 0, null, null);
-	
-	OrderLine.add(new OrderLine(orderID, productID, 2, 1799));
-	OrderLine.add(new OrderLine(orderID, productID, 3,1899));
-	OrderLine.add(new OrderLine(orderID, productID, 5,1599));
+		
+		// Creation of Dummy Data for orderline by Christine Stokes
+		Order orderID = new Order();
+		Product productID = new Product(null, 0, 0, 0, 0, 0, 0, 0, null, null);
+		
+		//orderLine.add(new OrderLine(orderID, productID, 2, 1799));
+		//orderLine.add(new OrderLine(orderID, productID, 3,1899));
+		//orderLine.add(new OrderLine(orderID, productID, 5,1599));
+		
+		//OrderStatus status, long currentDate, Customer customer, OrderLine orderLine
+		
+		//Product product, int quantity, int purchasePrice
+		
+		orders.add(new Order(OrderStatus.PLACED , currentDate , customers.get(0), new OrderLine(products.get(3), 5 , 500)));
+		orders.add(new Order(OrderStatus.PLACED , currentDate , customers.get(3), new OrderLine(products.get(0), 1 , 40)));
+		orders.add(new Order(OrderStatus.WISHLIST , currentDate , customers.get(4), new OrderLine(products.get(10), 100 , 0)));
 	
 	// Creation of Payment Dummy Data by Christine Stokes
 	
@@ -112,6 +133,9 @@ public class InitialData{
 	productSuppliers.add(new ProductSupplier(supplier.get(0), productID, 1999));
 	productSuppliers.add(new ProductSupplier(supplier.get(1), productID, 2500));
 	productSuppliers.add(new ProductSupplier(supplier.get(2), productID, 499));
+	
+	
+	
 	
 	}
 	// Products and Employee methods by Mohammed Miah
@@ -173,18 +197,18 @@ public class InitialData{
 	// Order data getter by Christine Stokes
 	
 	public List<Order>getOrders(){
-		return Orders;
+		return orders;
 
 	}
 	public void addOrder(Order order){
-		Orders.add(order);
+		orders.add(order);
 	}
 	public void setOrder(List<Order> order) {
-		Orders = (ArrayList<Order>) order;
+		orders = (ArrayList<Order>) order;
 	}
 
 	public List<Order> getEntityList() {
-		return Orders;
+		return orders;
 	}
 	
 	// Product Suppliers by Duncan Gillespie
@@ -200,18 +224,18 @@ public class InitialData{
 	// Order Line getter etc added by Christine
 	
 	public ArrayList<OrderLine> getOrderLines(){
-		return OrderLine;
+		return orderLine;
 
 	}
 	public void addOrderLine(OrderLine orderline){
-		OrderLine.add(orderline);
+		orderLine.add(orderline);
 	}
 	public void setOrderLine(List<OrderLine> orderline) {
-		OrderLine = (ArrayList<OrderLine>) orderline;
+		orderLine = (ArrayList<OrderLine>) orderline;
 	}
 
 	public List<OrderLine> getEntityListOrderLine() {
-		return OrderLine;
+		return orderLine;
 	}
 	
 		

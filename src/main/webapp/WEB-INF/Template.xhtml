@@ -6,10 +6,8 @@
 	xmlns:s="http://jboss.com/products/seam/taglib"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
-<h:head>
-	<meta charset="ISO-8859-1"></meta>
-	<link rel="stylesheet" type="text/css" href="Template.css" />
-	<title>NBGardens</title>
+<h:head id = "header">
+	<link rel="stylesheet" type="text/css" href="Template.css"/>
 </h:head>
 <f:view>
 	<body>
@@ -43,7 +41,7 @@
 
 			<!-- Template calling pages - @author Stewart -->
 			<div class="content">
-				<ui:insert name="pagetitle"></ui:insert>
+				<ui:insert name="pagetitle" ></ui:insert>
 
 				<ui:insert name="maincontent"></ui:insert>
 			</div>
