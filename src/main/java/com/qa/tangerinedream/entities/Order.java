@@ -40,7 +40,7 @@ public class Order {
 	@Size (min = 1, max = 10)
 	private OrderStatus status; // Status which needs to be converted to an enum at time
 	
-	@Column(name = "order_date", nullable = false, length = 50)
+	@Column(name = "order_date", length = 50)
 	@NotNull
 	@Size (min = 6, max = 50)
 	private Date order_date; // the column for date order placed
@@ -57,6 +57,13 @@ public class Order {
 	public Order(){
 		orderLines = new ArrayList<>();
 	}
+	
+	public Order(Customer customer, OrderStatus status){
+		orderLines = new ArrayList<>();
+		this.customer = customer;
+		this.status = status;
+	}
+
 
 	/**
 	 *   method to allow dummy data to be generated 
@@ -96,6 +103,14 @@ public class Order {
 	public List<OrderLine> getOrderLines() {
 		return orderLines;
 	}
+	
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
 
 	public void setOrderLines(List<OrderLine> orderLines) {
 		this.orderLines = orderLines;
@@ -105,5 +120,15 @@ public class Order {
 		this.orderLines.add(orderLine);
 		if(orderLine.getOrder() != this)
 			orderLine.setOrder(this);
+	}
+	public void removeOrderLine(OrderLine orderline){
+		this.orderLines.remove(orderline);
+	}
+	public void updateOrderLine(OrderLine orderline){
+		for (int i=0; i < orderLines.size(); i++){
+			if(orderLines.get(i) == orderline) {
+				orderLines.set(i, orderline);
+			}
+		}
 	}
 }

@@ -28,6 +28,7 @@ public class OrderController {
 	@Inject CurrentUser currentUser;
 	
 	private Order order = orderService.getUsersPendingOrder(currentUser.getUserID());
+	private float totalPrice = orderService.calcOrderTotalPlaced(currentUser.getUserID());
 	
 	/*
 	 * List of required functions
@@ -55,29 +56,36 @@ public class OrderController {
 	}
 	
 	
-	public void getOrderHistory(){
+	public Order getOrderHistory( long userID){
 		
-		// TODO hook into order search functionality in relevent Bean.
-		
-	};
+		orderService.getUsersOrderHistory(userID);
+		return order;
+	}
 	
 	public void cancelOrder(){
 		
 		orderService.clearOrder(currentUser.getUserID());
 		
-	}; 
+	}
 	
 	public void searchForOrder(){
 		
 		// TODO hook into order search functionality in relevent Bean.
 		
-	}; 
+	}
 	
-	public void cofirmOrder(){
+	public String cofirmOrder(){
 		
 		orderService.placeOrder(order, currentUser.getUserID());
-	}; // returns a boolean if order has been successfully confirmed or not
-
+	 return "order";
+	}
 	
+	public Order getPlacedOrder(long userID){
+		Order order = orderService.getUsersPlacedOrders(userID);
+		return order;
+	}
 
+    public float getTotalCostPending(){
+    	return totalPrice;
+    }
 }

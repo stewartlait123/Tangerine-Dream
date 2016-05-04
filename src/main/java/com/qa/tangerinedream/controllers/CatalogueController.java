@@ -20,6 +20,8 @@ public class CatalogueController {
 	
 	private String productName= "";
 	private String productType = "";
+	private String productImageLocation = "";
+	
 	
 	public ArrayList<Product> getProducts() {
 		return catalogueService.getProducts();

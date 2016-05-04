@@ -6,8 +6,14 @@ import java.util.List;
 import javax.inject.Inject;
 
 import repositorybackend.InitialData;
+import repositorybackend.OrderStatus;
 
+import static repositorybackend.OrderStatus.PENDING;
+import static repositorybackend.OrderStatus.WISHLIST;
+
+import com.qa.tangerinedream.entities.Customer;
 import com.qa.tangerinedream.entities.Order;
+
 import com.qa.tangerinedream.repositories.OrderRepository;
 
 
@@ -19,16 +25,15 @@ import com.qa.tangerinedream.repositories.OrderRepository;
  */
 public class OrderRepositoryOffline 
 implements OrderRepository {
-	@Inject
 	
 	/**Changed injection from 'OrderInitialData' to 'InitialData' as all offline
 	 * data is to be folded into this class. 
 	*  Changed variable name 'OrderInitialData' to 'initialData' to reflect this.
 	*  Jessica:changed to long rather than biginteger for order_id (james recommended)
 	*/
-	
+	@Inject
 	private InitialData initialData;
-	
+
 	@Override
 	public void persistOrder(Order o) {
 		initialData.addOrder(o);	
@@ -44,6 +49,16 @@ implements OrderRepository {
 		}		
 			return null;
 	}
+	
+	@Override
+	public Order findUserAndStatus(long userId, OrderStatus orderStatus) {
+		ArrayList<Order> orders = (ArrayList<Order>) initialData.getOrders();
+		for (Order order : orders)
+			if(order.getCustomer().getCustomerId()==userId && order.getStatus().equals(orderStatus))
+				return order;
+		return null;
+	}
+	
 
 	@Override
 	public void updateOrder(Order o) {
@@ -70,8 +85,13 @@ implements OrderRepository {
 	}
 
 	@Override
-	public Order findUsersPendingOrder(long userId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Order findUsersOrderHistory(long userID) {
+		ArrayList<Order> os = (ArrayList<Order>) initialData.getOrders();
+		for (Order order : os){
+			if(order.getCustomer().getCustomerId()==userID && !order.getStatus().equals(PENDING) && !order.getStatus().equals(WISHLIST))
+				return order;
+			
+		}return null;
+	
 	}
 }

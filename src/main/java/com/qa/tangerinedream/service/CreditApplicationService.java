@@ -3,7 +3,8 @@ package com.qa.tangerinedream.service;
 //service to link with muley mule
 
 import static javax.jms.Session.AUTO_ACKNOWLEDGE;
-import javax.enterprise.context.spi.Context;
+
+import javax.ejb.Stateless;
 import javax.jms.JMSException;
 import javax.jms.ObjectMessage;
 import javax.jms.Queue;
@@ -11,10 +12,11 @@ import javax.jms.QueueConnection;
 import javax.jms.QueueConnectionFactory;
 import javax.jms.QueueSender;
 import javax.jms.QueueSession;
-import javax.jms.Session;
+import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+@Stateless
 public class CreditApplicationService {
 	private Context context = null;
 	private QueueConnectionFactory connectionFactory = null;
@@ -37,9 +39,9 @@ public class CreditApplicationService {
 				bank_name,  time_with_bank,  account_number,  sort_code,  card_name,
 				card_number,  expiry_date,  cvs,  bank_address);
 		try {
-			context = (Context) new InitialContext();
-			connectionFactory = (QueueConnectionFactory) ((javax.naming.Context) context).lookup("ConnectionFactory");
-			queue = (Queue) ((javax.naming.Context) context).lookup("queue1");
+			context = new InitialContext();
+			connectionFactory = (QueueConnectionFactory) context.lookup("ConnectionFactory");
+			queue = (Queue) context.lookup("queue1");
 			connection = connectionFactory.createQueueConnection();
 			session = connection.createQueueSession(false, AUTO_ACKNOWLEDGE);
 			queueSender = session.createSender(queue);
@@ -54,8 +56,8 @@ public class CreditApplicationService {
 		} finally {
 			if (context != null) {
 				try {
-					((Session) context).close();
-				} catch (JMSException e) {
+					context.close();
+				} catch (NamingException e) {
 					e.printStackTrace();
 				}
 			}

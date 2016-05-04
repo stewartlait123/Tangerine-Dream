@@ -6,6 +6,7 @@ import java.util.Calendar;
 
 import javax.inject.Inject;
 
+import com.qa.tangerinedream.entities.Customer;
 import com.qa.tangerinedream.entities.Order;
 import com.qa.tangerinedream.entities.OrderLine;
 import com.qa.tangerinedream.entities.Product;
@@ -17,6 +18,7 @@ public class BasketService {
 	@Inject OrderRepository orderRepository;
 	@Inject ProductRepository productRepository;
 	@Inject CustomerRepository customerRepository;
+
 	
 	public void addToBasket(long productId, int quantity, long userId) {
 		Product product = productRepository.findByProductId(productId);
@@ -33,4 +35,5 @@ public class BasketService {
 		} else 
 			order = new Order(PENDING, Calendar.getInstance().getTimeInMillis(), customerRepository.findByID(userId), new OrderLine(product, quantity, product.getPrice()));
 	}
+
 }
