@@ -1,6 +1,11 @@
 package com.qa.tangerinedream.service;
 
-import java.util.ArrayList;
+/*
+ * 
+ * @author Iain Q
+ * 
+ */
+
 
 import javax.inject.Inject;
 
@@ -12,10 +17,12 @@ public class ProductService {
 	
 	@Inject ProductRepository productRepo;
 
-	public Product getProduct() {
-		// TODO Auto-generated method stub
-		return null;
+	public Product getProduct(long productId) {
+		return productRepo.findByProductId(productId);
 	}
 
+	
+	
+	
 
 }

@@ -1,9 +1,7 @@
-
-
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets" template="/WEB-INF/Template.xhtml"
-	css="Template.css" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/html">
+	css="Template.css" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
 
 
 	<ui:define name="pagetitle">
@@ -32,13 +30,13 @@
 
 
 	<!-- dynamically-constructed dataTable with data pulled from the product list -->
-		<h:dataTable id="catalogue" value="#{catalogueController.getProducts}" var="product"
+		<h:dataTable id="catalogue" value="#{productController.products}" var="product"
 			   styleClass="productTable"
 			   headerClass="productTableHeader"
 			   rowClasses="productTableOddRow,productTableEvenRow">
 			   <h:column>    				
 			      <f:facet name="header">Image</f:facet>    				
-			      <img src = #{product.imageLocation}></img>
+			      <img src = "#{product.imageLocation}"></img>
 			      
 			   </h:column>
 			   <h:column>    				
@@ -53,11 +51,8 @@
 			   
 			   <h:column>
 			      <f:facet name="header">Description</f:facet>
-			      #{product.description}
-			   </h:column>
-			   <h:column>
-			      <f:facet name="header">Category</f:facet>
-			      #{product.category}
+			      Placeholder product description fix later.
+			      <!--#{product.productDescription} -->
 			   </h:column>
 			   <h:column>
 			      <f:facet name="header">Stock</f:facet>
@@ -65,7 +60,7 @@
 			   </h:column>
 			   <h:column>
 			      <f:facet name="header">Cost Per Unit</f:facet>
-			      #{product.price}
+			      #{product.productPrice}
 			   </h:column>
 			   <h:column>
 				   <f:facet name="header"></f:facet>
