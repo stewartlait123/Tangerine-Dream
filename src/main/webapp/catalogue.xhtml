@@ -15,7 +15,6 @@
 	<ui:define name="maincontent">
 		<!--Author (and artist): Iain Q><-->
 
-
 		<input type="text" name="search" value="Search"></input>
 
 
@@ -30,7 +29,7 @@
 
 
 	<!-- dynamically-constructed dataTable with data pulled from the product list -->
-		<h:dataTable id="catalogue" value="#{productController.products}" var="product"
+		<h:dataTable id="catalogue" value="#{catalogueController.products}" var="product"
 			   styleClass="productTable"
 			   headerClass="productTableHeader"
 			   rowClasses="productTableOddRow,productTableEvenRow">
