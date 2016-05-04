@@ -7,12 +7,16 @@
 package com.qa.tangerinedream.controllers;
 
 
+import java.util.List;
+
 import javax.faces.bean.RequestScoped;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.qa.tangerinedream.entities.Order;
+import com.qa.tangerinedream.entities.OrderLine;
+import com.qa.tangerinedream.entities.Product;
 import com.qa.tangerinedream.service.OrderService;
 
 
@@ -80,9 +84,15 @@ public class OrderController {
 	 return "order";
 	}
 	
-	public Order getPlacedOrder(long userID){
-		Order order = orderService.getUsersPlacedOrders(userID);
+	public Order getPlacedOrder(){
+		Order order = orderService.getUsersPlacedOrders(currentUser.getUserID());
+		
 		return order;
+	}
+	
+	public List<OrderLine> getPlacedOrderLines(){
+		Order order = orderService.getUsersPlacedOrders(currentUser.getUserID());
+		return order.getOrderLines();
 	}
 
     public float getTotalCostPending(){

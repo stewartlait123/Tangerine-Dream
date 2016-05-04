@@ -6,6 +6,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +23,7 @@ import com.qa.tangerinedream.entities.ProductSupplier;
 import com.qa.tangerinedream.entities.PurchaseOrder;
 import com.qa.tangerinedream.entities.PurchaseOrderLine;
 import com.qa.tangerinedream.entities.Supplier;
+
 
 @Singleton
 public class InitialData{
@@ -80,6 +82,7 @@ public class InitialData{
 			System.out.println("Error in creating date!");
 			e.printStackTrace();
 		}
+
 		
 		// Creation of Dummy Data for orderline by Christine Stokes
 		Order orderID = new Order();
@@ -96,6 +99,7 @@ public class InitialData{
 		orders.add(new Order(OrderStatus.PLACED , currentDate , customers.get(0), new OrderLine(products.get(3), 5 , 500)));
 		orders.add(new Order(OrderStatus.PLACED , currentDate , customers.get(3), new OrderLine(products.get(0), 1 , 40)));
 		orders.add(new Order(OrderStatus.WISHLIST , currentDate , customers.get(4), new OrderLine(products.get(10), 100 , 0)));
+	
 	
 	// Creation of Payment Dummy Data by Christine Stokes
 	

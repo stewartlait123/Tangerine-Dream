@@ -4,6 +4,7 @@
 
 package com.qa.tangerinedream.service;
 
+
 import javax.inject.Inject;
 
 import com.qa.tangerinedream.controllers.BasketController;
@@ -45,6 +46,4 @@ public class PaymentService {
 		customerRepository.updateCredit( currentUser.getUserID(), (int) basketController.getTotalPrice());
 		//TODO continue from here
 	}
-	
-	
 }

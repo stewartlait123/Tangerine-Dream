@@ -61,7 +61,7 @@ public class WishlistController {
 	 */
 	public String addToBasketFromWishlist(long productId) {
 		removeFromWishlist(productId);
-		basketService.addToBasket(productId,);
+		basketService.addToBasket(productId);
 		return "wishlist";
 	}
 
