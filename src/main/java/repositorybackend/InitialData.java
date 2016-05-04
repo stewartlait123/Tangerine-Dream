@@ -6,6 +6,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +23,7 @@ import com.qa.tangerinedream.entities.ProductSupplier;
 import com.qa.tangerinedream.entities.PurchaseOrder;
 import com.qa.tangerinedream.entities.PurchaseOrderLine;
 import com.qa.tangerinedream.entities.Supplier;
+
 
 @Singleton
 public class InitialData{
@@ -64,17 +66,17 @@ public class InitialData{
 			System.out.println("Error in creating date!");
 			e.printStackTrace();
 		}
-		Orders.add(new Order(1, currentDate, customer_ID));
-		Orders.add(new Order(2, currentDate, customer_ID));
-		Orders.add(new Order(3, currentDate, customer_ID));
+		Orders.add(new Order(OrderStatus.PLACED, Calendar.getInstance().getTimeInMillis(), customer_ID, OrderLine.get(0)));
+		Orders.add(new Order(OrderStatus.AWAITINGDISPATCH, Calendar.getInstance().getTimeInMillis(), customer_ID, OrderLine.get(1)));
+		Orders.add(new Order(OrderStatus.DELIVERED, Calendar.getInstance().getTimeInMillis(), customer_ID, OrderLine.get(2)));
 	
 	// Creation of Dummy Data for orderline by Christine Stokes
 	Order orderID = new Order();
 	Product productID = new Product(null, 0, 0, 0, 0, 0, 0, 0, null, null);
 	
-	OrderLine.add(new OrderLine(orderID, productID, 2, 1799));
-	OrderLine.add(new OrderLine(orderID, productID, 3,1899));
-	OrderLine.add(new OrderLine(orderID, productID, 5,1599));
+	OrderLine.add(new OrderLine(productID, 2, 1799));
+	OrderLine.add(new OrderLine(productID, 3,1899));
+	OrderLine.add(new OrderLine(productID, 5,1599));
 	
 	// Creation of Payment Dummy Data by Christine Stokes
 	
