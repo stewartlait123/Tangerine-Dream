@@ -7,7 +7,7 @@ import javax.ejb.Stateless;
 @Stateless
 public class CreditApplicationApplication  implements Serializable{
 	/**
-	 * 
+	 * This is the appplication for the actual information to be sent over to mule
 	 */
 	private static final long serialVersionUID = 4104281045024394123L;
 

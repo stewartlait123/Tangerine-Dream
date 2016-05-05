@@ -2,6 +2,9 @@ package com.qa.tangerinedream.service;
 
 //service to link with muley mule
 
+/**
+ * Service to send over the form information from webpage to mule
+ */
 import static javax.jms.Session.AUTO_ACKNOWLEDGE;
 
 import javax.ejb.Stateless;
