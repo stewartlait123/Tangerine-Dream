@@ -32,6 +32,7 @@ public class OrderController {
 	
 	private Order order = orderService.getUsersPendingOrder(currentUser.getUserID());
 	private float totalPrice = orderService.calcOrderTotalPlaced(currentUser.getUserID());
+	private float totalPaid = orderService.calcOrderTotalPaid(currentUser.getUserID());
 	
 	/*
 	 * List of required functions
@@ -94,7 +95,16 @@ public class OrderController {
 		return order.getOrderLines();
 	}
 
+	public List<OrderLine> getPaidOrderLines(){
+		Order order = orderService.getUsersPaidOrders(currentUser.getUserID());
+		return order.getOrderLines();
+	}
+	
     public float getTotalCostPending(){
     	return totalPrice;
+    }
+    
+    public float getTotalCostPaid(){
+		return totalPaid;
     }
 }
