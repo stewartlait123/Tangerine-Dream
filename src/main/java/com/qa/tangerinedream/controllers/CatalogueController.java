@@ -21,7 +21,7 @@ public class CatalogueController {
 	private String productName= "";
 	private String productType = "";
 	private String productImageLocation = "";
-	private int stock;
+	
 	
 	
 	public ArrayList<Product> getProducts() {

@@ -1,15 +1,21 @@
 package com.qa.tangerinedream.service;
 
+/*
+ * 
+ * @author Iain Q
+ * 
+ */
+
 import java.util.ArrayList;
 
-import javax.ejb.Stateless;
+
 import javax.inject.Inject;
 
 import com.qa.tangerinedream.entities.Product;
 import com.qa.tangerinedream.repositories.ProductRepository;
 
 
-@Stateless 
+
 public class CatalogueService {
 		@Inject ProductRepository productRepo;
 		//no cataloguerepo as it's all in the product one
