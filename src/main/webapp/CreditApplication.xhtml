@@ -76,9 +76,15 @@
 						</tr>
 
 						<tr>
-							<td><h:outputLabel value="Date Of Birth:" /></td>
+							<td><h:outputLabel value="Date Of Birth (DD/MM/YYYY):" /></td>
 							<td><h:inputText value="#{credapplic.date_of_birth}" /></td>
 						</tr>
+						
+						<tr>
+							<td><h:outputLabel value="Place Of Birth:" /></td>
+							<td><h:inputText value="#{credapplic.place_of_birth}" /></td>
+						</tr>
+						
 
 						<tr>
 							<td><h:outputLabel value="Home Address:" /></td>
@@ -211,7 +217,8 @@
 
 						<tr>
 							<td><h:outputLabel value="Expiry Date:" /></td>
-							<td><h:inputText value="#{credapplic.expiry_date}" /></td>
+							<td><h:inputText value="#{credapplic.expiry_date}" ></h:inputText></td>
+			
 						</tr>
 
 						<tr>
