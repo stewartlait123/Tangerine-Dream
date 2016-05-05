@@ -43,7 +43,7 @@ implements CustomerRepository{
 	}
 	
 	@Override
-	public Customer findByID(int id_)
+	public Customer findByID(long id_)
 	{
 		ArrayList<Customer> searchList = initialData.getCustomers(); //The list we will search
 		
@@ -202,5 +202,54 @@ implements CustomerRepository{
 			}
 		}
 		initialData.setCustomers(searchList);
+	}
+
+	@Override
+	public long findUserIdByUsername(String username_) {
+		
+		ArrayList<Customer> searchList = initialData.getCustomers(); //The list we will search
+		
+		for(int i = 0 ; i < searchList.size() ; i++ )
+		{
+			if(searchList.get(i).getUsername().equals(username_))
+			{
+				Customer searchResult = searchList.get(i);
+				return searchResult.getCustomerId();				
+			}
+		}
+		return 0;
+	}
+
+	@Override
+	public long getUserID(String lowerCase) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Customer findByUserPass(String username, String password) {
+		
+		ArrayList<Customer> searchList = initialData.getCustomers(); //The list we will search
+		
+		for(int i = 0 ; i < searchList.size() ; i++ )
+		{
+			System.out.println("Searching");
+			if(searchList.get(i).getUsername().equals(username))
+			{
+				System.out.println("Username matched");
+				if(!searchList.get(i).getPassword().equals(password))
+				{
+					//wrong password message
+					System.out.println("Password wrong");
+					return null;
+				}else{
+					System.out.println("match found");
+				Customer searchResult = searchList.get(i);
+				return searchResult;
+				}
+			}
+		}
+		
+		return null;
 	}
 }
