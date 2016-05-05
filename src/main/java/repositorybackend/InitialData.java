@@ -57,13 +57,13 @@ public class InitialData{
 		
 		//creation of products
 		//name, cost price size weight stock minstock orderamount productType image location
-		products.add(new Product("pot", 100, 300, 10, 500, 1000, 100, 1000, "POT", "img/abstractpot.png"));
-		products.add(new Product("clippers", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Clippers.png"));
-		products.add(new Product("normal gnome", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome1.jpg"));
-		products.add(new Product("normal gnome2", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
-		products.add(new Product("normal gnome3", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
-		products.add(new Product("normal gnome3", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
-		products.add(new Product("normal gnome4", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome4.jpg"));
+		products.add(new Product("Simple Pot", 100, 300, 10, 500, 1000, 100, 1000, "POT", "img/abstractpot.png"));
+		products.add(new Product("Clippers", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Clippers.jpg"));
+		products.add(new Product("Normal Gnome", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome1.jpg"));
+		products.add(new Product("Normal Gnome 2", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
+		products.add(new Product("Normal Gnome 3", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
+		products.add(new Product("Normal Gnome 4", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome4.jpg"));
+		products.add(new Product("Return of Normal Gnome 3", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
 		products.add(new Product("Godzilla Gnome", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome5.jpg"));
 		products.add(new Product("Gun gnome3", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome6.jpg"));
 		products.add(new Product("Hook", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Hook.jpg"));
