@@ -36,4 +36,16 @@ public class BasketService {
 			order = new Order(PENDING, Calendar.getInstance().getTimeInMillis(), customerRepository.findByID(userId), new OrderLine(product, quantity, product.getPrice()));
 	}
 
+
+	public int getTotalPrice() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	public void placeOrder() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
