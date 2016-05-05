@@ -2,7 +2,8 @@
 
 <!DOCTYPE html>
 <html>
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="/WEB-INF/Template.xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -10,8 +11,8 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 
-	<ui:define name="maincontent" id="test-container">
-		<div id="landing-page-content" style="min-width: 685px">
+	<ui:define name="maincontent">
+		<div>
 
 			<div id="spacer"></div>
 
@@ -23,7 +24,7 @@
 
 				<div>
 
-					<div class="departments" id="department-holder">
+					<div>
 
 						<div class="department-header">
 							<h4 class="department-font">Gnomes and Accessories</h4>
@@ -31,14 +32,14 @@
 
 						<div id="department1" class="product-row">
 							<div class="carousel1">
-								<h:dataTable id="datatable" value="#{products.getProducts}"
-									var="product">
+								<h:dataTable id="datatable" value="#{catalogue.products}"
+									var="products">
 									<h:column>
 										<f:facet name="">
 										</f:facet>
 										<div>
-											<img src="#{product.imageLocation}" />
-											<p>#{product.productPrice}</p>
+											<img src="#{products.imageLocation}" />
+											"#{products.price}"
 										</div>
 									</h:column>
 								</h:dataTable>
@@ -46,15 +47,23 @@
 						</div>
 
 
-
 						<div class="department-header">
 							<h4 class="department-font">Garden Tools</h4>
 						</div>
 
 						<div id="department2" class="product-row">
-							<div class="carousel2"></div>
-						</div>
-
+							<h:dataTable id="datatable" value="#{catalogue.products}"
+									var="products">
+									<h:column>
+										<f:facet name="">
+										</f:facet>
+										<div>
+											<img src="#{products.imageLocation}" />
+											<p>#{products.price}</p>
+										</div>
+									</h:column>
+								</h:dataTable>
+							</div>
 					</div>
 
 
@@ -118,7 +127,7 @@
 		<link rel="stylesheet" type="text/css"
 			href="slick-1.5.9/slick/slick-theme.css" />
 
-		<script	src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.min.js"></script>
+
 		<script type="text/javascript" src="slick-1.5.9/slick/slick.min.js"></script>
 	</ui:define>
 </ui:composition>
