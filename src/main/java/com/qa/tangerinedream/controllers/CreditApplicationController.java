@@ -1,19 +1,18 @@
 package com.qa.tangerinedream.controllers;
+import javax.ejb.EJB;
 //Created by Jessica Maddocks. Credit Application controller: the controller will have the apply and cancel buttons that navigate to a confirmation page and send to Accounts via Mule (JMS) when applied and go to the home page when cancelled.
 //For Mule, to receive the form, the application service is created which has the JMS 
 import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.qa.tangerinedream.service.CreditApplicationService;
 
 @Named(value = "credapplic")
 @RequestScoped
-
 public class CreditApplicationController {
 	
 	//CAS will be a service layer object to carry the gay away
-	@Inject
+	@EJB
 	private CreditApplicationService creditApplicationService;
 		
 	//apply for credit method
@@ -41,9 +40,11 @@ public class CreditApplicationController {
 	private String bank_address = "";
 
 	
-	//method for apply and cancel buttons
+	//method to return to credit application if any boxes are left empty and for apply and cancel buttons
 	public String apply (){
-		//send to accounts and confirm page
+		if (surname.isEmpty() || first_name.isEmpty() || date_of_birth.isEmpty() || home_address.isEmpty() || time_at_address.isEmpty() || place_of_birth.isEmpty() || type_of_proof.isEmpty() || proof_number.isEmpty() || employer_name.isEmpty() || employer_address.isEmpty() || time_with_employer.isEmpty() || type_of_employment.isEmpty() || bank_name.isEmpty() || time_with_bank.isEmpty() || account_number.isEmpty() || sort_code.isEmpty() || card_name.isEmpty() || card_number.isEmpty() || expiry_date.isEmpty() || cvs.isEmpty() || bank_address.isEmpty())
+			return "CreditApplication";
+		//send to imaginary accounts department via mule.
 		//we don't give a shit m8 coz its a controller, we dont need the logik ere
 		creditApplicationService.sendApplication(surname, first_name, date_of_birth, home_address, time_at_address, place_of_birth, type_of_proof, proof_number, employer_name, employer_address, time_with_employer, type_of_employment, bank_name, time_with_bank, account_number, sort_code, card_name, card_number, expiry_date, cvs, bank_address);
 		return "CreditConfirmation";	

@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets" template="/WEB-INF/Template.xhtml"
 	css="Template.css">
 	<ui:define name="pagetitle">
@@ -12,11 +15,13 @@
 	<ui:define name="maincontent">
 		<!--Author: Iain Q><-->
 		<div>
-			Select a payment method: <select name="category">
-				<option value="payment">Payment methods</option>
-				<option value="payment1">Visa ending 1234</option>
-				<option value="payment2">Credit</option>
-			</select>
+			Select a payment method:
+			
+			<h:selectOneMenu value="#{Payment.method}" name = "category">
+            <f:selectItem itemValue="1" itemLabel="Select One..." />
+            <f:selectItem itemValue="2" itemLabel="Visa" />
+            <f:selectItem itemValue="3" itemLabel="Credit" />			
+         </h:selectOneMenu>
 		</div>
 
 		<div>
@@ -34,22 +39,22 @@
 						<table id="payment">
 							<tr>
 								<th>Name as it appears on card:</th>
-								<th><input type="text" name="cardname"></input></th>
+								<th><h:inputText value="#{Payment.nameOnCard}" /> </th>
 							</tr>
 							<tr>
 								<th>Card Number:</th>
-								<th><input type="text" name="cardnumber"></input></th>
+								<th><h:inputText value="#{Payment.cardNumber}" /></th>
 							</tr>
 							<tr>
 								<th>Expiry Date:</th>
-								<th><input type="text" name="expirydate"></input></th>
+								<th><h:inputText value="#{Payment.expiryDate}" /></th>
 							</tr>
 							<tr>
 								<th>CSV:</th>
-								<th><input type="text" name="csv"></input></th>
+								<th><h:inputText value="#{Payment.cSV}" /></th>
 							</tr>
 						</table>
-						<input type="submit" class="submitButton" value="Submit"></input>
+						<h:commandButton action="#{Payment.Submit}" value="Submit" />
 
 					</fieldset>
 				</form>

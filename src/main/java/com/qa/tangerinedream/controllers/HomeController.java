@@ -21,9 +21,11 @@ public class HomeController {
 
 	
 	@SuppressWarnings("unused")
-	private void GetProducts()
+	private ArrayList<Product> GetProducts()
 
 	{
-		productRepo.getProducts();
+		return productRepo.getProducts();
 	}
+	
+	
 }

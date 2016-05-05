@@ -3,32 +3,6 @@
 
 
 /*
-* Template page styling
-*/
-body {
-	background: #bdfdaf;
-}
-
-.footer{
-	clear: both;
-    position: relative;
-    z-index: 10;
-    height: 3em;
-    margin-top: -3em;
-    background: #000000;
-}
-
-.middleText {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50em
-}
-
-.top-bar{
-	background: #000000;
-}
-
-/*
 *  Fonts
 */
 
@@ -52,10 +26,48 @@ src:url(Font/Austie.ttf);
 	src:url(Font/Orange.ttf);
 }
 
+#advert-wrapper{
+	
+	display:inline-block;
+}
+
 /*
 * Landing page CSS
 */ 
 
+#advert-container{
+
+	display:inline;
+	height: 250px;
+	width: 250px;
+	
+}
+
+#header{
+
+	display:block;
+}
+
+#advert-left{
+	float:left;
+	margin: auto;
+	display:inline;
+}
+
+#advert-right{
+	margin:auto;
+	display:inline;	
+}
+
+#landingpage-content p{
+
+	font-family: Carnet;
+	text-align: left;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 5px;
+    margin:0px;
+}
 
 #landingpage-content h1{
 
@@ -71,6 +83,23 @@ src:url(Font/Austie.ttf);
     font-size: 60px;
     line-height: 60px;
     letter-spacing: 15px;
+}
+
+#product-titlewrapper h2{
+
+	font-family: OrangeJuice;
+	text-align: center;
+    font-size: 60px;
+    line-height: 60px;
+    letter-spacing: 15px;
+    display: inline-block;
+    width: 70%;
+
+}
+
+#content-container{
+
+	text-align: center;
 }
 
 #landingpage-content h3{
@@ -118,15 +147,15 @@ src:url(Font/Austie.ttf);
 	border-radius: 15px 50px 0px 0px;
 }
 
-.landing-page-content{
+#landing-page-content{
 	
-	background-color:#575757;
+	background-color:#FFFFFF;
 	opacity:1;	
 }
 
 .landing-page-advert{
 
-	display:inline;
+	display:inline !important;
 	width:auto;
 	margin:auto;
 }
@@ -142,6 +171,7 @@ src:url(Font/Austie.ttf);
 
 .product-row p{
 	
+	font-family: Carnet;
 	text-align: left;	
 }
 
@@ -184,7 +214,7 @@ src:url(Font/Austie.ttf);
 	border-radius: 15px 50px 15px 50px;
 	font-size: 14px;
     text-align: center;
-    padding:5px;
+    padding:10px;
 }
 
 /* Spacer ID. Used for vertical spacing (see landing page for example)*/
@@ -199,6 +229,47 @@ src:url(Font/Austie.ttf);
 * End of landing page CSS
 */
 
+
+
+/*
+* Order Form CSS
+*/
+
+
+.orderForm{
+
+	width:595px;
+	text-align: center;
+	display: block;
+
+
+}
+
+.entry-block{
+
+	display: block;
+	margin: auto;
+}
+
+.details-entry{
+
+	display:inline-block;
+	float:left;
+
+}
+
+
+.entry-box{
+
+	outline-style: solid;
+	height: 25px;
+	width: 100px;
+
+}
+
+
+
+
 #orderpage {
 	width: 100%;
 	text-align: center;
@@ -206,7 +277,6 @@ src:url(Font/Austie.ttf);
 	padding: 10px 10px 10px 10px;
 	float: left;
 }
-
 .container {
 	width: 100%;
 	margin: 0 0 0 0;
@@ -227,9 +297,7 @@ src:url(Font/Austie.ttf);
 	font-family: fantasy;
 	color: #13ca17;
 	margin-left: 20px;
-}
-
-S
+}S
 
 #Banner ul {
 	padding-right: 1em;
@@ -338,7 +406,6 @@ span.myspan {
 	margin-left: 30px;
 	position: relative;
 }
-
 #productIm li {
 	display: inline-block;
 	margin: 8em . 20em;
@@ -346,19 +413,18 @@ span.myspan {
 	font-size: 2em;
 }
 
-#orderlist ul {
+
+#orderlist ul{
 	list-style: none;
 	text-align: left;
 }
-
-.ProductName {
+.ProductName{
 	padding-left: 30px;
 	padding-bottom: 2em;
 	margin-left: 20px;
 	font-size: larger;
 	font-weight: bold;
 }
-
 .ProductLabels {
 	padding-left: 30px;
 	padding-bottom: 2em;
@@ -366,81 +432,33 @@ span.myspan {
 	font-size: large;
 	font-weight: bold;
 }
-
-.Productdescriptions {
-	padding-left: 30px;
+.Productdescriptions{
+		padding-left: 30px;
 	padding-bottom: 2em;
 	margin-left: 20px;
 	font-size: large;
 }
-
-.ProductTotal {
+.ProductTotal{
 	padding-left: 3em;
 	padding-top: 2em;
 	margin-left: 20px;
 	font-size: large;
 	font-weight: bold;
 }
-
-.OrderPrice {
+.OrderPrice{
 	padding-left: 3em;
 	padding-top: 2em;
 	margin-left: 20px;
 	font-size: large;
 }
-
-.Button {
+.Button{
 	padding-top: 2em;
 	margin-left: 20px;
 	font-size: large
 }
-
 #about {
 	font-size: x-large;
 	padding-left: 20%;
 	padding-right: 20%;
 	text-align: center;
-}
-
-.faq {
-	Width: 500px;
-	height: 50px;
-	border: 1px solid black;
-	padding: 10px;
-	margin: 1px;
-	border-radius: 9px 9px 9px 9px;
-	border-color: #dddddd;
-	background-color: white;
-	color: black;
-}
-
-.info {
-	Width: 500px;
-	height: 230px;
-	visibility: "hidden";
-}
-
-.accounts {
-	Width: 350px;
-	height: 200px;
-	border: 1px solid black;
-	border-color: #dddddd;
-	background-color: white;
-	border-radius: 9px 9px 9px 9px;
-	color: black;
-	padding: 10px;
-	margin: 20px;
-}
-
-h2 {
-	color: coral;
-	line-height: 60%;
-}
-
-h5 {
-	line-height: 60%;
-}
-
-a {
-	text-decoration: none;
 }

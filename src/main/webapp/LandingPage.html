@@ -1,0 +1,329 @@
+<!-- Author: Finley Peters @Team Tang  -->
+
+
+
+<!DOCTYPE html><html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="/WEB-INF/Template.xhtml">
+
+<ui:define name="pagetitle">
+	<title> NBGardens Home </title>
+	
+	<link rel="stylesheet" type="text/css" href="slick-1.5.9/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="slick-1.5.9/slick/slick-theme.css"/>
+
+</ui:define>
+
+
+<ui:define name= "maincontent">
+<div id = "landing-page-content" style = "min-width:685px"> 
+		
+	<div id = "spacer" > </div>
+
+		<div id="content-container">
+
+			<div id = "product-titlewrapper" style = "display:inline-block;width:70%">
+				<h2> Check Out Our Hottest Deals</h2>
+			</div>
+
+			<div style = "float:left; display:inline-block;width:30%">
+
+			</div>
+
+			<div style="text-align: center;">
+
+				<div class = "departments" id="department-holder">					
+
+						<div class="department-header">
+							<h4 class= "department-font">Gnomes and Accessories  </h4>
+						</div>
+						
+						<div id="department1"  class = "product-row">			
+							<div class = "carousel1">	
+								<h:dataTable value="products" var="product">
+								<h:column>
+								<f:facet name= ""> </f:facet>
+								<div> <img src = #{product.imageLocation}/>
+									<p> #{product.price} </p>
+								</div>
+							</h:column>
+							</h:dataTable>
+							</div>			
+						</div> 	
+
+
+
+						<div class="department-header">
+							<h4 class= "department-font">Garden Tools  </h4>
+						</div>
+
+						<div id="department2"  class = "product-row">			
+							<div class = "carousel2">	
+								<div> <img src = "img/Rake.jpg"/>
+									<p> Item. Price </p>
+								</div>
+								<div> <img src = "img/Shovel.jpg"/>
+									<p> Item. Price </p>
+								</div>
+								<div> <img src = "img/Trimmers.jpg"/>
+									<p> Item. Price </p>
+								</div>
+								<div> <img src = "img/Trowel.jpg"/>
+									<p> Item. Price </p>
+								</div>
+								<div> <img src = "img/Clippers.jpg"/>
+									<p> Item. Price </p>
+								</div>
+								<div> <img src = "img/Hook.jpg"/>
+									<p> Item. Price </p>
+								</div>
+								<div> <img src = "img/Rake.jpg"/>
+									<p> Item. Price </p>
+								</div>
+								<div> <img src = "img/Shovel.jpg"/>
+									<p> Item. Price </p>
+								</div>
+								<div> <img src = "img/Trimmers.jpg"/>
+									<p> Item. Price </p>
+								</div>
+								<div> <img src = "img/Trowel.jpg"/>
+									<p> Item. Price </p>
+								</div>
+								<div> <img src = "img/Clippers.jpg"/>
+									<p> Item. Price </p>
+								</div>
+								<div> <img src = "img/Hook.jpg"/>
+									<p> Item. Price </p>
+								</div>
+							</div>			
+						</div>
+
+				</div>
+
+
+				<div id = "news-container"> 
+					<div id = "news-panel-top" class = "news-panel"> 
+						<h3> Garden Gnews </h3>
+					</div>
+
+					<div id = "news-panel-bottom" class = "news-panel">
+
+						<div class = "news-item"> Lorem ipsum dolor sit amet, consectetur 								adipiscing elit. 
+							Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
+							Aenean id sapien in mi convallis dapibus vel eu felis.
+						</div>
+							
+						<div class = "news-item"> Lorem ipsum dolor sit amet, consectetua 					adipiscing elit. 
+									Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
+									Aenean id sapien in mi convallis dapibus vel eu felis.
+						</div>
+
+						<div class = "news-item"> Lorem ipsum dolor sit amet, consectetur 					adipiscing elit. 
+									Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
+									Aenean id sapien in mi convallis dapibus vel eu felis.
+						</div>
+
+						<div class = "news-item"> Lorem ipsum dolor sit amet, consectetur 					adipiscing elit. 
+									Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
+									Aenean id sapien in mi convallis dapibus vel eu felis. 
+						</div>
+
+						<div class = "news-item"> Lorem ipsum dolor sit amet, consectetur 					adipiscing elit. 
+									Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
+									Aenean id sapien in mi convallis dapibus vel eu felis.
+						</div>
+
+						<div class = "news-item"> Lorem ipsum dolor sit amet, consectetur 					adipiscing elit. 
+									Sed venenatis quam nec velit suscipit, id placerat enim sollicitudin.
+									Aenean id sapien in mi convallis dapibus vel eu felis.
+						</div>
+
+					</div>
+				</div>
+
+				<div id="advert-wrapper">
+
+					<div id="advert1" class = "landing-page-advert">
+						<img src = "img/CreditApplyAlt.jpg" />
+					</div>
+
+					<div id = "advert2" class = "landing-page-advert">
+						<img src = "img/GnomeAwards.jpg" />
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+</div>
+
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="slick-1.5.9/slick/slick.min.js"></script>
+
+</ui:define>
+</ui:composition>
+
+
+<script type="text/javascript">
+
+var carouselHolder = document.getElementById("department-holder");
+var carouselDisplayCount = carouselHolder.offsetWidth/128;
+
+$(document).ready(function() {
+	
+	$('.carousel1').slick({
+
+		slidesToShow:6,
+		slidesToScroll: 1,
+	  	arrows: true,
+	  	dots: false,
+	  	infinite:true,
+
+	  	responsive: [{
+
+	  		breakpoint: 1500,
+      		settings:
+      		{
+        		slidesToShow: 6,
+        		infinite: true
+      		}
+      	},
+	  		{
+	  		breakpoint: 1224,
+      		settings:
+      		{
+        		slidesToShow: 4,
+        		infinite: true
+      		}
+      	},
+      	{
+	  		breakpoint: 800,
+      		settings:
+      		{
+        		slidesToShow: 3,
+        		infinite: true
+      		}
+      	}]
+		
+	});
+	
+	$('.carousel2').slick({
+
+		slidesToShow:6,
+		slidesToScroll: 1,
+	  	arrows: true,
+	  	dots: false,
+	  	infinite:true,
+
+	  	responsive: [{
+
+	  		breakpoint: 1500,
+      		settings:
+      		{
+        		slidesToShow: 6,
+        		infinite: true
+      		}
+      	},
+	  		{
+	  		breakpoint: 1224,
+      		settings:
+      		{
+        		slidesToShow: 4,
+        		infinite: true
+      		}
+      	},
+      	{
+	  		breakpoint: 800,
+      		settings:
+      		{
+        		slidesToShow: 3,
+        		infinite: true
+      		}
+      	}]
+		
+	});
+
+
+	responsiveLayout();
+  
+});
+
+$(window).resize(function(){
+
+	responsiveLayout();
+
+	});
+
+
+function responsiveLayout() {
+
+	var docWidth = $(window).width();
+
+	if(docWidth > 1224)
+	{
+		//Return settings to 'default' if page is large enough.
+
+		document.getElementById("content-container").style.textAlign = "center";
+
+
+		document.getElementById("product-titlewrapper").style.float = "left";
+
+		document.getElementById("news-container").style.width = '350px';
+		document.getElementById("news-container").style.float = "right";
+
+
+		var newsPanelElements = document.getElementsByClassName("news-panel");
+		for(var i = 0 ;  i < newsPanelElements.length ; i++){
+			newsPanelElements[i].style.padding = "5px";
+			newsPanelElements[i].style.width = "350px";
+		}
+
+		var newsItemElements = document.getElementsByClassName("news-item");
+		for(var i = 0 ; i < newsItemElements ; i++)
+		{
+			newsItemElements[i].style.width = 330;
+		}
+
+	}else if(docWidth > 800)
+	{
+
+		document.getElementById("content-container").style.textAlign = "center";
+
+		document.getElementById("product-titlewrapper").style.float = "none";
+
+		document.getElementById("news-container").style.width = "350px";
+		document.getElementById("news-container").style.float = "right";
+
+
+		var newsPanelElements = document.getElementsByClassName("news-panel");
+		for(var i = 0 ;  i < newsPanelElements.length ; i++){
+			newsPanelElements[i].style.padding = "5px";
+			newsPanelElements[i].style.width = "350px";
+		}
+	}else
+	{
+
+		document.getElementById("content-container").style.textAlign = "center";
+
+		document.getElementById("product-titlewrapper").style.float = "none";
+
+		document.getElementById("news-container").style.width = "100%";
+		document.getElementById("news-container").style.float = "none";
+
+		var newsPanelElements = document.getElementsByClassName("news-panel");
+		for(var i = 0 ;  i < newsPanelElements.length ; i++){
+			newsPanelElements[i].style.padding = "15px";
+			newsPanelElements[i].style.width = "100%";
+		}
+
+		var newsItemElements = document.getElementsByClassName("news-item");
+		for(var i = 0 ; i < newsItemElements ; i++)
+		{
+			newsItemElements[i].style.width = 450;
+		}
+	}
+};
+
+</script>
+</html>

@@ -1,6 +1,34 @@
 /* Page created by Christine Stokes*/
 @CHARSET "ISO-8859-1";
 
+/*
+* Template page styling - @author Umar
+*/
+body {
+	background: #bdfdaf;
+}
+
+.footer{
+	clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: -3em;
+    background: #000000;
+}
+
+.middleText {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em
+}
+
+.top-bar{
+	background-color: #000000;
+	width: 100%
+}
+
+/* End */
 
 /*
 *  Fonts
@@ -9,7 +37,7 @@
 @font-face{
 
 font-family: Austie;
-src:url(Font/Austie.ttf);
+src:url(../Font/Austie.ttf);
 
 
 }
@@ -17,13 +45,13 @@ src:url(Font/Austie.ttf);
 @font-face{
 
 	font-family: Carnet;
-	src:url(Font/Carnet.ttf);
+	src:url(../Font/Carnet.ttf);
 }
 
 @font-face{
 
 	font-family: OrangeJuice;
-	src:url(Font/Orange.ttf);
+	src:url(../Font/Orange.ttf);
 }
 
 /*
@@ -57,11 +85,32 @@ src:url(Font/Austie.ttf);
     margin:0px;
 }
 
+#landingpage-content p{
+
+	font-family: Carnet;
+	text-align: center;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 5px;
+    margin:0px;
+}
+
 #landingpage-content h4{
 	
 	font-family:Carnet;
 	margin:0px;
 }
+
+#product-titlewrapper h2{
+
+	font-family: OrangeJuice;
+	text-align: center;
+    font-size: 60px;
+    line-height: 60px;
+    letter-spacing: 15px;
+
+}
+
 
 /*
 * Landng page product department CSS
@@ -90,11 +139,11 @@ src:url(Font/Austie.ttf);
 	display: block;
 	background-color: #00A9A2;
 	border-radius: 15px 50px 0px 0px;
-}
+}	
 
-.landing-page-content{
+#landing-page-content{
 	
-	background-color:#575757;
+	background-color:#D4FFDB;
 	opacity:1;	
 }
 
@@ -116,7 +165,12 @@ src:url(Font/Austie.ttf);
 
 .product-row p{
 	
-	text-align: left;	
+	text-align: left;
+	font-family: Carnet;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 5px;
+    margin:0px;
 }
 
 /*

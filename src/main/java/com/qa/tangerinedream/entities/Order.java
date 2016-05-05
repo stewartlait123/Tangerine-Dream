@@ -9,8 +9,9 @@ package com.qa.tangerinedream.entities;
  * table are defined and reference to Customer class included
  * @author Christine Stokes
  */
-import java.sql.Date;
+//import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -64,16 +65,24 @@ public class Order {
 		this.status = status;
 	}
 
-
 	/**
 	 *   method to allow dummy data to be generated 
 	 * @param status
 	 * @param currentDate
 	 * @param customerID
-	 */
-	public Order(OrderStatus status, long currentDate, Customer customer, OrderLine orderLine) {
+	 
+	public Order(OrderStatus status, Date currentDate, Customer customer, OrderLine orderLine) {
 		this.status = status;
 		this.order_date.setTime(currentDate);
+		this.customer = customer;
+		this.orderLines = new ArrayList<>();
+		this.orderLines.add(orderLine);
+	}
+	*/
+
+	public Order(OrderStatus status, Date currentDate, Customer customer, OrderLine orderLine) {
+		this.status = status;
+		this.order_date = currentDate;
 		this.customer = customer;
 		this.orderLines = new ArrayList<>();
 		this.orderLines.add(orderLine);

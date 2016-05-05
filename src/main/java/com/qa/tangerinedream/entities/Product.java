@@ -203,4 +203,5 @@ public class Product{
 	public void setImageLocation(String imageLocation) {
 		this.imageLocation = imageLocation;
 	}
+
 }

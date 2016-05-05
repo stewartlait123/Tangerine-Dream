@@ -17,8 +17,9 @@ import com.qa.tangerinedream.service.ProductService;
 @RequestScoped
 public class ProductController {
 	@Inject ProductService productService;
+	private long productId = 0;
 	
-	private Product product = productService.getProduct();
+	private Product product = productService.getProduct(productId);
 	
 	public long getProductId(){
 		return product.getProduct_id();
@@ -36,8 +37,13 @@ public class ProductController {
 		return product.getProduct_type();
 	}
 	
+	public String getImageLocation(){
+		return product.getImageLocation();
+	}
 	
-	
+	public int getStock(){
+		return product.getStock();
+	}
 	
 	
 }
