@@ -38,17 +38,14 @@ public class PaymentController {
 				return "payment";
 			else {
 				paymentService.paybycard(nameOnCard, cardNumber, expiryDate, cSV);
-			return "orderconfirmed";
-		}
+				return "orderconfirmed";
+			}
 		}
 		else if (method.equalsIgnoreCase("3")){
-			boolean accepted = false;
-			paymentService.creditpayment(currentUser.getUserID(), accepted);
-			
-		return "orderconfirmed";
+			if(paymentService.creditpayment(currentUser.getUserID()))
+				return "orderconfirmed";
 		}
-		else
-			return "payment";
+		return "payment";
 	}
 	
 
