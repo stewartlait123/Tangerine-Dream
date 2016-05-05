@@ -1,6 +1,6 @@
 package com.qa.tangerinedream.service;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.Calendar;
 
 import javax.inject.Inject;
@@ -17,7 +17,7 @@ public class RegisterService {
 	}
 
 	public boolean ValidateDetails(String name, String username, String password, String confirmPassword, Date dob) {
-		if (name != "" || username != "" || password != "" || confirmPassword != "" || validateDate(dob))
+		if (name != "" && username != "" && password != "" && confirmPassword != "" && validateDate(dob))
 		{
 			return true;
 		}
@@ -25,6 +25,7 @@ public class RegisterService {
 	}
 	
 	private boolean validateDate(Date value){
+		//Convert String to date
 		Calendar cal = Calendar.getInstance();
 		cal.setLenient(false);
 		cal.setTime(value);
