@@ -4,7 +4,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.qa.tangerinedream.entities.Product;
 import com.qa.tangerinedream.service.ProductService;
 
 
@@ -16,7 +15,9 @@ import com.qa.tangerinedream.service.ProductService;
 @Named(value = "product")
 @RequestScoped
 public class ProductController {
+	
 	@Inject ProductService productService;
+	
 	private long product_id;
 	private String name = "";
 	private int price;
@@ -39,8 +40,15 @@ public class ProductController {
 	public void setProductService(ProductService productService) {
 		this.productService = productService;
 	}*/
-
+/*
+	public Product getProduct(long product_id){
+		return productService.getProduct(product_id);
+	}*/
+	
+	
+	
 	public String getName() {
+		System.out.println("Name: " + name + productService.getProduct(product_id).getName());
 		return name;
 	}
 	
@@ -71,9 +79,6 @@ public class ProductController {
 
 
 
-	/*public Product getProduct() {
-		return product;
-	}*/
 
 
 	public void setStock(int stock) {
@@ -82,13 +87,10 @@ public class ProductController {
 
 	
 	
-	public long getProduct_Id(){
+	public long getproduct_id(){
 		return product_id;
 	}
 	
-	public String getProductName(){
-		return name;
-	}
 	
 	public int getPrice(){
 		return price;
@@ -106,5 +108,50 @@ public class ProductController {
 		return stock;
 	}
 	
+	public void setName(String name){
+		this.name = name;
+	}
+
+	public void setProductService(ProductService productService) {
+		this.productService = productService;
+	}
+
+	public void setproduct_id(long product_id) {
+		this.product_id = product_id;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public void setProduct_type(String product_type) {
+		this.product_type = product_type;
+	}
+
+	public void setImageLocation(String imageLocation) {
+		this.imageLocation = imageLocation;
+	}
+
+	public void setCost_price(int cost_price) {
+		this.cost_price = cost_price;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
+	public void setMinStock(int minStock) {
+		this.minStock = minStock;
+	}
+
+	public void setOrderAmount(int orderAmount) {
+		this.orderAmount = orderAmount;
+	}
+	
+
 	
 }

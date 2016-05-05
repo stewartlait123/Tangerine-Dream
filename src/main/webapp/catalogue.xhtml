@@ -29,24 +29,22 @@
 
 
 	  <!-- dynamically-constructed dataTable with data pulled from the product list -->
-	  	<h:dataTable id="catalogue" value="#{catalogue.products}" var="product"
-			   styleClass="productTable"
-			   headerClass="productTableHeader"
-			   rowClasses="productTableOddRow,productTableEvenRow">
+	  	<h:dataTable value="#{catalogue.products}" var="products">
+			    		    
 			    
 			   <h:column>    				
 			      <f:facet name="header">Image</f:facet>    				
-			      <img src = "#{product.imageLocation}"></img>
+			      <img src = "#{products.imageLocation}"></img>
 			      
 			   </h:column>
 			   <h:column>    				
 			      <f:facet name="header">Name</f:facet>    				
-			      #{product.name}
+			      #{products.name}
 			   </h:column>
 			   
 			   <h:column>    				
 			      <f:facet name="header">Type</f:facet>    				
-			      #{product.product_type}
+			      #{products.product_type}
 			   </h:column>
 			   
 			   <h:column>
@@ -55,11 +53,11 @@
 			   </h:column>
 			   <h:column>
 			      <f:facet name="header">Stock</f:facet>
-			      #{product.stock}
+			      #{products.stock}
 			   </h:column>
 			   <h:column>
 			      <f:facet name="header">Cost Per Unit</f:facet>
-			      #{product.price}
+			      #{products.price}
 			   </h:column>
 			   <h:column>
 				   <f:facet name="header"></f:facet>
