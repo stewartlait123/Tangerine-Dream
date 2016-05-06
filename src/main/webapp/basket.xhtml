@@ -26,7 +26,7 @@
 				<ui:repeat var="line" value="#{basket.order.orderLines}">
 					<tr>
 						<td><h:outputText value="#{line.product.name}" /></td>
-						<td><h:intputText value="#{line.quantity}" /></td>
+						<td><h:inputText value="#{line.quantity}" /></td>
 						<td><h:commandButton
 								value="#{basket.removeFromBasket(line.product.product_id)}" /></td>
 					</tr>

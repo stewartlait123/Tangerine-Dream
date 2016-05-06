@@ -4,10 +4,10 @@
 	import static repositorybackend.OrderStatus.PLACED;
 
 	import java.util.Calendar;
+import java.util.Date;
 
-	import javax.inject.Inject;
+import javax.inject.Inject;
 
-	import com.qa.tangerinedream.entities.Customer;
 	import com.qa.tangerinedream.entities.Order;
 	import com.qa.tangerinedream.entities.OrderLine;
 	import com.qa.tangerinedream.entities.Product;
@@ -15,6 +15,8 @@
  
     import com.qa.tangerinedream.repositories.OrderRepository;
 	import com.qa.tangerinedream.repositories.ProductRepository;
+
+import repositorybackend.OrderStatus;
 
 
 	public class OrderService {
@@ -73,7 +75,7 @@
 				if(!foundOrderLine)
 					order.addOrderLine(new OrderLine(product, quantity, product.getPrice()));
 			} else 
-				order = new Order(PENDING, Calendar.getInstance().getTimeInMillis(), customerRepository.findByID(userId), new OrderLine(product, quantity, product.getPrice()));
+				order = new Order(PENDING, new Date(), customerRepository.findByID(userId), new OrderLine(product, quantity, product.getPrice()));
 		}
 
 
@@ -129,4 +131,25 @@
 		return order;
 		
 	}
+
+	public Order getUsersPaidOrders(long userID) {
+		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.PAID);
+		return order;
+	}
+
+	public float calcOrderTotalPaid(long userID) {
+		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.PAID);
+		float totalPrice = 0;
+		float price;
+		if (order != null){
+			for (OrderLine ol : order.getOrderLines()){
+				price = ol.getquantity() * ol.getproduct().getCost_price();
+				totalPrice = totalPrice + price;
+			}
+			return totalPrice;
+		}
+		else 
+			return 0;
+	}
+	
 }

@@ -32,8 +32,15 @@ public interface CustomerRepository {
 	
 	public void updatePassword(Long id_, String password_);
 	
-	public void updateCredit(Long id_, int credit_);
+	public void updateCredit(Long id_, float f);
 	
 	public void updateCreditLimit(Long id_, int creditLimit_);
+	
+	public long getUserID(String lowerCase);
+	
+	public Customer findByUserPass(String lowerCase, String password);
+	
+	long findUserIdByUsername(String username);
+
 
 }

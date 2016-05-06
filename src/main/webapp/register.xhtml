@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-
-	xmlns:ui="http://java.sun.com/jsf/facelets" template="template/Template.xhtml">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/Template.xhtml">
 
 	<ui:define name="pagetitle">
 		<div id="header">
@@ -17,20 +17,23 @@
 <div class="row-title">Please enter your details.</div>
 <div class="main-row">
 			<!-- Umar - 28 April 2016 -->
-			<h:form>
-			<h:message class= "error" value="#{register.error}"/>
+			<h:form styleClass="uk-form-horizontal">
+			<h:message class="error" value="#{register.error}"/>
 			<table>
-				<tr><th><h:outputLabel value="Name: "/></th><th><h:inputText value="#{login.name}"/></th></tr>
+				<tr><th><h:outputLabel value="Name: "/></th><th><h:inputText value="#{register.name}"/></th></tr>
 				<tr><th><h:outputLabel value="Username: "/></th>
-					<th><h:inputText value="#{login.username}"/></th></tr>	
+					<th><h:inputText value="#{register.username}"/></th></tr>	
 				<tr><th><h:outputLabel value="Password: "/></th>
-					<th><h:inputText value="#{login.password}"/></th></tr>
+					<th><h:inputSecret value="#{register.password}"/></th></tr>
 				<tr><th><h:outputLabel value="Confirm Password: "/></th>
-					<th><h:inputText value="#{login.confirmPassword}"/></th></tr>
-				<tr><th><h:outputLabel value="Date Of Birth: "/></th>
-					<th><h:inputText value="#{login.dob}"/></th></tr>			
+					<th><h:inputSecret value="#{register.confirmPassword}"/></th></tr>
+				<tr><th><h:outputLabel value="Date Of Birth: "/>
+					<h:inputText value="#{register.dd}" size="2"/>
+					<h:inputText value="#{register.mm}" size="2"/>
+					<h:inputText value="#{register.yyyy}" size="4"/></th>
+					</tr>			
 			</table>
-			<h:commandButtonvalue="Login" action="#{register.Register}"/>
+			<h:commandButton value="Register" action="#{register.register}"/>
 			</h:form>
 			<!--  <form name="registerform">
 			<fieldset>
