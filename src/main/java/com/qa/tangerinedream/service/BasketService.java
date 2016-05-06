@@ -3,6 +3,7 @@ package com.qa.tangerinedream.service;
 import static repositorybackend.OrderStatus.PENDING;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.inject.Inject;
 
@@ -33,7 +34,7 @@ public class BasketService {
 			if(!foundOrderLine)
 				order.addOrderLine(new OrderLine(product, quantity, product.getPrice()));
 		} else 
-			order = new Order(PENDING, Calendar.getInstance().getTimeInMillis(), customerRepository.findByID(userId), new OrderLine(product, quantity, product.getPrice()));
+			order = new Order(PENDING, new Date(), customerRepository.findByID(userId), new OrderLine(product, quantity, product.getPrice()));
 	}
 
 

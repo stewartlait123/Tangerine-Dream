@@ -43,7 +43,6 @@ public class OrderLine {
 		this.product = product;
 		this.quantity = quantity;
 		this.purchasePrice = purchasePrice;
-		
 	}
 	
 	public Product getproduct(){

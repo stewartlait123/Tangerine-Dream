@@ -52,7 +52,7 @@ public class Order {
 	private Customer customer; // Customer ID taken from customer table
 
 	@OneToMany(mappedBy="OrderLine")
-	private List<OrderLine> orderLines;
+	private List<OrderLine> orderLines = new ArrayList<OrderLine>();
 	
 
 	public Order(){
@@ -80,14 +80,6 @@ public class Order {
 	}
 	*/
 
-	public Order(OrderStatus status, long l, Customer customer, OrderLine orderLine) {
-		this.status = status;
-		//this.order_date = l;
-		this.customer = customer;
-		this.orderLines = new ArrayList<>();
-		this.orderLines.add(orderLine);
-	}
-	
 	public Order(OrderStatus status, Date date, Customer customer, OrderLine orderLine){
 		this.status = status;
 		this.order_date = date;
