@@ -4,8 +4,9 @@
 	import static repositorybackend.OrderStatus.PLACED;
 
 	import java.util.Calendar;
+import java.util.Date;
 
-	import javax.inject.Inject;
+import javax.inject.Inject;
 
 	import com.qa.tangerinedream.entities.Order;
 	import com.qa.tangerinedream.entities.OrderLine;
@@ -74,7 +75,7 @@ import repositorybackend.OrderStatus;
 				if(!foundOrderLine)
 					order.addOrderLine(new OrderLine(product, quantity, product.getPrice()));
 			} else 
-				order = new Order(PENDING, Calendar.getInstance().getTimeInMillis(), customerRepository.findByID(userId), new OrderLine(product, quantity, product.getPrice()));
+				order = new Order(PENDING, new Date(), customerRepository.findByID(userId), new OrderLine(product, quantity, product.getPrice()));
 		}
 
 

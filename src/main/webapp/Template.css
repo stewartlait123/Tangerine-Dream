@@ -37,7 +37,7 @@ body {
 @font-face{
 
 font-family: Austie;
-src:url(../Font/Austie.ttf);
+src:url(Font/Austie.ttf);
 
 
 }
@@ -45,13 +45,13 @@ src:url(../Font/Austie.ttf);
 @font-face{
 
 	font-family: Carnet;
-	src:url(../Font/Carnet.ttf);
+	src:url(Font/Carnet.ttf);
 }
 
 @font-face{
 
 	font-family: OrangeJuice;
-	src:url(../Font/Orange.ttf);
+	src:url(Font/Orange.ttf);
 }
 
 /*

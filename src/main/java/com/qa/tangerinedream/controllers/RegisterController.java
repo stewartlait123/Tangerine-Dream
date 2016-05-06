@@ -2,7 +2,7 @@
  * @author - Umar*/
 package com.qa.tangerinedream.controllers;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -21,16 +21,25 @@ public class RegisterController {
 	private String username = "";
 	private String password = "";
 	private String confirmPassword = "";
-	private Date dob;
+	private String dd = "";
+	private String mm = "";
+	private String yyyy = "";
 	private String error;
 	
 	public void register() {
-		if (registerService.ValidateDetails(name, username, password, confirmPassword, dob)){
+		
+		@SuppressWarnings("deprecation")
+		Date date = new Date(Integer.parseInt(yyyy), Integer.parseInt(mm), Integer.parseInt(dd));
+		
+		if (registerService.ValidateDetails(name, username, password, confirmPassword, date)){
+			
+			//Date convertDob = registerService.convertStringToDate(date);
+			
 			Customer customer = new Customer();
 			customer.setName(name);
 			customer.setUsername(username);
 			customer.setPassword(password);
-			customer.setDOB(dob);
+			customer.setDOB(date);
 			registerService.addCustomer(customer);
 		}
 	}
@@ -45,8 +54,17 @@ public class RegisterController {
 	public void setPassword(String value){
 		password = value;
 	}
-	public void setDOB(Date value){
-		dob = value;
+	public void setDd(String value)
+	{
+		dd = value;
+	}
+	public void setMm(String value)
+	{
+		mm = value;
+	}
+	public void setYyyy(String value)
+	{
+		yyyy = value;
 	}
 	public void setError(String value){
 		error = value;
@@ -63,13 +81,22 @@ public class RegisterController {
 	public String getPassword(){
 		return password;
 	}
-	public Date getDOB(){
-		return dob;
+	public String getDd()
+	{
+		return dd;
+	}
+	public String getMm()
+	{
+		return mm;
+	}
+	public String getYyyy()
+	{
+		return yyyy;
 	}
 	public String getError(){
 		return error;
 	}
-	public String confirmPassword(){
+	public String getConfirmPassword(){
 		return confirmPassword;
 	}
 }

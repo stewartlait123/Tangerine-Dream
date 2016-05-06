@@ -5,6 +5,7 @@
 package com.qa.tangerinedream.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -40,14 +41,20 @@ public class WishlistService {
 
 	public void removeFromWishlist(long productId, long userID) {
 		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.WISHLIST);
+		if(order!=null){
+			for (OrderLine line : order.getOrderLines())
+				if (line.getproduct().getProduct_id() == productId)
+					order.removeOrderLine(line);
+		orderRepository.updateOrder(order);			
+		}
 		
 		
 		
 	}
 
-	public ArrayList<Product> getWishlist(long userID) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<OrderLine> getWishlist(long userID) {
+		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.WISHLIST);
+		return order.getOrderLines(); 
 	}
 
 }
