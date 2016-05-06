@@ -8,7 +8,6 @@ import java.util.Date;
 
 import javax.inject.Inject;
 
-	import com.qa.tangerinedream.entities.Customer;
 	import com.qa.tangerinedream.entities.Order;
 	import com.qa.tangerinedream.entities.OrderLine;
 	import com.qa.tangerinedream.entities.Product;
@@ -16,6 +15,8 @@ import javax.inject.Inject;
  
     import com.qa.tangerinedream.repositories.OrderRepository;
 	import com.qa.tangerinedream.repositories.ProductRepository;
+
+import repositorybackend.OrderStatus;
 
 
 	public class OrderService {
@@ -130,4 +131,25 @@ import javax.inject.Inject;
 		return order;
 		
 	}
+
+	public Order getUsersPaidOrders(long userID) {
+		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.PAID);
+		return order;
+	}
+
+	public float calcOrderTotalPaid(long userID) {
+		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.PAID);
+		float totalPrice = 0;
+		float price;
+		if (order != null){
+			for (OrderLine ol : order.getOrderLines()){
+				price = ol.getquantity() * ol.getproduct().getCost_price();
+				totalPrice = totalPrice + price;
+			}
+			return totalPrice;
+		}
+		else 
+			return 0;
+	}
+	
 }
