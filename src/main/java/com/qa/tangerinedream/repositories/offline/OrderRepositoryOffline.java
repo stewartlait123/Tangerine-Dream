@@ -94,4 +94,10 @@ implements OrderRepository {
 		}return null;
 	
 	}
+
+	@Override
+	public Order findUsersPendingOrder(long userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

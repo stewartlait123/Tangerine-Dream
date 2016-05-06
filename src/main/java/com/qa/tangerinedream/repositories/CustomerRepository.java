@@ -32,7 +32,7 @@ public interface CustomerRepository {
 	
 	public void updatePassword(Long id_, String password_);
 	
-	public void updateCredit(Long id_, float f);
+	public void updateCredit(Long id_, int f);
 	
 	public void updateCreditLimit(Long id_, int creditLimit_);
 	
