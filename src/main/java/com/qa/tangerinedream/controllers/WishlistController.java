@@ -6,8 +6,6 @@
 
 package com.qa.tangerinedream.controllers;
 
-
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -15,7 +13,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.qa.tangerinedream.entities.OrderLine;
-import com.qa.tangerinedream.entities.Product;
 import com.qa.tangerinedream.service.BasketService;
 import com.qa.tangerinedream.service.WishlistService;
 

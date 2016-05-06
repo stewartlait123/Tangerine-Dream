@@ -1,125 +1,40 @@
 <!--
 @author - Stewart Lait 
 -->
-
-<!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets" template="/WEB-INF/Template.xhtml">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/Template.xhtml">
 
 	<ui:define name="pagetitle">
-<head>
-		<link rel="stylesheet" type="text/css" href="Template.css"></link>
-		</head>
 		<div>
 			<h1 class="page-header">Wish List</h1>
-
 		</div>
 	</ui:define>
 	<!--  
 This is the first table
  -->
-
+ 
 	<ui:define name="maincontent">
-		<table style="width: 80%">
-			<tr>
-				<td width="128px"><img src="img/freaky_gnome_01.png"
-					height="128xp" width="128xp"></img></td>
-				<td>
-					<table style="float: left;">
-						<tr>
-							<td>Gnome</td>
-						</tr>
-						<tr>
-							<td>Colour</td>
-							<td><select name="Colour" size="1">
-									<option value="Green">Green</option>
-									<option value="Red">Red</option>
-									<option value="Blue">Blue</option>
-							</select></td>
-						</tr>
-						<tr>
-							<td>In / Out Stock</td>
-						</tr>
-						<tr>
-							<td>Quantity</td>
-							<td>
-								<form>
-									<input type="number" name="quantity" min="1" max="999"></input>
-								</form>
-							</td>
-						</tr>
-					</table>
-					<table style="float: right;">
-						<tr>
-							<td><input type="button"
-								onclick="alert('Product added to Basket.')"
-								value="Add to Basket"></input></td>
-						</tr>
-						<tr>
-							<td><select name="Move +/-" size="1">
-									<option value="move">Move</option>
-									<option value="moveup">Up</option>
-									<option value="movedown">Down</option>
-							</select></td>
-							<td><input type="button"
-								onclick="alert('Product deleted from Basket.')" value="Delete"></input>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-
-		<!-- 
-This is the second table
- -->
-		<table style="width: 80%">
-			<tr>
-				<td width="128px"><img src="img/abstractpot.png" height="128xp" width="128xp"></img></td>
-				<td>
-					<table style="float: left;">
-						<tr>
-							<td>Pot</td>
-						</tr>
-						<tr>
-							<td>Colour</td>
-							<td><select name="Colour" size="1">
-									<option value="Green">Green</option>
-									<option value="Red">Red</option>
-									<option value="Brown">Brown</option>
-							</select></td>
-						</tr>
-						<tr>
-							<td>In / Out Stock</td>
-						</tr>
-						<tr>
-							<td>Quantity</td>
-							<td>
-								<form>
-									<input type="number" name="quantity" min="1" max="999"></input>
-								</form>
-							</td>
-						</tr>
-					</table>
-					<table style="float: right;">
-						<tr>
-							<td><input type="button"
-								onclick="alert('Product added to Basket.')"
-								value="Add to Basket"></input></td>
-						</tr>
-						<tr>
-							<td><select name="Move +/-" size="1">
-									<option value="move">Move</option>
-									<option value="moveup">Up</option>
-									<option value="movedown">Down</option>
-							</select></td>
-							<td><input type="button"
-								onclick="alert('Product deleted from Basket.')" value="Delete"></input>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
+	<table style="width: 80%">
+		<h:form>
+			<ui:repeat var="line" value="#{wishlist.wishlist}">
+				<tr>
+					<td width="128px"><h:graphicImage value="#{line.product.imageLocation}" height="128xp" width="128xp"/></td>
+					<td>
+						<table style="float: left;">
+							<tr>
+								<td><h:outputText value="#{line.product.name}" /></td>
+								<td><h:inputText value="#{line.quantity}" converterMessage="Please Enter a number" /> </td>
+								
+								<td><h:commandButton value="#{wishlist.addToBasketFromWishlist(line.product.product_id)}" /></td>
+								<td><h:commandButton value="#{wishlist.removeFromWishlist(line.product.product_id)}" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</ui:repeat>
+		</h:form>
+	</table>
 	</ui:define>
 </ui:composition>
