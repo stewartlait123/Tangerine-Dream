@@ -6,14 +6,13 @@ import javax.inject.Named;
 
 import com.qa.tangerinedream.repositories.CustomerRepository;
 import com.qa.tangerinedream.service.CustomerService;
-import com.qa.tangerinedream.service.LoggedInUser;
 
 @Named(value="login")
 @RequestScoped
 public class LoginController{
 	@Inject CustomerRepository customerRepo;
 	@Inject CustomerService customerService;
-	@Inject LoggedInUser loggedInUser;
+	@Inject CurrentUser currentUser;
 	
 	private String username = "";
 	private String password = "";
@@ -41,7 +40,7 @@ public class LoginController{
 			return "login";
 		}
 		error = "Logged in";
-		loggedInUser.setUser(customerService.findUserIdByUsername(username));
+		currentUser.setUser(customerService.findUserIdByUsername(username));
 		return "LandingPage";
 	}
 	
