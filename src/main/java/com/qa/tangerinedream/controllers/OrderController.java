@@ -30,9 +30,9 @@ public class OrderController {
 	@Inject OrderService orderService; 
 	@Inject CurrentUser currentUser;
 	
-	private Order order = orderService.getUsersPendingOrder(currentUser.getUserID());
-	private float totalPrice = orderService.calcOrderTotalPlaced(currentUser.getUserID());
-	private float totalPaid = orderService.calcOrderTotalPaid(currentUser.getUserID());
+	private Order order;
+	private float totalPrice;
+	private float totalPaid;
 	
 	/*
 	 * List of required functions
@@ -52,6 +52,7 @@ public class OrderController {
 	
 
 	public Long getOrderId() {
+		order = orderService.getUsersPendingOrder(currentUser.getUserID());
 		return order.getOrder_id();
 	}
 
@@ -101,10 +102,12 @@ public class OrderController {
 	}
 	
     public float getTotalCostPending(){
+    	totalPrice =  orderService.calcOrderTotalPlaced(currentUser.getUserID());
     	return totalPrice;
     }
     
     public float getTotalCostPaid(){
-		return totalPaid;
+		totalPaid = orderService.calcOrderTotalPaid(currentUser.getUserID());
+    	return totalPaid;
     }
 }

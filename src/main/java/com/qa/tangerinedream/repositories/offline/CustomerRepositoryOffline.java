@@ -169,7 +169,7 @@ implements CustomerRepository{
 	}
 
 	@Override
-	public void updateCredit(Long id_, int credit_) {
+	public void updateCredit(Long id_, float credit_) {
 		// TODO Auto-generated method stub
 
 		ArrayList<Customer> searchList = initialData.getCustomers(); //The list we will search		
@@ -187,7 +187,7 @@ implements CustomerRepository{
 	}
 
 	@Override
-	public void updateCreditLimit(Long id_, int creditLimit_) {
+	public void updateCreditLimit(Long id_, long creditLimit_) {
 		// TODO Auto-generated method stub
 
 		ArrayList<Customer> searchList = initialData.getCustomers(); //The list we will search		
@@ -264,5 +264,11 @@ ArrayList<Customer> searchList = initialData.getCustomers(); //The list we will 
 		}
 		
 		return null;
+	}
+
+	@Override
+	public void updateCreditLimit(Long id_, float f) {
+		// TODO Auto-generated method stub
+		
 	}
 }

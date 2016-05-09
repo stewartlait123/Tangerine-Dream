@@ -18,6 +18,7 @@ public class BasketController {
 	@Inject OrderService orderService;
 	@Inject CurrentUser currentUser;
 	private Order order;
+	private float totalPrice;
 	
 	/**
 	 * This method adds the specified product to the basket
@@ -77,7 +78,7 @@ public class BasketController {
 	 */
 	public Order getOrder() {
 		if(order == null)
-			order = orderService.getUsersPendingOrder(0);
+			order = orderService.getUsersPendingOrder(currentUser.getUserID());
 		return order;
 	}
 
@@ -97,6 +98,7 @@ public class BasketController {
 	 * @return - the price
 	 */
 	public float getTotalPrice() {
-		return orderService.calcOrderTotalPending(currentUser.getUserID());
+		totalPrice = orderService.calcOrderTotalPending(currentUser.getUserID());
+		return totalPrice;
 	}
 }

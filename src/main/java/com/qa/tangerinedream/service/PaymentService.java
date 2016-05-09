@@ -15,6 +15,7 @@ public class PaymentService {
 	@Inject CustomerRepository customerRepository;
 	@Inject BasketService basketService;
 	@Inject CurrentUser currentUser;
+	@Inject OrderService orderservice;
 	
 	public void makeCardPayment()
 	{
@@ -42,8 +43,8 @@ public class PaymentService {
 	}
 
 	public boolean creditpayment(long userID) {
-		if(customerRepository.findByID(userID).getCredit() >= basketService.getTotalPrice()) {
-			customerRepository.updateCredit(userID, customerRepository.findByID(userID).getCredit() - basketService.getTotalPrice());
+		if(customerRepository.findByID(userID).getCredit() >= orderservice.calcOrderTotalPlaced(userID)) {
+			customerRepository.updateCreditLimit(userID, customerRepository.findByID(userID).getCredit() - orderservice.calcOrderTotalPlaced(userID));
 			return true;
 		}
 		return false;

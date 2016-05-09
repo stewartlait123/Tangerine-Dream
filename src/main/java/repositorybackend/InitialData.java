@@ -99,7 +99,7 @@ public class InitialData{
 		orders.add(new Order(OrderStatus.PLACED , currentDate , customers.get(3), new OrderLine(products.get(0), 1 , 40)));
 		orders.add(new Order(OrderStatus.WISHLIST , currentDate , customers.get(0), new OrderLine(products.get(10), 100 , 0)));
 		orders.add(new Order(OrderStatus.PENDING, currentDate, customers.get(0), new OrderLine(products.get(0), 1, 10)));
-	
+		orders.add(new Order(OrderStatus.PAID , currentDate , customers.get(0), new OrderLine(products.get(3), 5 , 500)));
 	// Creation of Payment Dummy Data by Christine Stokes
 	
 
