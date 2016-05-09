@@ -19,7 +19,7 @@ import javax.validation.constraints.Size;
 @Table (name = "product")
 public class Product{	
 	public Product(long product_id, String name, int cost, int price, int size, int weight, int stock, int minStock, int orderAmount, String productType, String imageLocation){
-		this.product_id = product_id; //debug
+		this.product_id = product_id; //temporary fix, will probably just be auto-generated
 		this.name = name;
 		this.cost_price = cost;
 		this.price = price;
@@ -30,7 +30,7 @@ public class Product{
 		this.order_amount = orderAmount;
 		this.product_type = productType;
 		this.imageLocation = imageLocation;
-		System.out.println(this.product_id + ", " + this.name); //debug
+		//System.out.println(this.product_id + ", " + this.name); //debug
 		
 	}
 	
