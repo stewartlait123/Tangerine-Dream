@@ -35,6 +35,7 @@ public class WishlistController {
 	private WishlistService wishlistService;
 	@Inject
 	private CurrentUser currentUser;
+	
 
 	private List<OrderLine> wishlist;
 
