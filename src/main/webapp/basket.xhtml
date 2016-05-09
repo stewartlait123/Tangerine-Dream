@@ -33,7 +33,8 @@
 				<tr>
 					<td></td>
 					<td><h:outputText value="#{basket.totalPrice}" /></td>
-					<td><h:commandButton value="#{basket.placeOrder()}" /></td>
+					<td>
+					<h:commandButton action="Order.xhtml" value="#{basket.placeOrder()}" /></td>
 				</tr>
 			</h:form>
 		</table>

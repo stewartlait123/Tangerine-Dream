@@ -17,29 +17,29 @@
 					<p> Thank you your payment has gone through and your order will be with you shortly. The details
 					 of your order are below.</p>
 					<table>
-						<ui:repeat value="#{order.getPaidOrderLines}" var="item">
+						<ui:repeat value="#{order.paidOrderLines()}" var="item">
 
 							<tr>
-								<td><img src="img/freaky_gnome_01.png"></img></td>
+							
 								<td Class="ProductName"><h:outputText
-										value="#{item.getProduct.getName}" /></td>
+										value="#{item.product.name}" /></td>
 								<td class="ProductLabels">Product ID</td>
 								<td class="Productdescriptions"><h:outputText 
-										value="#{item.getProduct.getProduct_id}" /></td>
+										value="#{item.product.product_type}" /></td>
 
 								<td class="ProductLabels">Quantity</td>
 								<td class="Productdescriptions"><h:outputText 
-										value="#{item.getquantity}" /></td>
+										value="#{item.quantity}" /></td>
 
 								<td class="ProductLabels">Price</td>
 								<td class="Productdescriptions"><h:outputText 
-										value="#{item.getProduct.getPrice}" /></td>
+										value="#{item.product.cost_price}" /></td>
 							</tr>
 						</ui:repeat>
 						<tr>
 							<td Class="ProductTotal">Total Cost</td>
 							<td Class="OrderPrice"><h:outputText 
-							        value="#{order.getTotalCostPaid}"/></td>
+							        value="#{order.totalCostPaid}"/></td>
 							<td Class="ProductTotal"></td>
 							<td Class="OrderPrice"></td>
 							<td Class="ProductTotal"></td>
