@@ -55,8 +55,13 @@ public class Customer {
 	@Column (name = "credit", nullable = true)
 	private float credit;
 
+
 	@Column (name = "credit", nullable = true)
 	private long credit_limit;
+
+	@Column (name = "creditLimit", nullable = true)
+	private long credit_limit1;
+
 	
 	//Constructor added for creation in InitialData class
 	public Customer(String name_, String username_, String password_, Date date, int credit_, int creditLimit_ )

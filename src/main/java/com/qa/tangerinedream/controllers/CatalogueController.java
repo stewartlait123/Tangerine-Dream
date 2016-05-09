@@ -18,33 +18,19 @@ import com.qa.tangerinedream.service.CatalogueService;
 public class CatalogueController {
 	@Inject CatalogueService catalogueService;
 	
-	private String productName= "";
-	private String productType = "";
-	private String productImageLocation = "";
-	 
-	
 	
 	public ArrayList<Product> getProducts() {	
 		return catalogueService.getProducts();
 	}
 	
-	public ArrayList<Product> searchProducts() {
-		return catalogueService.getProducts();
+	public ArrayList<Product> searchProducts(String producttype) {
+		return catalogueService.searchProducts(producttype);
 	}
-
-	public String getProductName() {
-		return productName;
+	
+	public Product getProductById(long product_id){
+		return catalogueService.getProductById(product_id);
 	}
-
-
-	public String getProductType() {
-		return productType;
-	}
-
-	public String getProductImageLocation() {
-		return productImageLocation;
-	}
-
+	
 
 	
 }
