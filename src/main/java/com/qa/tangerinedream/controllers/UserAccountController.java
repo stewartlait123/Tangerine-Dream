@@ -6,12 +6,12 @@ import javax.inject.Named;
 
 import com.qa.tangerinedream.entities.Customer;
 import com.qa.tangerinedream.entities.Order;
-import com.qa.tangerinedream.repositories.CustomerRepository;
+import com.qa.tangerinedream.service.CustomerService;
 
 @Named(value="user_account")
 @RequestScoped
 public class UserAccountController{
-	@Inject CustomerRepository customerRepo;
+	@Inject CustomerService customerservice;
 	
 	public Customer getUserAccount(String username){
 		//TODO: get the Customer object from the database
@@ -39,13 +39,6 @@ public class UserAccountController{
 		//TODO: Get an array of all the users past orders using the OrderService.
 		//OrderService orderService;
 		//return orderService.getOrderHistory(userID);
-		return null;
-	}
-
-	public Order getWishList(long userID){
-		//TODO: Get a users wish list using CustomerService.
-		//CustomerService customerService;
-		//return customerService.getWishList(userID);
 		return null;
 	}
 

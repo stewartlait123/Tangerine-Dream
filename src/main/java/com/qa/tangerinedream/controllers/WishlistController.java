@@ -17,45 +17,51 @@ import com.qa.tangerinedream.service.BasketService;
 import com.qa.tangerinedream.service.WishlistService;
 
 /**
- * This is the controller for the wishlist.
- * Any time you need to do anything with the wishlist, use this.
+ * This is the controller for the wishlist. Any time you need to do anything
+ * with the wishlist, use this.
  * 
  * @author Stewart "noob" Lait
  */
-@Named(value="wishlist")
+@Named(value = "wishlist")
 @RequestScoped
 public class WishlistController {
 
-	@Inject private BasketService basketService;
-	@Inject private WishlistService wishlistService;
-	@Inject private CurrentUser currentUser;
-	
-	private List<OrderLine> wishlist = wishlistService.getWishlist(currentUser.getUserID());
-	
+	@Inject
+	private BasketService basketService;
+	@Inject
+	private WishlistService wishlistService;
+	@Inject
+	private CurrentUser currentUser;
+
+	private List<OrderLine> wishlist;
+
 	/**
 	 * This method will add the product to the users wishlist
 	 * 
-	 * @param productId - this it the ID of the product to add
+	 * @param productId
+	 *            - this it the ID of the product to add
 	 */
 	public void addToWishlist(long productId) {
 		wishlistService.addToWishlist(productId, currentUser.getUserID());
 	}
-	
+
 	/**
 	 * This is for removing an item from the wishlist
 	 * 
-	 * @param productId - the product to remove
+	 * @param productId
+	 *            - the product to remove
 	 * @return - Returns "wishlist" to reload the wishlist page
 	 */
 	public String removeFromWishlist(long productId) {
 		wishlistService.removeFromWishlist(productId, currentUser.getUserID());
 		return "wishlist";
 	}
-	
+
 	/**
 	 * this method removes a product from the wishlist and adds it to the basket
 	 * 
-	 * @param productId - the product to buy
+	 * @param productId
+	 *            - the product to buy
 	 * @return - Returns "wishlist" to reload the wishlist page
 	 */
 	public String addToBasketFromWishlist(long productId) {
@@ -70,7 +76,13 @@ public class WishlistController {
 	 * @return - the users wishlist
 	 */
 	public List<OrderLine> getWishlist() {
+		try {
+			if (wishlist.isEmpty())
+			wishlist = wishlistService.getWishlist(currentUser.getUserID());
+		} catch (NullPointerException npe) {
+			npe.printStackTrace();
+			return null;
+		}
 		return wishlist;
-	}	
+	}
 }
-
