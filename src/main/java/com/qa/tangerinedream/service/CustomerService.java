@@ -7,7 +7,6 @@ import com.qa.tangerinedream.entities.Order;
 import com.qa.tangerinedream.repositories.CustomerRepository;
 
 public class CustomerService {
-	
 	@Inject CustomerRepository customerRepo;
 	
 	public Order getWishList(long userID){

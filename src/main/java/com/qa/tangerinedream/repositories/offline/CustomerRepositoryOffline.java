@@ -221,6 +221,19 @@ implements CustomerRepository{
 	}
 
 	@Override
+	public Customer findUserByUsername(String username_){
+ArrayList<Customer> searchList = initialData.getCustomers(); //The list we will search
+		
+		for(int i = 0 ; i < searchList.size() ; i++ )
+		{
+			if(searchList.get(i).getUsername().equals(username_))
+			{
+				return searchList.get(i);
+			}
+			
+	}return null;
+	}
+	@Override
 	public long getUserID(String lowerCase) {
 		// TODO Auto-generated method stub
 		return 0;

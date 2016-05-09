@@ -39,8 +39,7 @@ public class LoginController{
 			password = "";
 			return "login";
 		}
-		error = "Logged in";
-		currentUser.setUser(customerService.findUserIdByUsername(username));
+		currentUser.setUserID(customerService.findUserIdByUsername(username));
 		return "LandingPage";
 	}
 	
