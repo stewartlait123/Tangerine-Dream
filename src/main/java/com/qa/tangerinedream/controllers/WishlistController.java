@@ -12,9 +12,12 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.qa.tangerinedream.entities.Order;
 import com.qa.tangerinedream.entities.OrderLine;
 import com.qa.tangerinedream.service.BasketService;
 import com.qa.tangerinedream.service.WishlistService;
+
+import repositorybackend.OrderStatus;
 
 /**
  * This is the controller for the wishlist. Any time you need to do anything
@@ -39,7 +42,7 @@ public class WishlistController {
 	 * This method will add the product to the users wishlist
 	 * 
 	 * @param productId
-	 *            - this it the ID of the product to add
+	 *            - this is the ID of the product to add
 	 */
 	public void addToWishlist(long productId) {
 		wishlistService.addToWishlist(productId, currentUser.getUserID());
@@ -84,5 +87,7 @@ public class WishlistController {
 			return null;
 		}
 		return wishlist;
+		
+	
 	}
 }
