@@ -40,8 +40,7 @@ public class CreditApplicationController {
 	private String cvs = "";
 	private String bank_address = "";
 
-	// method to return to credit application if any boxes are left empty and
-	// for apply and cancel buttons
+	// method to return to credit application if any boxes are left empty when clicked apply
 	public String apply() {
 		if (surname.isEmpty() || first_name.isEmpty() || date_of_birth.isEmpty() || home_address.isEmpty()
 				|| time_at_address.isEmpty() || place_of_birth.isEmpty() || type_of_proof.isEmpty()
@@ -49,35 +48,17 @@ public class CreditApplicationController {
 				|| time_with_employer.isEmpty() || type_of_employment.isEmpty() || bank_name.isEmpty()
 				|| time_with_bank.isEmpty() || account_number.isEmpty() || sort_code.isEmpty() || card_name.isEmpty()
 				|| card_number.isEmpty() || expiry_date.isEmpty() || cvs.isEmpty() || bank_address.isEmpty()) {
-			System.out.println(toString());
+			System.out.println(toString());//print to check for error that was occurring #BetterToBeSafeThanSorry
 			return "CreditApplication";
 		}
-		// send to imaginary accounts department via mule.
-		// we don't give a shit m8 coz its a controller, we dont need the logik
-		// ere
+		// to send to imaginary accounts department via mule using method sendApplication which is contained within the service
+		// we don't give a shit m8 coz its a controller, we dont need the logik ere
 		creditApplicationService.sendApplication(surname, first_name, date_of_birth, home_address, time_at_address,
 					place_of_birth, type_of_proof, proof_number, employer_name, employer_address, time_with_employer,
 					type_of_employment, bank_name, time_with_bank, account_number, sort_code, card_name, card_number,
 					expiry_date, cvs, bank_address);
-		System.out.println("---noemptyFields");
+		System.out.println("---noemptyFields"); //prints out in the console to say there are no empty fields
 		return "CreditConfirmation";
-	}
-
-	@Override
-	public String toString() {
-		return "CreditApplicationController [surname=" + surname + ", first_name=" + first_name + ", date_of_birth="
-				+ date_of_birth + ", home_address=" + home_address + ", time_at_address=" + time_at_address
-				+ ", place_of_birth=" + place_of_birth + ", type_of_proof=" + type_of_proof + ", proof_number="
-				+ proof_number + ", employer_name=" + employer_name + ", employer_address=" + employer_address
-				+ ", time_with_employer=" + time_with_employer + ", type_of_employment=" + type_of_employment
-				+ ", bank_name=" + bank_name + ", time_with_bank=" + time_with_bank + ", account_number="
-				+ account_number + ", sort_code=" + sort_code + ", card_name=" + card_name + ", card_number="
-				+ card_number + ", expiry_date=" + expiry_date + ", cvs=" + cvs + ", bank_address=" + bank_address
-				+ "]";
-	}
-
-	public String cancel() {
-		return "LandingPage";
 	}
 
 	// getters and setters for strings
