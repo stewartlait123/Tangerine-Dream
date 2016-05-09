@@ -55,20 +55,20 @@ public class InitialData{
 		
 		//creation of products
 		//name, cost price size weight stock minstock orderamount productType image location
-		products.add(new Product("Simple Pot", 100, 300, 10, 500, 1000, 100, 1000, "POT", "img/abstractpot.png"));
-		products.add(new Product("Clippers", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Clippers.jpg"));
-		products.add(new Product("Normal Gnome", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome1.jpg"));
-		products.add(new Product("Normal Gnome 2", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
-		products.add(new Product("Normal Gnome 3", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
-		products.add(new Product("Normal Gnome 4", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome4.jpg"));
-		products.add(new Product("Return of Normal Gnome 3", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
-		products.add(new Product("Godzilla Gnome", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome5.jpg"));
-		products.add(new Product("Gun gnome3", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome6.jpg"));
-		products.add(new Product("Hook", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Hook.jpg"));
-		products.add(new Product("Rake", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Rake.jpg"));
-		products.add(new Product("Shovel", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Shovel.jpg"));
-		products.add(new Product("Trimmers", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Trimmers.jpg"));
-		products.add(new Product("Trowel", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Trowel.jpg"));
+		products.add(new Product(0, "Simple Pot", 100, 300, 10, 500, 1000, 100, 1000, "POT", "img/abstractpot.png"));
+		products.add(new Product(1, "Clippers", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Clippers.jpg"));
+		products.add(new Product(2, "Normal Gnome", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome1.jpg"));
+		products.add(new Product(3, "Normal Gnome 2", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
+		products.add(new Product(4, "Normal Gnome 3", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
+		products.add(new Product(5, "Abnormal Gnome", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome4.jpg"));
+		products.add(new Product(6, "Return of Normal Gnome 3", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
+		products.add(new Product(7, "Godzilla Gnome", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome5.jpg"));
+		products.add(new Product(8, "Gunome", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome6.jpg"));
+		products.add(new Product(9, "Hook", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Hook.jpg"));
+		products.add(new Product(10, "Rake", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Rake.jpg"));
+		products.add(new Product(11, "Shovel", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Shovel.jpg"));
+		products.add(new Product(12, "Trimmers", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Trimmers.jpg"));
+		products.add(new Product(13, "Trowel", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Trowel.jpg"));
 		
 		//Creation of Order Dummy data by Christine Stokes
 		
@@ -84,7 +84,7 @@ public class InitialData{
 		
 		// Creation of Dummy Data for orderline by Christine Stokes
 		Order orderID = new Order();
-		Product productID = new Product(null, 0, 0, 0, 0, 0, 0, 0, null, null);
+		Product productID = new Product(14, null, 0, 0, 0, 0, 0, 0, 0, null, null);
 		
 		//orderLine.add(new OrderLine(orderID, productID, 2, 1799));
 		//orderLine.add(new OrderLine(orderID, productID, 3,1899));
