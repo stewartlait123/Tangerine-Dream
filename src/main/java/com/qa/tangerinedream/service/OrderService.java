@@ -31,7 +31,7 @@ public class OrderService {
 
 	public Order getUsersPendingOrder(long userID) {
 		Order order = orderRepository.findUserAndStatus(userID, PENDING);
-		return new Order(PENDING, currentdate, new Customer(0, "bill", "bill", "bill", new Date(), 0, 0), new OrderLine(new Product("gnome", 1, 1, 1, 1, 1, 1, 1, "Gnome", " "), 1, 1));
+		return new Order(PENDING, currentdate, new Customer(0, "bill", "bill", "bill", new Date(), 0, 0), new OrderLine(new Product(15,"gnome", 1, 1, 1, 1, 1, 1, 1, "Gnome", " "), 1, 1));
 	}
 
 	public float calcOrderTotalPending(long userID) {

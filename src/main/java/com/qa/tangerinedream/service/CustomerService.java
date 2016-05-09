@@ -10,6 +10,8 @@ public class CustomerService {
 	@Inject CustomerRepository customerRepo;
 	
 	public Order getWishList(long userID){
+		
+		
 		//TODO: get the wish list for the specified customer
 		return null;
 	}
