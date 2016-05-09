@@ -41,6 +41,5 @@ public interface CustomerRepository {
 	public Customer findByUserPass(String lowerCase, String password);
 	
 	long findUserIdByUsername(String username);
-	
 
 }

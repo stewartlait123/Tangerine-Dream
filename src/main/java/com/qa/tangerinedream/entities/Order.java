@@ -68,7 +68,7 @@ public class Order {
 	/**
 	 *   method to allow dummy data to be generated 
 	 * @param status
-	 * @param l
+	 * @param date
 	 * @param customerID
 	 
 	public Order(OrderStatus status, Date currentDate, Customer customer, OrderLine orderLine) {
@@ -80,7 +80,9 @@ public class Order {
 	}
 	*/
 
+
 	public Order(OrderStatus status, Date date, Customer customer, OrderLine orderLine){
+
 		this.status = status;
 		this.order_date = date;
 		this.customer = customer;
