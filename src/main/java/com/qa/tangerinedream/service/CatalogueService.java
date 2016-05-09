@@ -27,6 +27,11 @@ public class CatalogueService {
 		public ArrayList<Product> searchProducts(String productType) {
 		//must be add to ProductRepository.java
 			return productRepo.findByProductType(productType);
+		}
+
+		public Product getProductById(long product_id) {
+			// TODO Auto-generated method stub
+			return productRepo.findByProductId(product_id);
 		} 
 	}
 

@@ -48,7 +48,7 @@ public class ProductController {
 	
 	
 	public String getName() {
-		System.out.println("Name: " + name + productService.getProduct(product_id).getName());
+		//System.out.println("Name: " + name + productService.getProduct(product_id).getName());
 		return name;
 	}
 	
