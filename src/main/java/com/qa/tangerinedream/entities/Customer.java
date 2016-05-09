@@ -55,7 +55,7 @@ public class Customer {
 	@Column (name = "credit", nullable = true)
 	private int credit;
 
-	@Column (name = "credit", nullable = true)
+	@Column (name = "creditLimit", nullable = true)
 	private int credit_limit;
 	
 	//Constructor added for creation in InitialData class

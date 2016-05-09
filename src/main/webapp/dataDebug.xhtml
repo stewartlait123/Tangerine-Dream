@@ -1,0 +1,107 @@
+<!-- Author: Finley Peters @Team Tang  -->
+
+<!DOCTYPE html>
+<html>
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/Template.xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+	<ui:define name="maincontent">
+		<div>
+
+			<div id="content-container">
+			
+			<p> Customer Details</p>
+			<h:dataTable value="#{debugData.customer}" var="customer">
+			    
+			     <h:column>    				
+			      <f:facet name="header">ID</f:facet>    				
+			      "#{customer.customerId}"			      
+			   </h:column>		    
+			    
+			   <h:column>    				
+			      <f:facet name="header">Name</f:facet>    				
+			      "#{customer.name}"			      
+			   </h:column>
+			   
+			  	<h:column>    				
+			      <f:facet name="header">Username</f:facet>    				
+			      "#{customer.username}"	      
+			   </h:column>	
+			   
+			   <h:column>    				
+			      <f:facet name="header">Password</f:facet>    				
+			      "#{customer.password}"		      
+			   </h:column>	
+			   
+			   <h:column>    				
+			      <f:facet name="header">dob</f:facet>    				
+			      "#{customer.dob}"			      
+			   </h:column>	
+			   
+			   <h:column>    				
+			      <f:facet name="header">credit</f:facet>    				
+			     "#{customer.credit}"			      
+			   </h:column>
+			   
+			   <h:column>    				
+			      <f:facet name="header">credit Limit</f:facet>    				
+			      "#{customer.creditLimit}"		      
+			   </h:column>	
+			   		   
+		</h:dataTable>
+			
+		<p> Product Details</p>
+			<h:dataTable value="#{debugData.product}" var="product">
+			    
+			    <h:column>
+			    <f:facet name="image">Image</f:facet>
+			    <img src = "#{product.imageLocation}"></img>
+			    </h:column>
+			    
+			    <h:column>    				
+			      <f:facet name="header">ID</f:facet>    				
+			      "#{product.product_id}"		      
+			   </h:column>		    
+			    
+			   <h:column>    				
+			      <f:facet name="header">Name</f:facet>    				
+			      "#{product.name}"			      
+			   </h:column>
+			   
+			  	<h:column>    				
+			      <f:facet name="header">Price</f:facet>    				
+			     "#{product.price}"		      
+			   </h:column>	
+			   
+			   <h:column>    				
+			      <f:facet name="header">Type</f:facet>    				
+			      "#{product.product_type}"		      
+			   </h:column>	
+			   
+			   <h:column>    				
+			      <f:facet name="header">stock</f:facet>    				
+			      "#{product.stock}"			      
+			   </h:column>
+			   		   
+		</h:dataTable>
+
+
+			</div>
+		</div>
+		<link rel="stylesheet" type="text/css"
+			href="slick-1.5.9/slick/slick.css" />
+		<link rel="stylesheet" type="text/css"
+			href="slick-1.5.9/slick/slick-theme.css" />
+
+
+		<script type="text/javascript" src="slick-1.5.9/slick/slick.min.js"></script>
+	</ui:define>
+</ui:composition>
+
+</html>
