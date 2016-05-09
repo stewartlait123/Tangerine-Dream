@@ -3,7 +3,10 @@
 	import static repositorybackend.OrderStatus.PENDING;
 	import static repositorybackend.OrderStatus.PLACED;
 
-	import java.util.Calendar;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.inject.Inject;
@@ -24,7 +27,7 @@ import repositorybackend.OrderStatus;
 		@Inject ProductRepository productRepository;
 		@Inject CustomerRepository customerRepository;
 		
-
+	
 
 
 	public Order getUsersPendingOrder(long userID) {
@@ -62,6 +65,7 @@ import repositorybackend.OrderStatus;
 			return 0;
 	}
 
+
 	public void addToBasket(long productId, int quantity, long userId) {
 			Product product = productRepository.findByProductId(productId);
 			Order order = orderRepository.findUserAndStatus(userId, PENDING);
@@ -75,8 +79,8 @@ import repositorybackend.OrderStatus;
 				if(!foundOrderLine)
 					order.addOrderLine(new OrderLine(product, quantity, product.getPrice()));
 			} else
-				long date = System.currentTimeMillis();
-				order = new Order(PENDING, date, customerRepository.findByID(userId), new OrderLine(product, quantity, product.getPrice()));
+				
+				order = new Order(PENDING, currentdate, customerRepository.findByID(userId), new OrderLine(product, quantity, product.getPrice()));
 		}
 
 

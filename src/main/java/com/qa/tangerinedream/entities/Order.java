@@ -44,7 +44,7 @@ public class Order {
 	@Column(name = "order_date", length = 50)
 	@NotNull
 	@Size (min = 6, max = 50)
-	private long order_date; // the column for date order placed
+	private Date order_date; // the column for date order placed
 	
 	@ManyToOne
 	@JoinColumn (name = "order_customer_id_fk", nullable = false)
@@ -52,7 +52,7 @@ public class Order {
 	private Customer customer; // Customer ID taken from customer table
 
 	@OneToMany(mappedBy="OrderLine")
-	private List<OrderLine> orderLines;
+	private List<OrderLine> orderLines = new ArrayList<OrderLine>();
 	
 
 	public Order(){
@@ -80,11 +80,12 @@ public class Order {
 	}
 	*/
 
-	public Order(OrderStatus status, long date, Customer customer, OrderLine orderLine) {
+
+	public Order(OrderStatus status, Date date, Customer customer, OrderLine orderLine){
+
 		this.status = status;
 		this.order_date = date;
 		this.customer = customer;
-		this.orderLines = new ArrayList<>();
 		this.orderLines.add(orderLine);
 	}
 
@@ -97,7 +98,7 @@ public class Order {
 		return status;
 	}
 
-	public long getOrder_date() {
+	public Date getOrder_date() {
 		return order_date;
 	}
 
@@ -105,7 +106,7 @@ public class Order {
 		this.status = status;
 	}
 
-	public void setOrder_date(Long order_date) {
+	public void setOrder_date(Date order_date) {
 		this.order_date = order_date;
 	}	
 	
