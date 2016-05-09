@@ -69,13 +69,21 @@ public class Customer {
 		credit_limit = creditLimit_;
 	}
 
-	public Customer(){
-		
+	public Customer(){}
+	
+	public Customer(long customer_id, String name, String username, String password, Date dob, int credit,
+			int credit_limit) {
+		this.customer_id = customer_id;
+		this.name = name;
+		this.username = username;
+		this.password = password;
+		this.dob = dob;
+		this.credit = credit;
+		this.credit_limit = credit_limit;
 	}
+	
 	public Long getCustomerId()
 		{ return customer_id; }
-
-
 	public String getName()
 		{ return name; }
 
@@ -111,6 +119,12 @@ public class Customer {
 
 	public int getCreditLimit()
 		{ return credit_limit; }
+
+	@Override
+	public String toString() {
+		return "Customer [customer_id=" + customer_id + ", name=" + name + ", username=" + username + ", password="
+				+ password + ", dob=" + dob + ", credit=" + credit + ", credit_limit=" + credit_limit + "]";
+	}
 
 }
 

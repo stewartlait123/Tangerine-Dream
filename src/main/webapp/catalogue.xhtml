@@ -17,7 +17,7 @@
 
 		<input type="text" name="search" value="Search"></input>
 
-  
+  	<!-- search by product type, not implemented yet -->
 		<select name="category">
 			<option value="category" selected = "selected" disabled = "disabled">Category</option>
 			<option value="gnome">Gnomes</option>
@@ -39,7 +39,11 @@
 			   </h:column>
 			   <h:column>    				
 			      <f:facet name="header">Name</f:facet>    				
-			      #{products.name}
+			      
+			      <h:outputLink value="product.xhtml" >
+				      #{products.name} 
+				      <f:param name="id" value="#{products.product_id}" />
+			      </h:outputLink>
 			   </h:column>
 			   
 			   <h:column>    				
@@ -63,6 +67,7 @@
 				   <f:facet name="header"></f:facet>
 					<h:inputText id="quantity" value="0"/>
 					   
+					<!-- button actions not currently implemented -->   
 					<h:commandButton id="AddToBasket" action="#{basket.addToBasket}" value="Add to basket" />
 					<h:commandButton id="AddToWishlist" action="#{wishlist.addToWishlist}" value="Wishlist" />
 						

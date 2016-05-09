@@ -27,14 +27,13 @@
 					<tr>
 						<td><h:outputText value="#{line.product.name}" /></td>
 						<td><h:inputText value="#{line.quantity}" /></td>
-						<td><h:commandButton
-								value="#{basket.removeFromBasket(line.product.product_id)}" /></td>
+						
 					</tr>
 				</ui:repeat>
 				<tr>
 					<td></td>
 					<td><h:outputText value="#{basket.totalPrice}" /></td>
-					<td><h:commandButton value="#{basket.placeOrder}" /></td>
+					<td><h:commandButton value="#{basket.placeOrder()}" /></td>
 				</tr>
 			</h:form>
 		</table>

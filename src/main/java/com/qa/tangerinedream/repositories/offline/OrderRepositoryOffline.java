@@ -11,7 +11,6 @@ import repositorybackend.OrderStatus;
 import static repositorybackend.OrderStatus.PENDING;
 import static repositorybackend.OrderStatus.WISHLIST;
 
-import com.qa.tangerinedream.entities.Customer;
 import com.qa.tangerinedream.entities.Order;
 
 import com.qa.tangerinedream.repositories.OrderRepository;
@@ -99,10 +98,13 @@ implements OrderRepository {
 	public Order findUsersPendingOrder(long userId) {
 
 		ArrayList<Order> orders = (ArrayList<Order>) initialData.getOrders();
-		for (Order order : orders)
-			if(order.getCustomer().getCustomerId()==userId && order.getStatus().equals(PENDING))
+		for (Order order : orders){
+			if(order.getCustomer().getCustomerId()==userId && order.getStatus().equals(PENDING)){
+				System.out.println("Order Found");
+			}
 				return order;
-
+		}
+		System.out.println("Order not Found");
 		return null;
 	}
 }
