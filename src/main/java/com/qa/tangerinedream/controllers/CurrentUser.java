@@ -17,8 +17,8 @@ public class CurrentUser implements Serializable {
 		return userID;
 	}
 
-	public void setUser(long findUserIdByUsername) {
+	public void setUser(long userId) {
 		// TODO Auto-generated method stub
-		
+		this.userID = userId;
 	}
 }
