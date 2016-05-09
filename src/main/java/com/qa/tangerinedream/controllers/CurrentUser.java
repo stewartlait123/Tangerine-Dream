@@ -2,8 +2,11 @@ package com.qa.tangerinedream.controllers;
 
 import java.io.Serializable;
 
-import javax.enterprise.context.SessionScoped;
 
+import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean
 @SessionScoped
 public class CurrentUser implements Serializable {
 	/**
@@ -11,14 +14,15 @@ public class CurrentUser implements Serializable {
 	 */
 	private static final long serialVersionUID = -6550704034146760260L;
 
-	private long userID;
+	private long userID = 0;
 	
 	protected long getUserID() {
+		System.out.println(userID);
 		return userID;
 	}
 
-	public void setUser(long userId) {
-		// TODO Auto-generated method stub
-		this.userID = userId;
+	protected void setUserID(long userID) {
+		System.out.println(userID);
+		this.userID = userID;
 	}
 }

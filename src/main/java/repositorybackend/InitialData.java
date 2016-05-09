@@ -6,7 +6,6 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -39,16 +38,15 @@ public class InitialData{
 	private ArrayList<Supplier> supplier = new ArrayList<Supplier>();
 	private ArrayList<ProductSupplier> productSuppliers = new ArrayList<ProductSupplier>();
 
-	
 	public InitialData(){
 		
 		//Creation of five entries to add into customer arraylist with unique values - Finley Peters @ TeamTang
-		customers.add(new Customer("John Doe", "BigJohn", "johnPassword", new Date() ,67 , 100));	
-		customers.add(new Customer("James Crisps", "GoldenWonder", "crisps00001", new Date() ,15099 , 12000));
-		customers.add(new Customer("Billy Kitten", "LifeIsPointless", "rootin_tootin", new Date() ,0 , 0));
-		customers.add(new Customer("Henry Gobble", "TurkeyMaster", "Innocent", new Date() ,6599 , 50000));
-		customers.add(new Customer("Jane Sniff", "Hoot", "Lovely_Day_1969", new Date() , 50020 , 600000));
-		
+		customers.add(new Customer(0, "John Doe", "BigJohn", "johnPassword", new Date() ,67 , 100));	
+		customers.add(new Customer(1, "James Crisps", "GoldenWonder", "crisps00001", new Date() ,15099 , 12000));
+		customers.add(new Customer(2, "Billy Kitten", "LifeIsPointless", "rootin_tootin", new Date() ,0 , 0));
+		customers.add(new Customer(3, "Henry Gobble", "TurkeyMaster", "Innocent", new Date() ,6599 , 50000));
+		customers.add(new Customer(4, "Jane Sniff", "Hoot", "Lovely_Day_1969", new Date() , 50020 , 600000));
+
 		//Creation of Address Dummy Data by Christine Stokes
 		Customer customer_ID = new Customer();
 		address.add(new Address("5 Linden Drive, Preston, PR54JL", "5 Linden Drive, Preston, PR54JL", customer_ID));
@@ -99,7 +97,7 @@ public class InitialData{
 		orders.add(new Order(OrderStatus.PLACED , currentDate , customers.get(0), new OrderLine(products.get(3), 5 , 500)));
 		orders.add(new Order(OrderStatus.PLACED , currentDate , customers.get(3), new OrderLine(products.get(0), 1 , 40)));
 		orders.add(new Order(OrderStatus.WISHLIST , currentDate , customers.get(4), new OrderLine(products.get(10), 100 , 0)));
-	
+		orders.add(new Order(OrderStatus.PENDING, currentDate, customers.get(0), new OrderLine(products.get(0), 1, 10)));
 	
 	// Creation of Payment Dummy Data by Christine Stokes
 	
@@ -200,7 +198,7 @@ public class InitialData{
 	
 	// Order data getter by Christine Stokes
 	
-	public List<Order>getOrders(){
+	public ArrayList<Order> getOrders(){
 		return orders;
 
 	}

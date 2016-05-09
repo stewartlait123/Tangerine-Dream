@@ -14,8 +14,7 @@ public class UserAccountController{
 	@Inject CustomerRepository customerRepo;
 	
 	public Customer getUserAccount(String username){
-		//TODO: get the Customer object from the database
-		//return CustomerRepository.getCustomer(username);
+		customerRepo.findUserByUsername(username);
 		return null;
 	}
 	

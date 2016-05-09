@@ -17,16 +17,13 @@ import com.qa.tangerinedream.service.OrderService;
 public class BasketController {
 	@Inject OrderService orderService;
 	@Inject CurrentUser currentUser;
-	private Order order = orderService.getUsersPendingOrder(currentUser.getUserID());
-	private float totalPrice = orderService.calcOrderTotalPending(currentUser.getUserID());
-	
+	private Order order;
 	
 	/**
 	 * This method adds the specified product to the basket
 	 * 
 	 * @param productId - the products id
 	 */
-	
 	
 	public void addToBasket(long productId, int quantity){
 		orderService.addToBasket(productId, quantity, currentUser.getUserID());
@@ -38,10 +35,10 @@ public class BasketController {
 	 * @param productId - the product to be removed
 	 * @return - returns basket which should redirect the user to the basket page
 	 */
-	public String removeFromBasket(long productId){
-		orderService.removeFromBasket(productId, currentUser.getUserID());
-		return "basket";
-	}
+//	public String removeFromBasket(long productId){
+//		orderService.removeFromBasket(productId, currentUser.getUserID());
+//		return "basket";
+//	}
 	
 	/**
 	 * This method updates the whole basket's quantity
@@ -79,6 +76,8 @@ public class BasketController {
 	 * @return - The Users Basket
 	 */
 	public Order getOrder() {
+		if(order == null)
+			order = orderService.getUsersPendingOrder(0);
 		return order;
 	}
 
@@ -98,6 +97,6 @@ public class BasketController {
 	 * @return - the price
 	 */
 	public float getTotalPrice() {
-		return totalPrice;
+		return orderService.calcOrderTotalPending(currentUser.getUserID());
 	}
 }
