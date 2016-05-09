@@ -94,4 +94,13 @@ implements OrderRepository {
 		}return null;
 	
 	}
+
+	@Override
+	public Order findUsersPendingOrder(long userId) {
+		ArrayList<Order> orders = (ArrayList<Order>) initialData.getOrders();
+		for (Order order : orders)
+			if(order.getCustomer().getCustomerId()==userId && order.getStatus().equals(PENDING))
+				return order;
+		return null;
+	}
 }

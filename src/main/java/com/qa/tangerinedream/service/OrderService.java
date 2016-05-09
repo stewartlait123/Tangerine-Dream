@@ -74,8 +74,9 @@ import repositorybackend.OrderStatus;
 					}
 				if(!foundOrderLine)
 					order.addOrderLine(new OrderLine(product, quantity, product.getPrice()));
-			} else 
-				order = new Order(PENDING, new Date(), customerRepository.findByID(userId), new OrderLine(product, quantity, product.getPrice()));
+			} else
+				long date = System.currentTimeMillis();
+				order = new Order(PENDING, date, customerRepository.findByID(userId), new OrderLine(product, quantity, product.getPrice()));
 		}
 
 

@@ -11,6 +11,7 @@ package com.qa.tangerinedream.entities;
  */
 //import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -67,7 +68,7 @@ public class Order {
 	/**
 	 *   method to allow dummy data to be generated 
 	 * @param status
-	 * @param l
+	 * @param date
 	 * @param customerID
 	 
 	public Order(OrderStatus status, Date currentDate, Customer customer, OrderLine orderLine) {
@@ -79,9 +80,9 @@ public class Order {
 	}
 	*/
 
-	public Order(OrderStatus status, long l, Customer customer, OrderLine orderLine) {
+	public Order(OrderStatus status, long date, Customer customer, OrderLine orderLine) {
 		this.status = status;
-		this.order_date = l;
+		this.order_date = date;
 		this.customer = customer;
 		this.orderLines = new ArrayList<>();
 		this.orderLines.add(orderLine);
