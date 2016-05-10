@@ -1,0 +1,36 @@
+<!-- Author Jessica Maddocks- go Team Tang 
+Hard coded for demonstration purposes only-->
+
+<!DOCTYPE html>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/Template.xhtml">
+	<link rel="stylesheet" type="text/css" href="/template/Template.css"></link>
+
+	<ui:define name="pagetitle">
+		<div id="header">
+			<h1>Manage Payments</h1>
+		</div>
+	</ui:define>
+
+	<ui:define name="maincontent">
+		<div class="content">
+			<div id="sectionTitle">
+				<h2>Credit Payment</h2>
+			</div>
+			<div id="maintext">
+				<h2>Current Credit Status</h2>
+				<p>17 days out of 28 left to pay £925.97 </p>
+				<p>GREAT CREDIT RATING</p>
+			</div>
+			<div id="sectionTitle">
+				<h2>Instant Payment</h2>
+			</div>
+			<div id="maintext">
+				<p>You have selected for NB Gardens to safely save credit/debit card details ready for your next order. If you want to change your mind, don't worry, just check 'Save card details' on your next purchase or <a href = "addcard.xhtml">click here!</a></p>
+			</div>
+
+		</div>
+	</ui:define>
+</ui:composition>

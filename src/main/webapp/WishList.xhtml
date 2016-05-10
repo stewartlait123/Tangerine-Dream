@@ -17,8 +17,8 @@ This is the first table
  
 	<ui:define name="maincontent">
 	<table style="width: 80%">
-	<h:form rendered="#{wishlist.wishlist != null}">
-			<ui:repeat value="#{wishlist.wishlist}" var="line">
+	<h:form rendered="#{wishlist.getWishlist() != null}">
+			<ui:repeat value="#{wishlist.getWishlist()}" var="line">
 				<tr>
 					<td width="128px"><h:graphicImage value="#{line.product.imageLocation}" height="128xp" width="128xp"/></td>
 					<td>

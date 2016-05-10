@@ -69,6 +69,8 @@ public class OrderService {
 	Date currentdate = Calendar.getInstance().getTime();
 
 	public void addToBasket(long productId, int quantity, long userId) {
+		System.out.println("Reached here!!!");
+		System.out.println("quantity = " + quantity + "UserID = " + userId);
 		Product product = productRepository.findByProductId(productId);
 		Order order = orderRepository.findUserAndStatus(userId, PENDING);
 		if (order != null) {

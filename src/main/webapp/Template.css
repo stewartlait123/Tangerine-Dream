@@ -491,3 +491,18 @@ a {
   line-height: 30px;
   color: white;
 }
+/*Big red cancel button*/
+.button3 {
+    background-color: white; 
+    color: black; 
+    border: none;
+    border: 2px solid #f44336;
+    padding: 16px 322px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button3:hover {
+    background-color: #f44336;
+    color: white;
+}

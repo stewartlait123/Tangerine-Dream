@@ -20,7 +20,7 @@ import com.qa.tangerinedream.service.WishlistService;
  * This is the controller for the wishlist. Any time you need to do anything
  * with the wishlist, use this.
  * 
- * @author Stewart "noob" Lait
+ * @author Stewart Lait
  */
 @Named(value = "wishlist")
 @RequestScoped
@@ -32,9 +32,6 @@ public class WishlistController {
 	private WishlistService wishlistService;
 	@Inject
 	private CurrentUser currentUser;
-	
-
-	private List<OrderLine> wishlist;
 
 	/**
 	 * This method will add the product to the users wishlist
@@ -77,16 +74,6 @@ public class WishlistController {
 	 * @return - the users wishlist
 	 */
 	public List<OrderLine> getWishlist() {
-		try {
-			if (wishlist == null)
-			wishlist = wishlistService.getWishlist(currentUser.getUserID());
-		} catch (NullPointerException npe) {
-			npe.printStackTrace();
-			return null;
-		}
-		return wishlist;
-
+		return wishlistService.getWishlist(currentUser.getUserID());
 	}
-	
-	}
-
+}
