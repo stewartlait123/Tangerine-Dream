@@ -14,6 +14,7 @@ import javax.inject.Named;
 
 import com.qa.tangerinedream.entities.Order;
 import com.qa.tangerinedream.entities.OrderLine;
+import com.qa.tangerinedream.entities.Product;
 import com.qa.tangerinedream.service.BasketService;
 import com.qa.tangerinedream.service.WishlistService;
 
@@ -87,7 +88,8 @@ public class WishlistController {
 			return null;
 		}
 		return wishlist;
-		
+
+	}
 	
 	}
-}
+
