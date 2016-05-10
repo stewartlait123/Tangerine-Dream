@@ -2,6 +2,8 @@ package com.qa.tangerinedream.repositories.offline;
 
 import java.util.ArrayList;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import repositorybackend.InitialData;
 
@@ -15,7 +17,8 @@ import com.qa.tangerinedream.repositories.CustomerRepository;
  *  All lists or just one row can be read and search can be done through ID number.
  */
 
-
+@Stateless
+@Default
 public class CustomerRepositoryOffline
 implements CustomerRepository{
 	
@@ -220,19 +223,6 @@ implements CustomerRepository{
 		return 0;
 	}
 
-	@Override
-	public Customer findUserByUsername(String username_){
-ArrayList<Customer> searchList = initialData.getCustomers(); //The list we will search
-		
-		for(int i = 0 ; i < searchList.size() ; i++ )
-		{
-			if(searchList.get(i).getUsername().equals(username_))
-			{
-				return searchList.get(i);
-			}
-			
-	}return null;
-	}
 	@Override
 	public long getUserID(String lowerCase) {
 		// TODO Auto-generated method stub

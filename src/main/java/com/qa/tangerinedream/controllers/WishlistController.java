@@ -12,13 +12,9 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.qa.tangerinedream.entities.Order;
 import com.qa.tangerinedream.entities.OrderLine;
-import com.qa.tangerinedream.entities.Product;
 import com.qa.tangerinedream.service.BasketService;
 import com.qa.tangerinedream.service.WishlistService;
-
-import repositorybackend.OrderStatus;
 
 /**
  * This is the controller for the wishlist. Any time you need to do anything
@@ -81,7 +77,7 @@ public class WishlistController {
 	 */
 	public List<OrderLine> getWishlist() {
 		try {
-			if (wishlist.isEmpty())
+			if (wishlist == null)
 			wishlist = wishlistService.getWishlist(currentUser.getUserID());
 		} catch (NullPointerException npe) {
 			npe.printStackTrace();
