@@ -472,3 +472,17 @@ h5 {
 a {
 	text-decoration: none;
 }
+
+/*Progress bar*/
+#myProgress {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background-color: grey;
+}
+#myBar {
+    position: absolute;
+    width: 1%;
+    height: 100%;
+    background-color: green;
+}
