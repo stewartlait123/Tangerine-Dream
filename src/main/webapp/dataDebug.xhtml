@@ -57,36 +57,36 @@
 		</h:dataTable>
 			
 		<p> Product Details</p>
-			<h:dataTable value="#{debugData.product}" var="product">
+			<h:dataTable value="#{debugData.product}" var="products">
 			    
 			    <h:column>
 			    <f:facet name="image">Image</f:facet>
-			    <img src = "#{product.imageLocation}"></img>
+			    <img src = "#{products.imageLocation}"></img>
 			    </h:column>
 			    
 			    <h:column>    				
 			      <f:facet name="header">ID</f:facet>    				
-			      "#{product.product_id}"		      
+			      "#{products.product_id}"		      
 			   </h:column>		    
 			    
 			   <h:column>    				
 			      <f:facet name="header">Name</f:facet>    				
-			      "#{product.name}"			      
+			      "#{products.name}"			      
 			   </h:column>
 			   
 			  	<h:column>    				
 			      <f:facet name="header">Price</f:facet>    				
-			     "#{product.price}"		      
+			     "#{products.price}"		      
 			   </h:column>	
 			   
 			   <h:column>    				
 			      <f:facet name="header">Type</f:facet>    				
-			      "#{product.product_type}"		      
+			      "#{products.product_type}"		      
 			   </h:column>	
 			   
 			   <h:column>    				
 			      <f:facet name="header">stock</f:facet>    				
-			      "#{product.stock}"			      
+			      "#{products.stock}"			      
 			   </h:column>
 			   		   
 		</h:dataTable>

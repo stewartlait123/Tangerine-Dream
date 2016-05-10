@@ -9,7 +9,6 @@ import java.util.Date;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import com.qa.tangerinedream.entities.Customer;
 import com.qa.tangerinedream.entities.Order;
 import com.qa.tangerinedream.entities.OrderLine;
 import com.qa.tangerinedream.entities.Product;
@@ -31,7 +30,12 @@ public class OrderService {
 
 	public Order getUsersPendingOrder(long userID) {
 		Order order = orderRepository.findUserAndStatus(userID, PENDING);
-		return new Order(PENDING, currentdate, new Customer(0, "bill", "bill", "bill", new Date(), 0, 0), new OrderLine(new Product(15,"gnome", 1, 1, 1, 1, 1, 1, 1, "Gnome", " "), 1, 1));
+
+//return new Order(PENDING, currentdate, new Customer(0, "bill", "bill", "bill", new Date(), 0, 0), new OrderLine(new Product("gnome", 1, 1, 1, 1, 1, 1, 1, "Gnome", " "), 1, 1));
+		return order;
+
+//		return new Order(PENDING, currentdate, new Customer(0, "bill", "bill", "bill", new Date(), 0, 0), new OrderLine(new Product(15,"gnome", 1, 1, 1, 1, 1, 1, 1, "Gnome", " "), 1, 1));
+
 	}
 
 	public float calcOrderTotalPending(long userID) {

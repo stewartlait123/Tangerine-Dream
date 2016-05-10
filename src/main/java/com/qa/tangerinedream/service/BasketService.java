@@ -2,10 +2,14 @@ package com.qa.tangerinedream.service;
 
 import static repositorybackend.OrderStatus.PENDING;
 
+
+
 import java.util.Date;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+
+
 
 import com.qa.tangerinedream.entities.Order;
 import com.qa.tangerinedream.entities.OrderLine;
@@ -38,10 +42,6 @@ public class BasketService {
 	}
 
 
-	public int getTotalPrice() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 
 	public void placeOrder() {
