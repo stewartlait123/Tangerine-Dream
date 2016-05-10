@@ -87,11 +87,6 @@ public class OrderLine {
 		return order;
 	}
 
-	@Override
-	public String toString() {
-		return "OrderLine [product=" + product + ", quantity=" + quantity + ", purchasePrice=" + purchasePrice
-				+ ", order=" + order + "]";
-	}
 	
 	
 }

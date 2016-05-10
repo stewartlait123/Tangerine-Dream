@@ -59,6 +59,7 @@ implements OrderRepository {
 		for (Order order : orders) {
 			System.out.println("User:" + userId + ", Cust:" + order.getCustomer().getCustomerId() + ", Search:" + orderStatus + ", Status:" + order.getStatus());
 			if(order.getCustomer().getCustomerId()==userId && order.getStatus().equals(orderStatus))
+				System.out.println("Order found!!!");
 				return order;
 		}
 		return null;

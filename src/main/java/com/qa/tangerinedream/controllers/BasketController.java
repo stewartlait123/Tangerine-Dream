@@ -79,6 +79,7 @@ public class BasketController {
 	 */
 	public Order getOrder() {
 		if(order == null)
+			System.out.println("Getting to this method!!!");
 			order = orderService.getUsersPendingOrder(currentUser.getUserID());
 		return order;
 	}
