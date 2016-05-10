@@ -25,7 +25,7 @@ public class WishlistService {
 	@Inject private ProductRepository productRepository;
 	
 	public void addToWishlist(long productId, long userID) {
-		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.WISHLIST);
+		Order order = orderRepository.findUserAndStatus1(userID, OrderStatus.WISHLIST);
 		if(order==null){
 			order=new Order(customerRepository.findByID(userID), OrderStatus.WISHLIST);
 			orderRepository.persistOrder(order);
@@ -41,7 +41,7 @@ public class WishlistService {
 	}
 
 	public void removeFromWishlist(long productId, long userID) {
-		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.WISHLIST);
+		Order order = orderRepository.findUserAndStatus1(userID, OrderStatus.WISHLIST);
 		if(order!=null) {
 			List<OrderLine> lines = order.getOrderLines();
 			for (int i = 0; i < lines.size(); i++)
@@ -53,7 +53,7 @@ public class WishlistService {
 	}
 
 	public List<OrderLine> getWishlist(long userID) {
-		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.WISHLIST);
+		Order order = orderRepository.findUserAndStatus1(userID, OrderStatus.WISHLIST);
 		System.out.println(order.toString());	
 		return order.getOrderLines(); 
 	}
