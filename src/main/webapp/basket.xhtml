@@ -15,29 +15,28 @@
 	</ui:define>
 
 	<ui:define name="maincontent">
-
-		<table class="basket">
-			<tr>
-				<td><h5>Product</h5></td>
-				<td><h5>Quantity</h5></td>
-				<td><h5>Remove?</h5></td>
-			</tr>
-			<h:form>
-				<ui:repeat var="line" value="#{basket.order.orderLines}">
-					<tr>
-						<td><h:outputText value="#{line.product.name}" /></td>
-						<td><h:inputText value="#{line.quantity}" /></td>
-						
-					</tr>
-				</ui:repeat>
-				<tr>
-					<td></td>
-					<td><h:outputText value="#{basket.totalPrice}" /></td>
-					<td>
-					<h:commandButton action="Order.xhtml" value="#{basket.placeOrder()}" /></td>
-				</tr>
+<h:form>
+		<h:dataTable value="#{basket.order.orderLines}" var="line">
+			<h:column>
+			<f:facet name="header">Product</f:facet>
+			</h:column>
+			<h:column>
+			<h:outputLabel value="#{line.product.name}" />
+			</h:column>
+			<h:column>
+			<f:facet name="header">Quantity</f:facet>
+			<h:inputText value="#{line.quantity}" />
+			</h:column>
+			<h:column>
+			<h:commandButton action="#{basket.updateQuantity(line.quantity)}" value="Update" />	
+			</h:column>
+					</h:dataTable>
+					<h:outputText value="#{basket.totalPrice}" />
+				
+					<h:commandButton action="Order.xhtml" value="#{basket.placeOrder()}" />
+				
 			</h:form>
-		</table>
+		
 
 	</ui:define>
 </ui:composition>

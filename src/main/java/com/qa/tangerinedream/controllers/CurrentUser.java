@@ -14,7 +14,7 @@ public class CurrentUser implements Serializable {
 	 */
 	private static final long serialVersionUID = -6550704034146760260L;
 
-	private long userID = 0;
+	private long userID=0;
 	
 	protected long getUserID() {
 		System.out.println(userID);

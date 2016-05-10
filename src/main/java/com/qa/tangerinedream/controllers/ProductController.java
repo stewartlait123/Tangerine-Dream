@@ -15,8 +15,7 @@ import com.qa.tangerinedream.service.ProductService;
 @Named(value = "product")
 @RequestScoped
 public class ProductController {
-	
-	@Inject ProductService productService;
+	@Inject private ProductService productService;
 	
 	private long product_id;
 	private String name = "";
@@ -29,24 +28,7 @@ public class ProductController {
 	private int weight;
 	private int minStock;
 	private int orderAmount;
-	
-	//private Product product = productService.getProduct(productId);
-	
-	
-	/*public ProductService getProductService() {
-		return productService;
-	}
 
-	public void setProductService(ProductService productService) {
-		this.productService = productService;
-	}*/
-/*
-	public Product getProduct(long product_id){
-		return productService.getProduct(product_id);
-	}*/
-	
-	
-	
 	public String getName() {
 		//System.out.println("Name: " + name + productService.getProduct(product_id).getName());
 		return name;
@@ -56,42 +38,30 @@ public class ProductController {
 		return cost_price;
 	}
 
-
 	public int getSize() {
 		return size;
 	}
-
 
 	public int getWeight() {
 		return weight;
 	}
 
-
 	public int getMinStock() {
 		return minStock;
 	}
-
-
 
 	public int getOrderAmount() {
 		return orderAmount;
 	}
 
-
-
-
-
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
-
-	
 	
 	public long getproduct_id(){
 		return product_id;
 	}
-	
-	
+
 	public int getPrice(){
 		return price;
 	}
@@ -150,8 +120,5 @@ public class ProductController {
 
 	public void setOrderAmount(int orderAmount) {
 		this.orderAmount = orderAmount;
-	}
-	
-
-	
+	}	
 }

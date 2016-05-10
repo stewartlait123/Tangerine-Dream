@@ -20,13 +20,14 @@ public class BasketController {
 	private Order order;
 	private float totalPrice;
 	
+	
 	/**
 	 * This method adds the specified product to the basket
 	 * 
 	 * @param productId - the products id
 	 */
-	
 	public void addToBasket(long productId, int quantity){
+		System.out.println("Reached this point!!!");
 		orderService.addToBasket(productId, quantity, currentUser.getUserID());
 	}
 	
@@ -50,7 +51,7 @@ public class BasketController {
 		orderService.updateOrder(order, currentUser.getUserID());
 		return "basket";
 	}
-	
+
 	/**
 	 * This method tells the service layer to remove all items from the basket
 	 * 
@@ -91,7 +92,6 @@ public class BasketController {
 		this.order = order;
 	}
 	
-
 	/**
 	 * Gets the total price of the order
 	 * 
