@@ -482,7 +482,12 @@ a {
 }
 #myBar {
     position: absolute;
-    width: 1%;
+    width: 80%;
     height: 100%;
     background-color: green;
+}
+#label {
+  text-align: center;
+  line-height: 30px;
+  color: white;
 }
