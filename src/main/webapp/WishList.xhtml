@@ -17,8 +17,8 @@ This is the first table
  
 	<ui:define name="maincontent">
 	<table style="width: 80%">
-	<h:form rendered="#{wishlist.wishlist != null}">
-			<ui:repeat value="#{wishlist.wishlist}" var="line">
+	<h:form rendered="#{wishlist.getWishlist() != null}">
+			<ui:repeat value="#{wishlist.getWishlist()}" var="line">
 				<tr>
 					<td width="128px"><h:graphicImage value="#{line.product.imageLocation}" height="128xp" width="128xp"/></td>
 					<td>
@@ -27,8 +27,8 @@ This is the first table
 								<td><h:outputText value="#{line.product.name}" /></td>
 								<td><h:inputText value="#{line.quantity}" converterMessage="Please Enter a number" /> </td>
 								
-								<td><h:commandButton value="#{wishlist.addToBasketFromWishlist(line.product.product_id)}" /></td>
-								<td><h:commandButton value="#{wishlist.removeFromWishlist(line.product.product_id)}" /></td>
+								<td><h:commandButton value="Add to Basket" action="#{wishlist.addToBasketFromWishlist(line.product.product_id)}" /></td>
+								<td><h:commandButton value="Remove" action="#{wishlist.removeFromWishlist(line.product.product_id)}" /></td>
 							</tr>
 						</table>
 					</td>

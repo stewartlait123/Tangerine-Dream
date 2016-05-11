@@ -105,6 +105,7 @@
 							<td><h:outputLabel value="Type of Proof for Address:" /></td>
 							<td><h:selectOneMenu value="#{credapplic.type_of_proof}">
 
+									<f:selectItem itemValue="" itemLabel="Select One..." />
 									<f:selectItem itemValue="Drivers License"
 										itemLabel="Drivers License" />
 									<f:selectItem itemValue="Bank/Building Society Statement"
@@ -156,7 +157,7 @@
 							<td><h:outputLabel value="Type of Employment" /></td>
 							<td><h:selectOneMenu
 									value="#{credapplic.type_of_employment}">
-
+									<f:selectItem itemValue="" itemLabel="Select One..." />
 									<f:selectItem itemValue="Financial" itemLabel="Financial" />
 									<f:selectItem itemValue="Medical" itemLabel="Medical" />
 									<f:selectItem itemValue="IT" itemLabel="IT" />
@@ -244,8 +245,8 @@
 						<tr>
 							<td><h:commandButton value="Apply"
 									action="#{credapplic.apply}"></h:commandButton></td>
-							<td><a href="LandingPage.xhtml"> <input
-									type="button" value="Cancel" />
+							<td><a href="LandingPage.xhtml"> <input type="button"
+									value="Cancel" />
 							</a></td>
 						</tr>
 					</table>
