@@ -4,11 +4,11 @@ import static repositorybackend.OrderStatus.PENDING;
 import static repositorybackend.OrderStatus.PLACED;
 
 import java.util.Calendar;
-import java.util.Date;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import com.qa.tangerinedream.controllers.PendingOrder;
 import com.qa.tangerinedream.entities.Order;
 import com.qa.tangerinedream.entities.OrderLine;
 import com.qa.tangerinedream.entities.Product;
@@ -27,16 +27,12 @@ public class OrderService {
 	ProductRepository productRepository;
 	@Inject
 	CustomerRepository customerRepository;
+	@Inject
+	PendingOrder currentOrder;
 
-	private Order order;
 	public Order getUsersPendingOrder(long userID) {
 		Order order = orderRepository.findUserAndStatus(userID, PENDING);
-
-//return new Order(PENDING, currentdate, new Customer(0, "bill", "bill", "bill", new Date(), 0, 0), new OrderLine(new Product("gnome", 1, 1, 1, 1, 1, 1, 1, "Gnome", " "), 1, 1));
 		return order;
-
-//		return new Order(PENDING, currentdate, new Customer(0, "bill", "bill", "bill", new Date(), 0, 0), new OrderLine(new Product(15,"gnome", 1, 1, 1, 1, 1, 1, 1, "Gnome", " "), 1, 1));
-
 	}
 
 	public float calcOrderTotalPending(long userID) {
@@ -67,10 +63,7 @@ public class OrderService {
 			return 0;
 	}
 
-	Date currentdate = Calendar.getInstance().getTime();
-
 	public void addToBasket(long productId, int quantity, long userId) {
-		System.out.println("Reached here!!!");
 		System.out.println("quantity = " + quantity + "UserID = " + userId);
 		Product product = productRepository.findByProductId(productId);
 		Order order = orderRepository.findUserAndStatus(userId, PENDING);
@@ -84,8 +77,7 @@ public class OrderService {
 			if (!foundOrderLine)
 				order.addOrderLine(new OrderLine(product, quantity, product.getPrice()));
 		} else
-
-			order = new Order(PENDING, currentdate, customerRepository.findByID(userId),
+			order = new Order(PENDING, Calendar.getInstance().getTime(), customerRepository.findByID(userId),
 					new OrderLine(product, quantity, product.getPrice()));
 	}
 
@@ -106,41 +98,24 @@ public class OrderService {
 	}
 
 	public void clearOrder(long userID) {
-		Order order = orderRepository.findUserAndStatus(userID, PLACED);
-		if (order != null) {
-			for (OrderLine ol : order.getOrderLines())
-				order.removeOrderLine(ol);
-		}
+		Order order = orderRepository.findUserAndStatus(userID, PENDING);
+		orderRepository.delete(order);
 	}
 
-	public void placeOrder(Order order, long userID) {
-		if (order != null) {
-			for (OrderLine ol : order.getOrderLines()) {
-				long prodID = ol.getproduct().getProduct_id();
-				Product product = productRepository.findByProductId(prodID);
-				int stock_level = ol.getproduct().getStock();
-				int quantity = ol.getquantity();
-				if (quantity <= stock_level) {
-					product.setStock(stock_level - quantity);
-					order.setStatus(PLACED);
-					orderRepository.updateOrder(order);
-				}
-
-			}
-		}
+	public void placeOrder(long orderID, long userID) {
+		Order order = orderRepository.findByOrderID(orderID);
+		order.setStatus(PLACED);
+		orderRepository.updateOrder(order);
 	}
 
 	public Order getUsersOrderHistory(long userID) {
-		order = orderRepository.findUsersOrderHistory(userID);
+		Order order = orderRepository.findUsersOrderHistory(userID);
 		return order;
 	}
 
 	public Order getUsersPlacedOrders(long userID) {
-		order = orderRepository.findUserAndStatus(userID, PENDING);	
-			return order;
-	
-		
-
+		Order order = orderRepository.findUserAndStatus(userID, PLACED);
+		return order;
 	}
 
 	public Order getUsersPaidOrders(long userID) {
@@ -166,5 +141,18 @@ public class OrderService {
 		Order order = orderRepository.findUserAndStatus(userID, PENDING);
 		order.setStatus(PLACED);
 		orderRepository.updateOrder(order);
+	}
+
+	public void updatequantity(long prod_ID, int quantity, long userID) {
+		Order order = orderRepository.findUserAndStatus(userID, PENDING);
+		if (order != null) {
+			for (OrderLine ol : order.getOrderLines()) {
+				if (ol.getproduct().getProduct_id() == prod_ID) {
+					ol.setquantity(quantity);
+				}
+				orderRepository.updateOrder(order);
+			}
+		}
+
 	}
 }
