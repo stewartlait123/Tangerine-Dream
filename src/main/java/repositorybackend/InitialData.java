@@ -95,11 +95,11 @@ public class InitialData{
 		
 		//Product product, int quantity, int purchasePrice
 		
-		orders.add(new Order(OrderStatus.PLACED , currentDate , customers.get(0), new OrderLine(products.get(3), 5 , 500)));
-		orders.add(new Order(OrderStatus.PLACED , currentDate , customers.get(3), new OrderLine(products.get(0), 1 , 40)));
-		orders.add(new Order(OrderStatus.WISHLIST , currentDate , customers.get(0), new OrderLine(products.get(5), 5 , 0)));
-		orders.add(new Order(OrderStatus.PENDING, currentDate, customers.get(0), new OrderLine(products.get(0), 1, 10)));
-		orders.add(new Order(OrderStatus.PAID , currentDate , customers.get(0), new OrderLine(products.get(3), 5 , 500)));
+		orders.add(new Order(0, OrderStatus.PLACED , currentDate , customers.get(2), new OrderLine(products.get(3), 5 , 500)));
+		orders.add(new Order(1, OrderStatus.PLACED , currentDate , customers.get(3), new OrderLine(products.get(0), 1 , 40)));
+		orders.add(new Order(2, OrderStatus.WISHLIST , currentDate , customers.get(0), new OrderLine(products.get(5), 5 , 0)));
+		orders.add(new Order(3, OrderStatus.PENDING, currentDate, customers.get(0), new OrderLine(products.get(0), 1, 10)));
+		orders.add(new Order(4, OrderStatus.PAID , currentDate , customers.get(1), new OrderLine(products.get(3), 5 , 500)));
 	// Creation of Payment Dummy Data by Christine Stokes
 	
 

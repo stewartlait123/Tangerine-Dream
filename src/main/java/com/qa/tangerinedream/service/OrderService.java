@@ -77,7 +77,7 @@ public class OrderService {
 			if (!foundOrderLine)
 				order.addOrderLine(new OrderLine(product, quantity, product.getPrice()));
 		} else
-			order = new Order(PENDING, Calendar.getInstance().getTime(), customerRepository.findByID(userId),
+			order = new Order(orderRepository.getOrders().size(),PENDING, Calendar.getInstance().getTime(), customerRepository.findByID(userId),
 					new OrderLine(product, quantity, product.getPrice()));
 	}
 
