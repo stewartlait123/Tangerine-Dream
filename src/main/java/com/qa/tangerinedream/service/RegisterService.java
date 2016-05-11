@@ -24,7 +24,7 @@ public class RegisterService {
 		return false;
 	}
 	
-	private boolean validateDate(Date value){
+	public boolean validateDate(Date value){
 		//Convert String to date
 		Calendar cal = Calendar.getInstance();
 		cal.setLenient(false);

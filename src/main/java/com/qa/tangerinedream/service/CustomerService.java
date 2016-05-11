@@ -1,5 +1,7 @@
 package com.qa.tangerinedream.service;
 
+import java.util.Date;
+
 import javax.inject.Inject;
 
 import com.qa.tangerinedream.entities.Customer;
@@ -8,6 +10,7 @@ import com.qa.tangerinedream.repositories.CustomerRepository;
 
 public class CustomerService {
 	@Inject CustomerRepository customerRepo;
+	@Inject RegisterService  registerService;
 	
 	public Order getWishList(long userID){
 		//TODO: get the wish list for the specified customer
@@ -41,8 +44,25 @@ public class CustomerService {
 		
 	}
 	
+	public boolean validateDetails(String name, Date date){		
+		if (name != "" && registerService.validateDate(date))
+		{
+			return true;
+		}
+		return false;
+	}
+	
 	public long findUserIdByUsername(String username){
 		 
-		return customerRepo.getUserID(username.toLowerCase());
+		return customerRepo.findUserIdByUsername(username.toLowerCase());
+	}
+
+	public Customer findUserByUsername(String username) {
+		return customerRepo.findUserByUsername(username);
+	}
+
+	public Customer findUserById(long userid) {
+		// TODO Auto-generated method stub
+		return customerRepo.findByID(userid);
 	}
 }

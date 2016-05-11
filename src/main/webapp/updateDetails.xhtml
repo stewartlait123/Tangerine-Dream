@@ -1,0 +1,38 @@
+<!-- @author - Umar -->
+<!DOCTYPE html>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/Template.xhtml">
+
+	<ui:define name="pagetitle">
+		<div id="header">
+			<h1>Update Details</h1>
+		</div>
+	</ui:define>
+
+
+<ui:define name="maincontent">
+<div class="grid-temp">
+<div class="main-row">
+			<h:form styleClass="uk-form-horizontal">
+			<h:message class="error" value="#{user_account.error}"/>
+			<h:inputHidden value="#{user_account.init}"></h:inputHidden>
+			<table>
+				<tr><th><h:outputLabel value="Name: "/></th><th><h:inputText value="#{user_account.name}"/></th></tr>
+				<tr><th><h:outputLabel value="Username: "/></th>
+					<th><h:inputText value="#{user_account.username}"/></th></tr>	
+
+				<tr><th><h:outputLabel value="Date Of Birth: "/>
+					<h:inputText value="#{user_account.dd}" size="2"/>
+					<h:inputText value="#{user_account.mm}" size="2"/>
+					<h:inputText value="#{user_account.yyyy}" size="4"/></th>
+					</tr>			
+			</table>
+				<h:commandButton value="Update" action="#{user_account.updateDetails}"/>
+			</h:form>
+		</div>
+		</div>
+	</ui:define>
+</ui:composition>
