@@ -17,7 +17,7 @@
 					<p> Thank you your payment has gone through and your order will be with you shortly. The details
 					 of your order are below.</p>
 					<table>
-						<ui:repeat value="#{order.paidOrderLines()}" var="item">
+						<ui:repeat value="#{order.placedOrder.orderLines}" var="item">
 
 							<tr>
 							
@@ -39,7 +39,7 @@
 						<tr>
 							<td Class="ProductTotal">Total Cost</td>
 							<td Class="OrderPrice"><h:outputText 
-							        value="#{order.totalCostPaid}"/></td>
+							        value="#{basket.totalPrice}"/></td>
 							<td Class="ProductTotal"></td>
 							<td Class="OrderPrice"></td>
 							<td Class="ProductTotal"></td>

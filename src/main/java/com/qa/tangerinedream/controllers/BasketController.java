@@ -48,7 +48,7 @@ public class BasketController {
 	 * @return - reloads the basket page
 	 */
 	public String updateQuantity(){
-		orderService.updateOrder(order, currentUser.getUserID());
+		orderService.placeOrder(currentUser.getUserID());
 		return "basket";
 	}
 
@@ -67,10 +67,7 @@ public class BasketController {
 	 * 
 	 * @return - sends the user to the order page
 	 */
-	public String placeOrder() {
-		orderService.placeOrder(order, currentUser.getUserID());
-		return "order";
-	}
+	
 	
 	/**
 	 * gets the basket
