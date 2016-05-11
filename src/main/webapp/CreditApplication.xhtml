@@ -244,15 +244,16 @@
 
 						<tr>
 							<td><h:commandButton value="Apply"
-									action="#{credapplic.apply}"></h:commandButton></td>
-							<td><a href="LandingPage.xhtml"> <input type="button"
-									value="Cancel" />
-							</a></td>
+									action="#{credapplic.apply}" class = "button" ></h:commandButton></td>
 						</tr>
 					</table>
-					<img alt="spade gnome" src="img/Gnome5.jpg" />
+
 				</div>
 			</h:form>
+			<h:form>
+				<h:commandButton value="Cancel" action="#{credapplic.cancel}" class = "buttoncancel"></h:commandButton>
+			</h:form>
+			<img alt="spade gnome" src="img/Gnome5.jpg" />
 		</div>
 
 	</ui:define>

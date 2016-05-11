@@ -20,17 +20,18 @@ public class CatalogueService {
 		@Inject ProductRepository productRepo;
 		//no cataloguerepo as it's all in the product one
 		
+		//return all products in database
 		public ArrayList<Product> getProducts() {
 			return productRepo.getProducts();
 		}
 		
+		//return all products of one type
 		public ArrayList<Product> searchProducts(String productType) {
-		//must be add to ProductRepository.java
 			return productRepo.findByProductType(productType);
 		}
 
+		//return one specific product
 		public Product getProductById(long product_id) {
-			// TODO Auto-generated method stub
 			return productRepo.findByProductId(product_id);
 		} 
 	}

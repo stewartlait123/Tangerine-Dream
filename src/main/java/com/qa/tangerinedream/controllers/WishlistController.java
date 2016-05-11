@@ -63,8 +63,8 @@ public class WishlistController {
 	 * @return - Returns "wishlist" to reload the wishlist page
 	 */
 	public String addToBasketFromWishlist(long productId) {
-		removeFromWishlist(productId);
-		basketService.addToBasket(productId, 0, currentUser.getUserID());
+		System.out.println("Product:" + productId + " added for " + currentUser.getUserID());
+		wishlistService.addToBasket(productId, currentUser.getUserID());
 		return "wishlist";
 	}
 

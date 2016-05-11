@@ -71,7 +71,7 @@ public class OrderLine {
 		
 		this.quantity = quantity; 		
 	}
-	
+
 	public void setpurchasePrice(int purchasePrice){
 		
 		this.purchasePrice = purchasePrice;		
@@ -86,7 +86,11 @@ public class OrderLine {
 	public Order getOrder() {
 		return order;
 	}
+	
+	@Override
+	public String toString() {
+		return "OrderLine [product=" + product + ", quantity=" + quantity + ", purchasePrice=" + purchasePrice
+				+ ", order=" + order + "]";
+	}
 
-	
-	
 }

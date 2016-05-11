@@ -28,6 +28,7 @@ public class OrderService {
 	@Inject
 	CustomerRepository customerRepository;
 
+	private Order order;
 	public Order getUsersPendingOrder(long userID) {
 		Order order = orderRepository.findUserAndStatus(userID, PENDING);
 
@@ -130,13 +131,15 @@ public class OrderService {
 	}
 
 	public Order getUsersOrderHistory(long userID) {
-		Order order = orderRepository.findUsersOrderHistory(userID);
+		order = orderRepository.findUsersOrderHistory(userID);
 		return order;
 	}
 
 	public Order getUsersPlacedOrders(long userID) {
-		Order order = orderRepository.findUserAndStatus(userID, PLACED);
-		return order;
+		order = orderRepository.findUserAndStatus(userID, PENDING);	
+			return order;
+	
+		
 
 	}
 
@@ -157,5 +160,11 @@ public class OrderService {
 			return totalPrice;
 		} else
 			return 0;
+	}
+
+	public void placeOrder(long userID) {
+		Order order = orderRepository.findUserAndStatus(userID, PENDING);
+		order.setStatus(PLACED);
+		orderRepository.updateOrder(order);
 	}
 }

@@ -5,6 +5,7 @@
 package com.qa.tangerinedream.service;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -24,9 +25,8 @@ public class WishlistService {
 	@Inject private CustomerRepository customerRepository;
 	@Inject private ProductRepository productRepository;
 	
-	
 	public void addToWishlist(long productId, long userID) {
-		Order order = orderRepository.findUserAndStatus1(userID, OrderStatus.WISHLIST);
+		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.WISHLIST);
 		if(order==null){
 			order=new Order(customerRepository.findByID(userID), OrderStatus.WISHLIST);
 			orderRepository.persistOrder(order);
@@ -42,12 +42,12 @@ public class WishlistService {
 	}
 
 	public void removeFromWishlist(long productId, long userID) {
-		Order order = orderRepository.findUserAndStatus1(userID, OrderStatus.WISHLIST);
+		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.WISHLIST);
 		if(order!=null) {
 			List<OrderLine> lines = order.getOrderLines();
-			//for (int i = 0; i < lines.size(); i++)
-				//if (lines.get(i).getproduct().getProduct_id() == productId)
-					//lines.remove(i);
+			for (int i = 0; i < lines.size(); i++)
+				if (lines.get(i).getproduct().getProduct_id() == productId)
+					lines.remove(i);
 			order.setOrderLines(lines);
 		orderRepository.updateOrder(order);			
 		}
@@ -55,10 +55,27 @@ public class WishlistService {
 	
 	public List<OrderLine> getWishlist(long userID) {
 
-		Order order = orderRepository.findUserAndStatus1(userID, OrderStatus.WISHLIST);
+		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.WISHLIST);
 		System.out.println(order.toString());	
 		return order.getOrderLines(); 
 	}
 
-
+	public synchronized void addToBasket(long productId, long userID) {
+		Order wishlist = orderRepository.findUserAndStatus(userID, OrderStatus.WISHLIST);
+		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.PENDING);
+		if (order != null) {
+			for (OrderLine ol: wishlist.getOrderLines())
+				if (ol.getproduct().getProduct_id() == productId) {
+					order.addOrderLine(ol);
+					wishlist.removeOrderLine(ol);
+					break;
+				}
+		} else {
+			order = new Order(OrderStatus.PENDING, Calendar.getInstance().getTime(), customerRepository.findByID(userID), new OrderLine(productRepository.findByProductId(productId), 1, 0));
+			for (OrderLine ol: wishlist.getOrderLines())
+				if (ol.getproduct().getProduct_id() == productId){
+					wishlist.removeOrderLine(ol);
+					break; }	
+		}
+	}
 }

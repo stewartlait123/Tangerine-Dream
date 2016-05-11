@@ -85,15 +85,19 @@ public class OrderController {
 	 return "order";
 	}
 	
+	public void placeOrder() {
+		orderService.placeOrder(order, currentUser.getUserID());
+	}
+	
 	public Order getPlacedOrder(){
 		Order order = orderService.getUsersPlacedOrders(currentUser.getUserID());
 		
 		return order;
 	}
 	
-	public List<OrderLine> getPlacedOrderLines(){
+	public Order getPlacedOrderLines(){
 		Order order = orderService.getUsersPlacedOrders(currentUser.getUserID());
-		return order.getOrderLines();
+		return order;
 	}
 
 	public List<OrderLine> getPaidOrderLines(){

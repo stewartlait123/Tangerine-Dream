@@ -1,59 +1,60 @@
+
 <!-- Page Created by Christine Stokes -->
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="/WEB-INF/Template.xhtml">
+	template="/WEB-INF/Template.xhtml"
+	xmlns:f="http://java.sun.com/jsf/core">
 
 	<ui:define name="pagetitle">
-	#{basket.placeOrder()}
 		<h1>Order Details</h1>
 	</ui:define>
 
 	<ui:define name="maincontent">
 
-		<div id="maincontent">
-			<div class="OrderPage">
-				<div id="orderlist">
-
-					<table>
-						<ui:repeat value="#{order.getPlacedOrderLines()}" var="item">
-
-							<tr>
-								<td><img src="img/freaky_gnome_01.png"></img></td>
-								<td Class="ProductName"><h:outputText
-										value="#{item.product.name}" /></td>
-								<td class="ProductLabels">Product ID</td>
-								<td class="Productdescriptions"><h:outputText 
-										value="#{item.product.product_type}" /></td>
-
-								<td class="ProductLabels">Quantity</td>
-								<td class="Productdescriptions"><h:outputText 
-										value="#{item.quantity}" /></td>
-
-								<td class="ProductLabels">Price</td>
-								<td class="Productdescriptions"><h:outputText 
-										value="#{item.product.cost_price}" /></td>
-							</tr>
-						</ui:repeat>
-						<tr>
-							<td Class="ProductTotal">Total Cost</td>
-							<td Class="OrderPrice"><h:outputText 
-							        value="#{order.getTotalCostPending()}"/></td>
-							<td Class="ProductTotal"></td>
-							<td Class="OrderPrice"></td>
-							<td Class="ProductTotal"></td>
-							<td Class="OrderPrice"></td>
-							<td Class="ProductTotal"></td>
-							<td Class="Button">
-								<button onclick="location.href='payment.xhtml'">Proceed
-									to Payment</button>
-							</td>
-						</tr>
-					</table>
-				</div>
-			</div>
-		</div>
+         <h:form>
+       
+			<h:dataTable value="#{order.placedOrder.orderLines}" var="item">
+			
+			<h:column>
+             <f:facet name="header">Product Name</f:facet>
+			</h:column>
+		    
+		    <h:column>
+			<h:outputLabel value="#{item.product.name}" />
+			</h:column>
+						
+			<h:column>
+            <f:facet name="header">Product ID</f:facet>
+			</h:column>
+			
+			<h:column>
+			<h:outputLabel value="#{item.product.product_type}" />
+			</h:column>			
+					
+			<h:column>
+            <f:facet name="header">Quantity</f:facet>
+			</h:column>
+			
+			<h:column>
+			<h:outputLabel value="#{item.quantity}" />
+			</h:column>						
+			
+			<h:column>
+            <f:facet name="header">Price</f:facet>
+			</h:column>
+			
+			<h:column>
+			<h:outputLabel value="#{item.product.cost_price}" />
+			</h:column>	
+		
+		</h:dataTable>
+				
+		<h:outputText value="#{basket.totalPrice}"/>
+		</h:form>
+		
+		<button onclick="location.href='payment.xhtml'">Proceed to Payment</button>
 	</ui:define>
 </ui:composition>
 
