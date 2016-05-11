@@ -27,7 +27,8 @@ This is the first table
 								<td><h:outputText value="#{line.product.name}" /></td>
 								<td><h:inputText value="#{line.quantity}" converterMessage="Please Enter a number" /> </td>
 								
-								<td><h:commandButton value="Add to Basket" action="#{wishlist.addToBasketFromWishlist(line.product.product_id)}" /></td>
+								<!-- <td><h:commandButton value="Add to basket" action="#{basket.addToBasket(products.product_id, products.quantity)}" /></td> -->
+								<td><h:commandButton value="Add to Basket" action="#{wishlist.addToBasketFromWishlist(product.product_id)}" /></td>
 								<td><h:commandButton value="Remove" action="#{wishlist.removeFromWishlist(line.product.product_id)}" /></td>
 							</tr>
 						</table>
