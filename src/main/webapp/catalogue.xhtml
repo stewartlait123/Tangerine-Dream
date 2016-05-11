@@ -59,8 +59,7 @@
 				<h:inputText value="#{products.quantity}" />
 				<!-- button actions not currently implemented -->
 				<h:commandButton action="#{basket.addToBasket(products.product_id, products.quantity)}" value="Add to basket"/>
-				
-				<h:commandButton id="AddToWishlist" action="#{wishlist.addToWishlist}" value="Wishlist" />
+				<h:commandButton action="#{wishlist.addProductToWishlist(products.product_id)}" value="Add to WishList" />
 			</h:column>
 		</h:dataTable>
 		</h:form>
