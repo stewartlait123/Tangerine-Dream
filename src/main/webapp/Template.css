@@ -28,6 +28,16 @@ body {
 	width: 100%
 }
 
+.nav-button-right{
+	float:right;
+	
+}
+
+.nav-button-left{
+	float:left;
+	
+}
+
 /* End */
 
 /*

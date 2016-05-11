@@ -40,6 +40,7 @@ public class LoginController{
 			return "login";
 		}
 		currentUser.setUserID(customerService.findUserIdByUsername(username));
+		currentUser.setLoginStatus(true);
 		return "LandingPage";
 	}
 	
@@ -71,27 +72,10 @@ public class LoginController{
 		error = error_;
 	}
 	
-	/*
-	public boolean Login(String username, String password){
-		boolean userValid = true;
-		
-		// Check username and password are not empty.
-		if (username != "" && password != ""){
-			//TODO: next check the database to authenticate the user.
-			//userValid = LoginService.validateUser(username, password);
-			
-			if (userValid){
-				//TODO: Customer customer = CustomerRepository.getCustomer(username);
-				return true;
-			}
-		}
-		
-		// If user was not found, return false.
-		return false;
-	}
-	*/
 	
-	public void Logout(){
-		// TODO: Log out the user by destroying all data held about them in the current session.
+	public String logout(){
+		currentUser.setUserID(0);
+		currentUser.setLoginStatus(false);
+		return "LandingPage";
 	}
 }

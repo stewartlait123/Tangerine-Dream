@@ -5,7 +5,8 @@
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets" template="/WEB-INF/Template.xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">>
 
 	<ui:define name="pagetitle">
 		<div id="header">
@@ -22,7 +23,7 @@
 
 			<h:inputText value = "#{login.password}"/>
 			
-			<h:commandButton value="Login" action = "#{login.login}"/>
+			<p:commandButton value="Login" action = "#{login.login}" style= "display:block"/>
 		</h:form>
 	</ui:define>
 </ui:composition>
