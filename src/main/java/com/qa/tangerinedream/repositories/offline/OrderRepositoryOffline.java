@@ -64,16 +64,7 @@ implements OrderRepository {
 		return null;
 	}
 	
-	@Override
-	public Order findUserAndStatus1(long userId, OrderStatus orderStatus) {
-		ArrayList<Order> orders = (ArrayList<Order>) initialData.getOrders();
-		for (Order order : orders) {
-			System.out.println("User:" + userId + ", Cust:" + order.getCustomer().getCustomerId() + ", Search:" + orderStatus + ", Status:" + order.getStatus());
-			if(order.getCustomer().getCustomerId()==userId && order.getStatus().equals(orderStatus))
-				return order;
-		}
-		return null;
-	}
+
 
 	@Override
 	public void updateOrder(Order o) {

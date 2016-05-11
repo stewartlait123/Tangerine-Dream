@@ -42,6 +42,7 @@ public class CreditApplicationController {
 
 	// method to return to credit application if any boxes are left empty when clicked apply
 	public String apply() {
+		System.out.println("not Butts");
 		if (surname.isEmpty() || first_name.isEmpty() || date_of_birth.isEmpty() || home_address.isEmpty()
 				|| time_at_address.isEmpty() || place_of_birth.isEmpty() || type_of_proof.isEmpty()
 				|| proof_number.isEmpty() || employer_name.isEmpty() || employer_address.isEmpty()
@@ -59,6 +60,11 @@ public class CreditApplicationController {
 					expiry_date, cvs, bank_address);
 		System.out.println("---noemptyFields"); //prints out in the console to say there are no empty fields
 		return "CreditConfirmation";
+	}
+	
+	public String cancel() {
+		System.out.println("Butts");
+		return "LandingPage";
 	}
 
 	// getters and setters for strings
