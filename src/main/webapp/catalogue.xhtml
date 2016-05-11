@@ -1,82 +1,68 @@
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets" template="/WEB-INF/Template.xhtml"
-	css="Template.css" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
-
-
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/Template.xhtml" css="Template.css"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
 	<ui:define name="pagetitle">
 		<div id="header">
 			<h1>Catalogue</h1>
 		</div>
 	</ui:define>
 
-
-
 	<ui:define name="maincontent">
+	<h:form>						 							
 		<!--Author (and artist): Iain Q><-->
-
 		<input type="text" name="search" value="Search"></input>
-
-  	<!-- search by product type, not implemented yet -->
+		<!-- search by product type, not implemented yet -->
 		<select name="category">
-			<option value="category" selected = "selected" disabled = "disabled">Category</option>
+			<option value="category" selected="selected" disabled="disabled">Category</option>
 			<option value="gnome">Gnomes</option>
 			<option value="pot">Pots</option>
 			<option value="tool">Tools</option>
 		</select>
 		<br></br>
 		<br></br>
-
-
-	  <!-- dynamically-constructed dataTable with data pulled from the product list -->
-	  	<h:dataTable value="#{catalogue.products}" var="products">
-			    		    
-			    
-			   <h:column>    				
-			      <f:facet name="header">Image</f:facet>    				
-			      <img src = "#{products.imageLocation}"></img>
-			      
-			   </h:column>
-			   <h:column>    				
-			      <f:facet name="header">Name</f:facet>    				
-			      
-			      <h:outputLink value="product.xhtml" >
-				      #{products.name} 
-				      <f:param name="id" value="#{products.product_id}" />
-			      </h:outputLink>
-			   </h:column>
-			   
-			   <h:column>    				
-			      <f:facet name="header">Type</f:facet>    				
-			      #{products.product_type}
-			   </h:column>
-			   
-			   <h:column>
-			      <f:facet name="header">Description</f:facet>
+		<!-- dynamically-constructed dataTable with data pulled from the product list -->
+		<h:dataTable value="#{catalogue.products}" var="products">
+			<h:column>
+				<f:facet name="header">Image</f:facet>
+				<img src="#{products.imageLocation}"></img>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Name</f:facet>
+				<h:outputLink value="product.xhtml" >#{products.name} <f:param name="id" value="#{products.product_id}" /></h:outputLink>
+			</h:column>
+			<h:column>
+				<f:facet name="header">ID</f:facet>
+				<h:outputLabel value="#{products.product_id}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Type</f:facet>    				
+			     <h:outputLabel value=" #{products.product_type}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Description</f:facet>
 			      No description yet.
-			   </h:column>
-			   <h:column>
-			      <f:facet name="header">Stock</f:facet>
-			      #{products.stock}
-			   </h:column>
-			   <h:column>
-			      <f:facet name="header">Cost Per Unit</f:facet>
-			      #{products.price}
-			   </h:column>
-			   <h:column>
-				   <f:facet name="header"></f:facet>
-					<h:inputText id="quantity" value="0"/>
-					   
-					<!-- button actions not currently implemented -->   
-					<h:commandButton id="AddToBasket" action="#{basket.addToBasket}" value="Add to basket" />
-					<h:commandButton id="AddToWishlist" action="#{wishlist.addToWishlist}" value="Wishlist" />
-						
-						
-			   </h:column>
-			   
+			</h:column>
+			<h:column>
+				<f:facet name="header">Stock</f:facet>
+			    <h:outputLabel value="#{products.stock}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Cost Per Unit</f:facet>
+			    <h:outputLabel value="#{products.price}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header"></f:facet>
+				<h:inputText value="#{products.quantity}" />
+				<!-- button actions not currently implemented -->
+				<h:commandButton action="#{basket.addToBasket(products.product_id, products.quantity)}" value="Add to basket"/>
+				
+				<h:commandButton id="AddToWishlist" action="#{wishlist.addToWishlist}" value="Wishlist" />
+			</h:column>
 		</h:dataTable>
-
-
-
+		</h:form>
 	</ui:define>
 </ui:composition>

@@ -18,7 +18,6 @@ import com.qa.tangerinedream.service.CatalogueService;
 public class CatalogueController {
 	@Inject CatalogueService catalogueService;
 	
-	
 	public ArrayList<Product> getProducts() {	
 		return catalogueService.getProducts();
 	}
@@ -26,6 +25,8 @@ public class CatalogueController {
 	public ArrayList<Product> searchProducts(String producttype) {
 		return catalogueService.searchProducts(producttype);
 	}
-
 	
+	public Product getProductById(long product_id){
+		return catalogueService.getProductById(product_id);
+	}
 }

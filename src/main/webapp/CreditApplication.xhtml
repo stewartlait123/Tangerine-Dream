@@ -79,12 +79,12 @@
 							<td><h:outputLabel value="Date Of Birth (DD/MM/YYYY):" /></td>
 							<td><h:inputText value="#{credapplic.date_of_birth}" /></td>
 						</tr>
-						
+
 						<tr>
 							<td><h:outputLabel value="Place Of Birth:" /></td>
 							<td><h:inputText value="#{credapplic.place_of_birth}" /></td>
 						</tr>
-						
+
 
 						<tr>
 							<td><h:outputLabel value="Home Address:" /></td>
@@ -93,10 +93,11 @@
 
 						<tr>
 							<td><h:outputLabel value="Time At Address (Years):" /></td>
-							<td><h:inputText id="time_at_address" value="#{credapplic.time_at_address}">
-							<f:validateLength maximum="2"/>
-							</h:inputText></td>
-							<td><h:message for="time_at_address" style = "color:red" /></td>
+							<td><h:inputText id="time_at_address"
+									value="#{credapplic.time_at_address}">
+									<f:validateLength maximum="2" />
+								</h:inputText></td>
+							<td><h:message for="time_at_address" style="color:red" /></td>
 						</tr>
 
 						<tr>
@@ -104,6 +105,7 @@
 							<td><h:outputLabel value="Type of Proof for Address:" /></td>
 							<td><h:selectOneMenu value="#{credapplic.type_of_proof}">
 
+									<f:selectItem itemValue="" itemLabel="Select One..." />
 									<f:selectItem itemValue="Drivers License"
 										itemLabel="Drivers License" />
 									<f:selectItem itemValue="Bank/Building Society Statement"
@@ -143,10 +145,11 @@
 
 						<tr>
 							<td><h:outputLabel value="Time With Employer:" /></td>
-							<td><h:inputText id = "time_with_employer" value="#{credapplic.time_with_employer}">
-							<f:validateLength maximum="2"/>
-							</h:inputText></td>
-							<td><h:message for="time_with_employer" style = "color:red" /></td>
+							<td><h:inputText id="time_with_employer"
+									value="#{credapplic.time_with_employer}">
+									<f:validateLength maximum="2" />
+								</h:inputText></td>
+							<td><h:message for="time_with_employer" style="color:red" /></td>
 						</tr>
 
 						<tr>
@@ -154,7 +157,7 @@
 							<td><h:outputLabel value="Type of Employment" /></td>
 							<td><h:selectOneMenu
 									value="#{credapplic.type_of_employment}">
-
+									<f:selectItem itemValue="" itemLabel="Select One..." />
 									<f:selectItem itemValue="Financial" itemLabel="Financial" />
 									<f:selectItem itemValue="Medical" itemLabel="Medical" />
 									<f:selectItem itemValue="IT" itemLabel="IT" />
@@ -179,27 +182,30 @@
 
 						<tr>
 							<td><h:outputLabel value="Time With Bank (Years):" /></td>
-							<td><h:inputText id ="time_with_bank" value="#{credapplic.time_with_bank}" >
-							<f:validateLength maximum="2"/>
-							</h:inputText></td>
-							<td><h:message for="time_with_bank" style = "color:red" /></td>
+							<td><h:inputText id="time_with_bank"
+									value="#{credapplic.time_with_bank}">
+									<f:validateLength maximum="2" />
+								</h:inputText></td>
+							<td><h:message for="time_with_bank" style="color:red" /></td>
 						</tr>
 
 						<tr>
 							<td><h:outputLabel value="Account Number" /></td>
-							<td><h:inputText id = "account_number" value="#{credapplic.account_number}">
-							<f:validateLength minimum ="8" maximum="8"/>
-							</h:inputText></td>
-							<td><h:message for="account_number" style = "color:red" /></td>
-							
+							<td><h:inputText id="account_number"
+									value="#{credapplic.account_number}">
+									<f:validateLength minimum="8" maximum="8" />
+								</h:inputText></td>
+							<td><h:message for="account_number" style="color:red" /></td>
+
 						</tr>
 
 						<tr>
 							<td><h:outputLabel value="Sort Code:" /></td>
-							<td><h:inputText id = "sort_code" value="#{credapplic.sort_code}">
-							<f:validateLength minimum ="6" maximum="6"/>
-							</h:inputText></td>
-							<td><h:message for="sort_code" style = "color:red" /></td>
+							<td><h:inputText id="sort_code"
+									value="#{credapplic.sort_code}">
+									<f:validateLength minimum="6" maximum="6" />
+								</h:inputText></td>
+							<td><h:message for="sort_code" style="color:red" /></td>
 						</tr>
 
 						<tr>
@@ -209,25 +215,26 @@
 
 						<tr>
 							<td><h:outputLabel value="Card Number:" /></td>
-							<td><h:inputText id = "card_number" value="#{credapplic.card_number}" >			
-							<f:validateLength minimum ="16" maximum="16"/>
-							</h:inputText></td>
-							<td><h:message for="card_number" style = "color:red" /></td>
+							<td><h:inputText id="card_number"
+									value="#{credapplic.card_number}">
+									<f:validateLength minimum="16" maximum="16" />
+								</h:inputText></td>
+							<td><h:message for="card_number" style="color:red" /></td>
 						</tr>
 
 						<tr>
 							<td><h:outputLabel value="Expiry Date:" /></td>
-							<td><h:inputText value="#{credapplic.expiry_date}" ></h:inputText></td>
-			
+							<td><h:inputText value="#{credapplic.expiry_date}"></h:inputText></td>
+
 						</tr>
 
 						<tr>
 							<td><h:outputLabel value="CVS:" /></td>
-							<td><h:inputText id = "cvs" value="#{credapplic.cvs}" >
-							<f:validateLength minimum ="3" maximum="3"/>
-							</h:inputText></td>
-							<td><h:message for="cvs" style = "color:red" /></td>
-							
+							<td><h:inputText id="cvs" value="#{credapplic.cvs}">
+									<f:validateLength minimum="3" maximum="3" />
+								</h:inputText></td>
+							<td><h:message for="cvs" style="color:red" /></td>
+
 						</tr>
 
 						<tr>
@@ -237,14 +244,16 @@
 
 						<tr>
 							<td><h:commandButton value="Apply"
-									action="#{credapplic.apply}"></h:commandButton></td>
-							<td><h:commandButton value="Cancel"
-									action="#{credapplic.cancel}"></h:commandButton></td>
+									action="#{credapplic.apply}" class = "button" ></h:commandButton></td>
 						</tr>
 					</table>
-					<img alt="spade gnome" src="img/Gnome5.jpg" />
+
 				</div>
 			</h:form>
+			<h:form>
+				<h:commandButton value="Cancel" action="#{credapplic.cancel}" class = "buttoncancel"></h:commandButton>
+			</h:form>
+			<img alt="spade gnome" src="img/Gnome5.jpg" />
 		</div>
 
 	</ui:define>

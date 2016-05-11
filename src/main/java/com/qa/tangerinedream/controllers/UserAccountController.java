@@ -15,8 +15,10 @@ import com.qa.tangerinedream.service.CustomerService;
 @Named(value="user_account")
 @RequestScoped
 public class UserAccountController{
+	
 	@Inject CustomerService customerService;
 	@Inject CurrentUser currentUser;
+	@Inject CustomerRepository customerRepo;
 	
 	private String username = "";
 	private String name = "";

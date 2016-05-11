@@ -40,6 +40,7 @@ public class InitialData{
 
 	public InitialData(){
 		
+			
 		//Creation of five entries to add into customer arraylist with unique values - Finley Peters @ TeamTang
 		customers.add(new Customer(0, "John Doe", "BigJohn", "johnPassword", new Date() ,67 , 100));	
 		customers.add(new Customer(1, "James Crisps", "GoldenWonder", "crisps00001", new Date() ,15099 , 12000));
@@ -96,9 +97,9 @@ public class InitialData{
 		
 		orders.add(new Order(OrderStatus.PLACED , currentDate , customers.get(0), new OrderLine(products.get(3), 5 , 500)));
 		orders.add(new Order(OrderStatus.PLACED , currentDate , customers.get(3), new OrderLine(products.get(0), 1 , 40)));
-		orders.add(new Order(OrderStatus.WISHLIST , currentDate , customers.get(4), new OrderLine(products.get(10), 100 , 0)));
+		orders.add(new Order(OrderStatus.WISHLIST , currentDate , customers.get(0), new OrderLine(products.get(5), 5 , 0)));
 		orders.add(new Order(OrderStatus.PENDING, currentDate, customers.get(0), new OrderLine(products.get(0), 1, 10)));
-	
+		orders.add(new Order(OrderStatus.PAID , currentDate , customers.get(0), new OrderLine(products.get(3), 5 , 500)));
 	// Creation of Payment Dummy Data by Christine Stokes
 	
 

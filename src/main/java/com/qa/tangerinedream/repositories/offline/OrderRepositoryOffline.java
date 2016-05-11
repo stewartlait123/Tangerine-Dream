@@ -3,6 +3,8 @@ package com.qa.tangerinedream.repositories.offline;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import repositorybackend.InitialData;
@@ -22,6 +24,8 @@ import com.qa.tangerinedream.repositories.OrderRepository;
  * @author Christine Stokes
  *
  */
+@Stateless
+@Default
 public class OrderRepositoryOffline 
 implements OrderRepository {
 	
@@ -52,12 +56,15 @@ implements OrderRepository {
 	@Override
 	public Order findUserAndStatus(long userId, OrderStatus orderStatus) {
 		ArrayList<Order> orders = (ArrayList<Order>) initialData.getOrders();
-		for (Order order : orders)
-			if(order.getCustomer().getCustomerId()==userId && order.getStatus().equals(orderStatus))
-				return order;
+		for (Order order : orders) {
+			System.out.println("User:" + userId + ", Cust:" + order.getCustomer().getCustomerId() + ", Search:" + orderStatus + ", Status:" + order.getStatus());
+			if(order.getCustomer().getCustomerId().equals(userId) && order.getStatus().equals(orderStatus))	
+				 return order;
+		}
 		return null;
 	}
 	
+
 
 	@Override
 	public void updateOrder(Order o) {

@@ -53,10 +53,15 @@ public class Customer {
 
 	//Currency types changed to ints
 	@Column (name = "credit", nullable = true)
-	private int credit;
+	private float credit;
+
 
 	@Column (name = "credit", nullable = true)
-	private int credit_limit;
+	private long credit_limit;
+
+	@Column (name = "creditLimit", nullable = true)
+	private long credit_limit1;
+
 	
 	//Constructor added for creation in InitialData class
 	public Customer(String name_, String username_, String password_, Date date, int credit_, int creditLimit_ )
@@ -105,19 +110,19 @@ public class Customer {
 	public Date getDob()
 		{ return dob; }
 
-	public void setCredit(int credit)
-		{ this.credit = credit; }
+	public void setCredit(float credit_)
+		{ this.credit = credit_; }
 
-	public int getCredit()
+	public float getCredit()
 		{ return credit; }
 
-	public void setCreditLimit(int credit_limit)
-		{ this.credit_limit = credit_limit; }
+	public void setCreditLimit(long creditLimit_)
+		{ this.credit_limit = creditLimit_; }
 	
 	public void setDOB(Date dob)
 	{ this.dob = dob; }
 
-	public int getCreditLimit()
+	public long getCreditLimit()
 		{ return credit_limit; }
 
 	@Override

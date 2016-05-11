@@ -82,7 +82,6 @@ public class Order {
 
 
 	public Order(OrderStatus status, Date date, Customer customer, OrderLine orderLine){
-
 		this.status = status;
 		this.order_date = date;
 		this.customer = customer;
@@ -140,5 +139,14 @@ public class Order {
 				orderLines.set(i, orderline);
 			}
 		}
+	}
+
+	@Override
+	public String toString() {
+		String o = "";
+		for(OrderLine line : orderLines)
+			o += line.toString() + " | ";
+		return "Order [order_id=" + order_id + ", status=" + status + ", order_date=" + order_date + ", customer="
+				+ customer + ", orderLines=" + o + "]";
 	}
 }

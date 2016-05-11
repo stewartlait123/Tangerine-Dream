@@ -9,7 +9,6 @@ import java.util.Date;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import com.qa.tangerinedream.entities.Customer;
 import com.qa.tangerinedream.entities.Order;
 import com.qa.tangerinedream.entities.OrderLine;
 import com.qa.tangerinedream.entities.Product;
@@ -29,9 +28,15 @@ public class OrderService {
 	@Inject
 	CustomerRepository customerRepository;
 
+	private Order order;
 	public Order getUsersPendingOrder(long userID) {
 		Order order = orderRepository.findUserAndStatus(userID, PENDING);
-		return new Order(PENDING, currentdate, new Customer(0, "bill", "bill", "bill", new Date(), 0, 0), new OrderLine(new Product("gnome", 1, 1, 1, 1, 1, 1, 1, "Gnome", " "), 1, 1));
+
+//return new Order(PENDING, currentdate, new Customer(0, "bill", "bill", "bill", new Date(), 0, 0), new OrderLine(new Product("gnome", 1, 1, 1, 1, 1, 1, 1, "Gnome", " "), 1, 1));
+		return order;
+
+//		return new Order(PENDING, currentdate, new Customer(0, "bill", "bill", "bill", new Date(), 0, 0), new OrderLine(new Product(15,"gnome", 1, 1, 1, 1, 1, 1, 1, "Gnome", " "), 1, 1));
+
 	}
 
 	public float calcOrderTotalPending(long userID) {
@@ -65,6 +70,8 @@ public class OrderService {
 	Date currentdate = Calendar.getInstance().getTime();
 
 	public void addToBasket(long productId, int quantity, long userId) {
+		System.out.println("Reached here!!!");
+		System.out.println("quantity = " + quantity + "UserID = " + userId);
 		Product product = productRepository.findByProductId(productId);
 		Order order = orderRepository.findUserAndStatus(userId, PENDING);
 		if (order != null) {
@@ -124,13 +131,15 @@ public class OrderService {
 	}
 
 	public Order getUsersOrderHistory(long userID) {
-		Order order = orderRepository.findUsersOrderHistory(userID);
+		order = orderRepository.findUsersOrderHistory(userID);
 		return order;
 	}
 
 	public Order getUsersPlacedOrders(long userID) {
-		Order order = orderRepository.findUserAndStatus(userID, PLACED);
-		return order;
+		order = orderRepository.findUserAndStatus(userID, PENDING);	
+			return order;
+	
+		
 
 	}
 
@@ -151,5 +160,11 @@ public class OrderService {
 			return totalPrice;
 		} else
 			return 0;
+	}
+
+	public void placeOrder(long userID) {
+		Order order = orderRepository.findUserAndStatus(userID, PENDING);
+		order.setStatus(PLACED);
+		orderRepository.updateOrder(order);
 	}
 }

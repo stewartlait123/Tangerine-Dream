@@ -13,6 +13,8 @@ public class CustomerService {
 	@Inject RegisterService  registerService;
 	
 	public Order getWishList(long userID){
+		
+		
 		//TODO: get the wish list for the specified customer
 		return null;
 	}

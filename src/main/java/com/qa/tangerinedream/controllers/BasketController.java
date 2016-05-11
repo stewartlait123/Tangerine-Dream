@@ -18,14 +18,16 @@ public class BasketController {
 	@Inject OrderService orderService;
 	@Inject CurrentUser currentUser;
 	private Order order;
+	private float totalPrice;
+	
 	
 	/**
 	 * This method adds the specified product to the basket
 	 * 
 	 * @param productId - the products id
 	 */
-	
 	public void addToBasket(long productId, int quantity){
+		System.out.println("Reached this point!!!");
 		orderService.addToBasket(productId, quantity, currentUser.getUserID());
 	}
 	
@@ -46,10 +48,10 @@ public class BasketController {
 	 * @return - reloads the basket page
 	 */
 	public String updateQuantity(){
-		orderService.updateOrder(order, currentUser.getUserID());
+		orderService.placeOrder(currentUser.getUserID());
 		return "basket";
 	}
-	
+
 	/**
 	 * This method tells the service layer to remove all items from the basket
 	 * 
@@ -65,10 +67,7 @@ public class BasketController {
 	 * 
 	 * @return - sends the user to the order page
 	 */
-	public String placeOrder() {
-		orderService.placeOrder(order, currentUser.getUserID());
-		return "order";
-	}
+	
 	
 	/**
 	 * gets the basket
@@ -77,7 +76,8 @@ public class BasketController {
 	 */
 	public Order getOrder() {
 		if(order == null)
-			order = orderService.getUsersPendingOrder(0);
+			System.out.println("Getting to this method!!!");
+			order = orderService.getUsersPendingOrder(currentUser.getUserID());
 		return order;
 	}
 
@@ -90,13 +90,13 @@ public class BasketController {
 		this.order = order;
 	}
 	
-
 	/**
 	 * Gets the total price of the order
 	 * 
 	 * @return - the price
 	 */
 	public float getTotalPrice() {
-		return orderService.calcOrderTotalPending(currentUser.getUserID());
+		totalPrice = orderService.calcOrderTotalPending(currentUser.getUserID());
+		return totalPrice;
 	}
 }

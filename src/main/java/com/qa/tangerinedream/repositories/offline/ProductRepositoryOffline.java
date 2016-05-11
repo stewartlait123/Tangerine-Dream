@@ -3,6 +3,8 @@ package com.qa.tangerinedream.repositories.offline;
 
 import java.util.ArrayList;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import com.qa.tangerinedream.entities.Product;
@@ -10,6 +12,8 @@ import com.qa.tangerinedream.repositories.ProductRepository;
 
 import repositorybackend.*;
 
+@Stateless
+@Default
 public class ProductRepositoryOffline implements ProductRepository{
 	@Inject
 	private InitialData initialData;
@@ -78,8 +82,9 @@ public class ProductRepositoryOffline implements ProductRepository{
 		ArrayList<Product> productList = initialData.getProducts();
 		ArrayList<Product> outputList = new ArrayList<Product>();
 		
+		
 		for(int i=0; i < productList.size(); i++) {
-			if(productList.get(i).getProduct_type() == productType){
+			if(productList.get(i).getProduct_type().equals(productType)){
 				outputList.add(productList.get(i));
 			}
 		}

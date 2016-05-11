@@ -1,0 +1,30 @@
+<!-- Author Jessica Maddocks- go Team Tang 
+Hard coded for demonstration purposes only-->
+
+<!DOCTYPE html>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/Template.xhtml">
+	<link rel="stylesheet" type="text/css" href="/template/Template.css"></link>
+
+	<ui:define name="pagetitle">
+		<div id="header">
+			<h1>Track Your Order</h1>
+		</div>
+	</ui:define>
+
+	<ui:define name="maincontent">
+		<div class="content">
+			<div id="sectionTitle">
+				<h2>Let's see where your parcel is.</h2>
+			</div>
+			<div id="myProgress">
+				<div id="myBar">
+					<div id="label">It's On It's Way!</div>
+				</div>
+			</div>
+
+		</div>
+	</ui:define>
+</ui:composition>
