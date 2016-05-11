@@ -137,14 +137,25 @@ public class InitialData{
 	productSuppliers.add(new ProductSupplier(supplier.get(1), productID, 2500));
 	productSuppliers.add(new ProductSupplier(supplier.get(2), productID, 499));
 	
-	// Created by Mohammed Miah to test order history
-	Customer bigShopper = new Customer(5, "Big Shopper", "shopping", "loveToShop", new Date() , 300000 , 900000); 
-	customers.add(bigShopper);
-	address.add(new Address("Big Shoppers House", "1 Shoppers Road, Shopping city, S0101B", bigShopper));
-	Order bigShoppersOrder = new Order(bigShopper, OrderStatus.PLACED);
-	bigShoppersOrder.addOrderLine(new OrderLine(products.get(0), 10, products.get(0).getPrice()));
-	bigShoppersOrder.addOrderLine(new OrderLine(products.get(1), 1, products.get(2).getPrice()));
-	bigShoppersOrder.addOrderLine(new OrderLine(products.get(2), 3, products.get(3).getPrice()));
+		// Created by Mohammed Miah to test view order history page
+		Customer bigShopper = new Customer(5, "Big Shopper", "shopping", "loveToShop", new Date() , 300000 , 900000); 
+		customers.add(bigShopper);
+		address.add(new Address("Big Shoppers House", "1 Shoppers Road, Shopping city, S010BS", bigShopper));
+		Order bigShoppersOrder = new Order(bigShopper, OrderStatus.ACCEPTED);
+		
+		OrderLine newOrderLine = new OrderLine(products.get(0), 10, products.get(0).getPrice()); 
+		bigShoppersOrder.addOrderLine(newOrderLine);
+		this.addOrderLine(newOrderLine);
+		
+		newOrderLine = new OrderLine(products.get(1), 1, products.get(2).getPrice()); 
+		bigShoppersOrder.addOrderLine(newOrderLine);
+		this.addOrderLine(newOrderLine);
+		
+		newOrderLine = new OrderLine(products.get(2), 3, products.get(3).getPrice()); 
+		bigShoppersOrder.addOrderLine(newOrderLine);
+		this.addOrderLine(newOrderLine);
+		
+		orders.add(bigShoppersOrder);
 	
 	}
 	// Products and Employee methods by Mohammed Miah
