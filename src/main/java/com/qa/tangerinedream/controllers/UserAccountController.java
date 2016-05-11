@@ -1,5 +1,8 @@
 package com.qa.tangerinedream.controllers;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -9,18 +12,52 @@ import com.qa.tangerinedream.entities.Order;
 import com.qa.tangerinedream.repositories.CustomerRepository;
 import com.qa.tangerinedream.service.CustomerService;
 
-
 @Named(value="user_account")
 @RequestScoped
 public class UserAccountController{
-
-	@Inject CustomerService customerservice;
-
+	
+	@Inject CustomerService customerService;
+	@Inject CurrentUser currentUser;
 	@Inject CustomerRepository customerRepo;
 	
-	public Customer getUserAccount(String username){
-		customerRepo.findUserByUsername(username);
-		return null;
+	private String username = "";
+	private String name = "";
+	private String dd;
+	private String mm;
+	private String yyyy;
+	private String error = "";
+	
+	private boolean init = false;
+	
+	public void setInit(boolean value){
+		System.out.println("init set called");
+		this.init = value;
+	}
+	public boolean getInit(){
+		System.out.println("init get called");
+		getUserAccount();
+		return this.init;
+	}
+	
+	public void getUserAccount(){
+		
+		Customer cust = customerService.findUserById(currentUser.getUserID());
+		if (cust != null)
+		{
+			Calendar cal = Calendar.getInstance();
+			//Get customer date of birth
+			cal.setTime(cust.getDob());
+			//Get day, month and year from date
+			String day = String.valueOf(cal.get(Calendar.DAY_OF_MONTH));
+			String month = String.valueOf(cal.get(Calendar.MONTH) + 1);
+			String year = String.valueOf(cal.get(Calendar.YEAR));
+			
+			this.setUsername(cust.getUsername());
+			this.setName(cust.getName());
+			this.setDd(day);
+			this.setMm(month);
+			this.setYyyy(year);
+		}
 	}
 	
 	public String trackOrder(long orderID){
@@ -76,6 +113,49 @@ public class UserAccountController{
 		//CustomerService customerService;
 		//customerService.addAddress(userID, newAddress);
 	}
+	
+	public void updateDetails()
+	{
+		@SuppressWarnings("deprecation")
+		Date date = new Date(Integer.parseInt(yyyy), Integer.parseInt(mm), Integer.parseInt(dd));
+		
+		if (customerService.validateDetails(username, date)){
+			//Update details
+		}
+	}
+	
+	public void setName(String value){
+		this.name = value;
+	}
+	public void setUsername(String value){
+		this.username = value;
+	}
+	public void setDd(String value){
+		this.dd = value;
+	}
+	public void setMm(String value){
+		this.mm = value;
+	}
+	public void setYyyy(String value){
+		this.yyyy = value;
+	}
+	
+	public String getName(){
+		return name;
+	}
+	public String getUsername(){
+		return username;
+	}
+	public String getDd(){
+		return dd;
+	}
+	public String getMm(){
+		return mm;
+	}
+	public String getYyyy(){
+		return yyyy;
+	}
+	
 }
 
 

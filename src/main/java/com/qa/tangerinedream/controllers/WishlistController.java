@@ -13,7 +13,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.qa.tangerinedream.entities.OrderLine;
-import com.qa.tangerinedream.service.BasketService;
 import com.qa.tangerinedream.service.WishlistService;
 
 /**
@@ -25,9 +24,6 @@ import com.qa.tangerinedream.service.WishlistService;
 @Named(value = "wishlist")
 @RequestScoped
 public class WishlistController {
-
-	@Inject
-	private BasketService basketService;
 	@Inject
 	private WishlistService wishlistService;
 	@Inject
@@ -39,7 +35,7 @@ public class WishlistController {
 	 * @param productId
 	 *            - this is the ID of the product to add
 	 */
-	public void addToWishlist(long productId) {
+	public void addProductToWishlist(long productId) {
 		wishlistService.addToWishlist(productId, currentUser.getUserID());
 	}
 
@@ -63,8 +59,8 @@ public class WishlistController {
 	 * @return - Returns "wishlist" to reload the wishlist page
 	 */
 	public String addToBasketFromWishlist(long productId) {
-		removeFromWishlist(productId);
-		basketService.addToBasket(productId, 0, currentUser.getUserID());
+		System.out.println("Product:" + productId + " added for " + currentUser.getUserID());
+		wishlistService.addToBasket(productId, currentUser.getUserID());
 		return "wishlist";
 	}
 

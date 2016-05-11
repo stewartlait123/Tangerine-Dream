@@ -2,7 +2,11 @@
  * @author - Umar*/
 package com.qa.tangerinedream.controllers;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -29,17 +33,21 @@ public class RegisterController {
 	public void register() {
 		
 		@SuppressWarnings("deprecation")
-		Date date = new Date(Integer.parseInt(yyyy), Integer.parseInt(mm), Integer.parseInt(dd));
+		Date date = new Date(Integer.parseInt(yyyy) - 1900, (Integer.parseInt(mm) - 1), Integer.parseInt(dd));
+		//Date date = convertStringToDate(dd+ "/" + mm + "/" + yyyy);
 		
 		if (registerService.ValidateDetails(name, username, password, confirmPassword, date)){
 			
 			//Date convertDob = registerService.convertStringToDate(date);
+			Random randomGenerator = new Random();
 			
-			Customer customer = new Customer();
-			customer.setName(name);
-			customer.setUsername(username);
-			customer.setPassword(password);
-			customer.setDOB(date);
+			int randomInt = randomGenerator.nextInt(1000000);
+			
+			Customer customer = new Customer(randomInt, name, username, password, date, 5, 5);
+			//customer.setName(name);
+			//customer.setUsername(username);
+			//customer.setPassword(password);
+			//customer.setDOB(date);
 			registerService.addCustomer(customer);
 		}
 	}

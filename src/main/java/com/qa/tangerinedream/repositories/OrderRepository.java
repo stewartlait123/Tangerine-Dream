@@ -25,6 +25,6 @@ import repositorybackend.OrderStatus;
 		public Order findUserAndStatus(long userId, OrderStatus orderStatus);
 		public Order findUsersOrderHistory(long userID);
 		public Order findUsersPendingOrder(long userId);
-		Order findUserAndStatus1(long userId, OrderStatus orderStatus);
 		public void delete(Order order);
+
 	}
