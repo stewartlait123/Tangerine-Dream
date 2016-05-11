@@ -50,7 +50,6 @@ public class WishlistService {
 	}
 	
 	public List<OrderLine> getWishlist(long userID) {
-
 		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.WISHLIST);
 		System.out.println(order.toString());	
 		return order.getOrderLines(); 
