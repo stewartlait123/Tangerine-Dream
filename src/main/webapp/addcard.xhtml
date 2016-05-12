@@ -14,50 +14,45 @@
 
 	<ui:define name="maincontent">
 		<div>
-			Select a payment method:
-
-			<h:selectOneMenu value="#{Addcard.type}" name="category">
-				<f:selectItem itemValue="1" itemLabel="Select One..." />
-				<f:selectItem itemValue="2" itemLabel="Visa Debit/Credit" />
-				<f:selectItem itemValue="3" itemLabel="MasterCard" />
-				<f:selectItem itemValue="4" itemLabel="American Express" />
-				<f:selectItem itemValue="5" itemLabel="Maestro" />
-			</h:selectOneMenu>
-		</div>
-
-		<div>
-			<br></br> <br></br> <br></br>
-		</div>
-
-		<div class="grid-temp">
-			<div class="row-title">Card Details</div>
-			<div class="main-row">
-				<form name="carddetailsform" action="">
-
-					<table id="details">
-						<tr>
-							<th>Name as it appears on card:</th>
-							<th><h:inputText value="#{Addcard.nameOnCard}" /></th>
-						</tr>
-						<tr>
-							<th>Card Number:</th>
-							<th><h:inputText value="#{Addcard.cardNumber}" /></th>
-						</tr>
-						<tr>
-							<th>Expiry Date:</th>
-							<th><h:inputText value="#{Addcard.expiryDate}" /></th>
-						</tr>
-						<tr>
-							<th>CVS:</th>
-							<th><h:inputText value="#{Addcard.cSV}" /></th>
-						</tr>
-					</table>
-
-				</form>
-				<button onclick="location.href='cardadded.xhtml'">Submit</button>
-			</div>
-
-
+			<h:form name="carddetailsform" action="">
+				<h:outputText value="#{Addcard.error}"></h:outputText>
+				Select a Card Type:
+				<h:selectOneMenu value="#{Addcard.type}" name="category">
+					<f:selectItem itemValue="1" itemLabel="Select One..." />
+					<f:selectItem itemValue="2" itemLabel="Visa Debit/Credit" />
+					<f:selectItem itemValue="3" itemLabel="MasterCard" />
+					<f:selectItem itemValue="4" itemLabel="American Express" />
+					<f:selectItem itemValue="5" itemLabel="Maestro" />
+				</h:selectOneMenu>
+				<div>
+					<br></br> <br></br> <br></br>
+				</div>
+				<div class="grid-temp">
+					<div class="row-title">Card Details</div>
+					<div class="main-row">
+						<table id="details">
+							<tr>
+								<th>Name as it appears on card:</th>
+								<th><h:inputText value="#{Addcard.nameOnCard}" /></th>
+							</tr>
+							<tr>
+								<th>Card Number:</th>
+								<th><h:inputText value="#{Addcard.cardNumber}" /></th>
+							</tr>
+							<tr>
+								<th>Expiry Date:</th>
+								<th><h:inputText value="#{Addcard.expiryDate}" /></th>
+							</tr>
+							<tr>
+								<th>CVS:</th>
+								<th><h:inputText value="#{Addcard.cSV}" /></th>
+							</tr>
+						</table>
+						<h:commandButton value="Add" action="#{Addcard.add}" class="button"></h:commandButton>
+						<h:commandButton value="Cancel" action="#{Addcard.cancel}" class="buttoncancel"></h:commandButton>
+					</div>
+				</div>
+			</h:form>
 		</div>
 	</ui:define>
 </ui:composition>
