@@ -15,7 +15,7 @@ public class CurrentUser implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -6550704034146760260L;
-	private boolean loginStatus = false;
+	private boolean loginStatus;
 	private long userID;
 	
 	protected long getUserID() {
@@ -38,5 +38,10 @@ public class CurrentUser implements Serializable {
 	public boolean getLoginStatus()
 	{
 		return loginStatus;
+	}
+	
+	public long getuserId()
+	{
+		return userID;
 	}
 }

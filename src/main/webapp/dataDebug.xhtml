@@ -16,6 +16,21 @@
 
 			<div id="content-container">
 			
+			<p> Logged in details</p>
+			<h:dataTable>
+			
+				<h:column>
+					<f:facet name="header">Logged In</f:facet>
+					"#{currentUser.loginStatus}"				
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">ID</f:facet>
+					"#{currentUser.userId}"
+				</h:column>
+			</h:dataTable>
+					
+			
 			<p> Customer Details</p>
 			<h:dataTable value="#{debugData.customer}" var="customer">
 			    

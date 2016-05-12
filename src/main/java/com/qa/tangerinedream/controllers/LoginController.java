@@ -76,6 +76,6 @@ public class LoginController{
 	public String logout(){
 		currentUser.setUserID(0);
 		currentUser.setLoginStatus(false);
-		return "LandingPage";
+		return "login";
 	}
 }
