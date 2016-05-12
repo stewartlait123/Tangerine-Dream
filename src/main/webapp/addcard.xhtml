@@ -1,0 +1,63 @@
+<!-- Author Jessica Maddocks -->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/Template.xhtml" css="Template.css">
+	<ui:define name="pagetitle">
+		<div id="header">
+			<h1>Add a Card</h1>
+		</div>
+	</ui:define>
+
+
+	<ui:define name="maincontent">
+		<div>
+			Select a payment method:
+
+			<h:selectOneMenu value="#{Addcard.type}" name="category">
+				<f:selectItem itemValue="1" itemLabel="Select One..." />
+				<f:selectItem itemValue="2" itemLabel="Visa Debit/Credit" />
+				<f:selectItem itemValue="3" itemLabel="MasterCard" />
+				<f:selectItem itemValue="4" itemLabel="American Express" />
+				<f:selectItem itemValue="5" itemLabel="Maestro" />
+			</h:selectOneMenu>
+		</div>
+
+		<div>
+			<br></br> <br></br> <br></br>
+		</div>
+
+		<div class="grid-temp">
+			<div class="row-title">Card Details</div>
+			<div class="main-row">
+				<form name="carddetailsform" action="">
+
+					<table id="details">
+						<tr>
+							<th>Name as it appears on card:</th>
+							<th><h:inputText value="#{Addcard.nameOnCard}" /></th>
+						</tr>
+						<tr>
+							<th>Card Number:</th>
+							<th><h:inputText value="#{Addcard.cardNumber}" /></th>
+						</tr>
+						<tr>
+							<th>Expiry Date:</th>
+							<th><h:inputText value="#{Addcard.expiryDate}" /></th>
+						</tr>
+						<tr>
+							<th>CVS:</th>
+							<th><h:inputText value="#{Addcard.cSV}" /></th>
+						</tr>
+					</table>
+
+				</form>
+				<button onclick="location.href='cardadded.xhtml'">Submit</button>
+			</div>
+
+
+		</div>
+	</ui:define>
+</ui:composition>

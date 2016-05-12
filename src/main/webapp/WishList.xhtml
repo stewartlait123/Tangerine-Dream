@@ -1,6 +1,7 @@
 <!--
 @author - Stewart Lait 
 -->
+<!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -25,7 +26,7 @@ This is the first table
 						<table style="float: left;">
 							<tr>
 								<td><h:outputText value="#{line.product.name}" /></td>
-								<td><h:inputText value="#{line.quantity}" converterMessage="Please Enter a number" /> </td>
+								
 								
 								<!-- <td><h:commandButton value="Add to basket" action="#{basket.addToBasket(products.product_id, products.quantity)}" /></td> -->
 								<td><h:commandButton value="Add to Basket" action="#{wishlist.addToBasketFromWishlist(line.product.product_id)}" /></td>

@@ -60,7 +60,6 @@ public class OrderService {
 	}
 
 	public void addToBasket(long productId, int quantity, long userId) {
-		System.out.println("quantity = " + quantity + "UserID = " + userId);
 		Product product = productRepository.findByProductId(productId);
 		Order order = orderRepository.findUserAndStatus(userId, PENDING);
 		if (order != null) {
@@ -79,12 +78,15 @@ public class OrderService {
 
 	public void removeFromBasket(long productId, long userID) {
 		Order order = orderRepository.findUserAndStatus(userID, PENDING);
+		System.out.println("Reached here!!");
 		if (order != null) {
-			for (OrderLine ol : order.getOrderLines())
+			System.out.println("found an order");
+			for (OrderLine ol : order.getOrderLines()){
 				if (ol.getproduct().getProduct_id() == productId)
 					order.removeOrderLine(ol);
 		}
-
+		}
+		orderRepository.updateOrder(order);
 	}
 
 	public void updateOrder(Order order, long userID) {
