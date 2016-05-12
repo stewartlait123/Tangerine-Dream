@@ -22,38 +22,41 @@
 	<title>NBGardens</title>
 
 </h:head>
-<f:view>
-	<body>
-		<ui:debug hotkey="x" />
-		<!-- @author - Umar -->
-		<div class="top-bar">
-			<img src="img/nb gardens logo 2.png"></img>
-		</div>
-		<div>
-			<h:form id="menuForm">
+
+<f:view>	 
+	 <body>
+	 <ui:debug hotkey="x"/>
+	<!-- @author - Umar -->
+	<div class="top-bar">
+		<img src="img/springBanner.png"></img>
+	</div>
+			<div>
+			<h:form id= "menuForm">		
 				<p:menubar>
-					<p:submenu class="nav-button-left" url="catalogue.xhtml"
-						label="Browse Departments">
-						<p:menuitem url="catalogue.xhtml" value="All departments" />
-					</p:submenu>
-
-					<p:submenu type="button" label="Account Settings"
-						icon="ui-icon-gear" style="float:right"
-						rendered="#{currentUser.loginStatus}">
-						<p:menuitem url="user_account_details.xhtml" type="button"
-							value="My Account" icon="ui-icon-wrench" />
-						<p:menuitem url="WishList.xhtml" type="button" value="Wishlist"
-							icon="ui-icon-zoomin" />
-						<p:menuitem url="updateDetails.xhtml" type="button"
-							value="Update Details" icon="ui-icon-zoomin" />
-						<p:menuitem url="paymentDetails.xhtml" type="button"
-							value="Update Address" icon="ui-icon-zoomin" />
-						<p:menuitem url="accountSecurity.xhtml" type="button"
-							value="Security" icon="ui-icon-zoomin" />
-						<p:menuitem value="Logout" icon="ui-icon-extlink"
-							action="#{login.logout}" />
-					</p:submenu>
-
+						<p:menuitem>
+							<f:facet name = "favicon">
+								<h:graphicImage name = "img/favicon.png"></h:graphicImage>					
+							</f:facet>
+						</p:menuitem>
+				   		<p:submenu class = "nav-button-left" url="catalogue.xhtml" label = "NB Gardens">
+				   		<p:menuitem url = "" value = "About"/>
+				   		<p:menuitem url = "" value = "Contact Us"/>
+				   		<p:menuitem url = "" value = "FAQ"/>
+				   	</p:submenu>
+				   	
+				   	<p:submenu class = "nav-button-left" url="catalogue.xhtml"  label = "Browse Departments">
+				   		<p:menuitem url = "catalogue.xhtml" value = "All departments"/>
+				   	</p:submenu>
+				    
+				    <p:submenu type = "button" label = "Account Settings" icon= "ui-icon-gear" style = "float:right" rendered = "#{currentUser.loginStatus}">
+		        				<p:menuitem url="user_account_details.xhtml" type="button" value="My Account" icon="ui-icon-wrench"/>
+		        				<p:menuitem url = "WishList.xhtml" type = "button" value = "Wishlist" icon= "ui-icon-zoomin"/>
+		        				<p:menuitem url = "updateDetails.xhtml" type = "button" value = "Update Details" icon= "ui-icon-zoomin"/>
+		        				<p:menuitem url = "paymentDetails.xhtml" type = "button" value = "Update Address" icon= "ui-icon-zoomin"/>
+		        				<p:menuitem url = "accountSecurity.xhtml" type = "button" value = "Security" icon= "ui-icon-zoomin"/>
+		        				<p:menuitem value = "Logout" icon= "ui-icon-extlink" action="#{login.logout}"/>
+		        	</p:submenu>
+				    
 					<f:facet name="options" style="float:right">
 						<p:inputText style="margin-right:10px" placeholder="Search" />
 
