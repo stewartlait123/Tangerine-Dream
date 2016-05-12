@@ -17,7 +17,7 @@ import repositorybackend.OrderStatus;
 		public void persistOrder (Order o);
 		public void persistOrder (List<Order> o);
 		
-		public Order findByOrderID(int id);
+		public Order findByOrderID(long orderID);
 		public ArrayList<Order> getOrders();
 		
 		
@@ -25,4 +25,6 @@ import repositorybackend.OrderStatus;
 		public Order findUserAndStatus(long userId, OrderStatus orderStatus);
 		public Order findUsersOrderHistory(long userID);
 		public Order findUsersPendingOrder(long userId);
+		public void delete(Order order);
+
 	}

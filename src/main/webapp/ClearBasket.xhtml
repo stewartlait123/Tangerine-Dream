@@ -1,4 +1,3 @@
-<!--@author - Mohammed Miah-->
 <!DOCTYPE html>
 
 
@@ -6,17 +5,18 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets" 
-	template="/WEB-INF/Template.xhtml">
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="/WEB-INF/Template.xhtml">
 
 	<ui:define name="pagetitle">
 		<div id="header">
-			<h1>Basket</h1>
+			<h1>Clear Basket</h1>
 		</div>
 	</ui:define>
 
 	<ui:define name="maincontent">
 <h:form>
+<h:outputText>Are you sure you wish to remove all these products from your basket?</h:outputText>
+
 		<h:dataTable value="#{basket.order.orderLines}" var="line">
 			<h:column>
 			<f:facet name="header">Product</f:facet>
@@ -27,15 +27,13 @@
 			<h:column>
 			<f:facet name="header">Quantity</f:facet>
 			<h:inputText value="#{line.quantity}" />
-			</h:column>
-			<h:column>
-			<h:commandButton action="#{basket.updateQuantity(line.quantity,line.product.product_id)}" value="Update" />	
-			</h:column>
+			</h:column>	
 					</h:dataTable>
 					<h:outputText value="#{basket.totalPrice}" />
-				<h:commandButton action="#{order.placeOrder()}" value="ORDER"/>	
+					<h:commandButton action="#{basket.clearBasket()}" value="Clear" />
+					<h:commandButton value="NO" />		
 			</h:form>	
-					<button onclick="location.href='ClearBasket.xhtml'">Clear Basket</button>
+					<button onclick="location.href='basket.xhtml'">Confirm</button>
 				
 			
 		

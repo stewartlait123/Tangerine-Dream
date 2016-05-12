@@ -42,7 +42,6 @@ public class Order {
 	private OrderStatus status; // Status which needs to be converted to an enum at time
 	
 	@Column(name = "order_date", length = 50)
-	@NotNull
 	@Size (min = 6, max = 50)
 	private Date order_date; // the column for date order placed
 	
@@ -81,7 +80,8 @@ public class Order {
 	*/
 
 
-	public Order(OrderStatus status, Date date, Customer customer, OrderLine orderLine){
+	public Order( long orderID, OrderStatus status, Date date, Customer customer, OrderLine orderLine){
+		this.order_id = orderID;
 		this.status = status;
 		this.order_date = date;
 		this.customer = customer;
@@ -91,6 +91,10 @@ public class Order {
 	// methods which will be defined in OrderRepositoryOffline and OrderLineRepository
 	public long getOrder_id() {
 		return order_id;
+	}
+	
+	public void setorder_id(long order_id) {
+		this.order_id = order_id;
 	}
 
 	public OrderStatus getStatus() {
@@ -124,6 +128,7 @@ public class Order {
 	public void setOrderLines(List<OrderLine> orderLines) {
 		this.orderLines = orderLines;
 	}
+
 	
 	public void addOrderLine(OrderLine orderLine){
 		this.orderLines.add(orderLine);

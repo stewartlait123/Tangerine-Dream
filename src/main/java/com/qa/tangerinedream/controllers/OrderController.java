@@ -20,98 +20,60 @@ import com.qa.tangerinedream.service.OrderService;
 
 
 @Named(value = "order")
-
 @RequestScoped
-
 public class OrderController {
-		
-	//Injection commented out for now as services are not created. To be uncommented/edited at later date
-	//@Inject
-	@Inject OrderService orderService; 
-	@Inject CurrentUser currentUser;
+	@Inject private OrderService orderService; 
+	@Inject private CurrentUser currentUser;
+	@Inject private PendingOrder pendingOrder;
 	
 	private Order order;
+	
 	private float totalPrice;
 	private float totalPaid;
+	private float totalPlaced;
 	
-	/*
-	 * List of required functions
-	 * 
-	 * View order history
-	 * 
-	 * 
-	 * Cancel order
-	 * 
-	 * 
-	 * Search order
-	 * 
-	 * 
-	 * Confirm order
-	 * 
-	 */
-	
-
-	public Long getOrderId() {
-		order = orderService.getUsersPendingOrder(currentUser.getUserID());
-		return order.getOrder_id();
-	}
-
-	public Long getCustomerId() {
-		return currentUser.getUserID();
-	}
-	
-	
-	public Order getOrderHistory( long userID){
-		
+	@Deprecated
+	public Order getOrderHistory( long userID){	
 		orderService.getUsersOrderHistory(userID);
 		return order;
 	}
 	
-	public void cancelOrder(){
-		
-		orderService.clearOrder(currentUser.getUserID());
-		
+	public void cancelOrder(){	
+		orderService.clearOrder(currentUser.getUserID());	
 	}
 	
 	public void searchForOrder(){
-		
 		// TODO hook into order search functionality in relevent Bean.
-		
 	}
 	
-	public String cofirmOrder(){
-		
-		orderService.placeOrder(order, currentUser.getUserID());
-	 return "order";
+	public String placeOrder() {
+		orderService.placeOrder(pendingOrder.getOrder().getOrder_id(), currentUser.getUserID());
+		return "Order.xhtml";
 	}
 	
-	public void placeOrder() {
-		orderService.placeOrder(order, currentUser.getUserID());
-	}
-	
-	public Order getPlacedOrder(){
-		Order order = orderService.getUsersPlacedOrders(currentUser.getUserID());
-		
-		return order;
-	}
-	
-	public Order getPlacedOrderLines(){
-		Order order = orderService.getUsersPlacedOrders(currentUser.getUserID());
+	public Order getOrder(){
+		order = orderService.getUsersPlacedOrders(currentUser.getUserID());
 		return order;
 	}
 
+	@Deprecated
 	public List<OrderLine> getPaidOrderLines(){
 		Order order = orderService.getUsersPaidOrders(currentUser.getUserID());
 		return order.getOrderLines();
 	}
 	
     public float getTotalCostPending(){
-    	totalPrice =  orderService.calcOrderTotalPlaced(currentUser.getUserID());
+    	totalPrice =  orderService.calcOrderTotalPending(currentUser.getUserID());
     	return totalPrice;
     }
     
     public float getTotalCostPaid(){
 		totalPaid = orderService.calcOrderTotalPaid(currentUser.getUserID());
     	return totalPaid;
+    }
+    
+    public float getTotalCostPlaced(){
+		totalPlaced = orderService.calcOrderTotalPlaced(currentUser.getUserID());
+    	return totalPlaced;
     }
 }
