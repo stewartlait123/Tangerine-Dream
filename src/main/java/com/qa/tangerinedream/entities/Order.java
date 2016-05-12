@@ -145,13 +145,4 @@ public class Order {
 			}
 		}
 	}
-
-	@Override
-	public String toString() {
-		String o = "";
-		for(OrderLine line : orderLines)
-			o += line.toString() + " | ";
-		return "Order [order_id=" + order_id + ", status=" + status + ", order_date=" + order_date + ", customer="
-				+ customer + ", orderLines=" + o + "]";
-	}
 }

@@ -66,7 +66,7 @@ public class WishlistService {
 					break;
 				}
 		} else {
-			order = new Order(OrderStatus.PENDING, Calendar.getInstance().getTime(), customerRepository.findByID(userID), new OrderLine(productRepository.findByProductId(productId), 1, 0));
+			order = new Order(orderRepository.getOrders().size(),OrderStatus.PENDING, Calendar.getInstance().getTime(), customerRepository.findByID(userID), new OrderLine(productRepository.findByProductId(productId), 1, 0));
 			for (OrderLine ol: wishlist.getOrderLines())
 				if (ol.getproduct().getProduct_id() == productId){
 					wishlist.removeOrderLine(ol);
