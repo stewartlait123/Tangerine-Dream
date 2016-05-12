@@ -5,7 +5,7 @@
 * Template page styling - @author Umar
 */
 body {
-	background: #bdfdaf;
+	background: #98FFC4;
 }
 
 .footer{
@@ -24,8 +24,18 @@ body {
 }
 
 .top-bar{
-	background-color: #000000;
+	background-color: #59B27F;
 	width: 100%
+}
+
+
+.nav-button-right{
+	float:right;
+	
+}
+
+.nav-button-left{
+	float:left;
 }
 
 #mainContent {
@@ -35,6 +45,7 @@ body {
 	margin-top: 25px;
 	width: 96%;
 	min-height: 1020px;
+
 }
 
 /* End */
