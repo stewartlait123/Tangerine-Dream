@@ -5,7 +5,23 @@
 * Template page styling - @author Umar
 */
 body {
-	background: #bdfdaf;
+	background: #FFFFFF;
+	text-align:center;
+}
+
+
+#login-box
+{
+	width:initial;
+	margin:auto;
+	border-style: solid;
+	display: inline-block;
+	border-color: #382513;
+	padding: 25px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background: #5C832F;
+	color: #FFFFFF;
 }
 
 .footer{
@@ -24,8 +40,18 @@ body {
 }
 
 .top-bar{
-	background-color: #000000;
+	background-color: #FFFFFF;
 	width: 100%
+}
+
+
+.nav-button-right{
+	float:right;
+	
+}
+
+.nav-button-left{
+	float:left;
 }
 
 #mainContent {
@@ -33,8 +59,8 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 25px;
-	width: 96%;
 	min-height: 1020px;
+
 }
 
 /* End */

@@ -4,7 +4,6 @@
 
 package com.qa.tangerinedream.service;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -13,6 +12,7 @@ import javax.inject.Inject;
 
 import com.qa.tangerinedream.entities.Order;
 import com.qa.tangerinedream.entities.OrderLine;
+import com.qa.tangerinedream.entities.Product;
 import com.qa.tangerinedream.repositories.CustomerRepository;
 import com.qa.tangerinedream.repositories.OrderRepository;
 import com.qa.tangerinedream.repositories.ProductRepository;
@@ -31,13 +31,9 @@ public class WishlistService {
 			order=new Order(customerRepository.findByID(userID), OrderStatus.WISHLIST);
 			orderRepository.persistOrder(order);
 		}
-		ArrayList<OrderLine> lines = (ArrayList<OrderLine>) order.getOrderLines();
-		boolean alreadySaved = false;
-		for(OrderLine line : lines)
-			if (line.getproduct().getProduct_id() == productId)
-				alreadySaved = true;
-		if(!alreadySaved)
-			order.addOrderLine(new OrderLine(productRepository.findByProductId(productId), 0, 0));
+		Product product = productRepository.findByProductId(productId);
+		if(!order.getOrderLines().contains(product))
+			order.addOrderLine(new OrderLine(product, 0, 0));
 		orderRepository.updateOrder(order);
 	}
 
@@ -54,7 +50,6 @@ public class WishlistService {
 	}
 	
 	public List<OrderLine> getWishlist(long userID) {
-
 		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.WISHLIST);
 		System.out.println(order.toString());	
 		return order.getOrderLines(); 
@@ -71,7 +66,9 @@ public class WishlistService {
 					break;
 				}
 		} else {
-			order = new Order(OrderStatus.PENDING, Calendar.getInstance().getTime(), customerRepository.findByID(userID), new OrderLine(productRepository.findByProductId(productId), 1, 0));
+
+			order = new Order(orderRepository.getOrders().size(), OrderStatus.PENDING, Calendar.getInstance().getTime(), customerRepository.findByID(userID), new OrderLine(productRepository.findByProductId(productId), 1, 0));
+
 			for (OrderLine ol: wishlist.getOrderLines())
 				if (ol.getproduct().getProduct_id() == productId){
 					wishlist.removeOrderLine(ol);

@@ -17,8 +17,6 @@
 
 			<div id="spacer"></div>
 
-			<div id="content-container">
-
 				<div id="product-titlewrapper">
 					<h2>Check Out Our Hottest Deals</h2>
 				</div>
@@ -95,30 +93,21 @@
 								suscipit, id placerat enim sollicitudin. Aenean id sapien in mi
 								convallis dapibus vel eu felis.</div>
 
-						</div>
-						
-						<div>
-
-							<div>
-								<img src="img/CreditApplyAlt.jpg" />
-							</div>
-	
-							<div >
-								<img src="img/GnomeAwards.jpg" />
-							</div>
-
-						</div>
-						
+						</div>						
 					</div>
-				
-			</div>
+					
+					<div id="adverts">
+
+						<div>
+							<img src="img/CreditApplyAlt.jpg" />
+						</div>
+
+						<div >
+							<img src="img/GnomeAwards.jpg" />
+						</div>
+
+					</div>
 		</div>
-		<link rel="stylesheet" type="text/css"
-			href="slick-1.5.9/slick/slick.css" />
-		<link rel="stylesheet" type="text/css"
-			href="slick-1.5.9/slick/slick-theme.css" />
-		
-		<script type="text/javascript" src="slick-1.5.9/slick/slick.min.js"></script>
 	</ui:define>
 </ui:composition>
 
@@ -127,112 +116,7 @@
 
     <![CDATA[
 
-$('.content table').replaceWith(function() {
-
-    var $th = $(this).find('th'); // get headers
-    var th = $th.map(function() {
-        return $(this).text();
-    }).get(); // and their values
-
-    $th.closest('tr').remove(); // then remove them
-
-    var $d = $('<div>', { 'class': 'box' });
-
-    $('tr', this).each(function(i, el) {
-        var $div = $('<div>', {'class': 'inner'}).appendTo($d);
-        $('td', this).each(function(j, el) {
-            var n = j + 1;
-            var $row = $('<div>', {
-                'class': 'row-' + n
-            });
-            $row.append(
-            $('<span>', {
-                'class': 'label-' + n,
-                text: th[j]
-            }), ' : ', $('<span>', {
-                'class': 'data-' + n,
-                text: $(this).text()
-            })).appendTo($div);
-        });
-    });
-
-    return $d;
-});
-
 $(document).ready(function() {
-	console.log(getElementId("carousel1"));
-	$("carousel1".slick({
-
-		slidesToShow:6,
-		slidesToScroll: 1,
-	  	arrows: true,
-	  	dots: false,
-	  	infinite:true,
-
-	  	responsive: [{
-
-	  		breakpoint: 1500,
-      		settings:
-      		{
-        		slidesToShow: 6,
-        		infinite: true
-      		}
-      	},
-	  		{
-	  		breakpoint: 1224,
-      		settings:
-      		{
-        		slidesToShow: 4,
-        		infinite: true
-      		}
-      	},
-      	{
-	  		breakpoint: 800,
-      		settings:
-      		{
-        		slidesToShow: 3,
-        		infinite: true
-      		}
-      	}]
-		
-	});
-	
-	$('.carousel2').slick({
-
-		slidesToShow:6,
-		slidesToScroll: 1,
-	  	arrows: true,
-	  	dots: false,
-	  	infinite:true,
-
-	  	responsive: [{
-
-	  		breakpoint: 1500,
-      		settings:
-      		{
-        		slidesToShow: 6,
-        		infinite: true
-      		}
-      	},
-	  		{
-	  		breakpoint: 1224,
-      		settings:
-      		{
-        		slidesToShow: 4,
-        		infinite: true
-      		}
-      	},
-      	{
-	  		breakpoint: 800,
-      		settings:
-      		{
-        		slidesToShow: 3,
-        		infinite: true
-      		}
-      	}]
-		
-	});
-
 
 	responsiveLayout();
   
@@ -314,7 +198,7 @@ function responsiveLayout() {
 	}
 };
 
-    ]]>
+]]>
 
 
 </script>

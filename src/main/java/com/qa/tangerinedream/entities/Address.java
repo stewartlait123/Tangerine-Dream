@@ -63,8 +63,4 @@ public class Address {
 	public void setCustomercustomer_id(long customercustomer_id) {
 		this.customer_id_fk = customercustomer_id;
 	}
-	
-	 
-	
-
 }

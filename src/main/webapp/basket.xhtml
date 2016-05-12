@@ -1,12 +1,10 @@
 <!--@author - Mohammed Miah-->
 <!DOCTYPE html>
-
-
-
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets" template="/WEB-INF/Template.xhtml">
+	xmlns:ui="http://java.sun.com/jsf/facelets" 
+	template="/WEB-INF/Template.xhtml">
 
 	<ui:define name="pagetitle">
 		<div id="header">
@@ -28,15 +26,15 @@
 			<h:inputText value="#{line.quantity}" />
 			</h:column>
 			<h:column>
-			<h:commandButton action="#{basket.updateQuantity(line.quantity)}" value="Update" />	
+			<h:commandButton action="#{basket.updateQuantity(line.quantity,line.product.product_id)}" value="Update" />	
+			</h:column>
+			<h:column>
+			<h:commandButton action="#{basket.removeFromBasket(line.product.product_id)}" value="Remove" />	
 			</h:column>
 					</h:dataTable>
 					<h:outputText value="#{basket.totalPrice}" />
+				<h:commandButton action="#{order.placeOrder()}" value="ORDER"/>	
+				<h:commandButton action="#{basket.clearBasket()}" value="Clear Basket" />
 			</h:form>	
-					<button onclick="location.href='Order.xhtml'">ORDER</button>
-				
-			
-		
-
 	</ui:define>
 </ui:composition>

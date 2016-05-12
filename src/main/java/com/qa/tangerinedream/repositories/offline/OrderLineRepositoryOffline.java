@@ -1,11 +1,17 @@
 package com.qa.tangerinedream.repositories.offline;
 
 import java.util.ArrayList;
+
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
+
 import repositorybackend.InitialData;
 import com.qa.tangerinedream.entities.OrderLine;
 import com.qa.tangerinedream.repositories.OrderLineRepository;
 
+@Default
+@Stateless
 public class OrderLineRepositoryOffline 
 implements OrderLineRepository {
 
@@ -14,9 +20,7 @@ implements OrderLineRepository {
 	
 	@Override
 	public void persistOrderLine(OrderLine o) {
-		
 		initialData.addOrderLine(o);
-		
 	}
 
 	@Override

@@ -38,10 +38,11 @@
 		
 		
 		<!-- dynamically-constructed dataTable with data pulled from the product list -->
+<<<<<<< HEAD
 		 <h:dataTable id="productTable" value="#{catalogue.products}" var="products"     > 
 		 
 		<!-- <h:dataTable id="productTable" value="#{catalogue.searchProducts('TOOL')}" var="products"> -->
-		
+
 			<h:column>
 				<f:facet name="header">Image</f:facet> <!--  rendered="#{products.product_type == category.selected.itemValue}"    -->
 				<!-- or maybe it's    rendered="#{products.product_type != 'GNOME'} #{products.product_type != 'TOOL'}" -->
@@ -73,6 +74,7 @@
 				<f:facet name="header">Cost Per Unit</f:facet>
 			    <h:outputLabel value="#{products.price}"/>
 			</h:column>
+<<<<<<< HEAD
 			<h:column>
 				<f:facet name="header"></f:facet>
 				<h:inputText value="#{products.quantity}" />
@@ -82,6 +84,8 @@
 				<h:commandButton id="AddToWishlist" action="#{wishlist.addToWishlist(products.product_id)}" value="Wishlist" />
 				
 			</h:column>
+=======
+>>>>>>> ae621f3038b2b160fe9e96dd79d1528c2b79f458
 		</h:dataTable>
 		</h:form>
 	</ui:define>

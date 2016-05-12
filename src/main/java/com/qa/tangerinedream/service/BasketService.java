@@ -38,7 +38,9 @@ public class BasketService {
 			if(!foundOrderLine)
 				order.addOrderLine(new OrderLine(product, quantity, product.getPrice()));
 		} else 
-			order = new Order(PENDING, new Date(), customerRepository.findByID(userId), new OrderLine(product, quantity, product.getPrice()));
+
+			order = new Order(orderRepository.getOrders().size(),PENDING, new Date(), customerRepository.findByID(userId), new OrderLine(product, quantity, product.getPrice()));
+
 	}
 
 
@@ -48,5 +50,8 @@ public class BasketService {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
 
 }

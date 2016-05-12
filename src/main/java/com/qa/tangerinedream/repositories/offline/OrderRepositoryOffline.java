@@ -42,22 +42,11 @@ implements OrderRepository {
 		initialData.addOrder(o);	
 	}
 
-	@Override
-	public Order findByOrderID(int id) {
-		ArrayList<Order> os = (ArrayList<Order>) initialData.getOrders();
-		for(int i=0;i<os.size(); i++){
-			if(os.get(i).getOrder_id() == id){
-				System.out.println(os.toString());
-			}
-		}		
-			return null;
-	}
 	
 	@Override
 	public Order findUserAndStatus(long userId, OrderStatus orderStatus) {
 		ArrayList<Order> orders = (ArrayList<Order>) initialData.getOrders();
 		for (Order order : orders) {
-			System.out.println("User:" + userId + ", Cust:" + order.getCustomer().getCustomerId() + ", Search:" + orderStatus + ", Status:" + order.getStatus());
 			if(order.getCustomer().getCustomerId().equals(userId) && order.getStatus().equals(orderStatus))	
 				 return order;
 		}
@@ -112,6 +101,28 @@ implements OrderRepository {
 				return order;
 		}
 		System.out.println("Order not Found");
+		return null;
+	}
+
+	@Override
+	public void delete(Order order) {
+		ArrayList<Order> orders = (ArrayList<Order>) initialData.getOrders();
+		for (int i = 0; i < orders.size(); i++) {
+			if(orders.get(i).getOrder_id()==order.getOrder_id() && (order.getStatus().equals(WISHLIST) || order.getStatus().equals(PENDING))) {
+				orders.remove(i);
+			}
+		}
+	}
+
+	@Override
+	public Order findByOrderID(long orderID) {
+		ArrayList<Order> os = (ArrayList<Order>) initialData.getOrders();
+		for(Order order : os){
+			if(order.getOrder_id() == orderID){
+				return order;
+			}
+		}		
+			
 		return null;
 	}
 }

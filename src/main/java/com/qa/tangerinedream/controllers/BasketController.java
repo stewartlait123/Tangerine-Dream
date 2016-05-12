@@ -15,19 +15,18 @@ import com.qa.tangerinedream.service.OrderService;
 @Named(value = "basket")
 @RequestScoped
 public class BasketController {
-	@Inject OrderService orderService;
-	@Inject CurrentUser currentUser;
-	private Order order;
-	private float totalPrice;
+	@Inject private PendingOrder pendingOrder;
+	@Inject private OrderService orderService;
+	@Inject private CurrentUser currentUser;
 	
+	private float totalPrice;
 	
 	/**
 	 * This method adds the specified product to the basket
 	 * 
 	 * @param productId - the products id
 	 */
-	public void addToBasket(long productId, int quantity){
-		System.out.println("Reached this point!!!");
+	public void addToBasket(long productId, int quantity) {
 		orderService.addToBasket(productId, quantity, currentUser.getUserID());
 	}
 	
@@ -37,18 +36,20 @@ public class BasketController {
 	 * @param productId - the product to be removed
 	 * @return - returns basket which should redirect the user to the basket page
 	 */
-//	public String removeFromBasket(long productId){
-//		orderService.removeFromBasket(productId, currentUser.getUserID());
-//		return "basket";
-//	}
+	public String removeFromBasket(long productId){
+		orderService.removeFromBasket(productId, currentUser.getUserID());
+		pendingOrder.setOrder(orderService.getUsersPendingOrder(currentUser.getUserID()));
+		return "basket.xhtml";
+	}
 	
 	/**
 	 * This method updates the whole basket's quantity
 	 * 
 	 * @return - reloads the basket page
 	 */
-	public String updateQuantity(){
-		orderService.placeOrder(currentUser.getUserID());
+	public String updateQuantity(int quantity, long prod_ID){
+		orderService.updatequantity(prod_ID, quantity, currentUser.getUserID());
+		pendingOrder.setOrder(orderService.getUsersPendingOrder(currentUser.getUserID()));
 		return "basket";
 	}
 
@@ -59,7 +60,8 @@ public class BasketController {
 	 */
 	public String clearBasket(){
 		orderService.clearOrder(currentUser.getUserID());
-		return "basket";
+		pendingOrder.setOrder(orderService.getUsersPendingOrder(currentUser.getUserID()));
+		return "LandingPage.xhtml";
 	}
 	
 	/**
@@ -75,10 +77,9 @@ public class BasketController {
 	 * @return - The Users Basket
 	 */
 	public Order getOrder() {
-		if(order == null)
-			System.out.println("Getting to this method!!!");
-			order = orderService.getUsersPendingOrder(currentUser.getUserID());
-		return order;
+		if(pendingOrder.getOrder() == null)
+			pendingOrder.setOrder(orderService.getUsersPendingOrder(currentUser.getUserID()));
+		return pendingOrder.getOrder();
 	}
 
 	/**
@@ -87,7 +88,7 @@ public class BasketController {
 	 * @param order - the updated order information
 	 */
 	public void setOrder(Order order) {
-		this.order = order;
+		pendingOrder.setOrder(order);
 	}
 	
 	/**
