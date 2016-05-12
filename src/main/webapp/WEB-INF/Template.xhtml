@@ -38,14 +38,15 @@
 								<h:graphicImage name = "img/favicon.png"></h:graphicImage>					
 							</f:facet>
 						</p:menuitem>
-				   		<p:submenu class = "nav-button-left" url="catalogue.xhtml" label = "NB Gardens">
-				   		<p:menuitem url = "" value = "About"/>
-				   		<p:menuitem url = "" value = "Contact Us"/>
-				   		<p:menuitem url = "" value = "FAQ"/>
+						
+					<p:submenu class = "nav-button-left" url="catalogue.xhtml"  label = "Available Products">
+				   		<p:menuitem url = "catalogue.xhtml" value = "All Categories"/>
 				   	</p:submenu>
-				   	
-				   	<p:submenu class = "nav-button-left" url="catalogue.xhtml"  label = "Browse Departments">
-				   		<p:menuitem url = "catalogue.xhtml" value = "All departments"/>
+						
+				   	<p:submenu class = "nav-button-left" url="catalogue.xhtml" label = "General Enquiries">
+				   		<p:menuitem url = "about.xhtml" value = "About"/>
+				   		<p:menuitem url = "ContactInfo.xhtml" value = "Contact Us"/>
+				   		<p:menuitem url = "faq_page.xhtml" value = "FAQ"/>
 				   	</p:submenu>
 				    
 				    <p:submenu type = "button" label = "Account Settings" icon= "ui-icon-gear" style = "float:right" rendered = "#{currentUser.loginStatus}">
@@ -84,7 +85,7 @@
 		<div class="footer">
 			<div class="middleText">
 				<a href="about.xhtml">About</a> | <a href="faq_page.xhtml">FAQ
-					(Frequently Asked Question)</a> | <a href="ContactInfo.html">Contact
+					(Frequently Asked Question)</a> | <a href="ContactInfo.xhtml">Contact
 					Information</a> | <a href="ReturnInfo.xhtml">Return Information</a> | <a
 					href="EmailForm.xhtml">Pdf Order Form</a>
 			</div>
