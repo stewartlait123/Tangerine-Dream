@@ -31,11 +31,14 @@
 			<h:column>
 			<h:commandButton action="#{basket.updateQuantity(line.quantity,line.product.product_id)}" value="Update" />	
 			</h:column>
+			<h:column>
+			<h:commandButton action="#{basket.removeFromBasket(line.product.product_id)}" value="Remove" />	
+			</h:column>
 					</h:dataTable>
 					<h:outputText value="#{basket.totalPrice}" />
 				<h:commandButton action="#{order.placeOrder()}" value="ORDER"/>	
+				<h:commandButton action="#{basket.clearBasket()}" value="Clear Basket" />
 			</h:form>	
-					<button onclick="location.href='ClearBasket.xhtml'">Clear Basket</button>
 				
 			
 		

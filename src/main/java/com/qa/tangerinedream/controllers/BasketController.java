@@ -39,7 +39,7 @@ public class BasketController {
 	public String removeFromBasket(long productId){
 		orderService.removeFromBasket(productId, currentUser.getUserID());
 		pendingOrder.setOrder(orderService.getUsersPendingOrder(currentUser.getUserID()));
-		return "basket";
+		return "basket.xhtml";
 	}
 	
 	/**
@@ -58,9 +58,10 @@ public class BasketController {
 	 * 
 	 * @return - reloads the basket
 	 */
-	public void clearBasket(){
+	public String clearBasket(){
 		orderService.clearOrder(currentUser.getUserID());
 		pendingOrder.setOrder(orderService.getUsersPendingOrder(currentUser.getUserID()));
+		return "LandingPage.xhtml";
 	}
 	
 	/**
