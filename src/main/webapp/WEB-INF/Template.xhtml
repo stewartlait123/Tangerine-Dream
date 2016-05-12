@@ -25,11 +25,22 @@
 	 <ui:debug hotkey="x"/>
 	<!-- @author - Umar -->
 	<div class="top-bar">
-		<img src="img/nb gardens logo 2.png"></img>
+		<img src="img/springBanner.png"></img>
 	</div>
 			<div>
 			<h:form id= "menuForm">		
 				<p:menubar>
+						<p:menuitem>
+							<f:facet name = "favicon">
+								<h:graphicImage name = "img/favicon.png"></h:graphicImage>					
+							</f:facet>
+						</p:menuitem>
+				   		<p:submenu class = "nav-button-left" url="catalogue.xhtml" label = "NB Gardens">
+				   		<p:menuitem url = "" value = "About"/>
+				   		<p:menuitem url = "" value = "Contact Us"/>
+				   		<p:menuitem url = "" value = "FAQ"/>
+				   	</p:submenu>
+				   	
 				   	<p:submenu class = "nav-button-left" url="catalogue.xhtml"  label = "Browse Departments">
 				   		<p:menuitem url = "catalogue.xhtml" value = "All departments"/>
 				   	</p:submenu>
