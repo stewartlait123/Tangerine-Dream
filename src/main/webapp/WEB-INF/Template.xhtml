@@ -48,7 +48,8 @@
 	
 	            		<p:button href="register.xhtml" type="button" value="Register" icon="ui-icon-extlink"  rendered = "#{!currentUser.loginStatus}" />
 	            		<p:button href="login.xhtml" type="button" value="Login" icon="ui-icon-extlink"  rendered = "#{!currentUser.loginStatus}" />
-	        			<p:commandButton type="button"  icon= "ui-icon-cart"/>
+	        			<p:button type="button"  icon= "ui-icon-cart" outcome="basket">
+	        			</p:button>
 	        		</f:facet>				
 				</p:menubar>
 			</h:form>
