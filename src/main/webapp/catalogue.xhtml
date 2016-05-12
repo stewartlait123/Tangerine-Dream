@@ -25,7 +25,7 @@
 		<br></br>
 		<br></br>
 		<!-- dynamically-constructed dataTable with data pulled from the product list -->
-		<h:dataTable value="#{catalogue.products}" var="products">
+		<h:dataTable value="#{catalogue.products}" var="products" style = "width:initial; margin:auto">
 			<h:column>
 				<f:facet name="header">Image</f:facet>
 				<img src="#{products.imageLocation}"></img>
@@ -53,13 +53,6 @@
 			<h:column>
 				<f:facet name="header">Cost Per Unit</f:facet>
 			    <h:outputLabel value="#{products.price}"/>
-			</h:column>
-			<h:column>
-				<f:facet name="header"></f:facet>
-				<h:inputText value="#{products.quantity}" />
-				<!-- button actions not currently implemented -->
-				<h:commandButton action="#{basket.addToBasket(products.product_id, products.quantity)}" value="Add to basket"/>
-				<h:commandButton action="#{wishlist.addProductToWishlist(products.product_id)}" value="Add to WishList" />
 			</h:column>
 		</h:dataTable>
 		</h:form>
