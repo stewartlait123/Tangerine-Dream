@@ -67,4 +67,9 @@ public class CustomerService {
 		// TODO Auto-generated method stub
 		return customerRepo.findByID(userid);
 	}
+	
+	public void updateCustomer(Customer customer)
+	{
+		customerRepo.updateCustomer(customer);
+	}
 }
