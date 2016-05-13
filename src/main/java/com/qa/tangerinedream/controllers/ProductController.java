@@ -15,7 +15,6 @@ import com.qa.tangerinedream.service.ProductService;
 @Named(value = "product")
 @RequestScoped
 public class ProductController {
-	@Inject private ProductService productService;
 	
 	private long product_id;
 	private String name = "";
