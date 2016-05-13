@@ -25,18 +25,21 @@
 
 <f:view>	 
 	 <body>
+	 <h:outputStylesheet name="customPrimeFaceStyle.css"/>
 	 <ui:debug hotkey="x"/>
 	<!-- @author - Umar -->
 	<div class="top-bar">
-		<img src="img/springBanner.png"></img>
+		<a href = "LandingPage.xhtml">
+			<img src="img/springBanner.png" style = "margin:25px;"></img>
+		</a>
 	</div>
-			<div>
+		<div>
 			<h:form id= "menuForm">		
 				<p:menubar>
 						<p:menuitem>
-							<f:facet name = "favicon">
-								<h:graphicImage name = "img/favicon.png"></h:graphicImage>					
-							</f:facet>
+							<h:link outcome="/index.xhmtl">
+								<img src = "img/favicon.png" style = "height:50px; width:50px;"></img>					
+							</h:link>
 						</p:menuitem>
 						
 					<p:submenu class = "nav-button-left" url="catalogue.xhtml"  label = "Available Products">
@@ -61,7 +64,7 @@
 					<f:facet name="options" style="float:right">
 						<p:inputText style="margin-right:10px" placeholder="Search" />
 
-						<p:button href="register.xhtml" type="button" value="Register"
+						<p:button class = "ui-menu-commandbutton" href="register.xhtml" type="button" value="Register"
 							icon="ui-icon-extlink" rendered="#{!currentUser.loginStatus}" />
 						<p:button href="login.xhtml" type="button" value="Login"
 							icon="ui-icon-extlink" rendered="#{!currentUser.loginStatus}" />
@@ -94,16 +97,5 @@
 	</body>
 </f:view>
 
-<script>
-	$(document).ready(function() {
-		navBarSettings();
-	});
 
-	function navBarSettings() {
-		if (document.getElementById("")) {
-
-		}
-
-	}
-</script>
 </html>

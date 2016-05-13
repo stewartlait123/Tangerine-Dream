@@ -5,7 +5,7 @@
 * Template page styling - @author Umar
 */
 body {
-	background: #FFFFFF;
+	background: #537D99;
 	text-align:center;
 }
 
@@ -40,7 +40,7 @@ body {
 }
 
 .top-bar{
-	background-color: #FFFFFF;
+	background-color: #6c5576;
 	width: 100%
 }
 
@@ -61,6 +61,13 @@ body {
 	margin-top: 25px;
 	min-height: 1020px;
 
+}
+
+#content-container{
+	
+	width: 80%;
+	margin:auto;
+	
 }
 
 /* End */
@@ -136,6 +143,15 @@ src:url(Font/Austie.ttf);
 	margin:0px;
 }
 
+#product-titlewrapper{
+	
+	margin: 25px;
+    background: #A5FFD7;
+    border-style: solid;
+    border-radius: 20px;
+	
+}
+
 #product-titlewrapper h2{
 
 	font-family: OrangeJuice;
@@ -143,6 +159,7 @@ src:url(Font/Austie.ttf);
     font-size: 60px;
     line-height: 60px;
     letter-spacing: 15px;
+
 
 }
 
@@ -360,11 +377,11 @@ S
 h1 {
 	letter-spacing: 1px;
 	font-size: .4in;
-	color: green;
+	color: #364327;
 }
 
 span {
-	color: red
+	
 }
 
 legend {
@@ -496,7 +513,7 @@ span.myspan {
 }
 
 h2 {
-	color: coral;
+	color: #000000;
 	line-height: 60%;
 }
 
