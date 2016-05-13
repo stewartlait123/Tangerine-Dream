@@ -16,6 +16,12 @@
 		href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/css/uikit.min.css" />
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/js/uikit.min.js"></script>
+		
+	<!-- Google API added to the  -->
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	
+	<!-- Google map config -->
+	<script src="library/js/googleMap.js"></script>
 
 	<meta charset="ISO-8859-1"></meta>
 	<link rel="stylesheet" type="text/css" href="Template.css" />
@@ -44,6 +50,9 @@
 						
 					<p:submenu class = "nav-button-left" url="catalogue.xhtml"  label = "Available Products">
 				   		<p:menuitem url = "catalogue.xhtml" value = "All Categories"/>
+				   		<p:menuitem url = "searchcatalogue.xhtml?type=GNOME" value = "Gnomes"/>
+						<p:menuitem url = "searchcatalogue.xhtml?type=TOOL" value = "Tools"/>
+						<p:menuitem url = "searchcatalogue.xhtml?type=POT" value = "Pots"/>
 				   	</p:submenu>
 						
 				   	<p:submenu class = "nav-button-left" url="catalogue.xhtml" label = "General Enquiries">

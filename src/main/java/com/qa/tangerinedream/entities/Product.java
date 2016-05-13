@@ -68,6 +68,13 @@ public class Product{
 	@Size (min = 0, max = 2147483647)
 	private String product_type;
 	
+	@Column (name = "description", nullable = false, length = 225)
+	@NotNull
+	@Size (min = 2, max = 225)
+	private String description;
+	
+	
+	
 	@Column(name="imageLocation")
 	private String imageLocation;
 	
@@ -75,7 +82,7 @@ public class Product{
 	
 	public Product() { }
 	
-	public Product(String name, int cost, int price, int size, int weight, int stock, int minStock, int orderAmount, String productType, String imageLocation){
+	public Product(String name, int cost, int price, int size, int weight, int stock, int minStock, int orderAmount, String productType, String imageLocation, String description){
 		this.name = name;
 		this.cost_price = cost;
 		this.price = price;
@@ -86,9 +93,10 @@ public class Product{
 		this.order_amount = orderAmount;
 		this.product_type = productType;
 		this.imageLocation = imageLocation;
+		this.description = description;
 	}
 	
-	public Product(long product_id, String name, int cost, int price, int size, int weight, int stock, int minStock, int orderAmount, String productType, String imageLocation){
+	public Product(long product_id, String name, int cost, int price, int size, int weight, int stock, int minStock, int orderAmount, String productType, String imageLocation, String description){
 		this.product_id = product_id; //temporary fix, will probably just be auto-generated
 		this.name = name;
 		this.cost_price = cost;
@@ -100,6 +108,7 @@ public class Product{
 		this.order_amount = orderAmount;
 		this.product_type = productType;
 		this.imageLocation = imageLocation;
+		this.description = description;
 		//System.out.println(this.product_id + ", " + this.name); //debug
 	}
 	
@@ -121,6 +130,8 @@ public class Product{
 	public String getProduct_type() { return product_type; }	
 	public String getImageLocation() { return imageLocation; }
 	public int getQuantity() { return quantity; }
+	public String getDescription() { return description;}
+	
 	
 	/**The maximum amount that the product should be bought for from a supplier*/
 	public void setCost_price(int value) { this.cost_price = value; }
