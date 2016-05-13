@@ -5,7 +5,7 @@
 * Template page styling - @author Umar
 */
 body {
-	background: #537D99;
+	background: #C6B7AB;
 	text-align:center;
 }
 
@@ -16,12 +16,12 @@ body {
 	margin:auto;
 	border-style: solid;
 	display: inline-block;
-	border-color: #382513;
+	border-color: #537D99;
 	padding: 25px;
 	padding-top: 50px;
 	padding-bottom: 50px;
-	background: #5C832F;
-	color: #FFFFFF;
+	background: #DEF2C8;
+	color: #000000;
 }
 
 .footer{
@@ -40,7 +40,7 @@ body {
 }
 
 .top-bar{
-	background-color: #6c5576;
+	background-color: #C6B7AB;
 	width: 100%
 }
 
@@ -60,7 +60,7 @@ body {
 	margin-right: auto;
 	margin-top: 25px;
 	min-height: 1020px;
-
+	text-align:center;
 }
 
 #content-container{
