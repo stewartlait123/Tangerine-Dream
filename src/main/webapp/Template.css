@@ -66,6 +66,9 @@ body {
 	
 }
 
+#payment {
+	vertical-align: middle;
+}
 /* End */
 
 /*
@@ -585,6 +588,7 @@ a {
     color: white;
 }
 
+
 /*temporary alternative link colours to go with blue background*/
 a:link    { color: #c00 }  /* unvisited links */
 a:visited { color: #0c0 }  /* visited links   */
@@ -627,4 +631,9 @@ li a:hover:not(.active) {
 
 .active {
     background-color: #4CAF50;
+}
+
+/* Google map configs */
+.googleMap {
+	width: 100%;	
 }

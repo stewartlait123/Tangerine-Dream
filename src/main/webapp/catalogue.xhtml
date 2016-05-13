@@ -14,17 +14,6 @@
 
 	<ui:define name="maincontent">
 
-
-	<form id="categoryselection">
-		<p:menubar>
-			<p:submenu class = "nav-button-left" label = "Search products by type">
-				<p:menuitem url = "searchcatalogue.xhtml?type=GNOME" value = "Gnomes"/>
-				<p:menuitem url = "searchcatalogue.xhtml?type=TOOL" value = "Tools"/>
-				<p:menuitem url = "searchcatalogue.xhtml?type=POT" value = "Pots"/>
-			</p:submenu>
-		</p:menubar>
-	    
-    </form>
 		
 		
 		<h:form id="catalogueform">
@@ -52,7 +41,7 @@
 			</h:column>
 			<h:column>
 				<f:facet name="header">Description</f:facet>
-			      No description yet.
+			      <h:outputLink> #{products.description} <f:param name="id" value="#{products.product_id}" /></h:outputLink>
 			</h:column>
 			<h:column>
 				<f:facet name="header">Stock</f:facet>
@@ -61,6 +50,13 @@
 			<h:column>
 				<f:facet name="header">Cost Per Unit</f:facet>
 			    <h:outputLabel value="&#163;#{products.price}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header"></f:facet>
+				<h:inputText value="#{products.quantity}" />
+				<h:commandButton action="#{basket.addToBasket(products.product_id, products.quantity)}" value="Add to Basket"/>
+				<h:commandButton action="#{wishlist.addProductToWishlist(products.product_id)}" value="Add to WishList" />
+
 			</h:column>
 
 		</h:dataTable>
