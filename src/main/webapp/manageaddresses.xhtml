@@ -1,0 +1,53 @@
+
+<!-- Author Jessica Maddocks- go Team Tang 
+Hard coded for demonstration purposes only-->
+
+<!DOCTYPE html>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/WEB-INF/Template.xhtml">
+	<link rel="stylesheet" type="text/css" href="/template/Template.css"></link>
+
+	<ui:define name="pagetitle">
+		<div id="header">
+			<h1>Manage Addresses</h1>
+		</div>
+	</ui:define>
+
+	<ui:define name="maincontent">
+		<div class="content">
+			<div id="sectionTitle">
+				<h2>Home Address</h2>
+			</div>
+			<div id="maintext">
+				<p>Floor 5, Anchorage 1</p>
+				<p>Anchorage Quay</p>
+				<p>Salford Quays</p>
+				<p>Manchester</p>
+				<p>M50 3YJ</p>
+			</div>
+			<div id="sectionTitle">
+				<h2>Work Address</h2>
+			</div>
+			<div id="maintext">
+				<p>Floor 6, Anchorage 1</p>
+				<p>Anchorage Quay</p>
+				<p>Salford Quays</p>
+				<p>Manchester</p>
+				<p>M50 3YJ</p>
+			</div>
+			<DIV>
+			<table>
+			<h:outputText value = "Add new address:" />
+			<h:inputText value="" />
+			<h:inputText value="" />
+			<h:inputText value="" />
+			<h:inputText value="" />
+			</table>
+			</DIV>
+		</div>
+	</ui:define>
+</ui:composition>

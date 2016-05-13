@@ -9,7 +9,7 @@
 
 	<ui:define name="pagetitle">
 		<div>
-			<h1 class="page-header">Wish List</h1>
+			<h1 class="page-header"></h1>
 		</div>
 	</ui:define>
 	<!--  
@@ -17,7 +17,14 @@ This is the first table
  -->
  
 	<ui:define name="maincontent">
-	<table style="width: 80%">
+	
+	<div id = "display-box" style = "background:#DEF2C8; width:500px; margin:auto; padding:10px;">
+	
+	<div>
+	<h2>My Wishlist</h2>	
+	</div>
+	
+	<table style = "padding-bottom:50px;">
 	<h:form rendered="#{wishlist.getWishlist() != null}">
 			<ui:repeat value="#{wishlist.getWishlist()}" var="line">
 				<tr>
@@ -38,5 +45,7 @@ This is the first table
 			</ui:repeat>
 		</h:form>
 	</table>
+	</div>
+	
 	</ui:define>
 </ui:composition>
