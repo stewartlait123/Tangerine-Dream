@@ -43,8 +43,10 @@ public class PaymentService {
 	}
 
 	public boolean creditpayment(long userID) {
-		if(customerRepository.findByID(userID).getCredit() >= orderservice.calcOrderTotalPlaced(userID)) {
-			customerRepository.updateCreditLimit(userID, customerRepository.findByID(userID).getCredit() - orderservice.calcOrderTotalPlaced(userID));
+		float totalPlaced = Float.parseFloat(orderservice.calcOrderTotalPlaced(userID));
+		if(customerRepository.findByID(userID).getCredit() >= totalPlaced) {
+			System.out.println("Got to here!!!");
+			customerRepository.updateCreditLimit(userID, customerRepository.findByID(userID).getCredit() - totalPlaced);
 			return true;
 		}
 		return false;
