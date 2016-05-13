@@ -21,14 +21,10 @@ import repositorybackend.OrderStatus;
 
 @Stateless
 public class OrderService {
-	@Inject
-	OrderRepository orderRepository;
-	@Inject
-	ProductRepository productRepository;
-	@Inject
-	CustomerRepository customerRepository;
-	@Inject
-	PendingOrder currentOrder;
+	@Inject private OrderRepository orderRepository;
+	@Inject private ProductRepository productRepository;
+	@Inject private CustomerRepository customerRepository;
+	@Inject private PendingOrder currentOrder;
 
 	public Order getUsersPendingOrder(long userID) {
 		Order order = orderRepository.findUserAndStatus(userID, PENDING);
@@ -155,6 +151,5 @@ public class OrderService {
 				orderRepository.updateOrder(order);
 			}
 		}
-
 	}
 }

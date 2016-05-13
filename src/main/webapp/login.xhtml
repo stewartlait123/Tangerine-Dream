@@ -13,8 +13,10 @@
 			<h1>Login</h1>
 		</div>
 	</ui:define>
-
+	
 	<ui:define name="maincontent">
+	
+	<div id= "login-box">
 		<h:form name="loginform">
 		<h:message class = "error" value="#{login.error}"/>
 			<h:outputLabel value = "UserName:" />
@@ -23,7 +25,8 @@
 
 			<h:inputSecret value = "#{login.password}"/>
 			
-			<p:commandButton value="Login" action = "#{login.login}" style= "display:block"/>
+			<p:commandButton value="Login" action = "#{login.login}" style= "width:initial; margin:auto; display:block; margin-top:30px;"/>
 		</h:form>
+		</div>
 	</ui:define>
 </ui:composition>

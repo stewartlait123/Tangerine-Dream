@@ -12,23 +12,42 @@
 	</ui:define>
 
 	<ui:define name="maincontent">
-	<h:form>						 							
-		<!--Author (and artist): Iain Q><-->
-		<input type="text" name="search" value="Search"></input>
-		<!-- search by product type, not implemented yet -->
-		<select name="category">
-			<option value="category" selected="selected" disabled="disabled">Category</option>
+	<h:form>		
+					 							
+			<!-- search by product type, not implemented yet -->
+	<!--  	<select name="category">
+			<option value="category" selected = "selected" disabled = "disabled">Category</option>
 			<option value="gnome">Gnomes</option>
 			<option value="pot">Pots</option>
 			<option value="tool">Tools</option>
 		</select>
 		<br></br>
 		<br></br>
+	-->
+
+	<!-- doesn't work yet, not even with test values -->
+    <h:selectOneMenu id="categorymenu" name="category" value="GNOME" onchange="productTable.value = #{catalogue.searchProducts('TOOL')}}" immediate="true">
+        <f:selectItem itemLabel="Filter by type" itemValue="#{null}"
+        	noSelectionOption="true" />
+        <f:selectItem itemValue="GNOME" itemLabel="Gnomes"/>
+        <f:selectItem itemValue="POT" itemLabel="Pots"/>
+        <f:selectItem itemValue="TOOL" itemLabel="Tools"/>
+    </h:selectOneMenu>
+    
+		
+		
+		
 		<!-- dynamically-constructed dataTable with data pulled from the product list -->
-		<h:dataTable value="#{catalogue.products}" var="products">
+		 <h:dataTable id="productTable" value="#{catalogue.products}" var="products"     > 
+		 
+		<!-- <h:dataTable id="productTable" value="#{catalogue.searchProducts('TOOL')}" var="products"> -->
+
 			<h:column>
-				<f:facet name="header">Image</f:facet>
-				<img src="#{products.imageLocation}"></img>
+				<f:facet name="header">Image</f:facet> <!--  rendered="#{products.product_type == category.selected.itemValue}"    -->
+				<!-- or maybe it's    rendered="#{products.product_type != 'GNOME'} #{products.product_type != 'TOOL'}" -->
+				<h:graphicImage url="#{products.imageLocation}"  
+				
+				   ></h:graphicImage>
 			</h:column>
 			<h:column>
 				<f:facet name="header">Name</f:facet>
@@ -40,7 +59,7 @@
 			</h:column>
 			<h:column>
 				<f:facet name="header">Type</f:facet>    				
-			     <h:outputLabel value=" #{products.product_type}"/>
+			     <h:outputText value=" #{products.product_type}"/> <!--  rendered="#{products.product_type == 'GNOME'}"--> 
 			</h:column>
 			<h:column>
 				<f:facet name="header">Description</f:facet>
@@ -59,6 +78,7 @@
 				<h:inputText value="#{products.quantity}" />
 				<h:commandButton action="#{basket.addToBasket(products.product_id, products.quantity)}" value="Add to basket"/>
 				<h:commandButton action="#{wishlist.addProductToWishlist(products.product_id)}" value="Add to WishList" />
+
 			</h:column>
 		</h:dataTable>
 		</h:form>
