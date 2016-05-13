@@ -66,6 +66,9 @@ body {
 	
 }
 
+#payment {
+	vertical-align: middle;
+}
 /* End */
 
 /*
@@ -584,6 +587,7 @@ a {
     background-color: #d11b0c;
     color: white;
 }
+
 
 /*temporary alternative link colours to go with blue background*/
 a:link    { color: #c00 }  /* unvisited links */
