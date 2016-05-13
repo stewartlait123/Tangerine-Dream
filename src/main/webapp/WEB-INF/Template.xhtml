@@ -22,42 +22,51 @@
 	<title>NBGardens</title>
 
 </h:head>
-<f:view>
-	<body>
-		<ui:debug hotkey="x" />
-		<!-- @author - Umar -->
-		<div class="top-bar">
-			<img src="img/nb gardens logo 2.png"></img>
-		</div>
+
+<f:view>	 
+	 <body>
+	 <h:outputStylesheet name="customPrimeFaceStyle.css"/>
+	 <ui:debug hotkey="x"/>
+	<!-- @author - Umar -->
+	<div class="top-bar">
+		<a href = "LandingPage.xhtml">
+			<img src="img/springBanner.png" style = "margin:25px;"></img>
+		</a>
+	</div>
 		<div>
-			<h:form id="menuForm">
+			<h:form id= "menuForm">		
 				<p:menubar>
-					<p:submenu class="nav-button-left" url="catalogue.xhtml"
-						label="Browse Departments">
-						<p:menuitem url="catalogue.xhtml" value="All departments" />
-					</p:submenu>
-
-					<p:submenu type="button" label="Account Settings"
-						icon="ui-icon-gear" style="float:right"
-						rendered="#{currentUser.loginStatus}">
-						<p:menuitem url="user_account_details.xhtml" type="button"
-							value="My Account" icon="ui-icon-wrench" />
-						<p:menuitem url="WishList.xhtml" type="button" value="Wishlist"
-							icon="ui-icon-zoomin" />
-						<p:menuitem url="updateDetails.xhtml" type="button"
-							value="Update Details" icon="ui-icon-zoomin" />
-						<p:menuitem url="paymentDetails.xhtml" type="button"
-							value="Update Address" icon="ui-icon-zoomin" />
-						<p:menuitem url="accountSecurity.xhtml" type="button"
-							value="Security" icon="ui-icon-zoomin" />
-						<p:menuitem value="Logout" icon="ui-icon-extlink"
-							action="#{login.logout}" />
-					</p:submenu>
-
+						<p:menuitem>
+							<h:link outcome="/index.xhmtl">
+								<a href = "LandingPage.xhtml">
+									<img src = "img/favicon.png" style = "height:50px; width:50px;"></img>								
+								</a>
+							</h:link>
+						</p:menuitem>
+						
+					<p:submenu class = "nav-button-left" url="catalogue.xhtml"  label = "Available Products">
+				   		<p:menuitem url = "catalogue.xhtml" value = "All Categories"/>
+				   	</p:submenu>
+						
+				   	<p:submenu class = "nav-button-left" url="catalogue.xhtml" label = "General Enquiries">
+				   		<p:menuitem url = "about.xhtml" value = "About"/>
+				   		<p:menuitem url = "ContactInfo.xhtml" value = "Contact Us"/>
+				   		<p:menuitem url = "faq_page.xhtml" value = "FAQ"/>
+				   	</p:submenu>
+				    
+				    <p:submenu type = "button" label = "Account Settings" icon= "ui-icon-gear" style = "float:right" rendered = "#{currentUser.loginStatus}">
+		        				<p:menuitem url="user_account_details.xhtml" type="button" value="My Account" icon="ui-icon-wrench"/>
+		        				<p:menuitem url = "WishList.xhtml" type = "button" value = "Wishlist" icon= "ui-icon-zoomin"/>
+		        				<p:menuitem url = "updateDetails.xhtml" type = "button" value = "Update Details" icon= "ui-icon-zoomin"/>
+		        				<p:menuitem url = "paymentDetails.xhtml" type = "button" value = "Update Address" icon= "ui-icon-zoomin"/>
+		        				<p:menuitem url = "accountSecurity.xhtml" type = "button" value = "Security" icon= "ui-icon-zoomin"/>
+		        				<p:menuitem value = "Logout" icon= "ui-icon-extlink" action="#{login.logout}"/>
+		        	</p:submenu>
+				    
 					<f:facet name="options" style="float:right">
 						<p:inputText style="margin-right:10px" placeholder="Search" />
 
-						<p:button href="register.xhtml" type="button" value="Register"
+						<p:button class = "ui-menu-commandbutton" href="register.xhtml" type="button" value="Register"
 							icon="ui-icon-extlink" rendered="#{!currentUser.loginStatus}" />
 						<p:button href="login.xhtml" type="button" value="Login"
 							icon="ui-icon-extlink" rendered="#{!currentUser.loginStatus}" />
@@ -81,7 +90,7 @@
 		<div class="footer">
 			<div class="middleText">
 				<a href="about.xhtml">About</a> | <a href="faq_page.xhtml">FAQ
-					(Frequently Asked Question)</a> | <a href="ContactInfo.html">Contact
+					(Frequently Asked Question)</a> | <a href="ContactInfo.xhtml">Contact
 					Information</a> | <a href="ReturnInfo.xhtml">Return Information</a> | <a
 					href="EmailForm.xhtml">Pdf Order Form</a>
 			</div>
@@ -90,16 +99,5 @@
 	</body>
 </f:view>
 
-<script>
-	$(document).ready(function() {
-		navBarSettings();
-	});
 
-	function navBarSettings() {
-		if (document.getElementById("")) {
-
-		}
-
-	}
-</script>
 </html>
