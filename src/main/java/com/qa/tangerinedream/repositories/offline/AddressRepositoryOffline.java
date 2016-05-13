@@ -101,7 +101,7 @@ implements AddressRepository
 		
 		for(int i = 0; i < searchList.size() ; i++)
 		{
-			if(searchList.get(i).getCustomercustomer_id() == id_)
+			if(searchList.get(i).getCustomercustomer_id().getCustomerId() == id_)
 			{
 				Address newDetails = searchList.get(i);
 				newDetails.setBilling_address(address_.getBilling_address());
@@ -118,7 +118,7 @@ implements AddressRepository
 		
 		for(int i = 0; i < searchList.size() ; i++)
 		{
-			if(searchList.get(i).getCustomercustomer_id() == id_)
+			if(searchList.get(i).getCustomercustomer_id().getCustomerId() == id_)
 			{
 				Address newDetails = searchList.get(i);
 				newDetails.setDelivery_address(address_.getDelivery_address());

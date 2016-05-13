@@ -28,24 +28,26 @@ public class PaymentController {
 	private String expiryDate;
 	private String cSV;
 	
-	private String method;
+	private int method;
 	
 	/* Setter for Paying by Card */
 
 	public String Submit(){
-		if (method.equalsIgnoreCase("2")){
+		if(method == 1)
+			return "payment.xhtml";
+		if (method ==2){
 			if (nameOnCard.isEmpty() || cardNumber.isEmpty() || expiryDate.isEmpty() || cSV.isEmpty())
-				return "payment";
+				return "payment.xhtml";
 			else {
 				paymentService.paybycard(nameOnCard, cardNumber, expiryDate, cSV);
-				return "orderconfirmed";
+				return "orderconfirmed.xhtml";
 			}
 		}
-		else if (method.equalsIgnoreCase("3")){
+		else if (method ==3){
 			if(paymentService.creditpayment(currentUser.getUserID()))
-				return "orderconfirmed";
+				return "orderconfirmed.xhtml";
 		}
-		return "payment";
+		return "payment.xhtml";
 	}
 	
 
@@ -80,11 +82,11 @@ public class PaymentController {
 		return cSV;
 	}
 	
-	public String getMethod() {
+	public int getMethod() {
 		return method;
 	}
 
-	public void setMethod(String method) {
+	public void setMethod(int method) {
 		this.method = method;
 	}
 	

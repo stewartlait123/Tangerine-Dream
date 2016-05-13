@@ -3,34 +3,19 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="/WEB-INF/Template.xhtml" css="Template.css"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:f="http://java.sun.com/jsf/core">
 	
 	<ui:define name="pagetitle">
 		<div id="header">
-			<h1>Catalogue</h1>
+			<h1>Catalogue Search</h1>
 		</div>
 	</ui:define>
 
 	<ui:define name="maincontent">
-
-
-	<form id="categoryselection">
-		<p:menubar>
-			<p:submenu class = "nav-button-left" label = "Search products by type">
-				<p:menuitem url = "searchcatalogue.xhtml?type=GNOME" value = "Gnomes"/>
-				<p:menuitem url = "searchcatalogue.xhtml?type=TOOL" value = "Tools"/>
-				<p:menuitem url = "searchcatalogue.xhtml?type=POT" value = "Pots"/>
-			</p:submenu>
-		</p:menubar>
-	    
-    </form>
-		
-		
+			<!-- author: Iain Q -->
 		<h:form id="catalogueform">
 		<!-- dynamically-constructed dataTable with data pulled from the product list -->
-		 <h:dataTable id="productTable" value="#{catalogue.products}" var="products"     > 
-		 
+		 <h:dataTable id="productTable" value="#{catalogue.searchProducts(param['type'])}" var="products"     > 
 
 			<h:column>
 				<f:facet name="header">Image</f:facet>
@@ -48,11 +33,11 @@
 			</h:column>
 			<h:column>
 				<f:facet name="header">Type</f:facet>    				
-			     <h:outputText value=" #{products.product_type}"/> <!--  rendered="#{products.product_type == 'GNOME'}"--> 
+			     <h:outputText value=" #{products.product_type}"/>
 			</h:column>
 			<h:column>
 				<f:facet name="header">Description</f:facet>
-			      <h:outputLink> #{products.description} <f:param name="id" value="#{products.product_id}" /></h:outputLink>
+			      No description yet.
 			</h:column>
 			<h:column>
 				<f:facet name="header">Stock</f:facet>
@@ -61,13 +46,6 @@
 			<h:column>
 				<f:facet name="header">Cost Per Unit</f:facet>
 			    <h:outputLabel value="&#163;#{products.price}"/>
-			</h:column>
-			<h:column>
-				<f:facet name="header"></f:facet>
-				<h:inputText value="#{products.quantity}" />
-				<h:commandButton action="#{basket.addToBasket(products.product_id, products.quantity)}" value="Add to Basket"/>
-				<h:commandButton action="#{wishlist.addProductToWishlist(products.product_id)}" value="Add to WishList" />
-
 			</h:column>
 
 		</h:dataTable>
