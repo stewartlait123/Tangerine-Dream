@@ -12,6 +12,7 @@ import java.util.List;
 import javax.ejb.Singleton;
 
 import com.qa.tangerinedream.entities.Address;
+import com.qa.tangerinedream.entities.Card;
 import com.qa.tangerinedream.entities.Customer;
 import com.qa.tangerinedream.entities.Employee;
 import com.qa.tangerinedream.entities.Order;
@@ -37,6 +38,7 @@ public class InitialData{
 	private ArrayList<PurchaseOrderLine> purchaseOrderLines = new ArrayList<PurchaseOrderLine>();
 	private ArrayList<Supplier> supplier = new ArrayList<Supplier>();
 	private ArrayList<ProductSupplier> productSuppliers = new ArrayList<ProductSupplier>();
+	private ArrayList<Card> cards = new ArrayList<>();
 
 	public InitialData(){
 		
@@ -156,7 +158,8 @@ public class InitialData{
 		this.addOrderLine(newOrderLine);
 		
 		orders.add(bigShoppersOrder);
-	
+	//Add Card to account Jessica
+		cards.add(new Card((long) 0, "Visa Debit/Credit", "James Thompson", "1234567891234567", "02/18", "123", customers.get(0)));
 	}
 	// Products and Employee methods by Mohammed Miah
 	// Products, Employee and Address methods by Mohammed Miah
@@ -376,5 +379,11 @@ public class InitialData{
 				address.set(i, newDetails);
 			}
 		}
+	}
+	public ArrayList<Card> getCards() {
+		return cards;
+	}
+	public void setCards(List<Card> cards) {
+		this.cards = (ArrayList<Card>) cards;
 	}
 }
