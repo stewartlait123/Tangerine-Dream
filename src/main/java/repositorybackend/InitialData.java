@@ -145,15 +145,15 @@ public class InitialData{
 		address.add(new Address("Big Shoppers House", "1 Shoppers Road, Shopping city, S010BS", bigShopper));
 		Order bigShoppersOrder = new Order(bigShopper, OrderStatus.ACCEPTED);
 		
-		OrderLine newOrderLine = new OrderLine(products.get(0), 10, products.get(0).getPrice()); 
+		OrderLine newOrderLine = new OrderLine(products.get(0), 10, products.get(0).getPrice());
 		bigShoppersOrder.addOrderLine(newOrderLine);
 		this.addOrderLine(newOrderLine);
 		
-		newOrderLine = new OrderLine(products.get(1), 1, products.get(2).getPrice()); 
+		newOrderLine = new OrderLine(products.get(1), 1, products.get(1).getPrice());
 		bigShoppersOrder.addOrderLine(newOrderLine);
 		this.addOrderLine(newOrderLine);
 		
-		newOrderLine = new OrderLine(products.get(2), 3, products.get(3).getPrice()); 
+		newOrderLine = new OrderLine(products.get(2), 3, products.get(2).getPrice()); 
 		bigShoppersOrder.addOrderLine(newOrderLine);
 		this.addOrderLine(newOrderLine);
 		
@@ -380,10 +380,18 @@ public class InitialData{
 			}
 		}
 	}
-	public ArrayList<Card> getCards() {
+	
+	public ArrayList<Order> getOrderHistory(long customerID){
+		ArrayList<Order> orderHistory = new ArrayList<Order>();
+		
+		return orderHistory;	
+	}
+	
+	public ArrayList<Card> getCards(){
 		return cards;
 	}
-	public void setCards(List<Card> cards) {
+	
+	public void setCards(List<Card> cards){
 		this.cards = (ArrayList<Card>) cards;
 	}
 }

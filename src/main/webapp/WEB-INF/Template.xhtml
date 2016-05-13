@@ -16,6 +16,43 @@
 		href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/css/uikit.min.css" />
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/js/uikit.min.js"></script>
+		
+	<!-- Google API added to the  -->
+	<script
+		src="http://maps.googleapis.com/maps/api/js">
+	</script>
+	
+	<script>
+		var myCenter=new google.maps.LatLng(53.4716257,-2.2836891);
+		
+		function initialize()
+		{
+		var mapProp = {
+		  center:myCenter,
+		  zoom:16,
+		  mapTypeId:google.maps.MapTypeId.ROADMAP
+		  };
+		
+		var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+		
+		var marker=new google.maps.Marker({
+		  position:myCenter,
+		  });
+		
+		marker.setMap(map);
+		
+		var infowindow = new google.maps.InfoWindow({
+		  content:'<h3>NB Gardens</h3>' +
+		  '<p>5th Floor, Anchorage 1</p>' +
+		  '<p>Anchorage Quay, Salford Quays</p>' +
+		  '<p>Greater Manchester, M50 3YJ</p>'
+		  });
+		
+		infowindow.open(map,marker);
+		}
+		
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
 
 	<meta charset="ISO-8859-1"></meta>
 	<link rel="stylesheet" type="text/css" href="Template.css" />
@@ -29,7 +66,7 @@
 	 <ui:debug hotkey="x"/>
 	<!-- @author - Umar -->
 	<div class="top-bar">
-		<a href = "LandingPage.xhtml">
+		<a href = "home.xhtml">
 			<img src="img/springBanner.png" style = "margin:25px;"></img>
 		</a>
 	</div>
@@ -38,9 +75,7 @@
 				<p:menubar>
 						<p:menuitem>
 							<h:link outcome="/index.xhmtl">
-								<a href = "LandingPage.xhtml">
-									<img src = "img/favicon.png" style = "height:50px; width:50px;"></img>								
-								</a>
+								<img src = "img/favicon.png" style = "height:50px; width:50px;"></img>					
 							</h:link>
 						</p:menuitem>
 						
@@ -64,13 +99,13 @@
 		        	</p:submenu>
 				    
 					<f:facet name="options" style="float:right">
-						<p:inputText style="margin-right:10px" placeholder="Search" />
+						<p:inputText style="margin-right:10px; background:#FFFFFF;" placeholder="Search"/>
 
 						<p:button class = "ui-menu-commandbutton" href="register.xhtml" type="button" value="Register"
 							icon="ui-icon-extlink" rendered="#{!currentUser.loginStatus}" />
 						<p:button href="login.xhtml" type="button" value="Login"
 							icon="ui-icon-extlink" rendered="#{!currentUser.loginStatus}" />
-						<p:button type="button" icon="ui-icon-cart" outcome="basket" rendered = "#{currentUser.loginStatus}">
+						<p:button type="button" icon="ui-icon-cart" outcome="basket">
 						</p:button>
 					</f:facet>
 				</p:menubar>
@@ -88,11 +123,14 @@
 
 		<!-- @author - Umar -->
 		<div class="footer">
-			<div class="middleText">
-				<a href="about.xhtml">About</a> | <a href="faq_page.xhtml">FAQ
-					(Frequently Asked Question)</a> | <a href="ContactInfo.xhtml">Contact
-					Information</a> | <a href="ReturnInfo.xhtml">Return Information</a> | <a
-					href="EmailForm.xhtml">Pdf Order Form</a>
+			<div class="middleText">		
+				<ul>
+				  <li><a href="about.xhtml">About</a></li>
+				  <li><a href="faq_page.xhtml">FAQ (Frequently Asked Question)</a></li>
+				  <li><a href="ContactInfo.xhtml">Contact</a></li>
+				  <li><a href="ReturnInfo.xhtml">Return Information</a></li>
+				  <li><a href="EmailForm.xhtml">PDF Order Form</a></li>
+				</ul>
 			</div>
 		</div>
 
