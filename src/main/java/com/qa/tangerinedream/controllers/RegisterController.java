@@ -31,26 +31,34 @@ public class RegisterController {
 	private String error;
 	
 	public void register() {
-		
-		@SuppressWarnings("deprecation")
-		Date date = new Date(Integer.parseInt(yyyy) - 1900, (Integer.parseInt(mm) - 1), Integer.parseInt(dd));
-		//Date date = convertStringToDate(dd+ "/" + mm + "/" + yyyy);
-		
-		if (registerService.ValidateDetails(name, username, password, confirmPassword, date)){
+
+		try {
+			@SuppressWarnings("deprecation")
+			Date date = new Date(Integer.parseInt(yyyy) - 1900, (Integer.parseInt(mm) - 1), Integer.parseInt(dd));
+			//Date date = convertStringToDate(dd+ "/" + mm + "/" + yyyy);
 			
-			//Date convertDob = registerService.convertStringToDate(date);
-			Random randomGenerator = new Random();
+			if (registerService.ValidateDetails(name, username, password, confirmPassword, date)){
+				
+				//Date convertDob = registerService.convertStringToDate(date);
+				Random randomGenerator = new Random();
+				
+				int randomInt = randomGenerator.nextInt(1000000);
+				
+				Customer customer = new Customer(randomInt, name, username, password, date, 5, 5);
+				//customer.setName(name);
+				//customer.setUsername(username);
+				//customer.setPassword(password);
+				//customer.setDOB(date);
+				registerService.addCustomer(customer);
+				}
+			}
 			
-			int randomInt = randomGenerator.nextInt(1000000);
-			
-			Customer customer = new Customer(randomInt, name, username, password, date, 5, 5);
-			//customer.setName(name);
-			//customer.setUsername(username);
-			//customer.setPassword(password);
-			//customer.setDOB(date);
-			registerService.addCustomer(customer);
-		}
+			catch (NumberFormatException n) {
+				// date contains something that isn't an int so we ignore the registration attempt entirely
+			}	
+				
 	}
+
 	
 	public void setName(String value)
 	{
