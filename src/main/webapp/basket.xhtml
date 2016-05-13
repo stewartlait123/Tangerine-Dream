@@ -17,11 +17,13 @@
 
 	<ui:define name="maincontent">
 <h:form>
-		<h:dataTable value="#{basket.order.orderLines}" var="line">
+		<h:dataTable value="#{basket.order.orderLines}" var="line" border = "1">
 			<h:column>
 			<f:facet name="header">Product</f:facet>
+			<h:graphicImage value="#{line.product.imageLocation}" height="128xp" width="128xp"/>
 			</h:column>
 			<h:column>
+			<f:facet name="header">Name</f:facet>
 			<h:outputLabel value="#{line.product.name}" />
 			</h:column>
 			<h:column>
@@ -29,15 +31,24 @@
 			<h:inputText value="#{line.quantity}" />
 			</h:column>
 			<h:column>
+			<f:facet name="header">Price</f:facet>
+			<h:outputLabel value="£#{line.price}" />
+			</h:column>
+			<h:column>
 			<h:commandButton action="#{basket.updateQuantity(line.quantity,line.product.product_id)}" value="Update" />	
+			</h:column>
+			<h:column>
+			<h:commandButton action="#{basket.addToWishList(line.product.product_id)}" value="Add to Wishlist" />	
 			</h:column>
 			<h:column>
 			<h:commandButton action="#{basket.removeFromBasket(line.product.product_id)}" value="Remove" />	
 			</h:column>
+			<f:facet name="footer">
+			<h:outputLabel> Total Price = £#{basket.totalPrice} </h:outputLabel>
+			</f:facet>
 					</h:dataTable>
-					<h:outputText value="#{basket.totalPrice}" />
+					
 				<h:commandButton action="#{order.placeOrder()}" value="ORDER"/>	
-				<h:commandButton action="#{basket.clearBasket()}" value="Clear Basket" />
 			</h:form>	
 				
 			
