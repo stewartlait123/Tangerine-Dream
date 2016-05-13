@@ -28,10 +28,14 @@ public class ProductController {
 	private int weight;
 	private int minStock;
 	private int orderAmount;
+	private String description = "";
 
 	public String getName() {
-		//System.out.println("Name: " + name + productService.getProduct(product_id).getName());
-		return name;
+			return name;
+	}
+	
+	public String getDescription() {
+		return description;
 	}
 	
 	public int getCost() {
@@ -82,6 +86,10 @@ public class ProductController {
 		this.name = name;
 	}
 
+	public void setDescription(String description){
+		this.description = description;
+	}
+	
 	public void setProductService(ProductService productService) {
 		this.productService = productService;
 	}

@@ -15,6 +15,7 @@
 	<ui:define name="maincontent">
 <h:form>
 		<h:dataTable value="#{basket.order.orderLines}" var="line" border = "1">
+		
 			<h:column>
 			<f:facet name="header">Product</f:facet>
 			<h:graphicImage value="#{line.product.imageLocation}" height="128xp" width="128xp"/>
