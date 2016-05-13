@@ -5,7 +5,7 @@
 * Template page styling - @author Umar
 */
 body {
-	background: #537D99;
+	background: #C6B7AB;
 	text-align:center;
 }
 
@@ -16,31 +16,27 @@ body {
 	margin:auto;
 	border-style: solid;
 	display: inline-block;
-	border-color: #382513;
+	border-color: #537D99;
 	padding: 25px;
 	padding-top: 50px;
 	padding-bottom: 50px;
-	background: #5C832F;
-	color: #FFFFFF;
+	background: #DEF2C8;
+	color: #000000;
 }
 
 .footer{
+	padding-bottom: 6px;
+	width: 100%;
 	clear: both;
     position: relative;
     z-index: 10;
     height: 3em;
     margin-top: 10px;
-    background: #000000;
-}
-
-.middleText {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50em
+    background: #FFF7EF;
 }
 
 .top-bar{
-	background-color: #6c5576;
+	background-color: #C6B7AB;
 	width: 100%
 }
 
@@ -60,7 +56,7 @@ body {
 	margin-right: auto;
 	margin-top: 25px;
 	min-height: 1020px;
-
+	text-align:center;
 }
 
 #content-container{
@@ -476,7 +472,7 @@ span.myspan {
 }
 
 #about {
-	font-size: x-large;
+	font-size: large;
 	padding-left: 20%;
 	padding-right: 20%;
 	text-align: center;
@@ -594,3 +590,41 @@ a:link    { color: #c00 }  /* unvisited links */
 a:visited { color: #0c0 }  /* visited links   */
 a:hover   { color: #fff }  /* user hovers     */
 a:active  { color: #ccc }  /* active links    */
+
+/* Vmaksymchuk */
+
+/* Footer CSS */
+
+.middleText {
+	width: 100%;
+	text-align: center;
+    position: relative;
+}
+
+ul {
+	padding-left: 25%;
+    list-style-type: none;
+    margin: 0;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    border-right:1px solid #bbb;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #444444;
+}
+
+.active {
+    background-color: #4CAF50;
+}

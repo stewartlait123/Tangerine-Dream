@@ -15,48 +15,61 @@
 	<ui:define name="maincontent">
 		<div>
 
-			<div id="spacer"></div>
-
 				<div id="product-titlewrapper">
 					<h2>Check Out Our Hottest Deals</h2>
 				</div>
 
-				<div>
+				<div id = "department-container" style = "margin:auto; display:inline-block; width:70%;">
 
 					<h:form class = "departments">
-						<p:carousel value="#{catalogue.products}" headerText = "Gnomes" var="products" itemStyle = "text-align:center" numVisible="5" responsive = "true">
+						<p:carousel value="#{catalogue.searchProducts('GNOME')}" headerText = "Gnice Gnomes" var="products" itemStyle = "text-align:center" numVisible="4" circular = "true" responsive = "true">
 							<p:panelGrid columns = "1" style = "width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
 								<f:facet name="header">
 									<p:graphicImage value = "#{products.imageLocation}"/>
 								</f:facet>
 								
 								<h:outputText value = ""/>
-								<h:outputText value = "#{products.name}"/>
+								<!-- <h:outputText value = "#{products.name}"/>-->
 								
 								<h:outputText value = "#{products.price}"/>
 								
 						</p:panelGrid>
 						</p:carousel>
 						
-						<p:carousel value="#{catalogue.products}" headerText = "Gnomes" var="products" itemStyle = "text-align:center" numVisible="5" responsive = "true">
+						<p:carousel value="#{catalogue.searchProducts('TOOL')}" headerText = "Garden Tools" var="products" itemStyle = "text-align:center" numVisible="4" circular = "true" responsive = "true">
 							<p:panelGrid columns = "1" style = "width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
 								<f:facet name="header">
 									<p:graphicImage value = "#{products.imageLocation}"/>
 								</f:facet>
 								
 								<h:outputText value = ""/>
-								<h:outputText value = "#{products.name}"/>
+								<!-- <h:outputText value = "#{products.name}"/>-->
+								
+								<h:outputText value = "#{products.price}"/>
+								
+						</p:panelGrid>
+						</p:carousel>
+						
+						<p:carousel value="#{catalogue.searchProducts('POT')}" headerText = "Popular Pots" var="products" itemStyle = "text-align:center" numVisible="4" circular = "true" responsive = "true">
+							<p:panelGrid columns = "1" style = "width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+								<f:facet name="header">
+									<p:graphicImage value = "#{products.imageLocation}"/>
+								</f:facet>
+								
+								<h:outputText value = ""/>
+								<!-- <h:outputText value = "#{products.name}"/>-->
 								
 								<h:outputText value = "#{products.price}"/>
 								
 						</p:panelGrid>
 						</p:carousel>
 					</h:form>
+					
 
 				</div>
 				
 				
-				<div id="news-container">
+				<div id="news-container" style = "margin:auto; display:inline-block; width:30%;">
 						<div id="news-panel-top" class="news-panel">
 							<h3>Garden Gnews</h3>
 						</div>
@@ -69,7 +82,7 @@
 								convallis dapibus vel eu felis.</div>
 
 							<div class="news-item">Lorem ipsum dolor sit amet,
-								consectetua adipiscing elit. Sed venenatis quam nec velit
+								consectetur adipiscing elit. Sed venenatis quam nec velit
 								suscipit, id placerat enim sollicitudin. Aenean id sapien in mi
 								convallis dapibus vel eu felis.</div>
 
@@ -96,13 +109,13 @@
 						</div>						
 					</div>
 					
-					<div id="adverts">
+					<div>
 
-						<div>
+						<div style = "display:inline-block; width:45%;">
 							<img src="img/CreditApplyAlt.jpg" />
 						</div>
 
-						<div >
+						<div style = "display:inline-block; width:45%;">
 							<img src="img/GnomeAwards.jpg" />
 						</div>
 

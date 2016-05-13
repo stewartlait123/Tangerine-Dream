@@ -20,17 +20,18 @@
 			<h:form styleClass="uk-form-horizontal">
 			<h:message class="error" value="#{register.error}"/>
 			<table>
-				<tr><th><h:outputLabel value="Name: "/></th><th><h:inputText value="#{register.name}"/></th></tr>
-				<tr><th><h:outputLabel value="Username: "/></th>
-					<th><h:inputText value="#{register.username}"/></th></tr>	
+				<tr><th><h:outputLabel value="Name: "/></th><th>
+					<h:inputText id="name" value="#{register.name}"/></th></tr>
+				<tr><th><h:outputLabel  value="Username: "/></th>
+					<th><h:inputText id="username" value="#{register.username}"/></th></tr>	
 				<tr><th><h:outputLabel value="Password: "/></th>
-					<th><h:inputSecret value="#{register.password}"/></th></tr>
+					<th><h:inputSecret id="password" value="#{register.password}"/></th></tr>
 				<tr><th><h:outputLabel value="Confirm Password: "/></th>
-					<th><h:inputSecret value="#{register.confirmPassword}"/></th></tr>
+					<th><h:inputSecret id="confirmPassword" value="#{register.confirmPassword}"/></th></tr>
 				<tr><th><h:outputLabel value="Date Of Birth: "/>
-					<h:inputText value="#{register.dd}" size="2"/>
-					<h:inputText value="#{register.mm}" size="2"/>
-					<h:inputText value="#{register.yyyy}" size="4"/></th>
+					<h:inputText id="day" value="#{register.dd}" size="2" />
+					<h:inputText id="month" value="#{register.mm}" size="2"/>
+					<h:inputText id="year" value="#{register.yyyy}" size="4"/></th>
 					</tr>			
 			</table>
 			<h:commandButton value="Register" action="#{register.register}"/>
