@@ -4,22 +4,56 @@ Hard coded for demonstration purposes only-->
 <!DOCTYPE html>
 
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="/WEB-INF/Template.xhtml">
+	template="/WEB-INF/Template.xhtml"
+	xmlns:f="http://java.sun.com/jsf/core">
 	<link rel="stylesheet" type="text/css" href="/template/Template.css"></link>
 
 	<ui:define name="pagetitle">
 		<div id="header">
-			<h1>Cancel Order</h1>
 		</div>
 	</ui:define>
 
 	<ui:define name="maincontent">
-		<div class="content">
-			<div id="sectionTitle">
-				<h2>Y U DO DIS? I TRUSTD U :(</h2>
+		<div id = "display-box" style = "background:#DEF2C8; width: 600px; margin:auto; padding:10px;">
+			
+			<div id = "return-box-left" style = "margin:auto; display:inline-block;">
+				<div>
+					<h2> Contact Customer Service:</h2><br/>
+					<p> For returns, please contact our customer service team using the form below. </p>
+				</div>
 			</div>
-			<button class="button3">Cancel</button>
+			
+			<div id = "return-box-right" style = "margin:auto; display:inline-block; width:100%;">
+				
+
+					<table style = "width:100%">
+					<tr>
+						<td>Query Category: </td>
+						<td><h:selectOneMenu value="" style = "float:left;">
+							<f:selectItem itemvalue="1" itemLabel="Product Returns" />
+							<f:selectItem itemvalue="2" itemLabel="User Account/Details" />
+							<f:selectItem itemvalue="3" itemLabel="Transactions and Sales" />
+							<f:selectItem itemvalue="4" itemLabel="Other" />
+							</h:selectOneMenu>
+						 </td>
+					</tr>
+					<tr>
+						<td>Order Number:</td>
+						<td><h:inputText name = "track no" value="" style = "float:left;"></h:inputText></td>
+					</tr>
+					<tr>
+						<td>Returns Message:</td>
+						<td><h:inputText name = "track no" value="" style = "height: 350px; width: 100%;"></h:inputText></td>
+					</tr>
+					<tr>
+						<td><h:commandButton  value="Submit" class="button" style = ""/></td>
+					</tr>
+					</table>
+
+			
+			</div>
 		</div>
 	</ui:define>
 </ui:composition>
