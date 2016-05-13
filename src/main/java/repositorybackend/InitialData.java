@@ -44,7 +44,7 @@ public class InitialData{
 		
 			
 		//Creation of five entries to add into customer arraylist with unique values - Finley Peters @ TeamTang
-		customers.add(new Customer(0, "John Doe", "BigJohn", "johnPassword", new Date() ,67 , 100));	
+		customers.add(new Customer(0, "John Doe", "BigJohn", "johnPassword", new Date() ,6700 , 100));	
 		customers.add(new Customer(1, "James Crisps", "GoldenWonder", "crisps00001", new Date() ,15099 , 12000));
 		customers.add(new Customer(2, "Billy Kitten", "LifeIsPointless", "rootin_tootin", new Date() ,0 , 0));
 		customers.add(new Customer(3, "Henry Gobble", "TurkeyMaster", "Innocent", new Date() ,6599 , 50000));
@@ -100,7 +100,7 @@ public class InitialData{
 		orders.add(new Order(0, OrderStatus.PLACED , currentDate , customers.get(2), new OrderLine(products.get(3), 5 , 500)));
 		orders.add(new Order(1, OrderStatus.PLACED , currentDate , customers.get(3), new OrderLine(products.get(0), 1 , 40)));
 		orders.add(new Order(2, OrderStatus.WISHLIST , currentDate , customers.get(0), new OrderLine(products.get(5), 5 , 0)));
-		orders.add(new Order(3, OrderStatus.PENDING, currentDate, customers.get(0), new OrderLine(products.get(0), 1, 10)));
+		orders.add(new Order(3, OrderStatus.PENDING, currentDate, customers.get(2), new OrderLine(products.get(0), 1, 10)));
 		orders.add(new Order(4, OrderStatus.PAID , currentDate , customers.get(1), new OrderLine(products.get(3), 5 , 500)));
 	// Creation of Payment Dummy Data by Christine Stokes
 	

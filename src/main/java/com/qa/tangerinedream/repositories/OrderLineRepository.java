@@ -24,6 +24,6 @@ public interface OrderLineRepository {
 	public ArrayList<OrderLine> findByProductId(long product_id);
 		
 	public void updateOrderLine (OrderLine o);
-	void removeOrderLine(OrderLine o);
+	public void removeOrderLine(OrderLine o);
 
 }

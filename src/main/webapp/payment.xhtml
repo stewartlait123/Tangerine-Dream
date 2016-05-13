@@ -33,7 +33,7 @@
 		<div class="grid-temp">
 			<div class="row-title">New payment method:</div>
 			<div class="main-row">
-				<form name="paymentform" action="">
+				<h:form name="paymentform" action="">
 					<fieldset>
 						<legend>Payment Form</legend>
 						<table id="payment">
@@ -57,7 +57,8 @@
 						
 
 					</fieldset>
-				</form>
+					<h:commandButton action="#{Payment.Submit()}" value="Submit" />
+				</h:form>
 				<button onclick="location.href='orderconfirmed.xhtml'">Submit </button>
 			</div>
 

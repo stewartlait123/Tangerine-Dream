@@ -30,10 +30,46 @@ public class OrderLine {
 	@NotNull	
 	private int quantity;
 	
+	@Column (name = "price", nullable = false)
+	@NotNull
+	private String price;
+	
 	@Column (name = "purchasePrice", nullable = false)
 	@NotNull
 	private int purchasePrice;
 	
+	public Product getProduct() {
+		return product;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public int getPurchasePrice() {
+		return purchasePrice;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public void setPurchasePrice(int purchasePrice) {
+		this.purchasePrice = purchasePrice;
+	}
+
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="OrderID")
 	private Order order;
@@ -43,6 +79,12 @@ public class OrderLine {
 		this.product = product;
 		this.quantity = quantity;
 		this.purchasePrice = purchasePrice;
+	}
+	
+	public OrderLine (Product product, int quantity, String price){
+		this.product = product;
+		this.quantity = quantity;
+		this.price = price;
 	}
 	
 	public OrderLine() { }

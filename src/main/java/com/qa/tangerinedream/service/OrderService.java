@@ -2,8 +2,8 @@ package com.qa.tangerinedream.service;
 
 import static repositorybackend.OrderStatus.PENDING;
 import static repositorybackend.OrderStatus.PLACED;
-
 import java.util.Calendar;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -26,40 +26,44 @@ public class OrderService {
 	@Inject private CustomerRepository customerRepository;
 	@Inject private PendingOrder currentOrder;
 
+
 	public Order getUsersPendingOrder(long userID) {
 		Order order = orderRepository.findUserAndStatus(userID, PENDING);
 		return order;
 	}
 
-	public float calcOrderTotalPending(long userID) {
+	public String calcOrderTotalPending(long userID) {
 		Order order = orderRepository.findUserAndStatus(userID, PENDING);
 		float totalPrice = 0;
 		float price;
 		if (order != null) {
 			for (OrderLine ol : order.getOrderLines()) {
-				price = ol.getquantity() * ol.getproduct().getCost_price();
+				price = ol.getquantity() * ol.getproduct().getPrice();
 				totalPrice = totalPrice + price;
 			}
-			return totalPrice;
+			String totalPrice1 = String.format("%.2f", totalPrice); 
+			return totalPrice1;
 		} else
-			return 0;
+			return null;
 	}
 
-	public float calcOrderTotalPlaced(long userID) {
+	public String calcOrderTotalPlaced(long userID) {
 		Order order = orderRepository.findUserAndStatus(userID, PLACED);
 		float totalPrice = 0;
 		float price;
 		if (order != null) {
 			for (OrderLine ol : order.getOrderLines()) {
-				price = ol.getquantity() * ol.getproduct().getCost_price();
+				price = ol.getquantity() * ol.getproduct().getPrice();
 				totalPrice = totalPrice + price;
 			}
-			return totalPrice;
+			String totalPrice1 = String.format("%.2f", totalPrice); 
+			return totalPrice1;
 		} else
-			return 0;
+			return null;
 	}
 
 	public void addToBasket(long productId, int quantity, long userId) {
+		float price = 0;
 		Product product = productRepository.findByProductId(productId);
 		Order order = orderRepository.findUserAndStatus(userId, PENDING);
 		if (order != null) {
@@ -67,26 +71,38 @@ public class OrderService {
 			for (OrderLine ol : order.getOrderLines())
 				if (ol.getproduct().getProduct_id() == productId) {
 					ol.setquantity(quantity += ol.getquantity());
+					price = ol.getquantity()*product.getPrice();
+					String price1 = String.format("%.2f", price);
+					ol.setPrice(price1);
 					foundOrderLine = true;
 				}
-			if (!foundOrderLine)
-				order.addOrderLine(new OrderLine(product, quantity, product.getPrice()));
-		} else
-			order = new Order(orderRepository.getOrders().size(),PENDING, Calendar.getInstance().getTime(), customerRepository.findByID(userId),
-					new OrderLine(product, quantity, product.getPrice()));
+			if (!foundOrderLine){
+				price = quantity*product.getPrice();
+				String price1 = String.format("%.2f", price);
+				String.format("%.2f", price);
+				order.addOrderLine(new OrderLine(product, quantity, price1));
+			}
+				
+		} else {
+			price = quantity*product.getPrice();
+			String price1 = String.format("%.2f", price);
+			order = (new Order(orderRepository.getOrders().size(),PENDING, Calendar.getInstance().getTime(), customerRepository.findByID(userId),
+					new OrderLine(product, quantity, price1)));
+			orderRepository.persistOrder(order);
+		}
 	}
 
 	public void removeFromBasket(long productId, long userID) {
 		Order order = orderRepository.findUserAndStatus(userID, PENDING);
 		System.out.println("Reached here!!");
 		if (order != null) {
-			System.out.println("found an order");
-			for (OrderLine ol : order.getOrderLines()){
-				if (ol.getproduct().getProduct_id() == productId)
-					order.removeOrderLine(ol);
-		}
-		}
+			List<OrderLine> lines = order.getOrderLines();
+			for (int i = 0; i < lines.size(); i++)
+				if (lines.get(i).getproduct().getProduct_id() == productId)
+					lines.remove(i);
+			order.setOrderLines(lines);
 		orderRepository.updateOrder(order);
+		}
 	}
 
 	public void updateOrder(Order order, long userID) {
@@ -121,18 +137,19 @@ public class OrderService {
 		return order;
 	}
 
-	public float calcOrderTotalPaid(long userID) {
+	public String calcOrderTotalPaid(long userID) {
 		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.PAID);
 		float totalPrice = 0;
 		float price;
 		if (order != null) {
 			for (OrderLine ol : order.getOrderLines()) {
-				price = ol.getquantity() * ol.getproduct().getCost_price();
+				price = ol.getquantity() * ol.getproduct().getPrice();
 				totalPrice = totalPrice + price;
 			}
-			return totalPrice;
+			String totalPrice1 = String.format("%.2f", totalPrice); 
+			return totalPrice1;
 		} else
-			return 0;
+			return null;
 	}
 
 	public void placeOrder(long userID) {
@@ -142,14 +159,45 @@ public class OrderService {
 	}
 
 	public void updatequantity(long prod_ID, int quantity, long userID) {
+		Product product = productRepository.findByProductId(prod_ID);
 		Order order = orderRepository.findUserAndStatus(userID, PENDING);
 		if (order != null) {
 			for (OrderLine ol : order.getOrderLines()) {
 				if (ol.getproduct().getProduct_id() == prod_ID) {
 					ol.setquantity(quantity);
+					float price = ol.getquantity()*product.getPrice();
+					String price1 = String.format("%.2f", price);
+					ol.setPrice(price1);
+					
 				}
 				orderRepository.updateOrder(order);
 			}
 		}
+	}
+
+	public void addToWishList(long productId, long userId) {
+		Order order = orderRepository.findUserAndStatus(userId, PENDING);
+		Order wishlist = orderRepository.findUserAndStatus(userId, OrderStatus.WISHLIST);
+		boolean orderfound = false;
+		if (wishlist != null){
+			for (OrderLine ol : wishlist.getOrderLines()){
+				if (ol.getproduct().getProduct_id()==productId)
+					orderfound = true;
+			}
+		}
+		List<OrderLine> lines = order.getOrderLines();
+		for (int i = 0; i < lines.size(); i++){
+			if (lines.get(i).getproduct().getProduct_id() == productId){
+				if(orderfound==false){
+					wishlist.addOrderLine(lines.get(i));
+				}
+				lines.remove(i);
+				order.setOrderLines(lines);
+			orderRepository.updateOrder(wishlist);	
+			}
+						
+				}
+			
+		
 	}
 }

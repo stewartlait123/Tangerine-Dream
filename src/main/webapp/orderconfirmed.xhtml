@@ -3,7 +3,8 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="/WEB-INF/Template.xhtml">
+	template="/WEB-INF/Template.xhtml"
+    xmlns:f="http://java.sun.com/jsf/core">
 
 	<ui:define name="pagetitle">
 		<h1>Order Confirmed</h1>
@@ -16,40 +17,34 @@
 				<div id="orderlist">
 					<p> Thank you your payment has gone through and your order will be with you shortly. The details
 					 of your order are below.</p>
-					<table>
-						<ui:repeat value="#{order.order.orderLines}" var="item">
-
-							<tr>
+					 <h:form>
+					<h:dataTable value="#{order.order.orderLines}" var="item">
+									<h:column>
+             <f:facet name="header">Product Name</f:facet>
+             <h:outputLabel value="#{item.product.name}" />
+			</h:column>
+						
+			<h:column>
+            <f:facet name="header">Product ID</f:facet>
+            <h:outputLabel value="#{item.product.product_type}" />
+			</h:column>		
+					
+			<h:column>
+            <f:facet name="header">Quantity</f:facet>
+            <h:outputLabel value="#{item.quantity}" />
+			</h:column>						
+			
+			<h:column>
+            <f:facet name="header">Price</f:facet>
+            <h:outputLabel value="£#{item.price}" />
+			</h:column>
+		
+		</h:dataTable>
+				
+		<h:outputText value="£#{order.totalCostPlaced}"/>
+		</h:form>
 							
-								<td Class="ProductName"><h:outputText
-										value="#{item.product.name}" /></td>
-								<td class="ProductLabels">Product ID</td>
-								<td class="Productdescriptions"><h:outputText 
-										value="#{item.product.product_type}" /></td>
-
-								<td class="ProductLabels">Quantity</td>
-								<td class="Productdescriptions"><h:outputText 
-										value="#{item.quantity}" /></td>
-
-								<td class="ProductLabels">Price</td>
-								<td class="Productdescriptions"><h:outputText 
-										value="#{item.product.cost_price}" /></td>
-							</tr>
-						</ui:repeat>
-						<tr>
-							<td Class="ProductTotal">Total Cost</td>
-							<td Class="OrderPrice"><h:outputText 
-							        value="#{basket.totalPrice}"/></td>
-							<td Class="ProductTotal"></td>
-							<td Class="OrderPrice"></td>
-							<td Class="ProductTotal"></td>
-							<td Class="OrderPrice"></td>
-							<td Class="ProductTotal"></td>
-							<td Class="Button">
-								<button onclick="location.href='LandingPage.xhtml'">Back to HomePage</button>
-							</td>
-						</tr>
-					</table>
+		<button onclick="location.href='LandingPage.xhtml'">Back to HomePage</button>
 				</div>
 			</div>
 		</div>
