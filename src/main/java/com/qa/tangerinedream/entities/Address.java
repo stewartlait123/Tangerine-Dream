@@ -33,7 +33,7 @@ public class Address {
 	
 	@ManyToOne
 	@JoinColumn (name = "customer_id_fk")
-	long customer_id_fk;
+	Customer customer;
 	
 	
 	public Address(String deliveryAddress ,String billingAddress, Customer customer) {
@@ -42,7 +42,7 @@ public class Address {
 		
 		this.billing_address = billingAddress;
 		this.delivery_address = deliveryAddress;
-		this.customer_id_fk = customer.getCustomerId();
+		this.customer = customer;
 	}
 
 	public String getBilling_address() {
@@ -57,10 +57,10 @@ public class Address {
 	public void setDelivery_address(String delivery_address) {
 		this.delivery_address = delivery_address;
 	}
-	public long getCustomercustomer_id() {
-		return customer_id_fk;
+	public Customer getCustomercustomer_id() {
+		return customer;
 	}
-	public void setCustomercustomer_id(long customercustomer_id) {
-		this.customer_id_fk = customercustomer_id;
+	public void setCustomercustomer_id(Customer customer) {
+		this.customer = customer;
 	}
 }

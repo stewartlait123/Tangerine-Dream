@@ -588,3 +588,9 @@ a {
     background-color: #d11b0c;
     color: white;
 }
+
+/*temporary alternative link colours to go with blue background*/
+a:link    { color: #c00 }  /* unvisited links */
+a:visited { color: #0c0 }  /* visited links   */
+a:hover   { color: #fff }  /* user hovers     */
+a:active  { color: #ccc }  /* active links    */
