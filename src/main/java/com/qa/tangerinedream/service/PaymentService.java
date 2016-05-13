@@ -7,6 +7,8 @@ package com.qa.tangerinedream.service;
 import javax.inject.Inject;
 
 import com.qa.tangerinedream.controllers.CurrentUser;
+import com.qa.tangerinedream.entities.Card;
+import com.qa.tangerinedream.repositories.CardRepository;
 import com.qa.tangerinedream.repositories.CustomerRepository;
 import com.qa.tangerinedream.repositories.OrderRepository;
 
@@ -16,7 +18,10 @@ public class PaymentService {
 	@Inject BasketService basketService;
 	@Inject CurrentUser currentUser;
 	@Inject OrderService orderservice;
+	@Inject	private DateValidator dateValidator;
+	@Inject	private CardRepository cardRepository;
 	
+	@Deprecated
 	public void makeCardPayment()
 	{
 		//TODO add card payment logic.
@@ -37,8 +42,10 @@ public class PaymentService {
 		basketService.placeOrder();
 	}
 
-	public void paybycard(String nameOnCard, String cardNumber, String expiryDate, String cSV) {
-		// TODO Auto-generated method stub
+	public boolean paybycard(String nameOnCard, String cardNumber, String expiryDate, String cSV) {
+		if(dateValidator.validateDate(expiryDate))
+			return true;
+		return false;
 		
 	}
 
@@ -51,4 +58,14 @@ public class PaymentService {
 		}
 		return false;
 	}
+
+
+
+	public boolean currentCardService(String csv, String expiry, long getuserId, String cardNum) {
+		if (dateValidator.validateDate(expiry) && (cardRepository.checkCustomerCardCSV(getuserId, cardNum, csv)))
+		return true;
+	return false;
+	}
+	
+	
 }
