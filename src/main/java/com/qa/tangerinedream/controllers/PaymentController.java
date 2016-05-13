@@ -1,5 +1,7 @@
 package com.qa.tangerinedream.controllers;
 
+import java.util.List;
+
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -9,7 +11,8 @@ import javax.inject.Named;
  * 
  */
 
-
+import com.qa.tangerinedream.entities.Card;
+import com.qa.tangerinedream.service.AddCardService;
 import com.qa.tangerinedream.service.OrderService;
 import com.qa.tangerinedream.service.PaymentService;
 
@@ -22,35 +25,42 @@ public class PaymentController {
 	@Inject PaymentService paymentService;
 	@Inject CurrentUser currentUser;
 	@Inject OrderService orderservice;
+	@Inject AddCardService addCardService;
 	
 	private String nameOnCard;
 	private String cardNumber;
 	private String expiryDate;
 	private String cSV;
+	private String error = "";
 	
-	private int method;
+
 	
 	/* Setter for Paying by Card */
 
 	public String Submit(){
-		if(method == 1)
-			return "payment.xhtml";
-		if (method ==2){
-			if (nameOnCard.isEmpty() || cardNumber.isEmpty() || expiryDate.isEmpty() || cSV.isEmpty())
-				return "payment.xhtml";
-			else {
-				paymentService.paybycard(nameOnCard, cardNumber, expiryDate, cSV);
-				return "orderconfirmed.xhtml";
-			}
-		}
-		else if (method ==3){
 			if(paymentService.creditpayment(currentUser.getUserID()))
 				return "orderconfirmed.xhtml";
-		}
+			setError("Insufficient Credit Please use another payment option");
 		return "payment.xhtml";
 	}
 	
+	public List<Card> getCards() {
+		return addCardService.list(currentUser.getUserID());
+	}
+	
+	public String CurrentCardPayment(String csv, String expiry){
+		return "orderconfirmed.xhtml";
+	}
 
+	public String PayNow(String name, String cardNum, String expiry, String csv){
+		return "orderconfirmed.xhtml";
+	}
+	
+	public String AddNow(String name, String cardNum, String expiry, String csv){
+		return "orderconfirmed.xhtml";
+	}
+	
+	
 	public void setNameOnCard(String nameOnCard) {
 		this.nameOnCard = nameOnCard;
 	}
@@ -81,14 +91,15 @@ public class PaymentController {
 	public String getcSV() {
 		return cSV;
 	}
-	
-	public int getMethod() {
-		return method;
+
+	public String getError() {
+		return error;
 	}
 
-	public void setMethod(int method) {
-		this.method = method;
+	public void setError(String error) {
+		this.error = error;
 	}
+	
 	
 
 
