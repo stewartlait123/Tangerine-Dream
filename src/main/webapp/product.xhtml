@@ -49,16 +49,9 @@
 				   <f:facet name="header"></f:facet>
 					<h:inputText id="quantity" value="#{products.quantity}"/>
 					   
-					<!-- button actions not fully implemented -->   
-<<<<<<< HEAD
 					<h:commandButton id = "AddToBasket" action="#{basket.addToBasket(products.product_id, products.quantity)}" value="Add to basket" >
 						<f:param name="id" value="${param.id}"/></h:commandButton>
 					<h:commandButton id= "AddToWishlist" action="#{wishlist.addProductToWishlist(products.product_id)}" value="Add to WishList" /> >
-=======
-					<h:commandButton id = "AddToBasket" action="#{basket.addToBasket(catalogue.getProductById(param['id']).product_id, products.quantity)}" value = "Basket" rendered = "#{currentUser.loginStatus}">
-						<f:param name="id" value="${param.id}"/></h:commandButton>
-					<h:commandButton id= "AddToWishlist" action="#{wishlist.addProductToWishlist(catalogue.getProductById(param['id']).product_id)}" value="Wishlist" rendered = "#{currentUser.loginStatus}">
->>>>>>> 5a80d3d5dbac7e2a9764d083c6bdbc1d305f97de
 						<f:param name="id" value="${param.id}"/></h:commandButton>
 						
 						
