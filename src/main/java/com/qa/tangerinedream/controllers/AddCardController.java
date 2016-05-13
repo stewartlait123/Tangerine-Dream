@@ -1,10 +1,13 @@
 package com.qa.tangerinedream.controllers;
 //Author Jessica Maddocks Go Team Tang!
 
+import java.util.List;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.qa.tangerinedream.entities.Card;
 import com.qa.tangerinedream.service.AddCardService;
 
 
@@ -13,20 +16,25 @@ import com.qa.tangerinedream.service.AddCardService;
 public class AddCardController {
 	@Inject
 	private AddCardService addCardService;
+	@Inject private CurrentUser currentUser;
 	private String error = "";
 	private String type = "";
 	private String nameOnCard = "";
 	private String cardNumber = "";
 	private String expiryDate = "";
 	private String cSV = "";
+	private List<Card> cards;
+
+	public List<Card> getCards() {
+		return addCardService.list(currentUser.getUserID());
+	}
 
 	public String add(){
-		System.out.println(nameOnCard + " " + cardNumber + " " + type + " " + expiryDate + " " + cSV);
 		if (type.isEmpty() || nameOnCard.isEmpty() || cardNumber.isEmpty() || expiryDate.isEmpty() || cSV.isEmpty()) {
 			error="empty fields";
 			return "addcard";
 		}
-		addCardService.addCard(nameOnCard, cardNumber, type, expiryDate, cSV);
+		addCardService.addCard(nameOnCard, cardNumber, type, expiryDate, cSV, currentUser.getUserID());
 		return "cardadded";
 		
 	}
@@ -34,8 +42,6 @@ public class AddCardController {
 	public String cancel() {
 		return "user_account_details";
 	}
-	
-	
 	
 	public String getType() {
 		return type;
