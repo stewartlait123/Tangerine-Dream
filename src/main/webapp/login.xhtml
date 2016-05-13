@@ -5,24 +5,33 @@
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets" template="/WEB-INF/Template.xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">>
 
 	<ui:define name="pagetitle">
 		<div id="header">
-			<h1>Login</h1>
 		</div>
 	</ui:define>
-
+	
 	<ui:define name="maincontent">
+	
+	<div id= "login-box">
+		<h2>Login</h2>
+		
 		<h:form name="loginform">
+		
 		<h:message class = "error" value="#{login.error}"/>
+			<tr>
 			<h:outputLabel value = "UserName:" />
 			<h:inputText value="#{login.username}"/>			
+			</tr>
 			<h:outputLabel value="Password: "/>
 
 			<h:inputText value = "#{login.password}"/>
 			
-			<h:commandButton value="Login" action = "#{login.login}"/>
+			<p:commandButton value="Login" action = "#{login.login}" style= "width:initial; margin:auto; display:block; margin-top:30px;"/>
 		</h:form>
+		
+		</div>
 	</ui:define>
 </ui:composition>

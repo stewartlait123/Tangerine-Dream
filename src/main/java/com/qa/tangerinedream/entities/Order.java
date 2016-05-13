@@ -80,7 +80,8 @@ public class Order {
 	*/
 
 
-	public Order(OrderStatus status, Date date, Customer customer, OrderLine orderLine){
+	public Order( long orderID, OrderStatus status, Date date, Customer customer, OrderLine orderLine){
+		this.order_id = orderID;
 		this.status = status;
 		this.order_date = date;
 		this.customer = customer;
@@ -90,6 +91,10 @@ public class Order {
 	// methods which will be defined in OrderRepositoryOffline and OrderLineRepository
 	public long getOrder_id() {
 		return order_id;
+	}
+	
+	public void setorder_id(long order_id) {
+		this.order_id = order_id;
 	}
 
 	public OrderStatus getStatus() {
@@ -139,14 +144,5 @@ public class Order {
 				orderLines.set(i, orderline);
 			}
 		}
-	}
-
-	@Override
-	public String toString() {
-		String o = "";
-		for(OrderLine line : orderLines)
-			o += line.toString() + " | ";
-		return "Order [order_id=" + order_id + ", status=" + status + ", order_date=" + order_date + ", customer="
-				+ customer + ", orderLines=" + o + "]";
 	}
 }

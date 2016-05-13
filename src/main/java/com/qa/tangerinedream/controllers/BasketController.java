@@ -19,7 +19,7 @@ public class BasketController {
 	@Inject private OrderService orderService;
 	@Inject private CurrentUser currentUser;
 	
-	private float totalPrice;
+	private String totalPrice;
 	
 	/**
 	 * This method adds the specified product to the basket
@@ -39,7 +39,11 @@ public class BasketController {
 	public String removeFromBasket(long productId){
 		orderService.removeFromBasket(productId, currentUser.getUserID());
 		pendingOrder.setOrder(orderService.getUsersPendingOrder(currentUser.getUserID()));
-		return "basket";
+		return "basket.xhtml";
+	}
+	
+	public void addToWishList(long productId){
+		orderService.addToWishList(productId, currentUser.getuserId());
 	}
 	
 	/**
@@ -58,9 +62,10 @@ public class BasketController {
 	 * 
 	 * @return - reloads the basket
 	 */
-	public void clearBasket(){
+	public String clearBasket(){
 		orderService.clearOrder(currentUser.getUserID());
 		pendingOrder.setOrder(orderService.getUsersPendingOrder(currentUser.getUserID()));
+		return "LandingPage.xhtml";
 	}
 	
 	/**
@@ -95,7 +100,7 @@ public class BasketController {
 	 * 
 	 * @return - the price
 	 */
-	public float getTotalPrice() {
+	public String getTotalPrice() {
 		totalPrice = orderService.calcOrderTotalPending(currentUser.getUserID());
 		return totalPrice;
 	}

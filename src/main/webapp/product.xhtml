@@ -42,16 +42,16 @@
 			   </h:column>
 			   <h:column>
 			      <f:facet name="header">Cost Per Unit</f:facet>
-			      #{products.price}
+			      &#163;#{products.price}
 			   </h:column>
 			   <h:column>
 				   <f:facet name="header"></f:facet>
 					<h:inputText id="quantity" value="#{products.quantity}"/>
 					   
 					<!-- button actions not fully implemented -->   
-					<h:commandButton id = "AddToBasket" action="#{basket.addToBasket(catalogue.getProductById(param['id']).product_id, products.quantity)}" value = "Basket" >
+					<h:commandButton id = "AddToBasket" action="#{basket.addToBasket(catalogue.getProductById(param['id']).product_id, products.quantity)}" value = "Basket" rendered = "#{currentUser.loginStatus}">
 						<f:param name="id" value="${param.id}"/></h:commandButton>
-					<h:commandButton id= "AddToWishlist" action="#{wishlist.addToWishlist(catalogue.getProductById(param['id']).product_id)}" value="Wishlist" >
+					<h:commandButton id= "AddToWishlist" action="#{wishlist.addProductToWishlist(catalogue.getProductById(param['id']).product_id)}" value="Wishlist" rendered = "#{currentUser.loginStatus}">
 						<f:param name="id" value="${param.id}"/></h:commandButton>
 						
 						

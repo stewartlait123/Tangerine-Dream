@@ -13,57 +13,69 @@
 
 
 	<ui:define name="maincontent">
-
-			<div id="content-container" style = "background:#6C5576;">
+		<div>
 
 				<div id="product-titlewrapper">
 					<h2>Check Out Our Hottest Deals</h2>
 				</div>
-				<div>
+
+				<div id = "department-container" style = "margin:auto; display:inline-block; width:70%;">
+
 					<h:form class = "departments">
-						<p:carousel value="#{catalogue.products}" headerText = "Gnomes" var="products" itemStyle = "text-align:center" numVisible="4" responsive = "true">
-							<p:panelGrid columns = "1" style = "width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
-								<f:facet name="header">
-									<p:graphicImage value = "#{products.imageLocation}"/>	
-								</f:facet>
-								
-								<h:outputText value = ""/>
-								<h:outputText value = "#{products.name}"/>
-								
-								<h:outputText value = "#{products.price}"/>
-								
-							</p:panelGrid>
-						</p:carousel>
-						
-						<p:carousel value="#{catalogue.products}" headerText = "Gnomes" var="products" itemStyle = "text-align:center" numVisible="4" responsive = "true">
+						<p:carousel value="#{catalogue.searchProducts('GNOME')}" headerText = "Gnice Gnomes" var="products" itemStyle = "text-align:center" numVisible="4" circular = "true" responsive = "true">
 							<p:panelGrid columns = "1" style = "width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
 								<f:facet name="header">
 									<p:graphicImage value = "#{products.imageLocation}"/>
 								</f:facet>
 								
 								<h:outputText value = ""/>
-								<h:outputText value = "#{products.name}"/>
+								<!-- <h:outputText value = "#{products.name}"/>-->
 								
 								<h:outputText value = "#{products.price}"/>
 								
-							</p:panelGrid>
+						</p:panelGrid>
+						</p:carousel>
+						
+						<p:carousel value="#{catalogue.searchProducts('TOOL')}" headerText = "Garden Tools" var="products" itemStyle = "text-align:center" numVisible="4" circular = "true" responsive = "true">
+							<p:panelGrid columns = "1" style = "width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+								<f:facet name="header">
+									<p:graphicImage value = "#{products.imageLocation}"/>
+								</f:facet>
+								
+								<h:outputText value = ""/>
+								<!-- <h:outputText value = "#{products.name}"/>-->
+								
+								<h:outputText value = "#{products.price}"/>
+								
+						</p:panelGrid>
+						</p:carousel>
+						
+						<p:carousel value="#{catalogue.searchProducts('POT')}" headerText = "Popular Pots" var="products" itemStyle = "text-align:center" numVisible="4" circular = "true" responsive = "true">
+							<p:panelGrid columns = "1" style = "width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+								<f:facet name="header">
+									<p:graphicImage value = "#{products.imageLocation}"/>
+								</f:facet>
+								
+								<h:outputText value = ""/>
+								<!-- <h:outputText value = "#{products.name}"/>-->
+								
+								<h:outputText value = "#{products.price}"/>
+								
+						</p:panelGrid>
 						</p:carousel>
 					</h:form>
+					
+
 				</div>
-				<div id="news-container">
+				
+				
+				<div id="news-container" style = "margin:auto; display:inline-block; width:30%;">
 						<div id="news-panel-top" class="news-panel">
 							<h3>Garden Gnews</h3>
 						</div>
 
 						<div id="news-panel-bottom" class="news-panel">
 
-							<div class="news-item">Welcome to NB Gardens.</div>
-
-							<div class="news-item">Lorem ipsum dolor sit amet,
-								consectetua adipiscing elit. Sed venenatis quam nec velit
-								suscipit, id placerat enim sollicitudin. Aenean id sapien in mi
-								convallis dapibus vel eu felis.</div>
-
 							<div class="news-item">Lorem ipsum dolor sit amet,
 								consectetur adipiscing elit. Sed venenatis quam nec velit
 								suscipit, id placerat enim sollicitudin. Aenean id sapien in mi
@@ -84,30 +96,31 @@
 								suscipit, id placerat enim sollicitudin. Aenean id sapien in mi
 								convallis dapibus vel eu felis.</div>
 
-						</div>
-						
-						<div id="advert-container">
+							<div class="news-item">Lorem ipsum dolor sit amet,
+								consectetur adipiscing elit. Sed venenatis quam nec velit
+								suscipit, id placerat enim sollicitudin. Aenean id sapien in mi
+								convallis dapibus vel eu felis.</div>
 
-							<div>
-								<img src="img/CreditApplyAlt.jpg" />
-							</div>
-	
-							<div >
-								<img src="img/GnomeAwards.jpg" />
-							</div>
+							<div class="news-item">Lorem ipsum dolor sit amet,
+								consectetur adipiscing elit. Sed venenatis quam nec velit
+								suscipit, id placerat enim sollicitudin. Aenean id sapien in mi
+								convallis dapibus vel eu felis.</div>
 
-						</div>
-						
+						</div>						
 					</div>
-				
-			</div>
+					
+					<div>
 
-		<link rel="stylesheet" type="text/css"
-			href="slick-1.5.9/slick/slick.css" />
-		<link rel="stylesheet" type="text/css"
-			href="slick-1.5.9/slick/slick-theme.css" />
-		
-		<script type="text/javascript" src="slick-1.5.9/slick/slick.min.js"></script>
+						<div style = "display:inline-block; width:45%;">
+							<img src="img/CreditApplyAlt.jpg" />
+						</div>
+
+						<div style = "display:inline-block; width:45%;">
+							<img src="img/GnomeAwards.jpg" />
+						</div>
+
+					</div>
+		</div>
 	</ui:define>
 </ui:composition>
 
@@ -116,112 +129,7 @@
 
     <![CDATA[
 
-$('.content table').replaceWith(function() {
-
-    var $th = $(this).find('th'); // get headers
-    var th = $th.map(function() {
-        return $(this).text();
-    }).get(); // and their values
-
-    $th.closest('tr').remove(); // then remove them
-
-    var $d = $('<div>', { 'class': 'box' });
-
-    $('tr', this).each(function(i, el) {
-        var $div = $('<div>', {'class': 'inner'}).appendTo($d);
-        $('td', this).each(function(j, el) {
-            var n = j + 1;
-            var $row = $('<div>', {
-                'class': 'row-' + n
-            });
-            $row.append(
-            $('<span>', {
-                'class': 'label-' + n,
-                text: th[j]
-            }), ' : ', $('<span>', {
-                'class': 'data-' + n,
-                text: $(this).text()
-            })).appendTo($div);
-        });
-    });
-
-    return $d;
-});
-
 $(document).ready(function() {
-	console.log(getElementId("carousel1"));
-	$("carousel1".slick({
-
-		slidesToShow:6,
-		slidesToScroll: 1,
-	  	arrows: true,
-	  	dots: false,
-	  	infinite:true,
-
-	  	responsive: [{
-
-	  		breakpoint: 1500,
-      		settings:
-      		{
-        		slidesToShow: 6,
-        		infinite: true
-      		}
-      	},
-	  		{
-	  		breakpoint: 1224,
-      		settings:
-      		{
-        		slidesToShow: 4,
-        		infinite: true
-      		}
-      	},
-      	{
-	  		breakpoint: 800,
-      		settings:
-      		{
-        		slidesToShow: 3,
-        		infinite: true
-      		}
-      	}]
-		
-	});
-	
-	$('.carousel2').slick({
-
-		slidesToShow:6,
-		slidesToScroll: 1,
-	  	arrows: true,
-	  	dots: false,
-	  	infinite:true,
-
-	  	responsive: [{
-
-	  		breakpoint: 1500,
-      		settings:
-      		{
-        		slidesToShow: 6,
-        		infinite: true
-      		}
-      	},
-	  		{
-	  		breakpoint: 1224,
-      		settings:
-      		{
-        		slidesToShow: 4,
-        		infinite: true
-      		}
-      	},
-      	{
-	  		breakpoint: 800,
-      		settings:
-      		{
-        		slidesToShow: 3,
-        		infinite: true
-      		}
-      	}]
-		
-	});
-
 
 	responsiveLayout();
   
@@ -303,7 +211,7 @@ function responsiveLayout() {
 	}
 };
 
-    ]]>
+]]>
 
 
 </script>

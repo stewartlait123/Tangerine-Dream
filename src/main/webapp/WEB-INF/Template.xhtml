@@ -5,57 +5,100 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:s="http://jboss.com/products/seam/taglib"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
-<h:head id = "header">
-	<link rel="stylesheet" type="text/css" href="Template.css"/>
+
+<h:head id="header">
+	<link rel="stylesheet" type="text/css" href="Template.css" />
 	<script src="jquery-2.2.3.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/css/uikit.min.css" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/js/uikit.min.js"></script>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/css/uikit.min.css" />
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/js/uikit.min.js"></script>
 
 	<meta charset="ISO-8859-1"></meta>
 	<link rel="stylesheet" type="text/css" href="Template.css" />
 	<title>NBGardens</title>
 
 </h:head>
+
 <f:view>	 
 	 <body>
+	 <h:outputStylesheet name="customPrimeFaceStyle.css"/>
+	 <ui:debug hotkey="x"/>
 	<!-- @author - Umar -->
 	<div class="top-bar">
-		<img src="img/nb gardens logo 2.png"></img>
+		<a href = "home.xhtml">
+			<img src="img/springBanner.png" style = "margin:25px;"></img>
+		</a>
 	</div>
-			<div class="data-uk-sticky">
-							<nav class="uk-navbar">
-						    <a href="LandingPage.xhtml" class="uk-navbar-brand">NB Gardens</a>
-						    <a href="catalogue.xhtml" class="uk-navbar-content uk-button"><i class="uk-icon-soundcloud"></i> Catalogue</a>
-						    <a href="WishList.xhtml" class="uk-navbar-content uk-button"><i class="uk-icon-soundcloud"></i> Wish List</a>
-						    <a href="basket.xhtml" class="uk-navbar-content uk-button"><i class="uk-icon-bitbucket"></i> Basket</a>
-						    <a href="login.xhtml" class="uk-navbar-content uk-button"><i class="uk-icon-user"></i> Login</a>
-						    <a href="register.xhtml" class="uk-navbar-content uk-button"><i class="uk-icon-user"></i> Register</a>
-						    <a href="user_account_details.xhtml" class="uk-navbar-content uk-button"><i class="uk-icon-user"></i> Account</a>
-							</nav>
+		<div>
+			<h:form id= "menuForm">		
+				<p:menubar>
+						<p:menuitem>
+							<h:link outcome="/index.xhmtl">
+								<img src = "img/favicon.png" style = "height:50px; width:50px;"></img>					
+							</h:link>
+						</p:menuitem>
+						
+					<p:submenu class = "nav-button-left" url="catalogue.xhtml"  label = "Available Products">
+				   		<p:menuitem url = "catalogue.xhtml" value = "All Categories"/>
+				   	</p:submenu>
+						
+				   	<p:submenu class = "nav-button-left" url="catalogue.xhtml" label = "General Enquiries">
+				   		<p:menuitem url = "about.xhtml" value = "About"/>
+				   		<p:menuitem url = "ContactInfo.xhtml" value = "Contact Us"/>
+				   		<p:menuitem url = "faq_page.xhtml" value = "FAQ"/>
+				   	</p:submenu>
+				    
+				    <p:submenu type = "button" label = "Account Settings" icon= "ui-icon-gear" style = "float:right" rendered = "#{currentUser.loginStatus}">
+		        				<p:menuitem url="user_account_details.xhtml" type="button" value="My Account" icon="ui-icon-wrench"/>
+		        				<p:menuitem url = "WishList.xhtml" type = "button" value = "Wishlist" icon= "ui-icon-zoomin"/>
+		        				<p:menuitem url = "updateDetails.xhtml" type = "button" value = "Update Details" icon= "ui-icon-zoomin"/>
+		        				<p:menuitem url = "paymentDetails.xhtml" type = "button" value = "Update Address" icon= "ui-icon-zoomin"/>
+		        				<p:menuitem url = "accountSecurity.xhtml" type = "button" value = "Security" icon= "ui-icon-zoomin"/>
+		        				<p:menuitem value = "Logout" icon= "ui-icon-extlink" action="#{login.logout}"/>
+		        	</p:submenu>
+				    
+					<f:facet name="options" style="float:right">
+						<p:inputText style="margin-right:10px; background:#FFFFFF;" placeholder="Search"/>
+
+						<p:button class = "ui-menu-commandbutton" href="register.xhtml" type="button" value="Register"
+							icon="ui-icon-extlink" rendered="#{!currentUser.loginStatus}" />
+						<p:button href="login.xhtml" type="button" value="Login"
+							icon="ui-icon-extlink" rendered="#{!currentUser.loginStatus}" />
+						<p:button type="button" icon="ui-icon-cart" outcome="basket">
+						</p:button>
+					</f:facet>
+				</p:menubar>
+			</h:form>
+		</div>
+
+		<div>
+			<!-- Template calling pages - @author Stewart -->
+			<div id="mainContent">
+				<ui:insert name="pagetitle"></ui:insert>
+
+				<ui:insert name="maincontent"></ui:insert>
 			</div>
-			
-			<div>
-				<!-- Template calling pages - @author Stewart -->
-				<div id="mainContent">
-					<ui:insert name="pagetitle"></ui:insert>
-	
-					<ui:insert name="maincontent"></ui:insert>
-				</div>
+		</div>
+
+		<!-- @author - Umar -->
+		<div class="footer">
+			<div class="middleText">		
+				<ul>
+				  <li><a href="about.xhtml">About</a></li>
+				  <li><a href="faq_page.xhtml">FAQ (Frequently Asked Question)</a></li>
+				  <li><a href="ContactInfo.xhtml">Contact</a></li>
+				  <li><a href="ReturnInfo.xhtml">Return Information</a></li>
+				  <li><a href="EmailForm.xhtml">PDF Order Form</a></li>
+				</ul>
 			</div>
-			
-			 <!-- @author - Umar -->
-			<div class="footer">
-				<div class="middleText">
-				<a href="about.xhtml">About</a> |
-				<a href="faq_page.xhtml">FAQ (Frequently Asked Question)</a> |
-				<a href="ContactInfo.html">Contact Information</a> |
-				<a href="ReturnInfo.xhtml">Return Information</a> |
-				<a href="EmailForm.xhtml">Pdf Order Form</a>
-				</div>
-			</div>
-			
+		</div>
+
 	</body>
 </f:view>
+
+
 </html>

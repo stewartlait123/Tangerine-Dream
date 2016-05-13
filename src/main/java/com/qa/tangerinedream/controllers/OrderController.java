@@ -28,9 +28,9 @@ public class OrderController {
 	
 	private Order order;
 	
-	private float totalPrice;
-	private float totalPaid;
-	private float totalPlaced;
+	private String totalPrice;
+	private String totalPaid;
+	private String totalPlaced;
 	
 	@Deprecated
 	public Order getOrderHistory( long userID){	
@@ -62,17 +62,17 @@ public class OrderController {
 		return order.getOrderLines();
 	}
 	
-    public float getTotalCostPending(){
+    public String getTotalCostPending(){
     	totalPrice =  orderService.calcOrderTotalPending(currentUser.getUserID());
     	return totalPrice;
     }
     
-    public float getTotalCostPaid(){
+    public String getTotalCostPaid(){
 		totalPaid = orderService.calcOrderTotalPaid(currentUser.getUserID());
     	return totalPaid;
     }
     
-    public float getTotalCostPlaced(){
+    public String getTotalCostPlaced(){
 		totalPlaced = orderService.calcOrderTotalPlaced(currentUser.getUserID());
     	return totalPlaced;
     }

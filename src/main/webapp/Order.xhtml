@@ -18,39 +18,27 @@
 			
 			<h:column>
              <f:facet name="header">Product Name</f:facet>
-			</h:column>
-		    
-		    <h:column>
-			<h:outputLabel value="#{item.product.name}" />
+             <h:outputLabel value="#{item.product.name}" />
 			</h:column>
 						
 			<h:column>
             <f:facet name="header">Product ID</f:facet>
-			</h:column>
-			
-			<h:column>
-			<h:outputLabel value="#{item.product.product_type}" />
-			</h:column>			
+            <h:outputLabel value="#{item.product.product_type}" />
+			</h:column>		
 					
 			<h:column>
             <f:facet name="header">Quantity</f:facet>
-			</h:column>
-			
-			<h:column>
-			<h:outputLabel value="#{item.quantity}" />
+            <h:outputLabel value="#{item.quantity}" />
 			</h:column>						
 			
 			<h:column>
             <f:facet name="header">Price</f:facet>
+            <h:outputLabel value="£#{item.price}" />
 			</h:column>
-			
-			<h:column>
-			<h:outputLabel value="#{item.product.cost_price}" />
-			</h:column>	
 		
 		</h:dataTable>
 				
-		<h:outputText value="#{order.totalCostPlaced}"/>
+		<h:outputText value="£#{order.totalCostPlaced}"/>
 		</h:form>
 		
 		<button onclick="location.href='payment.xhtml'">Proceed to Payment</button>
