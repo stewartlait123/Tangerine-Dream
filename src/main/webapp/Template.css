@@ -5,7 +5,23 @@
 * Template page styling - @author Umar
 */
 body {
-	background: #98FFC4;
+	background: #537D99;
+	text-align:center;
+}
+
+
+#login-box
+{
+	width:initial;
+	margin:auto;
+	border-style: solid;
+	display: inline-block;
+	border-color: #382513;
+	padding: 25px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background: #5C832F;
+	color: #FFFFFF;
 }
 
 .footer{
@@ -24,7 +40,7 @@ body {
 }
 
 .top-bar{
-	background-color: #59B27F;
+	background-color: #6c5576;
 	width: 100%
 }
 
@@ -43,9 +59,15 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 25px;
-	width: 96%;
 	min-height: 1020px;
 
+}
+
+#content-container{
+	
+	width: 80%;
+	margin:auto;
+	
 }
 
 /* End */
@@ -121,6 +143,15 @@ src:url(Font/Austie.ttf);
 	margin:0px;
 }
 
+#product-titlewrapper{
+	
+	margin: 25px;
+    background: #A5FFD7;
+    border-style: solid;
+    border-radius: 20px;
+	
+}
+
 #product-titlewrapper h2{
 
 	font-family: OrangeJuice;
@@ -128,6 +159,7 @@ src:url(Font/Austie.ttf);
     font-size: 60px;
     line-height: 60px;
     letter-spacing: 15px;
+
 
 }
 
@@ -345,11 +377,11 @@ S
 h1 {
 	letter-spacing: 1px;
 	font-size: .4in;
-	color: green;
+	color: #364327;
 }
 
 span {
-	color: red
+	
 }
 
 legend {
@@ -481,7 +513,7 @@ span.myspan {
 }
 
 h2 {
-	color: coral;
+	color: #000000;
 	line-height: 60%;
 }
 
@@ -556,3 +588,9 @@ a {
     background-color: #d11b0c;
     color: white;
 }
+
+/*temporary alternative link colours to go with blue background*/
+a:link    { color: #c00 }  /* unvisited links */
+a:visited { color: #0c0 }  /* visited links   */
+a:hover   { color: #fff }  /* user hovers     */
+a:active  { color: #ccc }  /* active links    */

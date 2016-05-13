@@ -117,10 +117,12 @@ public class UserAccountController{
 	public void updateDetails()
 	{
 		@SuppressWarnings("deprecation")
-		Date date = new Date(Integer.parseInt(yyyy), Integer.parseInt(mm), Integer.parseInt(dd));
+		Date date = new Date(Integer.parseInt(yyyy) - 1900, Integer.parseInt(mm) - 1, Integer.parseInt(dd));
 		
 		if (customerService.validateDetails(username, date)){
-			//Update details
+			Customer c = customerService.findUserByUsername(username);
+			c.setName(getName());
+			c.setUsername(getUsername());
 		}
 	}
 	
