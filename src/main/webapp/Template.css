@@ -25,6 +25,7 @@ body {
 }
 
 .footer{
+	width: 100%;
 	clear: both;
     position: relative;
     z-index: 10;
@@ -594,3 +595,42 @@ a:link    { color: #c00 }  /* unvisited links */
 a:visited { color: #0c0 }  /* visited links   */
 a:hover   { color: #fff }  /* user hovers     */
 a:active  { color: #ccc }  /* active links    */
+
+/* Vmaksymchuk */
+
+/* Footer CSS */
+.middleText {
+	width: 100%;
+	text-align: center;
+    position: relative;
+}
+
+ul {
+	padding-left: 25%;
+    top: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}

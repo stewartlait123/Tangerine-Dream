@@ -38,9 +38,7 @@
 				<p:menubar>
 						<p:menuitem>
 							<h:link outcome="/index.xhmtl">
-								<a href = "LandingPage.xhtml">
-									<img src = "img/favicon.png" style = "height:50px; width:50px;"></img>								
-								</a>
+								<img src = "img/favicon.png" style = "height:50px; width:50px;"></img>					
 							</h:link>
 						</p:menuitem>
 						
@@ -70,7 +68,7 @@
 							icon="ui-icon-extlink" rendered="#{!currentUser.loginStatus}" />
 						<p:button href="login.xhtml" type="button" value="Login"
 							icon="ui-icon-extlink" rendered="#{!currentUser.loginStatus}" />
-						<p:button type="button" icon="ui-icon-cart" outcome="basket" rendered = "#{currentUser.loginStatus}">
+						<p:button type="button" icon="ui-icon-cart" outcome="basket">
 						</p:button>
 					</f:facet>
 				</p:menubar>
@@ -88,11 +86,14 @@
 
 		<!-- @author - Umar -->
 		<div class="footer">
-			<div class="middleText">
-				<a href="about.xhtml">About</a> | <a href="faq_page.xhtml">FAQ
-					(Frequently Asked Question)</a> | <a href="ContactInfo.xhtml">Contact
-					Information</a> | <a href="ReturnInfo.xhtml">Return Information</a> | <a
-					href="EmailForm.xhtml">Pdf Order Form</a>
+			<div class="middleText">		
+				<ul>
+				  <li><a href="about.xhtml">About</a></li>
+				  <li><a href="faq_page.xhtml">FAQ (Frequently Asked Question)</a></li>
+				  <li><a href="ContactInfo.xhtml">Contact</a></li>
+				  <li><a href="ReturnInfo.xhtml">Return Information</a></li>
+				  <li><a href="EmailForm.xhtml">PDF Order Form</a></li>
+				</ul>
 			</div>
 		</div>
 
