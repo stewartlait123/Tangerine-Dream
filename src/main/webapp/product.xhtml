@@ -49,7 +49,8 @@
 				   <f:facet name="header"></f:facet>
 					<h:inputText id="quantity" value="#{products.quantity}"/>
 
-					<h:commandButton id = "AddToBasket" action="#{basket.addToBasket(products.product_id, products.quantity)}" value="Add to basket">
+
+					<h:commandButton id = "AddToBasket" action="#{basket.addToBasket(products.product_id, products.quantity)}" value="Add to basket" >
 						<f:param name="id" value="${param.id}"/></h:commandButton>
 					<h:commandButton id= "AddToWishlist" action="#{wishlist.addProductToWishlist(products.product_id)}" value="Add to WishList">
 
