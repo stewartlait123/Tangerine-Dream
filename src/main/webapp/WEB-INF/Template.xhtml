@@ -77,7 +77,7 @@
 							icon="ui-icon-extlink" rendered="#{!currentUser.loginStatus}" />
 						<p:button href="login.xhtml" type="button" value="Login"
 							icon="ui-icon-extlink" rendered="#{!currentUser.loginStatus}" />
-						<p:button type="button" icon="ui-icon-cart" outcome="basket">
+						<p:button type="button" icon="ui-icon-cart" outcome="basket" rendered = "#{currentUser.loginStatus}>
 						</p:button>
 					</f:facet>
 				</p:menubar>
