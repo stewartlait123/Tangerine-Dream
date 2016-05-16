@@ -28,6 +28,7 @@ public class ProductController {
 	private int minStock;
 	private int orderAmount;
 	private String description = "";
+	
 
 	public String getName() {
 			return name;
