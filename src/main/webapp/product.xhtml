@@ -4,7 +4,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	template="/WEB-INF/Template.xhtml"
 	xmlns:f="http://java.sun.com/jsf/core">
-
+	<link rel="stylesheet" type="text/css" href="tableDesign.css"/>
 	<ui:define name="pagetitle">
 		<div>
 			<h1>#{catalogue.getProductById(param['id']).name} Details </h1>
@@ -12,54 +12,54 @@
 	</ui:define>
 
 	<ui:define name="maincontent">
+	<div class ="display-box" style = "width:70%">
+		
+			<div style = "margin-bottom: 50px;">
+				<h2>Product Details</h2>
+			</div>
 	<!-- @author: Iain Q -->
-		<h:form>
-		<h:dataTable id="productTable" value="#{catalogue.getProductById(param['id'])}" var="products">
-			    		    
-			    
-			   <h:column>    				
-			      <f:facet name="header">Image</f:facet>    				
-			      <img src = "#{products.imageLocation}"></img>
-			      
-			   </h:column>
-			   <h:column>    				
-			      <f:facet name="header">Name</f:facet>    				
-			      #{products.name}
-			   </h:column>
-			   
-			   <h:column>    				
-			      <f:facet name="header">Type</f:facet>    				
-			      #{products.product_type}
-			   </h:column>
-			   
-			   <h:column>
-			      <f:facet name="header">Description</f:facet>
-			      #{products.description}
-			   </h:column>
-			   
-			   <h:column>
-			      <f:facet name="header">Stock</f:facet>
-			      #{products.stock}
-			   </h:column>
-			   <h:column>
-			      <f:facet name="header">Cost Per Unit</f:facet>
-			      &#163;#{products.price}
-			   </h:column>
-			   <h:column>
-				   <f:facet name="header"></f:facet>
-					<h:inputText id="quantity" value="#{products.quantity}"/>
-
-
-					<h:commandButton id = "AddToBasket" action="#{basket.addToBasket(products.product_id, products.quantity)}" value="Add to basket" >
-						<f:param name="id" value="${param.id}"/></h:commandButton>
-					<h:commandButton id= "AddToWishlist" action="#{wishlist.addProductToWishlist(products.product_id)}" value="Add to WishList">
-
-						<f:param name="id" value="${param.id}"/></h:commandButton>
+			<h:form>
+			<h:dataTable id="productTable" value="#{catalogue.getProductById(param['id'])}" var="products" columnClasses="p_column1, p_column2, p_column3, p_column4, p_column5">
+				    		    
+				    
+				   <h:column style = "padding:10px;">
+							
+							<h:graphicImage url="#{products.imageLocation}"  
+							
+							   ></h:graphicImage>
+						</h:column>
 						
+						<h:column style = "padding:10px;">
+								<h:outputLabel style = "display:block;" >#{products.name} <f:param name="id" value="#{products.product_id}" /></h:outputLabel>
+		   						<h:outputLabel value="&#163;#{products.price}" style = "display:block; margin:0px"/>
+						</h:column>
+							
+						<h:column style = "padding:10px;">
+							<h:outputLabel style = "display:block;"> #{products.description} <f:param name="id" value="#{products.product_id}" /></h:outputLabel>
+						</h:column>
 						
-			   </h:column>
-			   
-			</h:dataTable>
-		</h:form>			
+						<h:column style = "padding:10px;">
+							<h:outputLabel style = "margin:0px;" value="#{products.stock} In Stock"/>
+						</h:column>
+						
+				   <h:column>
+
+						<h:inputText id="quantity" value="#{products.quantity}" style = "display:block;" />	
+				
+						<h:commandButton id = "AddToBasket" action="#{basket.addToBasket(products.product_id, products.quantity)}" value="Add to basket" 
+							rendered = "#{currentUser.loginStatus}">
+							<f:param name="id" value="${param.id}"/>
+						</h:commandButton>
+						<h:commandButton id= "AddToWishlist" action="#{wishlist.addProductToWishlist(products.product_id)}" value="Add to WishList"
+							rendered = "#{currentUser.loginStatus}">
+							<f:param name="id" value="${param.id}"/>
+						</h:commandButton>							
+							
+				   </h:column>
+	
+				   
+				</h:dataTable>
+			</h:form>	
+		</div>		
 	</ui:define>
 </ui:composition>

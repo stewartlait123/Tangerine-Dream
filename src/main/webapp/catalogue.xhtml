@@ -33,21 +33,18 @@
 					   ></h:graphicImage>
 				</h:column>
 				
-					<h:column>
-
-						<h:outputLink value="product.xhtml" style = "float:left;" >#{products.name} <f:param name="id" value="#{products.product_id}" /></h:outputLink>
-						<br></br>
-						
-   						<h:outputLabel value="&#163;#{products.price}" style = "float:left;"/>
-   						
-					    <h:outputLink style = "margin:auto; display:block;"> #{products.description} <f:param name="id" value="#{products.product_id}" /></h:outputLink>
-
-
-					    <h:outputLabel value="#{products.stock}"/>
-
-
-					    
-					</h:column>
+				<h:column>
+						<h:outputLink value="product.xhtml" style = "display:block;" >#{products.name} <f:param name="id" value="#{products.product_id}" /></h:outputLink>
+   						<h:outputLabel value="&#163;#{products.price}" style = "display:block; margin:0px"/>
+				</h:column>
+					
+				<h:column>
+					<h:outputLink style = "display:block;"> #{products.description} <f:param name="id" value="#{products.product_id}" /></h:outputLink>
+				</h:column>
+				
+				<h:column>
+					<h:outputLabel style = "margin:0px;" value="#{products.stock} In Stock"/>
+				</h:column>
 				
 			</h:dataTable>
 			</h:form>
