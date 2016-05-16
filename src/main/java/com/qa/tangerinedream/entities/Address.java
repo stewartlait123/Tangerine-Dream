@@ -45,6 +45,10 @@ public class Address {
 		this.customer = customer;
 	}
 
+	public Address() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getBilling_address() {
 		return billing_address;
 	}

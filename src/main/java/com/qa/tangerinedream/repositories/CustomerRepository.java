@@ -44,7 +44,7 @@ public interface CustomerRepository {
 
 	Customer findUserByUsername(String username_);
 	void updateCreditLimit(Long id_, long creditLimit_);
-
+	public void updateCustomer(Customer customer);
 
 
 }

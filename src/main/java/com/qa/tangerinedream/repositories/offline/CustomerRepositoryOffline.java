@@ -267,4 +267,18 @@ implements CustomerRepository{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public void updateCustomer(Customer customer)
+	{
+		ArrayList<Customer> custList = initialData.getCustomers();
+		
+		for (int i = 0; i < custList.size(); i++){
+			if(custList.get(i).getUsername().equals(customer.getUsername()))
+			{
+				//Update details
+				custList.get(i).setName(customer.getName());
+				custList.get(i).setDOB(customer.getDob());
+			}
+		}
+	}
 }

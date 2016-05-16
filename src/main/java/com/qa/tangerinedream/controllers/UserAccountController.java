@@ -119,10 +119,15 @@ public class UserAccountController{
 		@SuppressWarnings("deprecation")
 		Date date = new Date(Integer.parseInt(yyyy) - 1900, Integer.parseInt(mm) - 1, Integer.parseInt(dd));
 		
-		if (customerService.validateDetails(username, date)){
-			Customer c = customerService.findUserByUsername(username);
-			c.setName(getName());
-			c.setUsername(getUsername());
+		if (customerService.validateDetails(name, date)){
+			Customer cust = new Customer();
+			cust.setName(name);
+			cust.setUsername(username);
+			cust.setDOB(date);
+			customerService.updateCustomer(cust);
+			//Customer c = customerService.findUserByUsername(username);
+			//c.setName(getName());
+			//c.setUsername(getUsername());
 		}
 	}
 	

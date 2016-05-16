@@ -2,113 +2,53 @@ package com.qa.entities;
 
 import static org.junit.Assert.*;
 
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
+
+import com.qa.tangerinedream.entities.Address;
+import com.qa.tangerinedream.entities.Customer;
 
 public class AddressTest {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
+	Address address = new Address("1 delivery address", "2 billing address", new Customer());
+	
 
 	@Test
 	public void testAddress() {
-		fail("Not yet implemented");
+		address = new Address();
+		assertNotNull(address);
 	}
 
 	@Test
 	public void testGetBilling_address() {
-		fail("Not yet implemented");
+		assertNotNull(address.getBilling_address());
 	}
 
 	@Test
 	public void testSetBilling_address() {
-		fail("Not yet implemented");
+		address.setBilling_address("1");
+		assertEquals("1", address.getBilling_address());
 	}
 
 	@Test
 	public void testGetDelivery_address() {
-		fail("Not yet implemented");
+		assertNotNull(address.getDelivery_address());
 	}
 
 	@Test
 	public void testSetDelivery_address() {
-		fail("Not yet implemented");
+		address.setDelivery_address("2");
+		assertEquals("1", address.getDelivery_address());
 	}
 
 	@Test
 	public void testGetCustomercustomer_id() {
-		fail("Not yet implemented");
+		assertNotNull(address.getCustomercustomer_id());
 	}
 
 	@Test
 	public void testSetCustomercustomer_id() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testObject() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetClass() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testHashCode() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testEquals() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testClone() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testNotify() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testNotifyAll() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWaitLong() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWaitLongInt() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWait() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testFinalize() {
-		fail("Not yet implemented");
+		address.setCustomercustomer_id(new Customer());
+		
 	}
 
 }
