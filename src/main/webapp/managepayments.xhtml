@@ -42,17 +42,15 @@ Hard coded for demonstration purposes only-->
 			<div id="maintext">
 				<h:dataTable value="#{Addcard.cards}" var="line">
 					<h:column>
-						<f:facet name="header">Name on Card:</f:facet>
-					</h:column>
-					<h:column>
+						<f:facet name="header">Name on Card</f:facet>
 						<h:outputLabel value="#{line.nameOnCard}" />
 					</h:column>
 					<h:column>
-						<f:facet name="header"> Card Number: </f:facet>
+						<f:facet name="header"> Card Number</f:facet>
 						<h:inputText value="#{line.cardNumber}" />
 					</h:column>
 					<h:column>
-						<f:facet name="header"> Expiry Date: </f:facet>
+						<f:facet name="header"> Expiry Date</f:facet>
 						<h:inputText value="#{line.expiryDate}" />
 					</h:column>
 				</h:dataTable>
