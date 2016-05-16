@@ -21,11 +21,20 @@
 			<h:inputHidden value="#{user_account.init}"></h:inputHidden>
 			<table>
 				<tr><th><h:outputLabel value="Name: "/></th><th><h:inputText value="#{user_account.name}"/></th></tr>
+<<<<<<< HEAD
 				<tr><th><h:outputLabel value="Date Of Birth: "/>
 					<h:inputText value="#{user_account.dd}" size="2"/>
+=======
+				<tr><th><h:outputLabel value="Username: "/></th>
+					<th><h:inputText value="#{user_account.username}"/></th></tr>	
+
+				<tr><th><h:outputLabel value="Date Of Birth: "/></th>
+					<th><h:inputText value="#{user_account.dd}" size="2"/>
+>>>>>>> c7f6d97a82c8e5b1aaad61725ea1065cc188677d
 					<h:inputText value="#{user_account.mm}" size="2"/>
 					<h:inputText value="#{user_account.yyyy}" size="4"/></th>
-					</tr>			
+				</tr>
+								
 			</table>
 				<h:commandButton value="Update" action="#{user_account.updateDetails}"/>
 			</h:form>

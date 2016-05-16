@@ -40,13 +40,32 @@ Hard coded for demonstration purposes only-->
 				<p>M50 3YJ</p>
 			</div>
 			<DIV>
+			
+			<h:form styleClass="uk-form-horizontal">
 			<table>
+				<tr><th><h:outputLabel value="Address Line 1:"/></th><th><h:inputText/></th></tr>
+				<tr><th><h:outputLabel value="Address Line 2:"/></th><th><h:inputText/></th></tr>
+				<tr><th><h:outputLabel value="Address Line 3:"/></th><th><h:inputText/></th></tr>
+				<tr><th><h:outputLabel value="State/Province/Region:"/></th><th><h:inputText/></th></tr>
+				<tr><th><h:outputLabel value="ZIP/Postal Code:"/></th><th><h:inputText/></th></tr>
+				<tr><th><h:outputLabel value="Country:"/></th><th><h:inputText/></th></tr>				
+								
+			</table>
+				<h:commandButton value="Add Address" action="#"/>
+			</h:form>
+			<!-- <table>
+			
+			<h:column>
+			<f:facet name="header">Line Address 1</f:facet>
+			<h:inputText/>
+			</h:column>
+			
 			<h:outputText value = "Add new address:" />
 			<h:inputText value="" />
 			<h:inputText value="" />
 			<h:inputText value="" />
 			<h:inputText value="" />
-			</table>
+			</table> -->
 			</DIV>
 		</div>
 	</ui:define>
