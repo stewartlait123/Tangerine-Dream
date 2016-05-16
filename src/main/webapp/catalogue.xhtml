@@ -8,58 +8,49 @@
 	
 	<ui:define name="pagetitle">
 		<div id="header">
-			<h1>Catalogue</h1>
+			<h1></h1>
 		</div>
 	</ui:define>
 
 	<ui:define name="maincontent">
-
+	
 		
+		<div class ="display-box" style = "width:70%">
 		
-		<h:form id="catalogueform">
-		<!-- dynamically-constructed dataTable with data pulled from the product list -->
-		 <h:dataTable id="productTable" value="#{catalogue.products}" var="products"     > 
-		 
-
-			<h:column>
-				<f:facet name="header">Image</f:facet>
-				<h:graphicImage url="#{products.imageLocation}"  
+			<div style = "margin-bottom: 50px;">
+				<h2>Product Catalogue</h2>
+			</div>
+		
+			<h:form id="catalogueform">
+			<!-- dynamically-constructed dataTable with data pulled from the product list -->
+			 <h:dataTable id="productTable" value="#{catalogue.products}" var="products"     > 
+			 
+	
+				<h:column style = "float:left;">
+					
+					<h:graphicImage url="#{products.imageLocation}"  
+					
+					   ></h:graphicImage>
+				</h:column>
 				
-				   ></h:graphicImage>
-			</h:column>
-			<h:column>
-				<f:facet name="header">Name</f:facet>
-				<h:outputLink value="product.xhtml" >#{products.name} <f:param name="id" value="#{products.product_id}" /></h:outputLink>
-			</h:column>
-			<h:column>
-				<f:facet name="header">ID</f:facet>
-				<h:outputLabel value="#{products.product_id}" />
-			</h:column>
-			<h:column>
-				<f:facet name="header">Type</f:facet>    				
-			     <h:outputText value=" #{products.product_type}"/> <!--  rendered="#{products.product_type == 'GNOME'}"--> 
-			</h:column>
-			<h:column>
-				<f:facet name="header">Description</f:facet>
-			      <h:outputLink> #{products.description} <f:param name="id" value="#{products.product_id}" /></h:outputLink>
-			</h:column>
-			<h:column>
-				<f:facet name="header">Stock</f:facet>
-			    <h:outputLabel value="#{products.stock}"/>
-			</h:column>
-			<h:column>
-				<f:facet name="header">Cost Per Unit</f:facet>
-			    <h:outputLabel value="&#163;#{products.price}"/>
-			</h:column>
-			<h:column>
-				<f:facet name="header"></f:facet>
-				<h:inputText value="#{products.quantity}" />
-				<h:commandButton action="#{basket.addToBasket(products.product_id, products.quantity)}" value="Add to Basket"/>
-				<h:commandButton action="#{wishlist.addProductToWishlist(products.product_id)}" value="Add to WishList" />
+					<h:column>
 
-			</h:column>
+						<h:outputLink value="product.xhtml" style = "float:left;" >#{products.name} <f:param name="id" value="#{products.product_id}" /></h:outputLink>
+						<br></br>
+						
+   						<h:outputLabel value="&#163;#{products.price}" style = "float:left;"/>
+   						
+					    <h:outputLink style = "margin:auto; display:block;"> #{products.description} <f:param name="id" value="#{products.product_id}" /></h:outputLink>
 
-		</h:dataTable>
-		</h:form>
+
+					    <h:outputLabel value="#{products.stock}"/>
+
+
+					    
+					</h:column>
+				
+			</h:dataTable>
+			</h:form>
+		</div>
 	</ui:define>
 </ui:composition>

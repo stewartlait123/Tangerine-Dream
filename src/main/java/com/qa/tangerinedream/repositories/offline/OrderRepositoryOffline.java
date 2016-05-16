@@ -47,7 +47,7 @@ implements OrderRepository {
 	public Order findUserAndStatus(long userId, OrderStatus orderStatus) {
 		ArrayList<Order> orders = (ArrayList<Order>) initialData.getOrders();
 		for (Order order : orders) {
-			if(order.getCustomer().getCustomerId().equals(userId) && order.getStatus().equals(orderStatus))	
+			if(order.getCustomer().getCustomerId()==userId && order.getStatus().equals(orderStatus))	
 				 return order;
 		}
 		return null;

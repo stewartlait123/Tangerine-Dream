@@ -192,6 +192,15 @@ src:url(Font/Austie.ttf);
 	border-radius: 15px 50px 0px 0px;
 }	
 
+.display-box{
+	
+	background:#DEF2C8;
+	width: 500px;
+	margin:auto;
+	padding:10px;
+	
+}
+
 #landing-page-content{
 	
 	background-color:#D4FFDB;

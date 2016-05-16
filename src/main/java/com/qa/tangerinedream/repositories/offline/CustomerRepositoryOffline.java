@@ -52,7 +52,7 @@ implements CustomerRepository{
 		
 		for(int i = 0 ; i < searchList.size() ; i++ )
 		{
-			if(searchList.get(i).getCustomerId().equals(id_))
+			if(searchList.get(i).getCustomerId()==id_)
 			{
 				//If search name is equal to customer name, add to result list
 				return searchList.get(i);
@@ -105,7 +105,7 @@ implements CustomerRepository{
 		
 		for(int i = 0 ; i < searchList.size() ; i++ )
 		{
-			if(searchList.get(i).getCustomerId().equals(id_))
+			if(searchList.get(i).getCustomerId()==id_)
 			{
 				Customer newDetails = searchList.get(i);
 				newDetails.setUsername(userName_);
@@ -124,7 +124,7 @@ implements CustomerRepository{
 		
 		for(int i = 0 ; i < searchList.size() ; i++ )
 		{
-			if(searchList.get(i).getCustomerId().equals(id_))
+			if(searchList.get(i).getCustomerId()==id_)
 			{
 				Customer newDetails = searchList.get(i);
 				newDetails.setName(customerName_);
@@ -160,7 +160,7 @@ implements CustomerRepository{
 		
 		for(int i = 0 ; i < searchList.size() ; i++ )
 		{
-			if(searchList.get(i).getCustomerId().equals(id_))
+			if(searchList.get(i).getCustomerId()==id_)
 			{
 				Customer newDetails = searchList.get(i);
 				newDetails.setPassword(password_);
@@ -179,7 +179,7 @@ implements CustomerRepository{
 		
 		for(int i = 0 ; i < searchList.size() ; i++ )
 		{
-			if(searchList.get(i).getCustomerId().equals(id_))
+			if(searchList.get(i).getCustomerId()==id_)
 			{
 				Customer newDetails = searchList.get(i);
 				newDetails.setCredit(credit_);
@@ -197,7 +197,7 @@ implements CustomerRepository{
 		
 		for(int i = 0 ; i < searchList.size() ; i++ )
 		{
-			if(searchList.get(i).getCustomerId().equals(id_))
+			if(searchList.get(i).getCustomerId()==id_)
 			{
 				Customer newDetails = searchList.get(i);
 				newDetails.setCreditLimit(creditLimit_);
