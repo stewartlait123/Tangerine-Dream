@@ -28,6 +28,7 @@ public class ProductController {
 	private int minStock;
 	private int orderAmount;
 	private String description = "";
+	private ProductService productService;
 	
 
 	public String getName() {
