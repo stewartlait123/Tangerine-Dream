@@ -2,6 +2,8 @@ package com.qa.entities;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
+
 import org.junit.Test;
 
 import com.qa.tangerinedream.entities.Address;
@@ -47,8 +49,9 @@ public class AddressTest {
 
 	@Test
 	public void testSetCustomercustomer_id() {
-		address.setCustomercustomer_id(new Customer());
-		
+		Customer customer = new Customer(1, "", "", "", new Date(), 5, 5);
+		address.setCustomercustomer_id(customer);
+		assertEquals(customer, address.getCustomercustomer_id());		
 	}
 
 }
