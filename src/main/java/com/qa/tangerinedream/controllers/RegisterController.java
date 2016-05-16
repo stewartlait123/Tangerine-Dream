@@ -2,9 +2,6 @@
  * @author - Umar*/
 package com.qa.tangerinedream.controllers;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
@@ -30,7 +27,7 @@ public class RegisterController {
 	private String yyyy = "";
 	private String error;
 	
-	public void register() {
+	public String register() {
 
 		try {
 			@SuppressWarnings("deprecation")
@@ -50,13 +47,15 @@ public class RegisterController {
 				//customer.setPassword(password);
 				//customer.setDOB(date);
 				registerService.addCustomer(customer);
+				return "login";
 				}
 			}
 			
 			catch (NumberFormatException n) {
 				// date contains something that isn't an int so we ignore the registration attempt entirely
+
 			}	
-				
+		return "register";
 	}
 
 	

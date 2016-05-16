@@ -7,48 +7,44 @@
 	
 	<ui:define name="pagetitle">
 		<div id="header">
-			<h1>Catalogue Search</h1>
 		</div>
 	</ui:define>
 
 	<ui:define name="maincontent">
+	
+	<div class ="display-box" style = "width:70%">
+		
+			<div style = "margin-bottom: 50px;">
+				<h2>Product Catalogue</h2>
+			</div>
+	
 			<!-- author: Iain Q -->
-		<h:form id="catalogueform">
-		<!-- dynamically-constructed dataTable with data pulled from the product list -->
-		 <h:dataTable id="productTable" value="#{catalogue.searchProducts(param['type'])}" var="products"     > 
-
-			<h:column>
-				<f:facet name="header">Image</f:facet>
-				<h:graphicImage url="#{products.imageLocation}"  
-				
-				   ></h:graphicImage>
-			</h:column>
-			<h:column>
-				<f:facet name="header">Name</f:facet>
-				<h:outputLink value="product.xhtml" >#{products.name} <f:param name="id" value="#{products.product_id}" /></h:outputLink>
-			</h:column>
-			<h:column>
-				<f:facet name="header">ID</f:facet>
-				<h:outputLabel value="#{products.product_id}" />
-			</h:column>
-			<h:column>
-				<f:facet name="header">Type</f:facet>    				
-			     <h:outputText value=" #{products.product_type}"/>
-			</h:column>
-			<h:column>
-				<f:facet name="header">Description</f:facet>
-			      No description yet.
-			</h:column>
-			<h:column>
-				<f:facet name="header">Stock</f:facet>
-			    <h:outputLabel value="#{products.stock}"/>
-			</h:column>
-			<h:column>
-				<f:facet name="header">Cost Per Unit</f:facet>
-			    <h:outputLabel value="&#163;#{products.price}"/>
-			</h:column>
-
-		</h:dataTable>
-		</h:form>
+			<h:form id="catalogueform">
+			<!-- dynamically-constructed dataTable with data pulled from the product list -->
+				 <h:dataTable id="productTable" value="#{catalogue.searchProducts(param['type'])}" var="products"     > 
+		
+						<h:column style = "float:left;">
+							
+							<h:graphicImage url="#{products.imageLocation}"  
+							
+							   ></h:graphicImage>
+						</h:column>
+						
+						<h:column>
+								<h:outputLink value="product.xhtml" style = "display:block;" >#{products.name} <f:param name="id" value="#{products.product_id}" /></h:outputLink>
+		   						<h:outputLabel value="&#163;#{products.price}" style = "display:block; margin:0px"/>
+						</h:column>
+							
+						<h:column>
+							<h:outputLink style = "display:block; float:left; margin-left:20px;"> #{products.description} <f:param name="id" value="#{products.product_id}" /></h:outputLink>
+						</h:column>
+						
+						<h:column>
+							<h:outputLabel style = "margin:0px;" value="#{products.stock} In Stock"/>
+						</h:column>
+		
+				</h:dataTable>
+			</h:form>
+		</div>
 	</ui:define>
 </ui:composition>

@@ -30,6 +30,7 @@ public class ProductController {
 	private String description = "";
 	private ProductService productService;
 
+
 	public String getName() {
 			return name;
 	}

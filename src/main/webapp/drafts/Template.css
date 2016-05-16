@@ -57,14 +57,14 @@ src:url(Font/Austie.ttf);
 */ 
 
 
-#landingpage-content h1{
+#home-content h1{
 
 	text-align: center;
     font-size: 36px;
     line-height: 40px;
 }
 
-#landingpage-content h2{
+#home-content h2{
 
 	font-family: OrangeJuice;
 	text-align: center;
@@ -73,7 +73,7 @@ src:url(Font/Austie.ttf);
     letter-spacing: 15px;
 }
 
-#landingpage-content h3{
+#home-content h3{
 
 	font-family: OrangeJuice;
 	text-align: center;
@@ -83,7 +83,7 @@ src:url(Font/Austie.ttf);
     margin:0px;
 }
 
-#landingpage-content h4{
+#home-content h4{
 	
 	font-family:Carnet;
 	margin:0px;
