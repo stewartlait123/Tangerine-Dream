@@ -40,11 +40,18 @@ public class Supplier
 	}
 	
 	public void setActive(boolean b) {
-		active = true;
+		active = b;
 	}
+	
+	public boolean getActive(){
+		return active;
+	}
+	
+	
 	public Supplier(int id, boolean active){
 		this.id = id;
 		this.active = active;
 	}
+	
 
 }
