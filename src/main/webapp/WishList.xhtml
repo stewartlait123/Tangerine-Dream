@@ -1,11 +1,13 @@
 <!--
-@author - Stewart Lait 
+@author - Stewart Lait
+@update 16-05-16 - Facelet library added + wishlist table was re-worked. 
 -->
 <!DOCTYPE html>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="/WEB-INF/Template.xhtml">
+	template="/WEB-INF/Template.xhtml"
+	xmlns:f="http://java.sun.com/jsf/core">
 
 	<ui:define name="pagetitle">
 		<div>
@@ -16,36 +18,42 @@
 This is the first table
  -->
  
-	<ui:define name="maincontent">
-	
-	<div id = "display-box" style = "background:#DEF2C8; width:500px; margin:auto; padding:10px;">
-	
-	<div>
-	<h2>My Wishlist</h2>
-	</div>
-	
-	<table style = "padding-bottom:50px;">
-	<h:form rendered="#{wishlist.getWishlist() != null}">
-			<ui:repeat value="#{wishlist.getWishlist()}" var="line">
-				<tr>
-					<td width="128px"><h:graphicImage value="#{line.product.imageLocation}" height="128xp" width="128xp"/></td>
-					<td>
-						<table style="float: left;">
-							<tr>
-								<td><h:outputText value="#{line.product.name}" /></td>
-								
-								
-								<!-- <td><h:commandButton value="Add to basket" action="#{basket.addToBasket(products.product_id, products.quantity)}" /></td> -->
-								<td><h:commandButton value="Add to Basket" action="#{wishlist.addToBasketFromWishlist(line.product.product_id)}" /></td>
-								<td><h:commandButton value="Remove" action="#{wishlist.removeFromWishlist(line.product.product_id)}" /></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</ui:repeat>
-		</h:form>
-	</table>
-	</div>
-	
+ 	<ui:define name="pagetitle">
+		<div>
+			<h1>My Wishlist</h1>
+		</div>
 	</ui:define>
+
+	<ui:define name="maincontent">
+	<!-- @author: Vmaksymchuk -->
+	
+	<h:form rendered="#{wishlist.getWishlist() != null}">
+	
+	<h:dataTable value="#{wishlist.getWishlist()}" var="line">
+		    		    
+		    
+		   <h:column>    				
+			      <f:facet name="header">Image</f:facet>    				
+			      <img src = "#{line.product.imageLocation}"></img>
+		   </h:column>
+		    
+		   <h:column>    				
+		      <f:facet name="header">Product</f:facet>    				
+		      #{line.product.name}
+		   </h:column>
+		   
+		   <h:column>
+		   		<h:commandButton value="Add to Basket" action="#{wishlist.addToBasketFromWishlist(line.product.product_id)}" />
+		   </h:column>
+		   		
+		   <h:column>
+		   		<h:commandButton value="Remove" action="#{wishlist.removeFromWishlist(line.product.product_id)}" />
+		   </h:column>
+		   
+	</h:dataTable>
+	
+	</h:form>
+		
+	</ui:define>
+ 
 </ui:composition>
