@@ -24,11 +24,12 @@
 				<tr><th><h:outputLabel value="Username: "/></th>
 					<th><h:inputText value="#{user_account.username}"/></th></tr>	
 
-				<tr><th><h:outputLabel value="Date Of Birth: "/>
-					<h:inputText value="#{user_account.dd}" size="2"/>
+				<tr><th><h:outputLabel value="Date Of Birth: "/></th>
+					<th><h:inputText value="#{user_account.dd}" size="2"/>
 					<h:inputText value="#{user_account.mm}" size="2"/>
 					<h:inputText value="#{user_account.yyyy}" size="4"/></th>
-					</tr>			
+				</tr>
+								
 			</table>
 				<h:commandButton value="Update" action="#{user_account.updateDetails}"/>
 			</h:form>
