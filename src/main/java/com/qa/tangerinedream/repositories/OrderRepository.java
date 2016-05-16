@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.qa.tangerinedream.entities.Order;
+import com.qa.tangerinedream.entities.Product;
 
 import repositorybackend.OrderStatus;
 
@@ -26,5 +27,5 @@ import repositorybackend.OrderStatus;
 		@Deprecated
 		public Order findUsersPendingOrder(long userId);
 		public void delete(Order order);
-
+		public ArrayList<Order> orderHistory(long customerID);
 	}

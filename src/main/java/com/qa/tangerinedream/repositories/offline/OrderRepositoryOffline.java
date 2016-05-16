@@ -14,7 +14,7 @@ import static repositorybackend.OrderStatus.PENDING;
 import static repositorybackend.OrderStatus.WISHLIST;
 
 import com.qa.tangerinedream.entities.Order;
-
+import com.qa.tangerinedream.entities.Product;
 import com.qa.tangerinedream.repositories.OrderRepository;
 
 
@@ -124,5 +124,18 @@ implements OrderRepository {
 		}		
 			
 		return null;
+	}
+	
+	public ArrayList<Order> orderHistory(long customerID){
+		ArrayList<Order> orderList = initialData.getOrders();
+		ArrayList<Order> orderHistory = new ArrayList<Order>();
+		
+		for(int i=0; i < orderList.size(); i++) {
+			if (orderList.get(i).getCustomer().getCustomerId() == customerID){
+				orderHistory.add(orderList.get(i));
+			}
+		}
+		
+		return orderHistory;
 	}
 }

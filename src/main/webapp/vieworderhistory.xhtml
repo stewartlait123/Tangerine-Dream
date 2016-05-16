@@ -7,9 +7,12 @@ Hard coded for demonstration purposes only-->
 <!DOCTYPE html>
 
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets" template="/WEB-INF/Template.xhtml">
-	<link rel="stylesheet" type="text/css" href="/template/Template.css"></link>
-
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/Template.xhtml" css="Template.css"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
 	<ui:define name="pagetitle">
 		<div id="header">
 			<h1>Order History</h1>
@@ -17,5 +20,24 @@ Hard coded for demonstration purposes only-->
 	</ui:define>
 
 	<ui:define name="maincontent">
+		<h:form id="orderhistoryform">
+		<!-- dynamically-constructed dataTable that gets all the orders of the currentUser -->
+		 <h:dataTable id="orderhistoryTable" value="#{order.orderHistory()}" var="orders">
+			<h:column>
+				<f:facet name="header">Order ID</f:facet>
+				<h:outputLabel url="#{orders.order_id}"></h:outputLabel>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Status</f:facet>
+				<h:outputLabel url="#{orders.status}"></h:outputLabel>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Date</f:facet>
+				<h:outputLabel url="#{orders.order_date}"></h:outputLabel>
+			</h:column>
+		</h:dataTable>
+		</h:form>
 	</ui:define>
 </ui:composition>
