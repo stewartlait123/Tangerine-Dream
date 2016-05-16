@@ -49,5 +49,17 @@ public class CardRepositoryOffline implements CardRepository {
 		}
 		return results;
 	}
+	
+	@Override
+	public boolean checkCustomerCardCSV(long customerID, String cardNum, String csv){
+		List<Card> cards = initialData.getCards();
+		for (Card card: cards){
+			if(card.getCustomer().getCustomerId()==customerID && card.getCardNumber().equalsIgnoreCase(cardNum)){
+				if(card.getcSV().equalsIgnoreCase(csv))
+				return true;
+			}
+		}return false;
+		
+	}
 
 }

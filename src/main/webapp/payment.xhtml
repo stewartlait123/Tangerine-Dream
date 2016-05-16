@@ -43,7 +43,7 @@
 		<h:outputLabel value="#{items.cardNumber}" />
 		<h:outputLabel value="#{items.expiryDate}" />
 		<h:inputText value="#{Payment.cSV}" />
-		<h:commandButton action="#{Payment.CurrentCardPayment(Payment.cSV, items.expiryDate)}" value="Pay with this card" />
+		<h:commandButton action="#{Payment.CurrentCardPayment(Payment.cSV, items.expiryDate, items.cardNumber)}" value="Pay with this card" />
 		</h:column>
 		
 		</h:dataTable>

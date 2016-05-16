@@ -27,11 +27,12 @@ public class PaymentController {
 	@Inject OrderService orderservice;
 	@Inject AddCardService addCardService;
 	
-	private String nameOnCard;
-	private String cardNumber;
-	private String expiryDate;
-	private String cSV;
 	private String error = "";
+	private String type = "";
+	private String nameOnCard = "";
+	private String cardNumber = "";
+	private String expiryDate = "";
+	private String cSV = "";
 	
 
 	
@@ -48,16 +49,37 @@ public class PaymentController {
 		return addCardService.list(currentUser.getUserID());
 	}
 	
-	public String CurrentCardPayment(String csv, String expiry){
-		return "orderconfirmed.xhtml";
+	public String CurrentCardPayment(String csv, String expiry, String cardNum){
+		if(paymentService.currentCardService(csv, expiry, currentUser.getuserId(),cardNum))
+			return "orderconfirmed.xhtml";
+		else{
+			error = "Invalid csv or expiry date has passed on card";
+					return "payment.xhtml";
+		}
+		
 	}
 
-	public String PayNow(String name, String cardNum, String expiry, String csv){
+	public String PayNow(String type, String name, String cardNum, String expiry, String csv){
+		if (type.isEmpty() || name.isEmpty() || cardNum.isEmpty() || expiry.isEmpty() || csv.isEmpty()) {
+			error="empty fields";
+			return "payment.xhtml";
+		} else if (paymentService.paybycard(name, cardNum, expiry, csv)){
+			error = "Invalid expiry date";
+			return "orderconfirmed.xhtml";
+			
+		
+	}return "payment.xhtml";
+}
+	
+	public String AddNow(String type, String name, String cardNum, String expiry, String csv){
+		if (type.isEmpty() || name.isEmpty() || cardNum.isEmpty() || expiry.isEmpty() || csv.isEmpty()) {
+			error="empty fields";
+			return "payment.xhtml";
+		}else {
+		addCardService.addCard(name, cardNum, type, expiry, csv, currentUser.getuserId());	
+		
 		return "orderconfirmed.xhtml";
 	}
-	
-	public String AddNow(String name, String cardNum, String expiry, String csv){
-		return "orderconfirmed.xhtml";
 	}
 	
 	
@@ -98,6 +120,14 @@ public class PaymentController {
 
 	public void setError(String error) {
 		this.error = error;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 	

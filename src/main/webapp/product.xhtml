@@ -4,7 +4,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	template="/WEB-INF/Template.xhtml"
 	xmlns:f="http://java.sun.com/jsf/core">
-
+	<link rel="stylesheet" type="text/css" href="tableDesign.css"/>
 	<ui:define name="pagetitle">
 		<div>
 			<h1>#{catalogue.getProductById(param['id']).name} Details </h1>
@@ -12,54 +12,54 @@
 	</ui:define>
 
 	<ui:define name="maincontent">
+	<div class ="display-box" style = "width:70%">
+		
+			<div style = "margin-bottom: 50px;">
+				<h2>Product Details</h2>
+			</div>
 	<!-- @author: Iain Q -->
-		<h:form>
-		<h:dataTable id="productTable" value="#{catalogue.getProductById(param['id'])}" var="products">
-			    		    
-			   <f:facet name="preview-image" style = "float:left; display:inline-block;">
-			   		<h:column>    				
-	 				
-				      <img src = "#{products.imageLocation}"></img>
-				      
-				   </h:column>
-			   </f:facet>
+			<h:form>
+			<h:dataTable id="productTable" value="#{catalogue.getProductById(param['id'])}" var="products" columnClasses="p_column1, p_column2, p_column3, p_column4, p_column5">
+				    		    
+				    
+				   <h:column style = "padding:10px;">
+							
+							<h:graphicImage url="#{products.imageLocation}"  
+							
+							   ></h:graphicImage>
+						</h:column>
+						
+						<h:column style = "padding:10px;">
+								<h:outputLabel style = "display:block;" >#{products.name} <f:param name="id" value="#{products.product_id}" /></h:outputLabel>
+		   						<h:outputLabel value="&#163;#{products.price}" style = "display:block; margin:0px"/>
+						</h:column>
+							
+						<h:column style = "padding:10px;">
+							<h:outputLabel style = "display:block;"> #{products.description} <f:param name="id" value="#{products.product_id}" /></h:outputLabel>
+						</h:column>
+						
+						<h:column style = "padding:10px;">
+							<h:outputLabel style = "margin:0px;" value="#{products.stock} In Stock"/>
+						</h:column>
+						
+				   <h:column>
+
+						<h:inputText id="quantity" value="#{products.quantity}" style = "display:block;" />	
 				
-				<f:facet name = "product-details">				
-				   
-				   <h:column>    				
-	  				
-				      #{products.name}
-				   </h:column>
-				   
-				   <h:column>    				
-	 				
-				      #{products.product_type}
-				   </h:column>
-				   
-				   <h:column>
-	
-				      #{products.description}
-				   </h:column>
-				   
-				   <h:column>
-				      &#163;#{products.price}
-				   </h:column>
-				   <h:column>
-					   <f:facet name="header"></f:facet>
-						<h:inputText id="quantity" value="#{products.quantity}"/>
-	
-	
-						<h:commandButton id = "AddToBasket" action="#{basket.addToBasket(products.product_id, products.quantity)}" value="Add to basket" >
-							<f:param name="id" value="${param.id}"/></h:commandButton>
-						<h:commandButton id= "AddToWishlist" action="#{wishlist.addProductToWishlist(products.product_id)}" value="Add to WishList">
-	
-							<f:param name="id" value="${param.id}"/></h:commandButton>						
+						<h:commandButton id = "AddToBasket" action="#{basket.addToBasket(products.product_id, products.quantity)}" value="Add to basket" 
+							rendered = "#{currentUser.loginStatus}">
+							<f:param name="id" value="${param.id}"/>
+						</h:commandButton>
+						<h:commandButton id= "AddToWishlist" action="#{wishlist.addProductToWishlist(products.product_id)}" value="Add to WishList"
+							rendered = "#{currentUser.loginStatus}">
+							<f:param name="id" value="${param.id}"/>
+						</h:commandButton>							
 							
 				   </h:column>
+	
 				   
-			</f:facet>
-			   
-			</h:dataTable>
-		</h:form>			
+				</h:dataTable>
+			</h:form>	
+		</div>		
 	</ui:define>
 </ui:composition>

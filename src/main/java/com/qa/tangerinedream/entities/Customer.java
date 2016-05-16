@@ -87,7 +87,7 @@ public class Customer {
 		this.credit_limit = credit_limit;
 	}
 	
-	public Long getCustomerId()
+	public long getCustomerId()
 		{ return customer_id; }
 	public String getName()
 		{ return name; }
