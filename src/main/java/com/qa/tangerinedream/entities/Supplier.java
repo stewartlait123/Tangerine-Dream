@@ -1,6 +1,6 @@
 package com.qa.tangerinedream.entities;
 
-import java.math.BigInteger;
+
 
 import javax.enterprise.inject.Default;
 import javax.persistence.Entity;
@@ -27,7 +27,7 @@ public class Supplier
 	@ManyToOne
 	@Column (name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private BigInteger id;
+	private int id;
 	@NotNull
 	@Size (min = 0)
 	
@@ -35,11 +35,16 @@ public class Supplier
 	@Default 
 	private boolean active = true;
 
-	public BigInteger getId() {
+	public int getId() {
 		return id;
 	}
 	
 	public void setActive(boolean b) {
-		active = b;
+		active = true;
 	}
+	public Supplier(int id, boolean active){
+		this.id = id;
+		this.active = active;
+	}
+
 }
