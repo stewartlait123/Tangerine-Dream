@@ -1,3 +1,7 @@
+/*
+ * @author: Iain Q
+ */
+
 package com.qa.entities;
 
 import static org.junit.Assert.*;
