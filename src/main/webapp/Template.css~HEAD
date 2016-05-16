@@ -59,7 +59,7 @@ src:url(Font/Austie.ttf);
 	display:inline;	
 }
 
-#landingpage-content p{
+#home-content p{
 
 	font-family: Carnet;
 	text-align: left;
@@ -69,14 +69,14 @@ src:url(Font/Austie.ttf);
     margin:0px;
 }
 
-#landingpage-content h1{
+#home-content h1{
 
 	text-align: center;
     font-size: 36px;
     line-height: 40px;
 }
 
-#landingpage-content h2{
+#home-content h2{
 
 	font-family: OrangeJuice;
 	text-align: center;
@@ -102,7 +102,7 @@ src:url(Font/Austie.ttf);
 	text-align: center;
 }
 
-#landingpage-content h3{
+#home-content h3{
 
 	font-family: OrangeJuice;
 	text-align: center;
@@ -112,7 +112,7 @@ src:url(Font/Austie.ttf);
     margin:0px;
 }
 
-#landingpage-content h4{
+#home-content h4{
 	
 	font-family:Carnet;
 	margin:0px;

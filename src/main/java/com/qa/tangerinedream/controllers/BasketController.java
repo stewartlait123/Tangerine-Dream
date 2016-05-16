@@ -65,7 +65,7 @@ public class BasketController {
 	public String clearBasket(){
 		orderService.clearOrder(currentUser.getUserID());
 		pendingOrder.setOrder(orderService.getUsersPendingOrder(currentUser.getUserID()));
-		return "LandingPage.xhtml";
+		return "home.xhtml";
 	}
 	
 	/**
