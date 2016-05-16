@@ -1,3 +1,6 @@
+ /*@ Stewart Lait */
+
+
 package com.qa.entities;
 
 import static org.junit.Assert.*;
