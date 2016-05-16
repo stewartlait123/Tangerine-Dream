@@ -25,7 +25,9 @@
 						<p:carousel value="#{catalogue.searchProducts('GNOME')}" headerText = "Gnice Gnomes" var="products" itemStyle = "text-align:center" numVisible="4" circular = "true" responsive = "true">
 							<p:panelGrid columns = "1" style = "width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
 								<f:facet name="header">
-									<p:graphicImage value = "#{products.imageLocation}"/>
+									<h:outputLink value="product.xhtml" style = "display:block;" ><f:param name="id" value="#{products.product_id}" />
+										<p:graphicImage value = "#{products.imageLocation}"/>
+									</h:outputLink>
 								</f:facet>
 								
 								<h:outputText value = ""/>
@@ -39,7 +41,9 @@
 						<p:carousel value="#{catalogue.searchProducts('TOOL')}" headerText = "Garden Tools" var="products" itemStyle = "text-align:center" numVisible="4" circular = "true" responsive = "true">
 							<p:panelGrid columns = "1" style = "width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
 								<f:facet name="header">
-									<p:graphicImage value = "#{products.imageLocation}"/>
+									<h:outputLink value="product.xhtml" style = "display:block;" ><f:param name="id" value="#{products.product_id}" />
+										<p:graphicImage value = "#{products.imageLocation}"/>
+									</h:outputLink>
 								</f:facet>
 								
 								<h:outputText value = ""/>
@@ -53,7 +57,9 @@
 						<p:carousel value="#{catalogue.searchProducts('POT')}" headerText = "Popular Pots" var="products" itemStyle = "text-align:center" numVisible="4" circular = "true" responsive = "true">
 							<p:panelGrid columns = "1" style = "width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
 								<f:facet name="header">
-									<p:graphicImage value = "#{products.imageLocation}"/>
+									<h:outputLink value="product.xhtml" style = "display:block;" ><f:param name="id" value="#{products.product_id}" />
+										<p:graphicImage value = "#{products.imageLocation}"/>
+									</h:outputLink>
 								</f:facet>
 								
 								<h:outputText value = ""/>
