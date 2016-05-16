@@ -28,6 +28,7 @@ public class AddCardService {
 			System.out.println("--Gnome Life Bitcheaz!--");
 		}
 	}
+	
 
 	public List<Card> list(long userID) {
 		System.out.println("--user ID:" + userID);
@@ -37,4 +38,6 @@ public class AddCardService {
 			System.out.println("--name on card: " + c.getNameOnCard());
 		return cards;
 	}
+	
+	
 }

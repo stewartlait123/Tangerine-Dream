@@ -41,7 +41,7 @@ public class LoginController{
 		}
 		currentUser.setUserID(customerService.findUserIdByUsername(username));
 		currentUser.setLoginStatus(true);
-		return "LandingPage";
+		return "home";
 	}
 	
 	public String getUsername()

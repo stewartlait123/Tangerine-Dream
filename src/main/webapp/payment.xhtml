@@ -8,38 +8,66 @@
 	<ui:define name="pagetitle">
 		<div id="header">
 			<h1>Payment</h1> 
+			<h2>Please Choose a Payment option</h2>
 		</div>
 	</ui:define>
 
 
 	<ui:define name="maincontent">
-		<!--Author: Iain Q><-->
-		<div>
-			Select a payment method:
-			
-			<h:selectOneMenu value="#{Payment.method}" name = "category">
-            <f:selectItem itemValue="1" itemLabel="Select One..." />
-            <f:selectItem itemValue="2" itemLabel="Visa" />
-            <f:selectItem itemValue="3" itemLabel="Credit" />			
-         </h:selectOneMenu>
+	<div id ="content-container">
+		<h:form name="carddetailsform" action="">
+		<h:outputText value ="#{Payment.error}"></h:outputText>
+		Credit Payment
+		<br /><br />
+		<h:commandButton action="#{Payment.Submit()}" value="Pay Using Credit" />
+		
+		<br /><br /><br /><br />
+		
+		<div style = "width100%; margin:auto;">
+		<h:dataTable style = "width100%; margin:auto;" value="#{Payment.cards}" var="items">
+		<h:column>
+		<h3>Stored Card</h3>
+		
+		<h:outputLabel value="Name on Card" />
+		<h:outputLabel value="Saved Card" />
+		<h:outputLabel value="Card Number" />
+		<h:outputLabel value="Expiry Date" />
+		<h:outputLabel value="Please insert the CSV number" />
+		<br />
+		</h:column>
+		
+		<h:column>
+		<h3></h3>
+		<h:outputLabel value="#{items.nameOnCard}" />
+		<h:outputLabel value="#{items.type}" />
+		<h:outputLabel value="#{items.cardNumber}" />
+		<h:outputLabel value="#{items.expiryDate}" />
+		<h:inputText value="#{Payment.cSV}" />
+		<h:commandButton action="#{Payment.CurrentCardPayment(Payment.cSV, items.expiryDate, items.cardNumber)}" value="Pay with this card" />
+		</h:column>
+		
+		</h:dataTable>
 		</div>
-
-		<div>
-			<br></br>
-			<br></br>
-			<br></br>
-		</div>
-
-		<div class="grid-temp">
-			<div class="row-title">New payment method:</div>
-			<div class="main-row">
-				<h:form name="paymentform" action="">
-					<fieldset>
-						<legend>Payment Form</legend>
-						<table id="payment">
+		<h3>Use A New Card</h3>
+				<h:outputText value="#{Addcard.error}"></h:outputText>
+				<h:outputLabel value="Select a Card Type:" />
+				
+					<br></br> 
+				<h:selectOneMenu value="#{Addcard.type}" name="category">
+					<f:selectItem itemValue="1" itemLabel="Select One..." />
+					<f:selectItem itemValue="2" itemLabel="Visa Debit/Credit" />
+					<f:selectItem itemValue="3" itemLabel="MasterCard" />
+					<f:selectItem itemValue="4" itemLabel="American Express" />
+					<f:selectItem itemValue="5" itemLabel="Maestro" />
+				</h:selectOneMenu>
+				
+					<br></br> 
+					<br></br> 
+					
+					<table id="content-container">
 							<tr>
 								<th>Name as it appears on card:</th>
-								<th><h:inputText value="#{Payment.nameOnCard}" /> </th>
+								<th><h:inputText value="#{Payment.nameOnCard}" /></th>
 							</tr>
 							<tr>
 								<th>Card Number:</th>
@@ -53,16 +81,16 @@
 								<th>CVS:</th>
 								<th><h:inputText value="#{Payment.cSV}" /></th>
 							</tr>
+							<tr>
+							<th><h:commandButton action="#{Payment.PayNow(Payment.nameOnCard, Payment.cardNumber, Payment.expiryDate, Payment.cSV)}" value="Use this Card Once" /></th>
+					<th><h:commandButton action="#{Payment.AddNow(Payment.nameOnCard, Payment.cardNumber, Payment.expiryDate, Payment.cSV)}" value="Use and add Card" /></th>
+							</tr>
 						</table>
 						
-
-					</fieldset>
-					<h:commandButton action="#{Payment.Submit()}" value="Submit" />
-				</h:form>
-				<button onclick="location.href='orderconfirmed.xhtml'">Submit </button>
+					
+					
+				
+			</h:form>
 			</div>
-
-
-		</div>
 		</ui:define>
 		</ui:composition>

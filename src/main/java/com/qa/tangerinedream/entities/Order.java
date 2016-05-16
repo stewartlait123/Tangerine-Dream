@@ -78,8 +78,6 @@ public class Order {
 		this.orderLines.add(orderLine);
 	}
 	*/
-
-
 	public Order( long orderID, OrderStatus status, Date date, Customer customer, OrderLine orderLine){
 		this.order_id = orderID;
 		this.status = status;
@@ -138,6 +136,7 @@ public class Order {
 	public void removeOrderLine(OrderLine orderline){
 		this.orderLines.remove(orderline);
 	}
+	
 	public void updateOrderLine(OrderLine orderline){
 		for (int i=0; i < orderLines.size(); i++){
 			if(orderLines.get(i) == orderline) {

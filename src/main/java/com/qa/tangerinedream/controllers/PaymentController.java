@@ -1,5 +1,7 @@
 package com.qa.tangerinedream.controllers;
 
+import java.util.List;
+
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -9,7 +11,8 @@ import javax.inject.Named;
  * 
  */
 
-
+import com.qa.tangerinedream.entities.Card;
+import com.qa.tangerinedream.service.AddCardService;
 import com.qa.tangerinedream.service.OrderService;
 import com.qa.tangerinedream.service.PaymentService;
 
@@ -22,35 +25,64 @@ public class PaymentController {
 	@Inject PaymentService paymentService;
 	@Inject CurrentUser currentUser;
 	@Inject OrderService orderservice;
+	@Inject AddCardService addCardService;
 	
-	private String nameOnCard;
-	private String cardNumber;
-	private String expiryDate;
-	private String cSV;
+	private String error = "";
+	private String type = "";
+	private String nameOnCard = "";
+	private String cardNumber = "";
+	private String expiryDate = "";
+	private String cSV = "";
 	
-	private int method;
+
 	
 	/* Setter for Paying by Card */
 
 	public String Submit(){
-		if(method == 1)
-			return "payment.xhtml";
-		if (method ==2){
-			if (nameOnCard.isEmpty() || cardNumber.isEmpty() || expiryDate.isEmpty() || cSV.isEmpty())
-				return "payment.xhtml";
-			else {
-				paymentService.paybycard(nameOnCard, cardNumber, expiryDate, cSV);
-				return "orderconfirmed.xhtml";
-			}
-		}
-		else if (method ==3){
 			if(paymentService.creditpayment(currentUser.getUserID()))
 				return "orderconfirmed.xhtml";
-		}
+			setError("Insufficient Credit Please use another payment option");
 		return "payment.xhtml";
 	}
 	
+	public List<Card> getCards() {
+		return addCardService.list(currentUser.getUserID());
+	}
+	
+	public String CurrentCardPayment(String csv, String expiry, String cardNum){
+		if(paymentService.currentCardService(csv, expiry, currentUser.getuserId(),cardNum))
+			return "orderconfirmed.xhtml";
+		else{
+			error = "Invalid csv or expiry date has passed on card";
+					return "payment.xhtml";
+		}
+		
+	}
 
+	public String PayNow(String type, String name, String cardNum, String expiry, String csv){
+		if (type.isEmpty() || name.isEmpty() || cardNum.isEmpty() || expiry.isEmpty() || csv.isEmpty()) {
+			error="empty fields";
+			return "payment.xhtml";
+		} else if (paymentService.paybycard(name, cardNum, expiry, csv)){
+			error = "Invalid expiry date";
+			return "orderconfirmed.xhtml";
+			
+		
+	}return "payment.xhtml";
+}
+	
+	public String AddNow(String type, String name, String cardNum, String expiry, String csv){
+		if (type.isEmpty() || name.isEmpty() || cardNum.isEmpty() || expiry.isEmpty() || csv.isEmpty()) {
+			error="empty fields";
+			return "payment.xhtml";
+		}else {
+		addCardService.addCard(name, cardNum, type, expiry, csv, currentUser.getuserId());	
+		
+		return "orderconfirmed.xhtml";
+	}
+	}
+	
+	
 	public void setNameOnCard(String nameOnCard) {
 		this.nameOnCard = nameOnCard;
 	}
@@ -81,14 +113,23 @@ public class PaymentController {
 	public String getcSV() {
 		return cSV;
 	}
-	
-	public int getMethod() {
-		return method;
+
+	public String getError() {
+		return error;
 	}
 
-	public void setMethod(int method) {
-		this.method = method;
+	public void setError(String error) {
+		this.error = error;
 	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	
 	
 
 

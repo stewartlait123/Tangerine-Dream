@@ -57,21 +57,34 @@ public class InitialData{
 		address.add(new Address("Walton Hall Paddock, Birmingham, B267hr", "Walton Hall Paddock, Birmingham, B267hr", customer_ID));
 		
 		//creation of products
-		//name, cost price size weight stock minstock orderamount productType image location
-		products.add(new Product(0, "Simple Pot", 100, 300, 10, 500, 1000, 100, 1000, "POT", "img/abstractpot.png"));
-		products.add(new Product(1, "Clippers", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Clippers.jpg"));
-		products.add(new Product(2, "Normal Gnome", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome1.jpg"));
-		products.add(new Product(3, "Normal Gnome 2", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
-		products.add(new Product(4, "Normal Gnome 3", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
-		products.add(new Product(5, "Abnormal Gnome", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome4.jpg"));
-		products.add(new Product(6, "Return of Normal Gnome 3", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome2.jpg"));
-		products.add(new Product(7, "Godzilla Gnome", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome5.jpg"));
-		products.add(new Product(8, "Gunome", 100, 300, 10, 500, 1000, 100, 1000, "GNOME", "img/Gnome6.jpg"));
-		products.add(new Product(9, "Hook", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Hook.jpg"));
-		products.add(new Product(10, "Rake", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Rake.jpg"));
-		products.add(new Product(11, "Shovel", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Shovel.jpg"));
-		products.add(new Product(12, "Trimmers", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Trimmers.jpg"));
-		products.add(new Product(13, "Trowel", 100, 300, 10, 500, 1000, 100, 1000, "TOOL", "img/Trowel.jpg"));
+		//name, cost price size weight stock minstock orderamount productType image location - re-edited @ Stewart
+		products.add(new Product(0, "Garden Gnome", 100, 15, 10, 500, 1000, 100, 1000, "GNOME", "img/gnome-garden.jpg", "Gnome with a shovel"));
+		products.add(new Product(1, "Mushroom Gnome", 100, 15, 10, 500, 1000, 100, 1000, "GNOME", "img/gnome-mushroom.jpg", "Gnome sitting on a mushroom"));
+		products.add(new Product(2, "Flasher Gnome", 100, 15, 10, 500, 1000, 100, 1000, "GNOME", "img/gnome-flasher.jpg", "Gnome showing himself off"));
+		products.add(new Product(3, "Coolio Gnome", 100, 15, 10, 500, 1000, 100, 1000, "GNOME", "img/gnome-coolio.jpg", "Gnome posing oh so cool"));
+		products.add(new Product(4, "Ninja Gnome", 100, 15, 10, 500, 1000, 100, 1000, "GNOME", "img/gnome-ninja.jpg", "Gnome practicing martial arts"));
+		products.add(new Product(5, "Scarface Gnome", 100, 20, 10, 500, 1000, 100, 1000, "GNOME", "img/gnome-scarface.jpg", "Gnome shooting his tommy gun"));
+		products.add(new Product(6, "Game of Gnome", 100, 20, 10, 500, 1000, 100, 1000, "GNOME", "img/gnome-gameof.jpg", "Gnome R R Martin"));
+		products.add(new Product(7, "Godzilla Gnome", 100, 25, 10, 500, 1000, 100, 1000, "GNOME", "img/gnome-godzilla.jpg", "Gnome in Tokyo"));
+		products.add(new Product(8, "Pot - Green", 100, 10, 10, 500, 1000, 100, 1000, "POT", "img/pot-plastic.jpg", "Plastic based garden pot"));
+		products.add(new Product(9, "Pot - Brown", 100, 10, 10, 500, 1000, 100, 1000, "POT", "img/pot-plastic2.jpg", "Plastic based garden pot"));
+		products.add(new Product(10, "Pot - Mahogany", 100, 40, 10, 500, 1000, 100, 1000, "POT", "img/pot-wooden.jpg", "Wood based garden pot"));
+		products.add(new Product(11, "Pot - Pine", 100, 40, 10, 500, 1000, 100, 1000, "POT", "img/pot-wooden2.jpg", "Wood based garden pot"));
+		products.add(new Product(12, "Pot - Original", 50, 50, 10, 500, 1000, 100, 1000, "POT", "img/pot-terracotta.jpg", "Terracotta based garden pot"));
+		products.add(new Product(13, "Pot - Flower", 50, 50, 10, 500, 1000, 100, 1000, "POT", "img/pot-terracotta2.jpg", "Terracotta based garden pot"));
+		products.add(new Product(14, "Pot - Original", 100, 80, 10, 500, 1000, 100, 1000, "POT", "img/pot-stone.jpg", "Stone based garden pot"));
+		products.add(new Product(15, "Pot - Flower", 100, 80, 10, 500, 1000, 100, 1000, "POT", "img/pot-stone2.jpg", "Stone based garden pot"));
+		products.add(new Product(16, "Clippers", 100, 10, 10, 500, 1000, 100, 1000, "TOOL", "img/tool-clippers.jpg", "Rubber covered handle, sharp smooth cutter head"));
+		products.add(new Product(17, "Trowel", 100, 10, 10, 500, 1000, 100, 1000, "TOOL", "img/tool-trowel.jpg", "Wooden handle, iron head"));
+		products.add(new Product(18, "Spade", 100, 20, 10, 500, 1000, 100, 1000, "TOOL", "img/tool-spade.jpg", "Wooden handle, iron head"));
+		products.add(new Product(19, "Rake", 100, 20, 10, 500, 1000, 100, 1000, "TOOL", "img/tool-rake.jpg", "Wooden handle, iron head"));
+		products.add(new Product(20, "Hoe", 100, 20, 10, 500, 1000, 100, 1000, "TOOL", "img/tool-hoe.jpg", "Wooden handle, iron head"));
+		products.add(new Product(21, "Axe", 100, 40, 10, 500, 1000, 100, 1000, "TOOL", "img/tool-axe.jpg", "Wooden handle, iron head"));
+		products.add(new Product(22, "Chainsaw", 100, 200, 10, 500, 1000, 100, 1000, "TOOL", "img/tool-chainsaw.jpg", "Petrol engine , 12 inch bar"));
+		products.add(new Product(23, "Lawnmower", 100, 400, 10, 500, 1000, 100, 1000, "TOOL", "img/tool-lawnmower.jpg", "Petrol engine, self-propelled wheels"));
+
+		//Creation of Dummy Data for Product Description
+		
 		
 		//Creation of Order Dummy data by Christine Stokes
 		
@@ -87,7 +100,7 @@ public class InitialData{
 		
 		// Creation of Dummy Data for orderline by Christine Stokes
 		Order orderID = new Order();
-		Product productID = new Product(14, null, 0, 0, 0, 0, 0, 0, 0, null, null);
+		Product productID = new Product(11, null, 0, 0, 0, 0, 0, 0, 0, null, null, null);
 		
 		//orderLine.add(new OrderLine(orderID, productID, 2, 1799));
 		//orderLine.add(new OrderLine(orderID, productID, 3,1899));

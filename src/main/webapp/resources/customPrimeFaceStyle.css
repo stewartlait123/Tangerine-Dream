@@ -46,14 +46,18 @@ search-bar{
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-    border: 1px solid #9A9B58;
+    border: 1px solid #564754;
     background: #c4c4c4 url("/Tangerine-Dream/javax.faces.resource/images/ui-bg_highlight-hard_80_c4c4c4_1x100.png.xhtml?ln=primefaces-aristo") 50% 50% repeat-x;
     background: #c4c4c4 linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0));
-    background: #9A9B58 -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0)));
+    background: #A6B2AA -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), to(rgba(255,255,255,0)));
     background: #9A9B58 -moz-linear-gradient(top, rgba(255,255,255,0.3), rgba(255,255,255,0));
     font-weight: bold;
     color: #4f4f4f;
-    text-shadow: 0px 1px 0px rgba(255,255,255,0.7);
+    text-shadow: 0px 1px 0px rgba(0,0,0,1);
+}
+
+.ui-button-text {
+    color: #FFF7EF;
 }
 
 .ui-menubar{
@@ -72,12 +76,4 @@ search-bar{
 	
 	color: #FFFFFF;
 	
-}
-
-.ui-state-default .ui-widget-content .ui-state-default .ui-widget-header .ui-state-default {
-    border: 1px solid #FFFFFF;
-    background: #B379CC -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0)));
-    font-weight: bold;
-    color: #B379CC;
-    text-shadow: 0px 1px 0px rgba(255,255,255,0.7);
 }

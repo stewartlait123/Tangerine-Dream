@@ -64,7 +64,7 @@ public class CreditApplicationController {
 	
 	public String cancel() {
 		System.out.println("Butts");
-		return "LandingPage";
+		return "home";
 	}
 
 	// getters and setters for strings
