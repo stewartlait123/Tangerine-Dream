@@ -384,6 +384,12 @@ public class InitialData{
 	public ArrayList<Order> getOrderHistory(long customerID){
 		ArrayList<Order> orderHistory = new ArrayList<Order>();
 		
+		for (Order order:orders){
+			if (order.getCustomer().getCustomerId() == customerID){
+				orderHistory.add(order);
+			}
+		}
+		
 		return orderHistory;	
 	}
 	

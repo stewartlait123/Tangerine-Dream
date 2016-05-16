@@ -2,6 +2,8 @@ package com.qa.tangerinedream.service;
 
 import static repositorybackend.OrderStatus.PENDING;
 import static repositorybackend.OrderStatus.PLACED;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -199,5 +201,9 @@ public class OrderService {
 				}
 			
 		
+	}
+	
+	public ArrayList<Order> orderHistory(long customerID){
+		return orderRepository.orderHistory(customerID);
 	}
 }
