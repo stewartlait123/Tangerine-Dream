@@ -7,7 +7,6 @@ package com.qa.tangerinedream.service;
 import javax.inject.Inject;
 
 import com.qa.tangerinedream.controllers.CurrentUser;
-import com.qa.tangerinedream.entities.Card;
 import com.qa.tangerinedream.repositories.CardRepository;
 import com.qa.tangerinedream.repositories.CustomerRepository;
 import com.qa.tangerinedream.repositories.OrderRepository;
