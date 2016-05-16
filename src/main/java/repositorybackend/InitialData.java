@@ -142,9 +142,7 @@ public class InitialData{
 	
 	// Creation of Supplier Dummy Data by Christine
 	
-	supplier.add(new Supplier());
-	supplier.add(new Supplier());
-	supplier.add(new Supplier());
+
 	
 	// Creation of Product Supplier Dummy data by Christine
 	

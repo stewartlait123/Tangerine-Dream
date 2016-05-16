@@ -29,7 +29,7 @@ public class ProductController {
 	private int orderAmount;
 	private String description = "";
 	private ProductService productService;
-	
+
 
 	public String getName() {
 			return name;
