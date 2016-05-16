@@ -142,9 +142,7 @@ public class InitialData{
 	
 	// Creation of Supplier Dummy Data by Christine
 	
-	supplier.add(new Supplier());
-	supplier.add(new Supplier());
-	supplier.add(new Supplier());
+
 	
 	// Creation of Product Supplier Dummy data by Christine
 	
@@ -396,6 +394,12 @@ public class InitialData{
 	
 	public ArrayList<Order> getOrderHistory(long customerID){
 		ArrayList<Order> orderHistory = new ArrayList<Order>();
+		
+		for (Order order:orders){
+			if (order.getCustomer().getCustomerId() == customerID){
+				orderHistory.add(order);
+			}
+		}
 		
 		return orderHistory;	
 	}

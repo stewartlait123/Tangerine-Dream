@@ -7,6 +7,7 @@
 package com.qa.tangerinedream.controllers;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.RequestScoped;
@@ -16,6 +17,7 @@ import javax.inject.Named;
 
 import com.qa.tangerinedream.entities.Order;
 import com.qa.tangerinedream.entities.OrderLine;
+import com.qa.tangerinedream.entities.Product;
 import com.qa.tangerinedream.service.OrderService;
 
 
@@ -76,4 +78,8 @@ public class OrderController {
 		totalPlaced = orderService.calcOrderTotalPlaced(currentUser.getUserID());
     	return totalPlaced;
     }
+	
+	public ArrayList<Order> orderHistory() {
+		return orderService.orderHistory(currentUser.getUserID());
+	}
 }
