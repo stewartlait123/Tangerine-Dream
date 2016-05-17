@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.qa.entities;
+package com.qa.controllers;
 
 import static org.junit.Assert.*;
 
@@ -73,11 +73,12 @@ public class CreditApplicationControllerTest {
 
 	/**
 	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setSurname(java.lang.String)}.
-	 * TODO: Continue testing
 	 */
 	@Test
-	public void testSetSurname() {
-		fail("Not yet implemented");
+	public void testSetSurnameIsSet() {
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setSurname("UsersSurname");
+		assertEquals("UsersSurname", firstCredit.getSurname());
 	}
 
 	/**
@@ -85,7 +86,11 @@ public class CreditApplicationControllerTest {
 	 */
 	@Test
 	public void testGetFirst_name() {
-		fail("Not yet implemented");
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		CreditApplicationController secondCredit = new CreditApplicationController();
+		firstCredit.setFirst_name("firstCreditFirstName");
+		secondCredit.setFirst_name(firstCredit.getFirst_name());
+		assertEquals(firstCredit.getFirst_name(), secondCredit.getFirst_name());
 	}
 
 	/**
@@ -93,7 +98,9 @@ public class CreditApplicationControllerTest {
 	 */
 	@Test
 	public void testSetFirst_name() {
-		fail("Not yet implemented");
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setFirst_name("UsersFirstName");
+		assertEquals("UsersFirstName", firstCredit.getFirst_name());
 	}
 
 	/**
@@ -101,7 +108,11 @@ public class CreditApplicationControllerTest {
 	 */
 	@Test
 	public void testGetDate_of_birth() {
-		fail("Not yet implemented");
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		CreditApplicationController secondCredit = new CreditApplicationController();
+		firstCredit.setDate_of_birth("28122000");
+		secondCredit.setDate_of_birth(firstCredit.getDate_of_birth());
+		assertEquals(firstCredit.getDate_of_birth(), secondCredit.getDate_of_birth());
 	}
 
 	/**
@@ -109,11 +120,14 @@ public class CreditApplicationControllerTest {
 	 */
 	@Test
 	public void testSetDate_of_birth() {
-		fail("Not yet implemented");
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setDate_of_birth("28122000");
+		assertEquals("28122000", firstCredit.getDate_of_birth());
 	}
 
 	/**
 	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getHome_address()}.
+	 * TODO: continue testing.
 	 */
 	@Test
 	public void testGetHome_address() {
