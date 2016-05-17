@@ -1,4 +1,4 @@
-package com.qa.entities;
+package com.qa.repositories.offline;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
@@ -11,7 +11,6 @@ import org.junit.Test;
 import com.qa.tangerinedream.entities.Address;
 import com.qa.tangerinedream.entities.Customer;
 import com.qa.tangerinedream.repositories.offline.AddressRepositoryOffline;
-import com.qa.tangerinedream.repositories.offline.CardRepositoryOffline;
 
 
 public class AddressRepositoryOfflineTest {
@@ -93,7 +92,7 @@ public class AddressRepositoryOfflineTest {
 		addressRepo.persistAddress(address);
 		Address newAddress = new Address("new delivery address", "billing address", customer);
 		addressRepo.setDeliveryAddress((long) 1, newAddress);
-		assertEquals("new delivery address", addressRepo.findBillingAddress("new delivery address"));
+		assertEquals("new delivery address", addressRepo.findDeliveryAddress("new delivery address"));
 	}
 
 }
