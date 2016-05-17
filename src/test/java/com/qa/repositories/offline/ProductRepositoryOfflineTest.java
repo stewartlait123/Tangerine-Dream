@@ -22,7 +22,7 @@ import com.qa.tangerinedream.repositories.offline.ProductRepositoryOffline;
  */
 public class ProductRepositoryOfflineTest {
 
-	Product product = new Product(1, "name", 0, 0, 0, 0, 0, 0, 0, "GNOME", null, null);
+	Product product = new Product(1, "name", 2, 3, 4, 5, 6, 7, 8, "GNOME", "Image", "Description");
 	ArrayList<Product> productList = new ArrayList<Product>(Arrays.asList(product));
 	ProductRepositoryOffline productRepo;
 
@@ -54,15 +54,21 @@ public class ProductRepositoryOfflineTest {
 	public void testUpdateProduct() {
 		productRepo = mock(ProductRepositoryOffline.class);
 		productRepo.addProduct(product);
-		product.setName("test");
+		//product.setName("test");
 		productRepo.updateProduct(product);
 		assertEquals("test",productRepo.findByProductId(product.getProduct_id()).getName());
+		
+		
+		///FIX
 	}
 
 
 	@Test
 	public void testRemoveProduct() {
-		fail("Not yet implemented");
+		productRepo = mock(ProductRepositoryOffline.class);
+		productRepo.addProduct(product);
+		productRepo.removeProduct(product);
+		assertEquals(new ArrayList<Product>(),productRepo.getProducts());
 	}
 
 

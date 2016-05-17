@@ -1,4 +1,4 @@
-package com.qa.entities;
+package com.qa.repositories.offline;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
