@@ -28,25 +28,25 @@ public class PaymentTest {
 	Payment payment = new Payment(1,order,address,customer);
 	
 	@Test
-	public void testPayment() {
+	public void testPaymentNotNull() {
 		Payment payment = new Payment(1,order,null,null);
 		assertNull(payment.getAddress_id());
 	}
 
 	@Test
-	public void testGetPayment_id() {
+	public void testGetPayment_idNotNull() {
 		Payment payment = new Payment(1,order,null,null);
 		assertNotNull(payment.getPayment_id());
 	}
 
 	@Test
-	public void testGetPayment_type() {
+	public void testGetPayment_typeNotNull() {
 		Payment payment = new Payment(1,order,null,null);
 		assertNotNull(payment.getPayment_type());
 	}
 
 	@Test
-	public void testSetPayment_type() {
+	public void testSetAndGetPayment_type() {
 		payment.setPayment_type(2);
 		assertEquals(2, payment.getPayment_type());
 	}

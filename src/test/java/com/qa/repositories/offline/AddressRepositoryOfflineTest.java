@@ -92,7 +92,7 @@ public class AddressRepositoryOfflineTest {
 		addressRepo.persistAddress(address);
 		Address newAddress = new Address("new delivery address", "billing address", customer);
 		addressRepo.setDeliveryAddress((long) 1, newAddress);
-		assertEquals("new delivery address", addressRepo.findBillingAddress("new delivery address"));
+		assertEquals("new delivery address", addressRepo.findDeliveryAddress("new delivery address"));
 	}
 
 }
