@@ -30,12 +30,14 @@ public class CardRepositoryOfflineTest {
 	
 	@Test
 	public void testPersistCard() {
+		cardRepo = mock(CardRepositoryOffline.class);
 		cardRepo.persistCard(card);
 		assertNotNull(cardRepo.findById(1));
 	}
 
 	@Test
 	public void testFindById() {
+		cardRepo = mock(CardRepositoryOffline.class);
 		Card cardWithId = new Card((long) 5, "type", "Test Name On Card", "1234123412341234", "06/2018", "666", customer);
 		cardRepo.persistCard(cardWithId);
 		assertNotNull(cardRepo.findById(5));
@@ -43,12 +45,14 @@ public class CardRepositoryOfflineTest {
 
 	@Test
 	public void testFindForCustomer() {
+		cardRepo = mock(CardRepositoryOffline.class);		
 		cardRepo.persistCard(card);
 		assertNotNull(cardRepo.findForCustomer(customer));
 	}
 
 	@Test
 	public void testCheckCustomerCardCSV() {
+		cardRepo = mock(CardRepositoryOffline.class);		
 		cardRepo.persistCard(card);
 		assertNotNull(cardRepo.checkCustomerCardCSV(1, "1234123412341234", "666"));
 	}

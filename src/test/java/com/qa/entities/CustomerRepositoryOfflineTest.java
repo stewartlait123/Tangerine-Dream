@@ -14,7 +14,7 @@ import com.qa.tangerinedream.repositories.offline.CustomerRepositoryOffline;
 
 
 
-public class CustomerRepositoryTest {
+public class CustomerRepositoryOfflineTest {
 	
 	Customer customer = new Customer(1, "name", "user", "password", Calendar.getInstance().getTime(), 0, 0);
 
