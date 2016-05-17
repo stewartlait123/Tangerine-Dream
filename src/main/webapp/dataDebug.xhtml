@@ -26,7 +26,8 @@
 				
 				<h:column>
 					<f:facet name="header">ID</f:facet>
-					"#{currentUser.userId}"
+					"#{currentUser.userId}"					
+				
 				</h:column>
 			</h:dataTable>
 					
@@ -68,6 +69,11 @@
 			      <f:facet name="header">credit Limit</f:facet>    				
 			      "#{customer.creditLimit}"		      
 			   </h:column>	
+			   
+			   <h:column>
+					<f:facet name="header">Payments</f:facet>
+					"#{payment.getCardsWithUserId(currentUser.userId)}"
+				</h:column> 
 			   		   
 		</h:dataTable>
 			

@@ -102,7 +102,6 @@ public class CustomerTest {
 		try {
 
 			date = formatter.parse(dateInString);
-			System.out.println(date);
 			System.out.println(formatter.format(date));
 
 		} catch (ParseException e) {

@@ -33,7 +33,7 @@
 								<h:outputText value = ""/>
 								<!-- <h:outputText value = "#{products.name}"/>-->
 								
-								<h:outputText value = "#{products.price}"/>
+								<h:outputText value = "&#163;#{products.price}"/>
 								
 						</p:panelGrid>
 						</p:carousel>
@@ -42,7 +42,7 @@
 							<p:panelGrid columns = "1" style = "width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
 								<f:facet name="header">
 									<h:outputLink value="product.xhtml" style = "display:block;" ><f:param name="id" value="#{products.product_id}" />
-										<p:graphicImage value = "#{products.imageLocation}"/>
+										<p:graphicImage value = "&#163;#{products.imageLocation}"/>
 									</h:outputLink>
 								</f:facet>
 								
@@ -58,7 +58,7 @@
 							<p:panelGrid columns = "1" style = "width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
 								<f:facet name="header">
 									<h:outputLink value="product.xhtml" style = "display:block;" ><f:param name="id" value="#{products.product_id}" />
-										<p:graphicImage value = "#{products.imageLocation}"/>
+										<p:graphicImage value = "&#163;#{products.imageLocation}"/>
 									</h:outputLink>
 								</f:facet>
 								
@@ -132,92 +132,6 @@
 
 <script src="#{facesContext.externalContext.requestContextPath}/jquery-2.2.3.min.js"></script>
 <script>
-
-    <![CDATA[
-
-$(document).ready(function() {
-
-	responsiveLayout();
-  
-});
-
-$(window).resize(function(){
-
-	responsiveLayout();
-
-	});
-
-
-function responsiveLayout() {
-
-	var docWidth = $(window).width();
-
-	if(docWidth > 1224)
-	{
-		//Return settings to 'default' if page is large enough.
-
-		document.getElementById("content-container").style.textAlign = "center";
-
-
-		document.getElementById("product-titlewrapper").style.float = "left";
-
-		document.getElementById("news-container").style.width = '350px';
-		document.getElementById("news-container").style.float = "right";
-
-
-		var newsPanelElements = document.getElementsByClassName("news-panel");
-		for(var i = 0 ;  i < newsPanelElements.length ; i++){
-			newsPanelElements[i].style.padding = "5px";
-			newsPanelElements[i].style.width = "350px";
-		}
-
-		var newsItemElements = document.getElementsByClassName("news-item");
-		for(var i = 0 ; i < newsItemElements ; i++)
-		{
-			newsItemElements[i].style.width = 330;
-		}
-
-	}else if(docWidth > 800)
-	{
-
-		document.getElementById("content-container").style.textAlign = "center";
-
-		document.getElementById("product-titlewrapper").style.float = "none";
-
-		document.getElementById("news-container").style.width = "350px";
-		document.getElementById("news-container").style.float = "right";
-
-
-		var newsPanelElements = document.getElementsByClassName("news-panel");
-		for(var i = 0 ;  i < newsPanelElements.length ; i++){
-			newsPanelElements[i].style.padding = "5px";
-			newsPanelElements[i].style.width = "350px";
-		}
-	}else
-	{
-
-		document.getElementById("content-container").style.textAlign = "center";
-
-		document.getElementById("product-titlewrapper").style.float = "none";
-
-		document.getElementById("news-container").style.width = "100%";
-		document.getElementById("news-container").style.float = "none";
-
-		var newsPanelElements = document.getElementsByClassName("news-panel");
-		for(var i = 0 ;  i < newsPanelElements.length ; i++){
-			newsPanelElements[i].style.padding = "15px";
-			newsPanelElements[i].style.width = "100%";
-		}
-
-		var newsItemElements = document.getElementsByClassName("news-item");
-		for(var i = 0 ; i < newsItemElements ; i++)
-		{
-			newsItemElements[i].style.width = 450;
-		}
-	}
-};
-
-]]>
 
 
 </script>
