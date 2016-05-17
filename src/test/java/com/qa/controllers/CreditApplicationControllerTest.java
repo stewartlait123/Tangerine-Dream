@@ -127,11 +127,14 @@ public class CreditApplicationControllerTest {
 
 	/**
 	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getHome_address()}.
-	 * TODO: continue testing.
 	 */
 	@Test
 	public void testGetHome_address() {
-		fail("Not yet implemented");
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		CreditApplicationController secondCredit = new CreditApplicationController();
+		firstCredit.setHome_address("Line1, Line 2");
+		secondCredit.setHome_address(firstCredit.getHome_address());
+		assertEquals(firstCredit.getDate_of_birth(), secondCredit.getDate_of_birth());
 	}
 
 	/**
@@ -139,279 +142,199 @@ public class CreditApplicationControllerTest {
 	 */
 	@Test
 	public void testSetHome_address() {
-		fail("Not yet implemented");
+		String testAddress = "12 Green Street";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setHome_address(testAddress);
+		assertEquals(testAddress, firstCredit.getHome_address());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getTime_at_address()}.
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getTime_at_address()}.
 	 */
 	@Test
-	public void testGetTime_at_address() {
-		fail("Not yet implemented");
+	public void testSetAndGetTime_at_address() {
+		String testTime = "5 years";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setTime_at_address(testTime);
+		assertEquals(testTime, firstCredit.getTime_at_address());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setTime_at_address(java.lang.String)}.
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getPlace_of_birth(java.lang.String)}.
 	 */
 	@Test
-	public void testSetTime_at_address() {
-		fail("Not yet implemented");
+	public void testSetAndGetPlace_of_birth() {
+		String testPlace = "London";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setPlace_of_birth(testPlace);
+		assertEquals(testPlace, firstCredit.getPlace_of_birth());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getPlace_of_birth()}.
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getType_of_proof(java.lang.String)}.
 	 */
 	@Test
-	public void testGetPlace_of_birth() {
-		fail("Not yet implemented");
+	public void testSetAndGetType_of_proof() {
+		String testProof = "Date Of Birth";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setType_of_proof(testProof);
+		assertEquals(testProof, firstCredit.getType_of_proof());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setPlace_of_birth(java.lang.String)}.
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getProof_number(java.lang.String)}.
 	 */
 	@Test
-	public void testSetPlace_of_birth() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getType_of_proof()}.
-	 */
-	@Test
-	public void testGetType_of_proof() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setType_of_proof(java.lang.String)}.
-	 */
-	@Test
-	public void testSetType_of_proof() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getProof_number()}.
-	 */
-	@Test
-	public void testGetProof_number() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setProof_number(java.lang.String)}.
-	 */
-	@Test
-	public void testSetProof_number() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getEmployer_name()}.
-	 */
-	@Test
-	public void testGetEmployer_name() {
-		fail("Not yet implemented");
+	public void testSetAndGetProof_number() {
+		String testProofNum = "0123456789";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setProof_number(testProofNum);
+		assertEquals(testProofNum, firstCredit.getProof_number());
 	}
 
 	/**
 	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setEmployer_name(java.lang.String)}.
 	 */
 	@Test
-	public void testSetEmployer_name() {
-		fail("Not yet implemented");
+	public void testSetAndGetEmployer_name() {
+		String testEmployersName = "EmployersName";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setEmployer_name(testEmployersName);
+		assertEquals(testEmployersName, firstCredit.getEmployer_name());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getEmployer_address()}.
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getEmployer_address(java.lang.String)}.
 	 */
 	@Test
-	public void testGetEmployer_address() {
-		fail("Not yet implemented");
+	public void testSetAndGetEmployer_address() {
+		String testEmployersAddr = "EmployersAddress";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setEmployer_address(testEmployersAddr);
+		assertEquals(testEmployersAddr, firstCredit.getEmployer_address());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setEmployer_address(java.lang.String)}.
-	 */
-	@Test
-	public void testSetEmployer_address() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getTime_with_employer()}.
-	 */
-	@Test
-	public void testGetTime_with_employer() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setTime_with_employer(java.lang.String)}.
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getTime_with_employer(java.lang.String)}.
 	 */
 	@Test
 	public void testSetTime_with_employer() {
-		fail("Not yet implemented");
+		String testData = "3 years";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setTime_with_employer(testData);
+		assertEquals(testData, firstCredit.getTime_with_employer());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getType_of_employment()}.
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getType_of_employment(java.lang.String)}.
 	 */
 	@Test
-	public void testGetType_of_employment() {
-		fail("Not yet implemented");
+	public void testSetAndGetType_of_employment() {
+		String testData = "IT";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setType_of_employment(testData);
+		assertEquals(testData, firstCredit.getType_of_employment());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setType_of_employment(java.lang.String)}.
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getBank_name(java.lang.String)}.
 	 */
 	@Test
-	public void testSetType_of_employment() {
-		fail("Not yet implemented");
+	public void testSetAndGetBank_name() {
+		String testData = "Lloyds TSB";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setBank_name(testData);
+		assertEquals(testData, firstCredit.getBank_name());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getBank_name()}.
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getTime_with_bank(java.lang.String)}.
 	 */
 	@Test
-	public void testGetBank_name() {
-		fail("Not yet implemented");
+	public void testSetAndGetTime_with_bank() {
+		String testData = "6 years";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setTime_with_bank(testData);
+		assertEquals(testData, firstCredit.getTime_with_bank());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setBank_name(java.lang.String)}.
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getAccount_number(java.lang.String)}.
 	 */
 	@Test
-	public void testSetBank_name() {
-		fail("Not yet implemented");
+	public void testSetAndGetAccount_number() {
+		String testData = "4444 3333 2222 5555";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setAccount_number(testData);
+		assertEquals(testData, firstCredit.getAccount_number());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getTime_with_bank()}.
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getSort_code(java.lang.String)}.
 	 */
 	@Test
-	public void testGetTime_with_bank() {
-		fail("Not yet implemented");
+	public void testSetAndGetSort_code() {
+		String testData = "22-31-67";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setSort_code(testData);
+		assertEquals(testData, firstCredit.getSort_code());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setTime_with_bank(java.lang.String)}.
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getCard_name(java.lang.String)}.
 	 */
 	@Test
-	public void testSetTime_with_bank() {
-		fail("Not yet implemented");
+	public void testSetAndGetCard_name() {
+		String testData = "MR JOHN SNOW";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setCard_name(testData);
+		assertEquals(testData, firstCredit.getCard_name());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getAccount_number()}.
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getCard_number(java.lang.String)}.
 	 */
 	@Test
-	public void testGetAccount_number() {
-		fail("Not yet implemented");
+	public void testSetAndGetCard_number() {
+		String testData = "1324 4567 1234 5678";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setCard_number(testData);
+		assertEquals(testData, firstCredit.getCard_number());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setAccount_number(java.lang.String)}.
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getExpiry_date(java.lang.String)}.
 	 */
 	@Test
-	public void testSetAccount_number() {
-		fail("Not yet implemented");
+	public void testSetAndGetExpiry_date() {
+		String testData = "17/21";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setExpiry_date(testData);
+		assertEquals(testData, firstCredit.getExpiry_date());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getSort_code()}.
-	 */
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getCvs(java.lang.String)}.
+	 */ //TODO:
 	@Test
-	public void testGetSort_code() {
-		fail("Not yet implemented");
+	public void testSetAndGetCvs() {
+		String testData = "412";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setCvs(testData);
+		assertEquals(testData, firstCredit.getCvs());
+		assertNotNull(firstCredit.getCvs());
 	}
 
 	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setSort_code(java.lang.String)}.
+	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#set/getBank_address(java.lang.String)}.
 	 */
 	@Test
-	public void testSetSort_code() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getCard_name()}.
-	 */
-	@Test
-	public void testGetCard_name() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setCard_name(java.lang.String)}.
-	 */
-	@Test
-	public void testSetCard_name() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getCard_number()}.
-	 */
-	@Test
-	public void testGetCard_number() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setCard_number(java.lang.String)}.
-	 */
-	@Test
-	public void testSetCard_number() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getExpiry_date()}.
-	 */
-	@Test
-	public void testGetExpiry_date() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setExpiry_date(java.lang.String)}.
-	 */
-	@Test
-	public void testSetExpiry_date() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getCvs()}.
-	 */
-	@Test
-	public void testGetCvs() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setCvs(java.lang.String)}.
-	 */
-	@Test
-	public void testSetCvs() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#getBank_address()}.
-	 */
-	@Test
-	public void testGetBank_address() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#setBank_address(java.lang.String)}.
-	 */
-	@Test
-	public void testSetBank_address() {
-		fail("Not yet implemented");
+	public void testSetAndGetBank_address() {
+		String testData = "13 Greenest Street, Yorkshire";
+		CreditApplicationController firstCredit = new CreditApplicationController();
+		firstCredit.setBank_address(testData);
+		assertEquals(testData, firstCredit.getBank_address());
+		assertNotNull(firstCredit.getBank_address());
 	}
 
 }
