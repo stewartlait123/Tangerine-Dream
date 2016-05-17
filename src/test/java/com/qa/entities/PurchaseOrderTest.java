@@ -1,4 +1,4 @@
-package com.qa.tangerinedream.entities;
+package com.qa.entities;
 
 import static org.junit.Assert.*;
 
@@ -8,9 +8,13 @@ import java.util.Date;
 
 import org.junit.Test;
 
+import com.qa.tangerinedream.entities.Employee;
+import com.qa.tangerinedream.entities.PurchaseOrder;
+
 public class PurchaseOrderTest {
 	
-	PurchaseOrder purchaseOrder = new PurchaseOrder(new Date(), new Employee("", 0, 0, false));
+	Employee employee = new Employee("", 0, 0, false);
+	PurchaseOrder purchaseOrder = new PurchaseOrder(new Date(), employee);
 	
 	@Test
 	public void testPurchaseOrderDateEmployee() {
@@ -36,6 +40,8 @@ public class PurchaseOrderTest {
 
 	@Test
 	public void testGetEmployee() {
+		
+		purchaseOrder.setEmployee(employee);
 		assertNotNull(purchaseOrder.getEmployee());
 	}
 
