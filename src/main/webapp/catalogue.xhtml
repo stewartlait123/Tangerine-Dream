@@ -33,7 +33,7 @@
 					   ></h:graphicImage>
 				</h:column>
 				
-				<h:column>
+				  <h:column>
 						<h:outputLink value="product.xhtml" style = "display:block;" >#{products.name} <f:param name="id" value="#{products.product_id}" /></h:outputLink>
    						<h:outputLabel value="&#163;#{products.price}" style = "display:block; margin:0px"/>
 				</h:column>
@@ -44,7 +44,7 @@
 				
 				<h:column>
 					<h:outputLabel style = "margin:0px;" value="#{products.stock} In Stock"/>
-				</h:column>
+				</h:column> 
 				
 			</h:dataTable>
 			</h:form>

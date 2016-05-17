@@ -41,7 +41,7 @@ public class ProductSupplierRepositoryOffline implements ProductSupplierReposito
 		@Override
 		public void updateProductSupplier(ProductSupplier ps) {
 			ArrayList<ProductSupplier> aps =
-			initialData.getProductSuppliers();
+			initialData.getProductSuppliers(); 
 			for(int i=0; i<aps.size(); i++) {
 				if(aps.get(i).equals(ps))
 				aps.set(i, ps);

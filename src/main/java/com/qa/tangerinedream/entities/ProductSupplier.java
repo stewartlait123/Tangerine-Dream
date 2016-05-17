@@ -8,7 +8,7 @@ package com.qa.tangerinedream.entities;
  */
 
 
-import javax.persistence.Column;
+import javax.persistence.Column; 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

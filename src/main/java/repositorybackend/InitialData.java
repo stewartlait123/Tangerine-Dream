@@ -83,7 +83,7 @@ public class InitialData{
 		products.add(new Product(22, "Chainsaw", 100, 200, 10, 500, 1000, 100, 1000, "TOOL", "img/tool-chainsaw.jpg", "Petrol engine , 12 inch bar"));
 		products.add(new Product(23, "Lawnmower", 100, 400, 10, 500, 1000, 100, 1000, "TOOL", "img/tool-lawnmower.jpg", "Petrol engine, self-propelled wheels"));
 
-		//Creation of Dummy Data for Product Description
+		//Creation of Dummy Data for Product Description 
 		
 		
 		//Creation of Order Dummy data by Christine Stokes
@@ -146,9 +146,9 @@ public class InitialData{
 	
 	// Creation of Product Supplier Dummy data by Christine
 	
-	productSuppliers.add(new ProductSupplier(supplier.get(0), productID, 1999));
-	productSuppliers.add(new ProductSupplier(supplier.get(1), productID, 2500));
-	productSuppliers.add(new ProductSupplier(supplier.get(2), productID, 499));
+	//productSuppliers.add(new ProductSupplier(supplier.get(0), productID, 1999));
+	//productSuppliers.add(new ProductSupplier(supplier.get(1), productID, 2500));
+	//productSuppliers.add(new ProductSupplier(supplier.get(2), productID, 499));
 	
 		// Created by Mohammed Miah to test view order history page
 		Customer bigShopper = new Customer(5, "Big Shopper", "shopping", "loveToShop", new Date() , 300000 , 900000); 

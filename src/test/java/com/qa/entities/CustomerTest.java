@@ -1,4 +1,4 @@
-package com.qa.tangerinedream.entities;
+package com.qa.entities;
 
 import static org.junit.Assert.*;
 
@@ -7,6 +7,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.junit.Test;
+
+import com.qa.tangerinedream.entities.Customer;
 
 public class CustomerTest {
 
