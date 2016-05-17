@@ -14,7 +14,7 @@ import com.qa.tangerinedream.entities.Supplier;
 
 public class ProductSupplierTest {
 
-	ProductSupplier productsupplier = new ProductSupplier(new Supplier(), new Product(), 0);
+	ProductSupplier productsupplier = new ProductSupplier(new Supplier(0, false), new Product(), 0);
 	
 	@Test
 	public void testProductSupplier() {
@@ -50,7 +50,7 @@ public class ProductSupplierTest {
 
 	@Test
 	public void testSetSupplier() {
-		Supplier supplier = new Supplier();
+		Supplier supplier = new Supplier(0,false);
 		productsupplier.setSupplier(supplier);
 		assertEquals(supplier,productsupplier.getSupplier());
 	}
