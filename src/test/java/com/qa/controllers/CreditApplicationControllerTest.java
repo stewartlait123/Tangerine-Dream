@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.qa.entities;
+package com.qa.controllers;
 
 import static org.junit.Assert.*;
 
