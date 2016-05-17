@@ -31,8 +31,8 @@ public class BasketService {
 		if(order != null) {
 			boolean foundOrderLine = false;
 			for(OrderLine ol : order.getOrderLines())
-				if(ol.getproduct().getProduct_id()==productId){
-					ol.setquantity(quantity += ol.getquantity());
+				if(ol.getProduct().getProduct_id()==productId){
+					ol.setQuantity(quantity += ol.getQuantity());
 					foundOrderLine = true;
 				}
 			if(!foundOrderLine)

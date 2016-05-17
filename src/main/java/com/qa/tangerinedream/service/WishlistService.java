@@ -42,7 +42,7 @@ public class WishlistService {
 		if(order!=null) {
 			List<OrderLine> lines = order.getOrderLines();
 			for (int i = 0; i < lines.size(); i++)
-				if (lines.get(i).getproduct().getProduct_id() == productId)
+				if (lines.get(i).getProduct().getProduct_id() == productId)
 					lines.remove(i);
 			order.setOrderLines(lines);
 		orderRepository.updateOrder(order);			
@@ -60,7 +60,7 @@ public class WishlistService {
 		Order order = orderRepository.findUserAndStatus(userID, OrderStatus.PENDING);
 		if (order != null) {
 			for (OrderLine ol: wishlist.getOrderLines())
-				if (ol.getproduct().getProduct_id() == productId) {
+				if (ol.getProduct().getProduct_id() == productId) {
 					order.addOrderLine(ol);
 					wishlist.removeOrderLine(ol);
 					break;
@@ -70,7 +70,7 @@ public class WishlistService {
 			order = new Order(orderRepository.getOrders().size(), OrderStatus.PENDING, Calendar.getInstance().getTime(), customerRepository.findByID(userID), new OrderLine(productRepository.findByProductId(productId), 1, 0));
 
 			for (OrderLine ol: wishlist.getOrderLines())
-				if (ol.getproduct().getProduct_id() == productId){
+				if (ol.getProduct().getProduct_id() == productId){
 					wishlist.removeOrderLine(ol);
 					break; }	
 		}
