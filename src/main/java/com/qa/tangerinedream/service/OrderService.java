@@ -40,7 +40,7 @@ public class OrderService {
 		float price;
 		if (order != null) {
 			for (OrderLine ol : order.getOrderLines()) {
-				price = ol.getquantity() * ol.getproduct().getPrice();
+				price = ol.getQuantity() * ol.getProduct().getPrice();
 				totalPrice = totalPrice + price;
 			}
 			String totalPrice1 = String.format("%.2f", totalPrice); 
@@ -55,7 +55,7 @@ public class OrderService {
 		float price;
 		if (order != null) {
 			for (OrderLine ol : order.getOrderLines()) {
-				price = ol.getquantity() * ol.getproduct().getPrice();
+				price = ol.getQuantity() * ol.getProduct().getPrice();
 				totalPrice = totalPrice + price;
 			}
 			String totalPrice1 = String.format("%.2f", totalPrice); 
@@ -71,25 +71,21 @@ public class OrderService {
 		if (order != null) {
 			boolean foundOrderLine = false;
 			for (OrderLine ol : order.getOrderLines())
-				if (ol.getproduct().getProduct_id() == productId) {
-					ol.setquantity(quantity += ol.getquantity());
-					price = ol.getquantity()*product.getPrice();
-					String price1 = String.format("%.2f", price);
-					ol.setPrice(price1);
+				if (ol.getProduct().getProduct_id() == productId) {
+					ol.setQuantity(quantity += ol.getQuantity());
+					price = ol.getQuantity()*product.getPrice();
+					ol.setPurchasePrice(price);
 					foundOrderLine = true;
 				}
 			if (!foundOrderLine){
 				price = quantity*product.getPrice();
-				String price1 = String.format("%.2f", price);
-				String.format("%.2f", price);
-				order.addOrderLine(new OrderLine(product, quantity, price1));
+				order.addOrderLine(new OrderLine(product, quantity, price));
 			}
 				
 		} else {
 			price = quantity*product.getPrice();
-			String price1 = String.format("%.2f", price);
 			order = (new Order(orderRepository.getOrders().size(),PENDING, Calendar.getInstance().getTime(), customerRepository.findByID(userId),
-					new OrderLine(product, quantity, price1)));
+					new OrderLine(product, quantity, price)));
 			orderRepository.persistOrder(order);
 		}
 	}
@@ -100,7 +96,7 @@ public class OrderService {
 		if (order != null) {
 			List<OrderLine> lines = order.getOrderLines();
 			for (int i = 0; i < lines.size(); i++)
-				if (lines.get(i).getproduct().getProduct_id() == productId)
+				if (lines.get(i).getProduct().getProduct_id() == productId)
 					lines.remove(i);
 			order.setOrderLines(lines);
 		orderRepository.updateOrder(order);
@@ -145,7 +141,7 @@ public class OrderService {
 		float price;
 		if (order != null) {
 			for (OrderLine ol : order.getOrderLines()) {
-				price = ol.getquantity() * ol.getproduct().getPrice();
+				price = ol.getQuantity() * ol.getProduct().getPrice();
 				totalPrice = totalPrice + price;
 			}
 			String totalPrice1 = String.format("%.2f", totalPrice); 
@@ -165,11 +161,10 @@ public class OrderService {
 		Order order = orderRepository.findUserAndStatus(userID, PENDING);
 		if (order != null) {
 			for (OrderLine ol : order.getOrderLines()) {
-				if (ol.getproduct().getProduct_id() == prod_ID) {
-					ol.setquantity(quantity);
-					float price = ol.getquantity()*product.getPrice();
-					String price1 = String.format("%.2f", price);
-					ol.setPrice(price1);
+				if (ol.getProduct().getProduct_id() == prod_ID) {
+					ol.setQuantity(quantity);
+					float price = ol.getQuantity()*product.getPrice();
+					ol.setPurchasePrice(price);
 					
 				}
 				orderRepository.updateOrder(order);
@@ -183,13 +178,13 @@ public class OrderService {
 		boolean orderfound = false;
 		if (wishlist != null){
 			for (OrderLine ol : wishlist.getOrderLines()){
-				if (ol.getproduct().getProduct_id()==productId)
+				if (ol.getProduct().getProduct_id()==productId)
 					orderfound = true;
 			}
 		}
 		List<OrderLine> lines = order.getOrderLines();
 		for (int i = 0; i < lines.size(); i++){
-			if (lines.get(i).getproduct().getProduct_id() == productId){
+			if (lines.get(i).getProduct().getProduct_id() == productId){
 				if(orderfound==false){
 					wishlist.addOrderLine(lines.get(i));
 				}

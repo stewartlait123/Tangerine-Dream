@@ -58,7 +58,7 @@ implements OrderLineRepository {
 		ArrayList<OrderLine> productLineList = initialData.getOrderLines();
 		
 		for (int i = 0; i < productLineList.size(); i++){
-			if (productLineList.get(i).getproduct().getProduct_id() != product_id){
+			if (productLineList.get(i).getProduct().getProduct_id() != product_id){
 				productLineList.remove(i);
 			}
 		}
