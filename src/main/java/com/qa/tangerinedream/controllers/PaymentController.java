@@ -49,6 +49,11 @@ public class PaymentController {
 		return addCardService.list(currentUser.getUserID());
 	}
 	
+	public List<Card> getCardsWithUserId(Long id_)
+	{
+		return addCardService.list(id_);
+	}
+	
 	public String CurrentCardPayment(String csv, String expiry, String cardNum){
 		if(paymentService.currentCardService(csv, expiry, currentUser.getuserId(),cardNum))
 			return "orderconfirmed.xhtml";
