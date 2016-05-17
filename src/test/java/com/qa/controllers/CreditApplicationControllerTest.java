@@ -10,13 +10,13 @@ import org.junit.Test;
 import com.qa.tangerinedream.controllers.CreditApplicationController;
 
 /**
- * @author Volodymyr Maksymchuk Team  2016
+ * @author Volodymyr Maksymchuk Team "Tangerine" 2016
+ * @category Test
+ * @version 0.1
  *
  */
 public class CreditApplicationControllerTest {
 	
-	//CreditApplicationController testCredit = new CreditApplicationController();
-
 	/**
 	 * Test method for {@link com.qa.tangerinedream.controllers.CreditApplicationController#apply()}.
 	 */
