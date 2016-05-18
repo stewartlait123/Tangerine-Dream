@@ -30,7 +30,7 @@
 			</h:column>
 			<h:column>
 			<f:facet name="header">Price</f:facet>
-			<h:outputLabel value="£#{line.price}" />
+			<h:outputLabel value="£#{line.product.price}" />
 			</h:column>
 			<h:column>
 			<h:commandButton action="#{basket.updateQuantity(line.quantity,line.product.product_id)}" value="Update" />	
