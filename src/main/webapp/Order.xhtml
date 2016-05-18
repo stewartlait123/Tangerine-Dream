@@ -33,7 +33,7 @@
 			
 			<h:column>
             <f:facet name="header">Price</f:facet>
-            <h:outputLabel value="£#{item.product.price}" />
+            <h:outputLabel value="£#{item.product.price * item.quantity}" />
 			</h:column>
 		
 		</h:dataTable>
